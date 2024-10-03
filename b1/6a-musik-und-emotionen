@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Was Musik mit uns macht</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .word-translate { position: relative; display: inline-block; }
+        .word-translate:hover .translation { display: block; }
+        .translation {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            color: white;
+            padding: 5px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-4">Was Musik mit uns macht</h1>
+
+        <p class="mb-4">
+            <span class="word-translate">Musik<span class="translation">Music</span></span>
+            <span class="word-translate">löst<span class="translation">triggers</span></span>
+            <span class="word-translate">Gefühle<span class="translation">feelings</span></span>
+            <span class="word-translate">aus<span class="translation">out</span></span> –
+            <span class="word-translate">sie<span class="translation">she/it</span></span>
+            <span class="word-translate">macht<span class="translation">makes</span></span>
+            <span class="word-translate">uns<span class="translation">us</span></span>
+            <span class="word-translate">fröhlich<span class="translation">happy</span></span>
+            <span class="word-translate">oder<span class="translation">or</span></span>
+            <span class="word-translate">traurig<span class="translation">sad</span></span>
+        </p>
+
+        <p class="mb-4">
+            <span class="word-translate">Der<span class="translation">The</span></span>
+            <span class="word-translate">amerikanische<span class="translation">American</span></span>
+            <span class="word-translate">Forscher<span class="translation">researcher</span></span>
+            <span class="word-translate">Steven Pinker</span>
+            <span class="word-translate">hat<span class="translation">has</span></span>
+            <span class="word-translate">einmal<span class="translation">once</span></span>
+            <span class="word-translate">gesagt<span class="translation">said</span></span>:
+            „<span class="word-translate">Musik<span class="translation">Music</span></span>
+            <span class="word-translate">ist<span class="translation">is</span></span>
+            <span class="word-translate">Käsekuchen<span class="translation">cheesecake</span></span>
+            <span class="word-translate">für<span class="translation">for</span></span>
+            <span class="word-translate">die<span class="translation">the</span></span>
+            <span class="word-translate">Ohren<span class="translation">ears</span></span>“,
+            <span class="word-translate">also<span class="translation">thus</span></span>
+            <span class="word-translate">etwas<span class="translation">something</span></span>
+            <span class="word-translate">Süßes<span class="translation">sweet</span></span>
+            <span class="word-translate">oder<span class="translation">or</span></span>
+            <span class="word-translate">Leckeres<span class="translation">delicious</span></span>.
+            <span class="word-translate">Aber<span class="translation">But</span></span>
+            <span class="word-translate">Musik<span class="translation">music</span></span>
+            <span class="word-translate">kann<span class="translation">can</span></span>
+            <span class="word-translate">natürlich<span class="translation">naturally</span></span>
+            <span class="word-translate">auch<span class="translation">also</span></span>
+            <span class="word-translate">anders<span class="translation">differently</span></span>
+            „<span class="word-translate">schmecken<span class="translation">taste</span></span>“.
+            <span class="word-translate">Heavy Metal</span>
+            <span class="word-translate">für<span class="translation">for</span></span>
+            <span class="word-translate">die<span class="translation">the</span></span>
+            <span class="word-translate">Ohren<span class="translation">ears</span></span>
+            <span class="word-translate">wohl<span class="translation">probably</span></span>
+            <span class="word-translate">eher<span class="translation">rather</span></span>
+            <span class="word-translate">scharf<span class="translation">spicy</span></span>
+            <span class="word-translate">und<span class="translation">and</span></span>
+            <span class="word-translate">würzig<span class="translation">savory</span></span>.
+        </p>
+
+        <p class="mb-4">
+            <span class="word-translate">Man<span class="translation">One</span></span>
+            <span class="word-translate">kann<span class="translation">can</span></span>
+            <span class="word-translate">entweder<span class="translation">either</span></span>
+            <span class="word-translate">Klassik<span class="translation">classical</span></span>
+            <span class="word-translate">oder<span class="translation">or</span></span>
+            <span class="word-translate">Metal<span class="translation">metal</span></span>
+            <span class="word-translate">mögen<span class="translation">like</span></span>,
+            <span class="word-translate">aber<span class="translation">but</span></span>
+            <span class="word-translate">unsere<span class="translation">our</span></span>
+            <span class="word-translate">Reaktion<span class="translation">reaction</span></span>
+            <span class="word-translate">auf<span class="translation">to</span></span>
+            <span class="word-translate">Musik<span class="translation">music</span></span>
+            <span class="word-translate">ist<span class="translation">is</span></span>
+            <span class="word-translate">immer<span class="translation">always</span></span>
+            <span class="word-translate">gleich<span class="translation">the same</span></span>.
+            <span class="word-translate">Dabei<span class="translation">In doing so</span></span>
+            <span class="word-translate">ist<span class="translation">is</span></span>
+            <span class="word-translate">es<span class="translation">it</span></span>
+            <span class="word-translate">ganz<span class="translation">completely</span></span>
+            <span class="word-translate">egal<span class="translation">irrelevant</span></span>,
+            <span class="word-translate">ob<span class="translation">whether</span></span>
+            <span class="word-translate">uns<span class="translation">us</span></span>
+            <span class="word-translate">die<span class="translation">the</span></span>
+            <span class="word-translate">Musik<span class="translation">music</span></span>
+            <span class="word-translate">gefällt<span class="translation">pleases</span></span>
+            <span class="word-translate">oder<span class="translation">or</span></span>
+            <span class="word-translate">nicht<span class="translation">not</span></span>.
+            <span class="word-translate">Jeder<span class="translation">Everyone</span></span>
+            <span class="word-translate">kann<span class="translation">can</span></span>
+            <span class="word-translate">das<span class="translation">that</span></span>
+            <span class="word-translate">beobachten<span class="translation">observe</span></span>:
+            <span class="word-translate">Bei<span class="translation">With</span></span>
+            <span class="word-translate">Dur-Tonarten<span class="translation">major keys</span></span>
+            <span class="word-translate">und<span class="translation">and</span></span>
+            <span class="word-translate">schnellen<span class="translation">fast</span></span>
+            <span class="word-translate">Rhythmen<span class="translation">rhythms</span></span>
+            <span class="word-translate">atmen<span class="translation">breathe</span></span>
+            <span class="word-translate">wir<span class="translation">we</span></span>
+            <span class="word-translate">zum Beispiel<span class="translation">for example</span></span>
+            <span class="word-translate">schneller<span class="translation">faster</span></span>
+            <span class="word-translate">und<span class="translation">and</span></span>
+            <span class="word-translate">empfinden<span class="translation">feel</span></span>
+            <span class="word-translate">eher<span class="translation">rather</span></span>
+            <span class="word-translate">Freude<span class="translation">joy</span></span>.
+            <span class="word-translate">Daher<span class="translation">Therefore</span></span>
+            <span class="word-translate">spielt<span class="translation">plays</span></span>
+            <span class="word-translate">man<span class="translation">one</span></span>
+            <span class="word-translate">weder<span class="translation">neither</span></span>
+            <span class="word-translate">bei<span class="translation">at</span></span>
+            <span class="word-translate">feierlichen<span class="translation">ceremonial</span></span>
+            <span class="word-translate">Veranstaltungen<span class="translation">events</span></span>
+            <span class="word-translate">noch<span class="translation">nor</span></span>
+            <span class="word-translate">auf<span class="translation">at</span></span>
+            <span class="word-translate">Hochzeiten<span class="translation">weddings</span></span>
+            <span class="word-translate">fröhliche<span class="translation">cheerful</span></span>
+            <span class="word-translate">Musik<span class="translation">music</span></span>
+            <span class="word-translate">in<span class="translation">in</span></span>
+            <span class="word-translate">Dur<span class="translation">major</span></span>.
+            <span class="word-translate">Bei<span class="translation">With</span></span>
+            <span class="word-translate">langsamen<span class="translation">slow</span></span>
+            <span class="word-translate">Stücken<span class="translation">pieces</span></span>
+            <span class="word-translate">in<span class="translation">in</span></span>
+            <span class="word-translate">Moll<span class="translation">minor</span></span>
+            <span class="word-translate">dagegen<span class="translation">on the other hand</span></span>
+            <span class="word-translate">ist<span class="translation">is</span></span>
+            <span class="word-translate">das<span class="translation">that</span></span>
+            <span class="word-translate">anders<span class="translation">different</span></span>:
+            <span class="word-translate">Der<span class="translation">The</span></span>
+            <span class="word-translate">Puls<span class="translation">pulse</span></span>
+            <span class="word-translate">sinkt<span class="translation">drops</span></span>
+            <span class="word-translate">und<span class="translation">and</span></span>
+            <span class="word-translate">man<span class="translation">one</span></span>
+            <span class="word-translate">fühlt<span class="translation">feels</span></span>
+            <span class="word-translate">sich<span class="translation">oneself</span></span>
+            <span class="word-translate">traurig<span class="translation">sad</span></span>.
+            <span class="word-translate">Die<span class="translation">The</span></span>
+            <span class="word-translate">Tonart<span class="translation">key</span></span>
+            <span class="word-translate">wirkt<span class="translation">acts</span></span>
+            <span class="word-translate">aber<span class="translation">but</span></span>
+            <span class="word-translate">auch<span class="translation">also</span></span>
+            <span class="word-translate">beruhigend<span class="translation">calming</span></span>.
+        </p>
+
+        <p class="mb-4">
+            <span class="word-translate">Warum<span class="translation">Why</span></span>
+            <span class="word-translate">ist<span class="translation">is</span></span>
+            <span class="word-translate">das<span class="translation">that</span></span>
+            <span class="word-translate">so<span class="translation">so</span></span>?
+            <span class="word-translate">Was<span class="translation">What</span></span>
+            <span class="word-translate">passiert<span class="translation">happens</span></span>
+            <span class="word-translate">da<span class="translation">there</span></span>
+            <span class="word-translate">in<span class="translation">in</span></span>
+            <span class="word-translate">unseren<span class="translation">our</span></span>
+            <span class="word-translate">Köpfen<span class="translation">heads</span></span>?
+            <span class="word-translate">Dafür<span class="translation">For that</span></span>
+            <span class="word-translate">gibt<span class="translation">there is</span></span>
+            <span class="word-translate">es<span class="translation">it</span></span>
+            <span class="word-translate">eine<span class="translation">an</span></span>
+            <span class="word-translate">interessante<span class="translation">interesting</span></span>
+            <span class="word-translate">Erklärung<span class="translation">explanation</span></span>:
+            <span class="word-translate">Die<span class="translation">The</span></span>
+            <span class="word-translate">Töne<span class="translation">tones</span></span>
+            <span class="word-translate">gelangen<span class="translation">reach</span></span>
+            <span class="word-translate">über<span class="translation">via</span></span>
+            <span class="word-translate">die<span class="translation">the</span></span>
+            <span class="word-translate">Ohren<span class="translation">ears</span></span>
+            <span class="word-translate">ins<span class="translation">into</span></span>
+            <span class="word-translate">Gehirn<span class="translation">brain</span></span>.
+            <span class="word-translate">Das<span class="translation">The</span></span>
+            <span class="word-translate">Gehirn<span class="translation">brain</span></span>
+            <span class="word-translate">verarbeitet<span class="translation">processes</span></span>
+            <span class="word-translate">die<span class="translation">the</span></span>
+            <span class="word-translate">Informationen<span class="translation">information</span></span>
+            <span class="word-translate">sowohl<span class="translation">both</span></span>
+            <span class="word-translate">im<span class="translation">in the</span></span>
+            <span class="word-translate">Bereich<span class="translation">area</span></span>
+            <span class="word-translate">für<span class="translation">for</span></span>
+            <span class="word-translate">Sprache<span class="translation">language</span></span>
+            <span class="word-translate">als auch<span class="translation">as well as</span></span>
+            <span class="word-translate">im<span class="translation">in the</span></span>
+            <span class="word-translate">Bereich<span class="translation">area</span></span>
+            <span class="word-translate">für<span class="translation">for</span></span>
+            <span class="word-translate">Gefühle<span class="translation">feelings</span></span>.
+            <span class="word-translate">Deswegen<span class="translation">Therefore</span></span>
+            <span class="word-translate">kann<span class="translation">can</span></span>
+            <span class="word-translate">es<span class="translation">it</span></span>
+            <span class="word-translate">sein<span class="translation">be</span></span>,
+            <span class="word-translate">dass<span class="translation">that</span></span>
+            <span class="word-translate">wir<span class="translation">we</span></span>
+            <span class="word-translate">fröhlich<span class="translation">happy</span></span>
+            <span class="word-translate">werden<span class="translation">become</span></span>,
+            <span class="word-translate">wenn<span class="translation">when</span></span>
+            <span class="word-translate">wir<span class="translation">we</span></span>
+            <span class="word-translate">Salsa</span>
+            <span class="word-translate">hören<span class="translation">listen</span></span>,
+            <span class="word-translate">und<span class="translation">and</span></span>
+            <span class="word-translate">dass<span class="translation">that</span></span>
+            <span class="word-translate">wir<span class="translation">we</span></span>
+            <span class="word-translate">traurig<span class="translation">sad</span></span>
+            <span class="word-translate">werden<span class="translation">become</span></span>
+            <span class="word-translate">oder<span class="translation">or</span></span>
+            <span class="word-translate">weinen<span class="translation">cry</span></span>,
+            <span class="word-translate">wenn<span class="translation">when</span></span>
+            <span class="word-translate">wir<span class="translation">we</span></span>
+            <span class="word-translate">tragische<span class="translation">tragic</span></span>
+            <span class="word-translate">Musik<span class="translation">music</span></span>
+            <span class="word-translate">hören<span class="translation">listen</span></span>.
+        </p>
+
+        <p class="mb-4">
+          <span class="word-translate">Dass<span class="translation">That</span></span>
+          <span class="word-translate">Musik<span class="translation">music</span></span>
+          <span class="word-translate">unsere<span class="translation">our</span></span>
+          <span class="word-translate">Stimmung<span class="translation">mood</span></span>
+          <span class="word-translate">beeinflusst<span class="translation">influences</span></span>,
+          <span class="word-translate">wissen<span class="translation">know</span></span>
+          <span class="word-translate">wir<span class="translation">we</span></span>
+          <span class="word-translate">auch<span class="translation">also</span></span>
+          <span class="word-translate">aus<span class="translation">from</span></span>
+          <span class="word-translate">dem<span class="translation">the</span></span>
+          <span class="word-translate">Kino<span class="translation">cinema</span></span>.
+          <span class="word-translate">Stellen<span class="translation">Imagine</span></span>
+          <span class="word-translate">Sie<span class="translation">you</span></span>
+          <span class="word-translate">sich<span class="translation">yourself</span></span>
+          <span class="word-translate">einen<span class="translation">a</span></span>
+          <span class="word-translate">spannenden<span class="translation">exciting</span></span>
+          <span class="word-translate">Thriller<span class="translation">thriller</span></span>
+          <span class="word-translate">oder<span class="translation">or</span></span>
+          <span class="word-translate">eine<span class="translation">a</span></span>
+          <span class="word-translate">romantische<span class="translation">romantic</span></span>
+          <span class="word-translate">Liebesszene<span class="translation">love scene</span></span>
+          <span class="word-translate">ohne<span class="translation">without</span></span>
+          <span class="word-translate">Musik<span class="translation">music</span></span>
+          <span class="word-translate">vor<span class="translation">imagine</span></span> – 
+          <span class="word-translate">der<span class="translation">the</span></span>
+          <span class="word-translate">Film<span class="translation">film</span></span>
+          <span class="word-translate">wäre<span class="translation">would be</span></span>
+          <span class="word-translate">zwar<span class="translation">indeed</span></span>
+          <span class="word-translate">immer<span class="translation">still</span></span>
+          <span class="word-translate">noch<span class="translation">still</span></span>
+          <span class="word-translate">gut<span class="translation">well</span></span>
+          <span class="word-translate">gespielt<span class="translation">acted</span></span>
+          <span class="word-translate">und<span class="translation">and</span></span>
+          <span class="word-translate">gut<span class="translation">well</span></span>
+          <span class="word-translate">gemacht<span class="translation">made</span></span>,
+          <span class="word-translate">aber<span class="translation">but</span></span>
+          <span class="word-translate">er<span class="translation">it</span></span>
+          <span class="word-translate">würde<span class="translation">would</span></span>
+          <span class="word-translate">uns<span class="translation">us</span></span>
+          <span class="word-translate">alle<span class="translation">all</span></span>
+          <span class="word-translate">nicht<span class="translation">not</span></span>
+          <span class="word-translate">so<span class="translation">so</span></span>
+          <span class="word-translate">berühren<span class="translation">touch</span></span>.
+          <span class="word-translate">Vermutlich<span class="translation">Probably</span></span>
+          <span class="word-translate">wäre<span class="translation">would be</span></span>
+          <span class="word-translate">er<span class="translation">it</span></span>
+          <span class="word-translate">ziemlich<span class="translation">quite</span></span>
+          <span class="word-translate">langweilig<span class="translation">boring</span></span>.
+          </p>
+          
+          <p class="mb-4">
+          <span class="word-translate">Nicht<span class="translation">Not</span></span>
+          <span class="word-translate">nur<span class="translation">only</span></span>
+          <span class="word-translate">in<span class="translation">in</span></span>
+          <span class="word-translate">der<span class="translation">the</span></span>
+          <span class="word-translate">Filmbranche<span class="translation">film industry</span></span>
+          <span class="word-translate">oder<span class="translation">or</span></span>
+          <span class="word-translate">in<span class="translation">in</span></span>
+          <span class="word-translate">der<span class="translation">the</span></span>
+          <span class="word-translate">Werbung<span class="translation">advertising</span></span>
+          <span class="word-translate">ist<span class="translation">is</span></span>
+          <span class="word-translate">Musik<span class="translation">music</span></span>
+          <span class="word-translate">wichtig<span class="translation">important</span></span>,
+          <span class="word-translate">sondern<span class="translation">but rather</span></span>
+          <span class="word-translate">auch<span class="translation">also</span></span>
+          <span class="word-translate">in<span class="translation">in</span></span>
+          <span class="word-translate">der<span class="translation">the</span></span>
+          <span class="word-translate">Medizin<span class="translation">medicine</span></span>.
+          <span class="word-translate">Personen<span class="translation">People</span></span>,
+          <span class="word-translate">die<span class="translation">who</span></span>
+          <span class="word-translate">an<span class="translation">with</span></span>
+          <span class="word-translate">Alzheimer</span>
+          <span class="word-translate">leiden<span class="translation">suffer</span></span>,
+          <span class="word-translate">die<span class="translation">who</span></span>
+          <span class="word-translate">sich<span class="translation">themselves</span></span>
+          <span class="word-translate">an<span class="translation">of</span></span>
+          <span class="word-translate">fast<span class="translation">almost</span></span>
+          <span class="word-translate">nichts<span class="translation">nothing</span></span>
+          <span class="word-translate">mehr<span class="translation">more</span></span>
+          <span class="word-translate">erinnern<span class="translation">remember</span></span>
+          <span class="word-translate">und<span class="translation">and</span></span>
+          <span class="word-translate">kaum<span class="translation">hardly</span></span>
+          <span class="word-translate">noch<span class="translation">still</span></span>
+          <span class="word-translate">sprechen<span class="translation">speak</span></span>
+          <span class="word-translate">können<span class="translation">can</span></span>,
+          <span class="word-translate">singen<span class="translation">sing</span></span>
+          <span class="word-translate">bekannte<span class="translation">known</span></span>
+          <span class="word-translate">Lieder<span class="translation">songs</span></span>
+          <span class="word-translate">mit<span class="translation">along</span></span>.
+          <span class="word-translate">Mithilfe<span class="translation">With the help</span></span>
+          <span class="word-translate">von<span class="translation">of</span></span>
+          <span class="word-translate">Musik<span class="translation">music</span></span>
+          <span class="word-translate">erinnern<span class="translation">remember</span></span>
+          <span class="word-translate">sie<span class="translation">they</span></span>
+          <span class="word-translate">sich<span class="translation">themselves</span></span>
+          <span class="word-translate">an<span class="translation">of</span></span>
+          <span class="word-translate">Erlebnisse<span class="translation">experiences</span></span>
+          <span class="word-translate">aus<span class="translation">from</span></span>
+          <span class="word-translate">ihrem<span class="translation">their</span></span>
+          <span class="word-translate">Leben<span class="translation">life</span></span>.
+          <span class="word-translate">Musik<span class="translation">Music</span></span>
+          <span class="word-translate">ist<span class="translation">is</span></span>
+          <span class="word-translate">also<span class="translation">thus</span></span>
+          <span class="word-translate">einerseits<span class="translation">on one hand</span></span>
+          <span class="word-translate">Unterhaltung<span class="translation">entertainment</span></span>
+          <span class="word-translate">für<span class="translation">for</span></span>
+          <span class="word-translate">uns<span class="translation">us</span></span>,
+          <span class="word-translate">andererseits<span class="translation">on the other hand</span></span>
+          <span class="word-translate">aber<span class="translation">but</span></span>
+          <span class="word-translate">viel<span class="translation">much</span></span>
+          <span class="word-translate">mehr<span class="translation">more</span></span>:
+          <span class="word-translate">Sie<span class="translation">It</span></span>
+          <span class="word-translate">beeinflusst<span class="translation">influences</span></span>
+          <span class="word-translate">unsere<span class="translation">our</span></span>
+          <span class="word-translate">Stimmung<span class="translation">mood</span></span>
+          <span class="word-translate">und<span class="translation">and</span></span>
+          <span class="word-translate">sie<span class="translation">it</span></span>
+          <span class="word-translate">kann<span class="translation">can</span></span>
+          <span class="word-translate">kranken<span class="translation">sick</span></span>
+          <span class="word-translate">Menschen<span class="translation">people</span></span>
+          <span class="word-translate">helfen<span class="translation">help</span></span>,
+          <span class="word-translate">weil<span class="translation">because</span></span>
+          <span class="word-translate">sie<span class="translation">it</span></span>
+          <span class="word-translate">eine<span class="translation">a</span></span>
+          <span class="word-translate">ähnliche<span class="translation">similar</span></span>
+          <span class="word-translate">Wirkung<span class="translation">effect</span></span>
+          <span class="word-translate">wie<span class="translation">like</span></span>
+          <span class="word-translate">Medizin<span class="translation">medicine</span></span>
+          <span class="word-translate">hat<span class="translation">has</span></span>.
+          </p>
+          
+          <p class="mt-8"><strong>Hinweis:</strong> Bewegen Sie den Mauszeiger über ein Wort, um seine Übersetzung zu sehen.</p>
+    </div>
+</body>
+</html>
