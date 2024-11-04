@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lernwortschatz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .word-translate {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .word-translate:hover .translation {
+            display: block;
+        }
+
+        .translation {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            color: white;
+            padding: 5px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            z-index: 1;
+        }
+
+        .example {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 p-8">
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-4">Lernwortschatz</h1>
+
+        <!-- Miteinander Section -->
+        <h2 class="text-xl font-bold mt-8 mb-4">Miteinander</h2>
+        <p class="mb-4">
+            <span class="word-translate">die Gemeinschaft<span class="translation">community</span></span>,
+            <span class="word-translate">die Gesellschaft<span class="translation">society</span></span>,
+            <span class="word-translate">das Zusammenleben<span class="translation">coexistence</span></span>,
+            <span class="word-translate">der Wert<span class="translation">value</span></span>,
+            <span class="word-translate">der Respekt<span class="translation">respect</span></span>,
+            <span class="word-translate">die Meinungsfreiheit<span class="translation">freedom of opinion</span></span>,
+            <span class="word-translate">die Gleichberechtigung<span class="translation">equality</span></span>,
+            <span class="word-translate">die Würde<span class="translation">dignity</span></span>,
+            <span class="word-translate">die Solidarität<span class="translation">solidarity</span></span>,
+            <span class="word-translate">die Gerechtigkeit<span class="translation">justice</span></span>,
+            <span class="word-translate">die Ehrlichkeit<span class="translation">honesty</span></span>,
+            <span class="word-translate">die Fairness<span class="translation">fairness</span></span>,
+            <span class="word-translate">die Zivilcourage<span class="translation">civic courage</span></span>,
+            <span class="word-translate">die Sicherheit<span class="translation">safety</span></span>,
+            <span class="word-translate">die Erziehung<span class="translation">education</span></span>,
+            <span class="word-translate">das Recht<span class="translation">law</span></span>,
+            <span class="word-translate">die Minderheit<span class="translation">minority</span></span>,
+            <span class="word-translate">das Vorurteil<span class="translation">prejudice</span></span>,
+            <span class="word-translate">die Toleranz<span class="translation">tolerance</span></span>
+        </p>
+
+        <!-- Engagement Section -->
+        <h2 class="text-xl font-bold mt-8 mb-4">Engagement</h2>
+        <p class="mb-4">
+            <span class="word-translate">ehrenamtlich<span class="translation">voluntary</span></span>,
+            <span class="word-translate">die Hilfsbereitschaft<span class="translation">willingness to help</span></span>,
+            <span class="word-translate">die Nachhilfe<span class="translation">tutoring</span></span>,
+            <span class="word-translate">bewältigen<span class="translation">to manage</span></span>,
+            <span class="word-translate">die Mühe<span class="translation">effort</span></span>,
+            <span class="word-translate">das Vorhaben<span class="translation">plan</span></span>,
+            <span class="word-translate">der Pate<span class="translation">godfather</span></span>,
+            <span class="word-translate">die Patin<span class="translation">godmother</span></span>,
+            <span class="word-translate">die Patenschaft<span class="translation">sponsorship</span></span>,
+            <span class="word-translate">die Not<span class="translation">need</span></span>,
+            <span class="word-translate">bedürftig<span class="translation">in need</span></span>,
+            <span class="word-translate">die Berufsfeuerwehr<span class="translation">professional fire service</span></span>,
+            <span class="word-translate">die Erste Hilfe<span class="translation">first aid</span></span>,
+            <span class="word-translate">spenden<span class="translation">to donate</span></span>
+        </p>
+
+        <!-- Behörden und Arbeitswelt Section -->
+        <h2 class="text-xl font-bold mt-8 mb-4">Behörden und Arbeitswelt</h2>
+        <p class="mb-4">
+            <span class="word-translate">das Amt<span class="translation">office</span></span>,
+            <span class="word-translate">der Anspruch<span class="translation">claim</span></span>,
+            <span class="word-translate">die Vorschrift<span class="translation">regulation</span></span>,
+            <span class="word-translate">abmelden<span class="translation">to deregister</span></span>,
+            <span class="word-translate">zulassen<span class="translation">to allow</span></span>,
+            <span class="word-translate">verantwortlich<span class="translation">responsible</span></span>,
+            <span class="word-translate">zuverlässig<span class="translation">reliable</span></span>,
+            <span class="word-translate">eine Entscheidung treffen<span class="translation">to make a decision</span></span>,
+            <span class="word-translate">das Arbeitsamt<span class="translation">employment office</span></span>,
+            <span class="word-translate">die Arbeitsstelle<span class="translation">job position</span></span>,
+            <span class="word-translate">einnehmen<span class="translation">to occupy</span></span>,
+            <span class="word-translate">finanzieren<span class="translation">to finance</span></span>,
+            <span class="word-translate">die Dienstleistung<span class="translation">service</span></span>
+        </p>
+
+        <!-- Politik Section -->
+        <h2 class="text-xl font-bold mt-8 mb-4">Politik</h2>
+        <p class="mb-4">
+            <span class="word-translate">die Demokratie<span class="translation">democracy</span></span>,
+            <span class="word-translate">abstimmen<span class="translation">to vote</span></span>,
+            <span class="word-translate">der Bundestag<span class="translation">German Federal Parliament</span></span>,
+            <span class="word-translate">der Abgeordnete<span class="translation">representative</span></span>,
+            <span class="word-translate">die Regierung<span class="translation">government</span></span>,
+            <span class="word-translate">der Bundeskanzler<span class="translation">Chancellor</span></span>,
+            <span class="word-translate">der Minister<span class="translation">minister</span></span>,
+            <span class="word-translate">der Kandidat<span class="translation">candidate</span></span>,
+            <span class="word-translate">die Bürgerversammlung<span class="translation">citizens' assembly</span></span>,
+            <span class="word-translate">die EU<span class="translation">EU</span></span>,
+            <span class="word-translate">der Mitgliedsstaat<span class="translation">member state</span></span>,
+            <span class="word-translate">die Organisation<span class="translation">organization</span></span>,
+            <span class="word-translate">die Vertretung<span class="translation">representation</span></span>,
+            <span class="word-translate">der Sitz<span class="translation">seat</span></span>
+        </p>
+
+        <!-- Migration und Flucht Section -->
+        <h2 class="text-xl font-bold mt-8 mb-4">Migration und Flucht</h2>
+        <p class="mb-4">
+            <span class="word-translate">die Flucht<span class="translation">flight, escape</span></span>,
+            <span class="word-translate">der Krieg<span class="translation">war</span></span>,
+            <span class="word-translate">die Aufnahme<span class="translation">admission</span></span>,
+            <span class="word-translate">die Integration<span class="translation">integration</span></span>,
+            <span class="word-translate">der Migrant<span class="translation">male migrant</span></span>,
+            <span class="word-translate">die Migrantin<span class="translation">female migrant</span></span>
+        </p>
+
+        <!-- Lebensmittel Section -->
+        <h2 class="text-xl font-bold mt-8 mb-4">Lebensmittel</h2>
+        <p class="mb-4">
+            <span class="word-translate">die Apfelsine<span class="translation">orange</span></span>,
+            <span class="word-translate">die Orange<span class="translation">orange</span></span>,
+            <span class="word-translate">die Aprikose<span class="translation">apricot</span></span>,
+            <span class="word-translate">die Pflaume<span class="translation">plum</span></span>,
+            <span class="word-translate">die Zwetschge<span class="translation">damson</span></span>,
+            <span class="word-translate">die Konfitüre<span class="translation">jam</span></span>,
+            <span class="word-translate">die Semmel<span class="translation">bread roll (Süddeutsch)</span></span>,
+            <span class="word-translate">das Hörnchen<span class="translation">croissant</span></span>,
+            <span class="word-translate">das Croissant<span class="translation">croissant</span></span>,
+            <span class="word-translate">die Margarine<span class="translation">margarine</span></span>,
+            <span class="word-translate">das Milchprodukt<span class="translation">dairy product</span></span>,
+            <span class="word-translate">die Vollmilch<span class="translation">whole milk</span></span>,
+            <span class="word-translate">der Quark<span class="translation">curd cheese</span></span>,
+            <span class="word-translate">die Schlagsahne<span class="translation">whipped cream</span></span>,
+            <span class="word-translate">der Pudding<span class="translation">pudding</span></span>
+        </p>
+
+        <!-- Andere wichtige Wörter und Wendungen Section -->
+        <h2 class="text-xl font-bold mt-8 mb-4">Andere wichtige Wörter und Wendungen</h2>
+        <p class="mb-4">
+            <span class="word-translate">zunächst<span class="translation">first</span></span>,
+            <span class="word-translate">im Lauf<span class="translation">in the course of</span></span>,
+            <span class="word-translate">übrig<span class="translation">remaining</span></span>,
+            <span class="word-translate">das Ding<span class="translation">thing</span></span>,
+            <span class="word-translate">verlassen<span class="translation">to leave</span></span>,
+            <span class="word-translate">der Vortrag<span class="translation">lecture</span></span>,
+            <span class="word-translate">sichern<span class="translation">to secure</span></span>,
+            <span class="word-translate">heraussuchen<span class="translation">to pick out</span></span>,
+            <span class="word-translate">blind<span class="translation">blind</span></span>,
+            <span class="word-translate">der Humor<span class="translation">humor</span></span>,
+            <span class="word-translate">die Auswahl<span class="translation">selection</span></span>,
+            <span class="word-translate">endgültig<span class="translation">final</span></span>,
+            <span class="word-translate">entsorgen<span class="translation">to dispose of</span></span>,
+            <span class="word-translate">erscheinen<span class="translation">to appear</span></span>,
+            <span class="word-translate">werden<span class="translation">to become</span></span>,
+            <span class="word-translate">die Zone<span class="translation">zone</span></span>
+        </p>
+
+    </div>
+</body>
+
+</html>
