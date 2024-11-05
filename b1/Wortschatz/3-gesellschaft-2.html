@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lernwortschatz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .word-translate {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .word-translate:hover .translation {
+            display: block;
+        }
+
+        .translation {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            color: white;
+            padding: 5px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 p-8">
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-4">Lernwortschatz</h1>
+
+        <table class="min-w-full bg-white">
+            <thead>
+                <tr>
+                    <th class="w-1/3 px-4 py-2">Wort</th>
+                    <th class="w-1/3 px-4 py-2">Beispiel (Deutsch)</th>
+                    <th class="w-1/3 px-4 py-2">Englische Bedeutung (mit Präposition)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2">die Gemeinschaft, -en</td>
+                    <td class="border px-4 py-2">Die Gemeinschaft hilft sich gegenseitig.</td>
+                    <td class="border px-4 py-2">community</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Gesellschaft, -en</td>
+                    <td class="border px-4 py-2">Die Gesellschaft entwickelt sich ständig weiter.</td>
+                    <td class="border px-4 py-2">society</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Zusammenleben (Sg.)</td>
+                    <td class="border px-4 py-2">Das Zusammenleben verschiedener Kulturen ist bereichernd.</td>
+                    <td class="border px-4 py-2">coexistence</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Wert, -e</td>
+                    <td class="border px-4 py-2">Ehrlichkeit ist ein wichtiger Wert in unserer Gesellschaft.</td>
+                    <td class="border px-4 py-2">value</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Respekt (Sg.)</td>
+                    <td class="border px-4 py-2">Respekt gegenüber anderen Menschen ist wichtig.</td>
+                    <td class="border px-4 py-2">respect (towards)</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Meinungsfreiheit (Sg.)</td>
+                    <td class="border px-4 py-2">In einer Demokratie ist die Meinungsfreiheit garantiert.</td>
+                    <td class="border px-4 py-2">freedom of opinion</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Gleichberechtigung (Sg.)</td>
+                    <td class="border px-4 py-2">Die Gleichberechtigung zwischen Männern und Frauen ist gesetzlich verankert.</td>
+                    <td class="border px-4 py-2">equality (between)</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Würde (Sg.)</td>
+                    <td class="border px-4 py-2">Jeder Mensch hat das Recht auf die Wahrung seiner Würde.</td>
+                    <td class="border px-4 py-2">dignity</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Solidarität (Sg.)</td>
+                    <td class="border px-4 py-2">Solidarität ist besonders in Krisenzeiten wichtig.</td>
+                    <td class="border px-4 py-2">solidarity</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Gerechtigkeit (Sg.)</td>
+                    <td class="border px-4 py-2">Gerechtigkeit bedeutet, dass alle Menschen gleich behandelt werden.</td>
+                    <td class="border px-4 py-2">justice</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Ehrlichkeit (Sg.)</td>
+                    <td class="border px-4 py-2">Ehrlichkeit ist die Basis für Vertrauen.</td>
+                    <td class="border px-4 py-2">honesty</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Fairness (Sg.)</td>
+                    <td class="border px-4 py-2">Fairness im Sport ist eine wichtige Regel.</td>
+                    <td class="border px-4 py-2">fairness</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Zivilcourage (Sg.)</td>
+                    <td class="border px-4 py-2">Zivilcourage bedeutet, sich für andere einzusetzen.</td>
+                    <td class="border px-4 py-2">civic courage</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Sicherheit (Sg.)</td>
+                    <td class="border px-4 py-2">Die Sicherheit der Bürger hat oberste Priorität.</td>
+                    <td class="border px-4 py-2">safety</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Erziehung (Sg.)</td>
+                    <td class="border px-4 py-2">Eine gute Erziehung ist für die Entwicklung eines Kindes wichtig.</td>
+                    <td class="border px-4 py-2">education</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Recht, -e</td>
+                    <td class="border px-4 py-2">Jeder Mensch hat das Recht auf freie Meinungsäußerung.</td>
+                    <td class="border px-4 py-2">law, right (auf)</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Minderheit, -en</td>
+                    <td class="border px-4 py-2">Minderheiten sollen in der Gesellschaft geschützt werden.</td>
+                    <td class="border px-4 py-2">minority</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Vorurteil, -e</td>
+                    <td class="border px-4 py-2">Vorurteile führen oft zu Missverständnissen.</td>
+                    <td class="border px-4 py-2">prejudice</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Toleranz (Sg.)</td>
+                    <td class="border px-4 py-2">Toleranz ist wichtig für ein friedliches Zusammenleben.</td>
+                    <td class="border px-4 py-2">tolerance</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">ehrenamtlich</td>
+                    <td class="border px-4 py-2">Sie arbeitet ehrenamtlich im Tierheim.</td>
+                    <td class="border px-4 py-2">voluntary</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Hilfsbereitschaft (Sg.)</td>
+                    <td class="border px-4 py-2">Ihre Hilfsbereitschaft beeindruckt uns alle.</td>
+                    <td class="border px-4 py-2">willingness to help</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Nachhilfe (Sg.)</td>
+                    <td class="border px-4 py-2">Er gibt Nachhilfe in Mathematik.</td>
+                    <td class="border px-4 py-2">tutoring</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">bewältigen</td>
+                    <td class="border px-4 py-2">Sie muss viele Aufgaben bewältigen.</td>
+                    <td class="border px-4 py-2">to manage</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Mühe, -n</td>
+                    <td class="border px-4 py-2">Die Mühe hat sich gelohnt.</td>
+                    <td class="border px-4 py-2">effort</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Vorhaben, -</td>
+                    <td class="border px-4 py-2">Das Vorhaben war ein großer Erfolg.</td>
+                    <td class="border px-4 py-2">plan</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Pate, -n</td>
+                    <td class="border px-4 py-2">Er wurde zum Paten seines Neffen ernannt.</td>
+                    <td class="border px-4 py-2">godfather</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Patin, -nen</td>
+                    <td class="border px-4 py-2">Sie ist die Patin des Kindes.</td>
+                    <td class="border px-4 py-2">godmother</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Patenschaft, -en</td>
+                    <td class="border px-4 py-2">Sie übernahm die Patenschaft für ein Kind in Afrika.</td>
+                    <td class="border px-4 py-2">sponsorship</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Not, -"e</td>
+                    <td class="border px-4 py-2">In der Not erkennt man wahre Freunde.</td>
+                    <td class="border px-4 py-2">need</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">bedürftig</td>
+                    <td class="border px-4 py-2">Viele bedürftige Menschen sind auf Hilfe angewiesen.</td>
+                    <td class="border px-4 py-2">in need</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Berufsfeuerwehr, -en</td>
+                    <td class="border px-4 py-2">Die Berufsfeuerwehr wurde alarmiert.</td>
+                    <td class="border px-4 py-2">professional fire service</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Erste Hilfe (Sg.)</td>
+                    <td class="border px-4 py-2">Er leistete Erste Hilfe.</td>
+                    <td class="border px-4 py-2">first aid</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">spenden</td>
+                    <td class="border px-4 py-2">Sie spendet regelmäßig für wohltätige Zwecke.</td>
+                    <td class="border px-4 py-2">to donate</td>
+                </tr>
+            <tr>
+                    <td class="border px-4 py-2">das Amt, -"er</td>
+                    <td class="border px-4 py-2">Er arbeitet seit Jahren im Amt.</td>
+                    <td class="border px-4 py-2">office</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Anspruch, -"e</td>
+                    <td class="border px-4 py-2">Sie haben Anspruch auf 30 Tage Urlaub.</td>
+                    <td class="border px-4 py-2">claim (auf)</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Vorschrift, -en</td>
+                    <td class="border px-4 py-2">Die Vorschriften müssen eingehalten werden.</td>
+                    <td class="border px-4 py-2">regulation</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">abmelden</td>
+                    <td class="border px-4 py-2">Sie müssen das Auto beim Amt abmelden.</td>
+                    <td class="border px-4 py-2">to deregister</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">zulassen</td>
+                    <td class="border px-4 py-2">Er lässt zu, dass sie das Haus betritt.</td>
+                    <td class="border px-4 py-2">to allow</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">verantwortlich (für + A.)</td>
+                    <td class="border px-4 py-2">Sie ist verantwortlich für das Projekt.</td>
+                    <td class="border px-4 py-2">responsible (for)</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">zuverlässig</td>
+                    <td class="border px-4 py-2">Er ist ein sehr zuverlässiger Mitarbeiter.</td>
+                    <td class="border px-4 py-2">reliable</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">eine Entscheidung treffen</td>
+                    <td class="border px-4 py-2">Es ist wichtig, schnell eine Entscheidung zu treffen.</td>
+                    <td class="border px-4 py-2">to make a decision</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Arbeitsamt, -"er</td>
+                    <td class="border px-4 py-2">Er hat sich beim Arbeitsamt gemeldet.</td>
+                    <td class="border px-4 py-2">employment office</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Arbeitsstelle, -n</td>
+                    <td class="border px-4 py-2">Sie hat eine neue Arbeitsstelle gefunden.</td>
+                    <td class="border px-4 py-2">job position</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">einnehmen</td>
+                    <td class="border px-4 py-2">Er nahm das Geld ein.</td>
+                    <td class="border px-4 py-2">to occupy, to earn</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">finanzieren</td>
+                    <td class="border px-4 py-2">Die Reise wurde durch Spenden finanziert.</td>
+                    <td class="border px-4 py-2">to finance</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Dienstleistung, -en</td>
+                    <td class="border px-4 py-2">Diese Firma bietet viele Dienstleistungen an.</td>
+                    <td class="border px-4 py-2">service</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Demokratie, -n</td>
+                    <td class="border px-4 py-2">In einer Demokratie sind freie Wahlen wichtig.</td>
+                    <td class="border px-4 py-2">democracy</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">abstimmen</td>
+                    <td class="border px-4 py-2">Wir müssen über das neue Gesetz abstimmen.</td>
+                    <td class="border px-4 py-2">to vote</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Bundestag (Sg.)</td>
+                    <td class="border px-4 py-2">Der Bundestag hat das neue Gesetz verabschiedet.</td>
+                    <td class="border px-4 py-2">German Federal Parliament</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der/die Abgeordnete, -n</td>
+                    <td class="border px-4 py-2">Der Abgeordnete vertritt die Interessen der Bürger.</td>
+                    <td class="border px-4 py-2">representative</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Regierung, -en</td>
+                    <td class="border px-4 py-2">Die Regierung hat neue Maßnahmen beschlossen.</td>
+                    <td class="border px-4 py-2">government</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Bundeskanzler, -</td>
+                    <td class="border px-4 py-2">Der Bundeskanzler sprach zur Nation.</td>
+                    <td class="border px-4 py-2">Chancellor</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Bundeskanzlerin, -nen</td>
+                    <td class="border px-4 py-2">Die Bundeskanzlerin wurde wiedergewählt.</td>
+                    <td class="border px-4 py-2">female Chancellor</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Minister, -</td>
+                    <td class="border px-4 py-2">Der Minister hat eine Rede gehalten.</td>
+                    <td class="border px-4 py-2">minister</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Ministerin, -nen</td>
+                    <td class="border px-4 py-2">Die Ministerin besuchte die Schule.</td>
+                    <td class="border px-4 py-2">female minister</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Kandidat, -en</td>
+                    <td class="border px-4 py-2">Der Kandidat stellte sich vor.</td>
+                    <td class="border px-4 py-2">candidate</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Kandidatin, -nen</td>
+                    <td class="border px-4 py-2">Die Kandidatin hat viele Anhänger.</td>
+                    <td class="border px-4 py-2">female candidate</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Bürgerversammlung, -en</td>
+                    <td class="border px-4 py-2">Die Bürgerversammlung findet im Rathaus statt.</td>
+                    <td class="border px-4 py-2">citizens' assembly</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die EU / Europäische Union (Sg.)</td>
+                    <td class="border px-4 py-2">Die EU hat neue Richtlinien verabschiedet.</td>
+                    <td class="border px-4 py-2">EU</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Mitgliedsstaat, -en</td>
+                    <td class="border px-4 py-2">Deutschland ist ein Mitgliedsstaat der EU.</td>
+                    <td class="border px-4 py-2">member state</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Organisation, -en</td>
+                    <td class="border px-4 py-2">Die Organisation hilft Menschen in Not.</td>
+                    <td class="border px-4 py-2">organization</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Vertretung, -en</td>
+                    <td class="border px-4 py-2">Die politische Vertretung hat ihren Sitz im Rathaus.</td>
+                    <td class="border px-4 py-2">representation</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Sitz, -e</td>
+                    <td class="border px-4 py-2">Die Firma hat ihren Sitz in Berlin.</td>
+                    <td class="border px-4 py-2">seat</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">erfüllen</td>
+                    <td class="border px-4 py-2">Er erfüllte eine wichtige Funktion im Team.</td>
+                    <td class="border px-4 py-2">to fulfill (eine wichtige Funktion erfüllen)</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">schließen</td>
+                    <td class="border px-4 py-2">Sie haben einen Vertrag geschlossen.</td>
+                    <td class="border px-4 py-2">to close, to conclude (einen Vertrag schließen)</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">unterzeichnen</td>
+                    <td class="border px-4 py-2">Er unterzeichnete das Dokument.</td>
+                    <td class="border px-4 py-2">to sign</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">national</td>
+                    <td class="border px-4 py-2">Dies ist eine nationale Angelegenheit.</td>
+                    <td class="border px-4 py-2">national</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Flucht, -en</td>
+                    <td class="border px-4 py-2">Viele Menschen mussten vor dem Krieg fliehen.</td>
+                    <td class="border px-4 py-2">escape, flight</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Krieg, -e</td>
+                    <td class="border px-4 py-2">Der Krieg forderte viele Opfer.</td>
+                    <td class="border px-4 py-2">war (Krieg führen)</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Aufnahme (Sg.)</td>
+                    <td class="border px-4 py-2">Die Aufnahme der Flüchtlinge verlief reibungslos.</td>
+                    <td class="border px-4 py-2">admission</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Integration (Sg.)</td>
+                    <td class="border px-4 py-2">Die Integration von Migranten ist wichtig.</td>
+                    <td class="border px-4 py-2">integration</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Migrant, -en</td>
+                    <td class="border px-4 py-2">Der Migrant lebt seit fünf Jahren in Deutschland.</td>
+                    <td class="border px-4 py-2">male migrant</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Migrantin, -nen</td>
+                    <td class="border px-4 py-2">Die Migrantin hat einen Integrationskurs besucht.</td>
+                    <td class="border px-4 py-2">female migrant</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Apfelsine, -n</td>
+                    <td class="border px-4 py-2">Ich esse gerne Apfelsinen zum Frühstück.</td>
+                    <td class="border px-4 py-2">orange</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Orange, -n</td>
+                    <td class="border px-4 py-2">Die Orange ist sehr saftig.</td>
+                    <td class="border px-4 py-2">orange</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Aprikose, -n</td>
+                    <td class="border px-4 py-2">Aprikosen schmecken im Sommer am besten.</td>
+                    <td class="border px-4 py-2">apricot</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Pflaume, -n</td>
+                    <td class="border px-4 py-2">Pflaumen sind reich an Vitaminen.</td>
+                    <td class="border px-4 py-2">plum</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Zwetschke, -n</td>
+                    <td class="border px-4 py-2">Die Zwetschken sind reif und süß.</td>
+                    <td class="border px-4 py-2">damson</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Konfitüre, -n</td>
+                    <td class="border px-4 py-2">Zum Frühstück esse ich gerne Konfitüre auf meinem Brot.</td>
+                    <td class="border px-4 py-2">jam</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Semmel, -n (Süddeutsch)</td>
+                    <td class="border px-4 py-2">In Bayern nennt man Brötchen oft Semmel.</td>
+                    <td class="border px-4 py-2">bread roll (southern Germany)</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Hörnchen, -</td>
+                    <td class="border px-4 py-2">Zum Kaffee esse ich gerne ein Hörnchen.</td>
+                    <td class="border px-4 py-2">croissant</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Croissant, -s</td>
+                    <td class="border px-4 py-2">Frische Croissants sind ein Genuss.</td>
+                    <td class="border px-4 py-2">croissant</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Margarine, -n</td>
+                    <td class="border px-4 py-2">Ich verwende Margarine statt Butter.</td>
+                    <td class="border px-4 py-2">margarine</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Milchprodukt, -e</td>
+                    <td class="border px-4 py-2">Joghurt ist ein beliebtes Milchprodukt.</td>
+                    <td class="border px-4 py-2">dairy product</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Vollmilch (Sg.)</td>
+                    <td class="border px-4 py-2">Vollmilch ist reich an Kalzium.</td>
+                    <td class="border px-4 py-2">whole milk</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Quark (Sg.)</td>
+                    <td class="border px-4 py-2">Quark kann man süß oder herzhaft genießen.</td>
+                    <td class="border px-4 py-2">curd cheese</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Schlagsahne (Sg.)</td>
+                    <td class="border px-4 py-2">Erdbeeren mit Schlagsahne sind ein Klassiker.</td>
+                    <td class="border px-4 py-2">whipped cream</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Pudding, -e/-s</td>
+                    <td class="border px-4 py-2">Zum Nachtisch gibt es Pudding.</td>
+                    <td class="border px-4 py-2">pudding</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Hackfleisch (Sg.)</td>
+                    <td class="border px-4 py-2">Hackfleisch wird oft für Bolognese verwendet.</td>
+                    <td class="border px-4 py-2">ground meat</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Hähnchen, -</td>
+                    <td class="border px-4 py-2">Zum Abendessen gibt es Hähnchen.</td>
+                    <td class="border px-4 py-2">chicken</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der/das Ketchup, -s</td>
+                    <td class="border px-4 py-2">Viele essen Pommes mit Ketchup.</td>
+                    <td class="border px-4 py-2">ketchup</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Soße, -n</td>
+                    <td class="border px-4 py-2">Die Soße zum Fleisch ist sehr lecker.</td>
+                    <td class="border px-4 py-2">sauce</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Gewürz, -e</td>
+                    <td class="border px-4 py-2">Curry ist ein bekanntes Gewürz.</td>
+                    <td class="border px-4 py-2">spice</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">würzen</td>
+                    <td class="border px-4 py-2">Bitte würze das Essen mit Salz und Pfeffer.</td>
+                    <td class="border px-4 py-2">to season</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Lieferung, -en</td>
+                    <td class="border px-4 py-2">Die Lieferung kam pünktlich an.</td>
+                    <td class="border px-4 py-2">delivery</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">zunächst</td>
+                    <td class="border px-4 py-2">Zunächst möchte ich mich bedanken.</td>
+                    <td class="border px-4 py-2">first of all</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">im Lauf (+ G.)</td>
+                    <td class="border px-4 py-2">Im Lauf der Zeit änderte sich vieles.</td>
+                    <td class="border px-4 py-2">in the course of</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">übrig</td>
+                    <td class="border px-4 py-2">Es blieb nichts übrig.</td>
+                    <td class="border px-4 py-2">remaining</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Ding, -e</td>
+                    <td class="border px-4 py-2">Das ist voll mein Ding.</td>
+                    <td class="border px-4 py-2">thing</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">verlassen</td>
+                    <td class="border px-4 py-2">Sie hat das Haus verlassen.</td>
+                    <td class="border px-4 py-2">to leave</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Vortrag, -"e</td>
+                    <td class="border px-4 py-2">Der Vortrag war sehr informativ.</td>
+                    <td class="border px-4 py-2">lecture</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">sichern</td>
+                    <td class="border px-4 py-2">Bildung sichert die Zukunft.</td>
+                    <td class="border px-4 py-2">to secure</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">herausfinden</td>
+                    <td class="border px-4 py-2">Er fand heraus, wie die Maschine funktioniert.</td>
+                    <td class="border px-4 py-2">to find out</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">körperlich</td>
+                    <td class="border px-4 py-2">Körperliche Bewegung ist wichtig für die Gesundheit.</td>
+                    <td class="border px-4 py-2">physical</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">blind</td>
+                    <td class="border px-4 py-2">Der Mann ist von Geburt an blind.</td>
+                    <td class="border px-4 py-2">blind</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Humor (Sg.)</td>
+                    <td class="border px-4 py-2">Sie hat einen großartigen Humor.</td>
+                    <td class="border px-4 py-2">humor</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Auswahl (Sg.)</td>
+                    <td class="border px-4 py-2">Wir müssen eine Auswahl treffen.</td>
+                    <td class="border px-4 py-2">selection</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">endgültig</td>
+                    <td class="border px-4 py-2">Die Entscheidung ist endgültig.</td>
+                    <td class="border px-4 py-2">final</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">entsorgen</td>
+                    <td class="border px-4 py-2">Bitte entsorgen Sie den Müll fachgerecht.</td>
+                    <td class="border px-4 py-2">to dispose of</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">erscheinen</td>
+                    <td class="border px-4 py-2">Das Buch erscheint nächste Woche.</td>
+                    <td class="border px-4 py-2">to appear</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">werden</td>
+                    <td class="border px-4 py-2">Er wird in Erste Hilfe ausgebildet.</td>
+                    <td class="border px-4 py-2">to become</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Zone, -n</td>
+                    <td class="border px-4 py-2">Diese Zone ist nur für Fußgänger.</td>
+                    <td class="border px-4 py-2">zone</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">erfüllen</td>
+                    <td class="border px-4 py-2">Eine wichtige Funktion erfüllen.</td>
+                    <td class="border px-4 py-2">to fulfill</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">schließen</td>
+                    <td class="border px-4 py-2">Einen Vertrag schließen.</td>
+                    <td class="border px-4 py-2">to close, to conclude</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">unterzeichnen</td>
+                    <td class="border px-4 py-2">Das Dokument wurde von allen Parteien unterzeichnet.</td>
+                    <td class="border px-4 py-2">to sign</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">national</td>
+                    <td class="border px-4 py-2">Das ist eine nationale Angelegenheit.</td>
+                    <td class="border px-4 py-2">national</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Flucht, -en</td>
+                    <td class="border px-4 py-2">Viele Menschen mussten aufgrund des Krieges die Flucht ergreifen.</td>
+                    <td class="border px-4 py-2">flight, escape</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Krieg, -e</td>
+                    <td class="border px-4 py-2">Der Krieg hat viel Zerstörung gebracht.</td>
+                    <td class="border px-4 py-2">war</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Aufnahme (Sg.)</td>
+                    <td class="border px-4 py-2">Die Aufnahme der Flüchtlinge war gut organisiert.</td>
+                    <td class="border px-4 py-2">admission</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Integration (Sg.)</td>
+                    <td class="border px-4 py-2">Integration ist ein wichtiger Prozess für das Zusammenleben.</td>
+                    <td class="border px-4 py-2">integration</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Migrant, -en</td>
+                    <td class="border px-4 py-2">Viele Migranten kommen nach Europa auf der Suche nach Arbeit.</td>
+                    <td class="border px-4 py-2">migrant</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Migrantin, -nen</td>
+                    <td class="border px-4 py-2">Die Migrantin lernt Deutsch, um sich besser zu integrieren.</td>
+                    <td class="border px-4 py-2">female migrant</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Apfelsine, -n</td>
+                    <td class="border px-4 py-2">Ich esse gern Apfelsinen zum Frühstück.</td>
+                    <td class="border px-4 py-2">orange</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Orange, -n</td>
+                    <td class="border px-4 py-2">Die Orange schmeckt sehr süß.</td>
+                    <td class="border px-4 py-2">orange</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Aprikose, -n</td>
+                    <td class="border px-4 py-2">Aprikosen sind im Sommer besonders lecker.</td>
+                    <td class="border px-4 py-2">apricot</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Zwetschge, -n</td>
+                    <td class="border px-4 py-2">Aus Zwetschgen kann man leckeren Kuchen backen.</td>
+                    <td class="border px-4 py-2">damson</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Konfitüre, -n</td>
+                    <td class="border px-4 py-2">Ich mag meine Brötchen mit Konfitüre.</td>
+                    <td class="border px-4 py-2">jam</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Semmel, -n</td>
+                    <td class="border px-4 py-2">In Süddeutschland sagt man Semmel statt Brötchen.</td>
+                    <td class="border px-4 py-2">bread roll (Süddeutsch)</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Hörnchen, -</td>
+                    <td class="border px-4 py-2">Zum Frühstück gibt es oft ein Hörnchen.</td>
+                    <td class="border px-4 py-2">croissant</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Croissant, -s</td>
+                    <td class="border px-4 py-2">Das Croissant ist typisch französisch.</td>
+                    <td class="border px-4 py-2">croissant</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Margarine, -n</td>
+                    <td class="border px-4 py-2">Ich benutze Margarine statt Butter.</td>
+                    <td class="border px-4 py-2">margarine</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Milchprodukt, -e</td>
+                    <td class="border px-4 py-2">Joghurt ist ein beliebtes Milchprodukt.</td>
+                    <td class="border px-4 py-2">dairy product</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Vollmilch (Sg.)</td>
+                    <td class="border px-4 py-2">Vollmilch enthält mehr Fett als fettarme Milch.</td>
+                    <td class="border px-4 py-2">whole milk</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Quark (Sg.)</td>
+                    <td class="border px-4 py-2">Quark wird oft zum Backen verwendet.</td>
+                    <td class="border px-4 py-2">curd cheese</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Schlagsahne (Sg.)</td>
+                    <td class="border px-4 py-2">Schlagsahne passt gut zu Kuchen.</td>
+                    <td class="border px-4 py-2">whipped cream</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Pudding, -e/-s</td>
+                    <td class="border px-4 py-2">Zum Nachtisch gibt es Vanillepudding.</td>
+                    <td class="border px-4 py-2">pudding</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">zunächst</td>
+                    <td class="border px-4 py-2">Zunächst sollten wir die Planung abschließen.</td>
+                    <td class="border px-4 py-2">first</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">im Lauf (+ G.)</td>
+                    <td class="border px-4 py-2">Im Lauf der Zeit änderte sich vieles.</td>
+                    <td class="border px-4 py-2">in the course of</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">übrig</td>
+                    <td class="border px-4 py-2">Nach dem Essen war nichts übrig.</td>
+                    <td class="border px-4 py-2">remaining</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Ding, -e</td>
+                    <td class="border px-4 py-2">Das ist voll mein Ding.</td>
+                    <td class="border px-4 py-2">thing</td>
+                </tr>
+
+                <tr>
+                    <td class="border px-4 py-2">das Hackfleisch (Sg.)</td>
+                    <td class="border px-4 py-2">Für die Bolognese-Sauce braucht man Hackfleisch.</td>
+                    <td class="border px-4 py-2">ground meat</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Hähnchen, -</td>
+                    <td class="border px-4 py-2">Zum Abendessen gab es gebratenes Hähnchen.</td>
+                    <td class="border px-4 py-2">chicken</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der/das Ketchup, -s</td>
+                    <td class="border px-4 py-2">Ich mag Ketchup zu meinen Pommes.</td>
+                    <td class="border px-4 py-2">ketchup</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Soße, -n</td>
+                    <td class="border px-4 py-2">Die Soße passt perfekt zu den Nudeln.</td>
+                    <td class="border px-4 py-2">sauce</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Gewürz, -e</td>
+                    <td class="border px-4 py-2">Kurkuma ist ein bekanntes Gewürz.</td>
+                    <td class="border px-4 py-2">spice</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">würzen</td>
+                    <td class="border px-4 py-2">Man sollte das Essen vor dem Servieren gut würzen.</td>
+                    <td class="border px-4 py-2">to season</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Lieferung, -en</td>
+                    <td class="border px-4 py-2">Die Lieferung kam pünktlich an.</td>
+                    <td class="border px-4 py-2">delivery</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">zunächst</td>
+                    <td class="border px-4 py-2">Zunächst möchte ich allen danken.</td>
+                    <td class="border px-4 py-2">first of all</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">im Lauf (+ G.)</td>
+                    <td class="border px-4 py-2">Im Lauf der Jahre haben wir viel gelernt.</td>
+                    <td class="border px-4 py-2">in the course of</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">übrig</td>
+                    <td class="border px-4 py-2">Es bleibt noch etwas Kuchen übrig.</td>
+                    <td class="border px-4 py-2">remaining</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">das Ding, -e</td>
+                    <td class="border px-4 py-2">Das ist genau mein Ding.</td>
+                    <td class="border px-4 py-2">thing</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">verlassen</td>
+                    <td class="border px-4 py-2">Sie hat das Gebäude verlassen.</td>
+                    <td class="border px-4 py-2">to leave</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Vortrag, -"e</td>
+                    <td class="border px-4 py-2">Der Vortrag war sehr interessant.</td>
+                    <td class="border px-4 py-2">lecture</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">sichern</td>
+                    <td class="border px-4 py-2">Bildung sichert die Zukunft.</td>
+                    <td class="border px-4 py-2">to secure</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">herausfinden</td>
+                    <td class="border px-4 py-2">Er fand heraus, wie die Maschine funktioniert.</td>
+                    <td class="border px-4 py-2">to find out</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">körperlich</td>
+                    <td class="border px-4 py-2">Körperliche Arbeit kann sehr anstrengend sein.</td>
+                    <td class="border px-4 py-2">physical</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">blind</td>
+                    <td class="border px-4 py-2">Der Hund ist blind auf einem Auge.</td>
+                    <td class="border px-4 py-2">blind</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">der Humor (Sg.)</td>
+                    <td class="border px-4 py-2">Sein Humor ist einzigartig.</td>
+                    <td class="border px-4 py-2">humor</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Auswahl (Sg.)</td>
+                    <td class="border px-4 py-2">Die Auswahl an Büchern ist beeindruckend.</td>
+                    <td class="border px-4 py-2">selection (eine Auswahl treffen)</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">endgültig</td>
+                    <td class="border px-4 py-2">Die Entscheidung ist endgültig.</td>
+                    <td class="border px-4 py-2">final</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">entsorgen</td>
+                    <td class="border px-4 py-2">Bitte entsorgen Sie die Batterien korrekt.</td>
+                    <td class="border px-4 py-2">to dispose of</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">erscheinen</td>
+                    <td class="border px-4 py-2">Das Buch erscheint im nächsten Monat.</td>
+                    <td class="border px-4 py-2">to appear</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">werden</td>
+                    <td class="border px-4 py-2">Er wird in Erste Hilfe ausgebildet.</td>
+                    <td class="border px-4 py-2">to become</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">die Zone, -n</td>
+                    <td class="border px-4 py-2">Diese Zone ist eine Fußgängerzone.</td>
+                    <td class="border px-4 py-2">zone</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
