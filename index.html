@@ -9,78 +9,188 @@ Index HTML with link to Lebensmittel page Preview Code
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body class="bg-gray-100 min-h-screen flex items-center justify-center">
-        <div class="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
+        <div class="bg-white p-8 rounded-lg shadow-md max-w-2xl w-full">
             <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">
                 German Learning Resources
             </h1>
             <div class="space-y-4">
-                <a
-                    href="b1/Bio-Lebensmittel.html"
-                    class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
-                >
-                    B1 Level: Lebensmittel (Food)
-                </a>
-                <a
-                    href="b1/vorsätz-1.html"
-                    class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
-                >
-                    B1 Level: Vorsätz-1
-                </a>
-                <a
-                    href="b1/podcasts/british-elections.html"
-                    class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
-                >
-                    UK Elections
-                </a>
-                <a
-                    href="b1/7-2a.html"
-                    class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
-                >
-                    Wir Gehören Zussamen
-                </a>
-                <a
-                    href="b1/6a-musik-und-emotionen.html"
-                    class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
-                >
-                    Musik und Emotionen
-                </a>
-                <a
-                    href="b1/news-articles/spiegel-1.html"
-                    class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
-                >
-                    Spiegel 1
-                </a>
-                <a
-                    href="b1/Wortschatz/b1.2.html"
-                    class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
-                >
-                    Wortschatz
-                </a>
-                <a
-                    href="b1/Wortschatz/kunst.html"
-                    class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
-                >
-                    Kunst
-                </a>
-                <a
-                    href="b1/Wortschatz/3-gesellschaft.html"
-                    class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
-                >
-                    B1.2 - 124
-                </a>
-                <a
-                    href="b1/Wortschatz/3-gesellschaft-2.html"
-                    class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
-                >
-                    B1.2 - 124 - Extended
-                </a>
-                <a
-                    href="b1/valerio/9_e2.html"
-                    class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
-                >
-                    Reif für den Wertstoffhoff
-                </a>
+                <!-- B1 Root Level -->
+                <div class="folder-section">
+                    <button
+                        class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
+                        onclick="toggleFolder('b1-root')"
+                    >
+                        <span>📁 B1 Level (Main)</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="folder-content space-y-2 ml-4" id="b1-root">
+                        <a
+                            href="b1/Bio-Lebensmittel.html"
+                            class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            B1 Level: Lebensmittel (Food)
+                        </a>
+                        <a
+                            href="b1/vorsätz-1.html"
+                            class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            B1 Level: Vorsätz-1
+                        </a>
+                        <a
+                            href="b1/7-2a.html"
+                            class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            Wir Gehören Zussamen
+                        </a>
+                        <a
+                            href="b1/6a-musik-und-emotionen.html"
+                            class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            Musik und Emotionen
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Wortschatz -->
+                <div class="folder-section">
+                    <button
+                        class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
+                        onclick="toggleFolder('wortschatz')"
+                    >
+                        <span>📁 Wortschatz</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="folder-content space-y-2 ml-4" id="wortschatz">
+                        <a
+                            href="b1/Wortschatz/b1.2.html"
+                            class="block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            Wortschatz
+                        </a>
+                        <a
+                            href="b1/Wortschatz/kunst.html"
+                            class="block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            Kunst
+                        </a>
+                        <a
+                            href="b1/Wortschatz/3-gesellschaft.html"
+                            class="block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            B1.2 - 124
+                        </a>
+                        <a
+                            href="b1/Wortschatz/3-gesellschaft-2.html"
+                            class="block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            B1.2 - 124 - Extended
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Podcasts -->
+                <div class="folder-section">
+                    <button
+                        class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
+                        onclick="toggleFolder('podcasts')"
+                    >
+                        <span>📁 Podcasts</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="folder-content space-y-2 ml-4" id="podcasts">
+                        <a
+                            href="b1/podcasts/british-elections.html"
+                            class="block bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            UK Elections
+                        </a>
+                    </div>
+                </div>
+
+                <!-- News Articles -->
+                <div class="folder-section">
+                    <button
+                        class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
+                        onclick="toggleFolder('news-articles')"
+                    >
+                        <span>📁 News Articles</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div
+                        class="folder-content space-y-2 ml-4"
+                        id="news-articles"
+                    >
+                        <a
+                            href="b1/news-articles/spiegel-1.html"
+                            class="block bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            Spiegel 1
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Valerio -->
+                <div class="folder-section">
+                    <button
+                        class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
+                        onclick="toggleFolder('valerio')"
+                    >
+                        <span>📁 Valerio</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="folder-content space-y-2 ml-4" id="valerio">
+                        <a
+                            href="b1/valerio/9_e2.html"
+                            class="block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            Reif für den Wertstoffhoff
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Rohan -->
+                <div class="folder-section">
+                    <button
+                        class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
+                        onclick="toggleFolder('rohan')"
+                    >
+                        <span>📁 Rohan</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="folder-content space-y-2 ml-4" id="rohan">
+                        <a
+                            href="b1/rohan/handys_in_der_schule.html"
+                            class="block bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded text-center transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            Handys in der Schule
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <script>
+            function toggleFolder(folderId) {
+                const content = document.getElementById(folderId);
+                const button = content.previousElementSibling;
+                const icon = button.querySelector(".toggle-icon");
+
+                if (content.style.display === "none") {
+                    content.style.display = "block";
+                    icon.textContent = "▼";
+                } else {
+                    content.style.display = "none";
+                    icon.textContent = "▶";
+                }
+            }
+
+            // Initialize all folders as expanded
+            document.addEventListener("DOMContentLoaded", function () {
+                const allFolders = document.querySelectorAll(".folder-content");
+                allFolders.forEach((folder) => {
+                    folder.style.display = "block";
+                });
+            });
+        </script>
     </body>
 </html>
