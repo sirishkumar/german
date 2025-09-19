@@ -1,5 +1,3 @@
-Index HTML with link to Lebensmittel page Preview Code
-
 <!doctype html>
 <html lang="en">
     <head>
@@ -184,11 +182,15 @@ Index HTML with link to Lebensmittel page Preview Code
                 }
             }
 
-            // Initialize all folders as expanded
+            // Initialize all folders as collapsed
             document.addEventListener("DOMContentLoaded", function () {
                 const allFolders = document.querySelectorAll(".folder-content");
+                const allIcons = document.querySelectorAll(".toggle-icon");
                 allFolders.forEach((folder) => {
-                    folder.style.display = "block";
+                    folder.style.display = "none";
+                });
+                allIcons.forEach((icon) => {
+                    icon.textContent = "▶";
                 });
             });
         </script>
