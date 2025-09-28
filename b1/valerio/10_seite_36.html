@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Das Beste aus meinem Leben</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .word-translate {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .word-translate:hover .translation {
+      display: block;
+    }
+
+    .translation {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      color: white;
+      padding: 5px 8px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      bottom: 125%;
+      /* Position above the word */
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      z-index: 10;
+    }
+
+    /* Adds a small arrow to the tooltip */
+    .translation::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #333 transparent transparent transparent;
+    }
+
+    .example {
+      background-color: #f3f4f6;
+      /* Tailwind's gray-100 */
+      padding: 1rem;
+      border-left: 4px solid #3b82f6;
+      /* Tailwind's blue-500 */
+      margin: 1rem 0;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 font-sans p-4 sm:p-8">
+  <div class="max-w-4xl mx-auto bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+
+    <h1 class="text-3xl font-bold mb-4 text-gray-800 border-b pb-2">Das Beste aus meinem Leben</h1>
+
+    <div class="text-lg leading-relaxed text-gray-700 space-y-4">
+      <p>
+        <span class="word-translate">Tag<span class="translation">Day</span></span>
+        <span class="word-translate">für<span class="translation">for</span></span>
+        <span class="word-translate">Tag<span class="translation">day</span></span>
+        <span class="word-translate">die<span class="translation">the</span></span>
+        <span class="word-translate">gleichen<span class="translation">same</span></span>
+        <span class="word-translate">Kämpfe<span class="translation">struggles</span></span>
+        <span class="word-translate">mit<span class="translation">with</span></span>
+        <span class="word-translate">Luis<span class="translation">Luis</span></span>
+        <span class="word-translate">:<span class="translation">:</span></span>
+        <span class="word-translate">Ob<span class="translation">Whether</span></span>
+        <span class="word-translate">er<span class="translation">he</span></span>
+        <span class="word-translate">dieses<span class="translation">this</span></span>
+        <span class="word-translate">Mal<span class="translation">time</span></span>
+        <span class="word-translate">das<span class="translation">the</span></span>
+        <span class="word-translate">Zähneputzen<span class="translation">teeth-brushing</span></span>
+        <span class="word-translate">auslassen<span class="translation">skip</span></span>
+        <span class="word-translate">darf<span class="translation">is allowed</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Ob<span class="translation">Whether</span></span>
+        <span class="word-translate">es<span class="translation">it</span></span>
+        <span class="word-translate">nicht<span class="translation">not</span></span>
+        <span class="word-translate">reicht<span class="translation">is enough</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">dass<span class="translation">that</span></span>
+        <span class="word-translate">er<span class="translation">he</span></span>
+        <span class="word-translate">sich<span class="translation">himself</span></span>
+        <span class="word-translate">gestern<span class="translation">yesterday</span></span>
+        <span class="word-translate">die<span class="translation">the</span></span>
+        <span class="word-translate">Zähne<span class="translation">teeth</span></span>
+        <span class="word-translate">besonders<span class="translation">especially</span></span>
+        <span class="word-translate">sorgfältig<span class="translation">carefully</span></span>
+        <span class="word-translate">geputzt<span class="translation">brushed</span></span>
+        <span class="word-translate">hat<span class="translation">has</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">…<span class="translation">...</span></span>
+        <span class="word-translate">Was<span class="translation">What</span></span>
+        <span class="word-translate">ist<span class="translation">is</span></span>
+        <span class="word-translate">nur<span class="translation">just</span></span>
+        <span class="word-translate">am<span class="translation">about</span></span>
+        <span class="word-translate">Zähneputzen<span class="translation">teeth-brushing</span></span>
+        <span class="word-translate">so<span class="translation">so</span></span>
+        <span class="word-translate">schlimm<span class="translation">bad</span></span>
+        <span class="word-translate">…?<span class="translation">...?</span></span>
+        <span class="word-translate">Paola<span class="translation">Paola</span></span>
+        <span class="word-translate">hat<span class="translation">has</span></span>
+        <span class="word-translate">dann<span class="translation">then</span></span>
+        <span class="word-translate">neulich<span class="translation">recently</span></span>
+        <span class="word-translate">eine<span class="translation">a</span></span>
+        <span class="word-translate">sprechende<span class="translation">talking</span></span>
+        <span class="word-translate">Zahnbürste<span class="translation">toothbrush</span></span>
+        <span class="word-translate">gekauft<span class="translation">bought</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">sehr<span class="translation">very</span></span>
+        <span class="word-translate">schön<span class="translation">nice</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">mit<span class="translation">with</span></span>
+        <span class="word-translate">neongelber<span class="translation">neon-yellow</span></span>
+        <span class="word-translate">Bürste<span class="translation">bristle/brush</span></span>
+        <span class="word-translate">und<span class="translation">and</span></span>
+        <span class="word-translate">einer<span class="translation">a</span></span>
+        <span class="word-translate">kleinen<span class="translation">small</span></span>
+        <span class="word-translate">sommersprossigen<span class="translation">freckled</span></span>
+        <span class="word-translate">Figur<span class="translation">figure</span></span>
+        <span class="word-translate">am<span class="translation">on the</span></span>
+        <span class="word-translate">Griff<span class="translation">handle</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Wenn<span class="translation">When</span></span>
+        <span class="word-translate">Luis<span class="translation">Luis</span></span>
+        <span class="word-translate">sich<span class="translation">himself</span></span>
+        <span class="word-translate">damit<span class="translation">with it</span></span>
+        <span class="word-translate">die<span class="translation">the</span></span>
+        <span class="word-translate">Zähne<span class="translation">teeth</span></span>
+        <span class="word-translate">zu<span class="translation">to</span></span>
+        <span class="word-translate">putzen<span class="translation">brush</span></span>
+        <span class="word-translate">begann<span class="translation">began</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">sagte<span class="translation">said</span></span>
+        <span class="word-translate">die<span class="translation">the</span></span>
+        <span class="word-translate">Zahnbürste<span class="translation">toothbrush</span></span>
+        <span class="word-translate">mit<span class="translation">with</span></span>
+        <span class="word-translate">roboterhafter<span class="translation">robotic</span></span>
+        <span class="word-translate">Stimme<span class="translation">voice</span></span>
+        <span class="word-translate">:<span class="translation">:</span></span>
+        <span class="word-translate">„Weitermachen!“<span class="translation">"Keep going!"</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Sie<span class="translation">It</span></span>
+        <span class="word-translate">redete<span class="translation">talked</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">bis<span class="translation">until</span></span>
+        <span class="word-translate">drei<span class="translation">three</span></span>
+        <span class="word-translate">Minuten<span class="translation">minutes</span></span>
+        <span class="word-translate">vorbei<span class="translation">over</span></span>
+        <span class="word-translate">waren<span class="translation">were</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+      </p>
+      <p>
+        <span class="word-translate">Das<span class="translation">That</span></span>
+        <span class="word-translate">funktionierte<span class="translation">worked</span></span>
+        <span class="word-translate">gut<span class="translation">well</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Seltsamerweise<span class="translation">Strangely</span></span>
+        <span class="word-translate">halten<span class="translation">adhere</span></span>
+        <span class="word-translate">sich<span class="translation">themselves</span></span>
+        <span class="word-translate">Kinder<span class="translation">children</span></span>
+        <span class="word-translate">an<span class="translation">to</span></span>
+        <span class="word-translate">die<span class="translation">the</span></span>
+        <span class="word-translate">Befehle<span class="translation">commands</span></span>
+        <span class="word-translate">von<span class="translation">of</span></span>
+        <span class="word-translate">Maschinen<span class="translation">machines</span></span>
+        <span class="word-translate">eher<span class="translation">more</span></span>
+        <span class="word-translate">als<span class="translation">than</span></span>
+        <span class="word-translate">an<span class="translation">to</span></span>
+        <span class="word-translate">die<span class="translation">those</span></span>
+        <span class="word-translate">ihrer<span class="translation">of their</span></span>
+        <span class="word-translate">Eltern<span class="translation">parents</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Aber<span class="translation">But</span></span>
+        <span class="word-translate">nun<span class="translation">now</span></span>
+        <span class="word-translate">ist<span class="translation">is</span></span>
+        <span class="word-translate">die<span class="translation">the</span></span>
+        <span class="word-translate">Zahnbürste<span class="translation">toothbrush</span></span>
+        <span class="word-translate">weg<span class="translation">gone</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Das<span class="translation">It</span></span>
+        <span class="word-translate">kam<span class="translation">happened</span></span>
+        <span class="word-translate">so<span class="translation">like this</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+      </p>
+      <p>
+        <span class="word-translate">Eines<span class="translation">One</span></span>
+        <span class="word-translate">Nachts<span class="translation">night</span></span>
+        <span class="word-translate">wachte<span class="translation">woke</span></span>
+        <span class="word-translate">ich<span class="translation">I</span></span>
+        <span class="word-translate">auf<span class="translation">up</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">weil<span class="translation">because</span></span>
+        <span class="word-translate">ich<span class="translation">I</span></span>
+        <span class="word-translate">eine<span class="translation">a</span></span>
+        <span class="word-translate">leise<span class="translation">quiet</span></span>
+        <span class="word-translate">Stimme<span class="translation">voice</span></span>
+        <span class="word-translate">hörte<span class="translation">heard</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Ich<span class="translation">I</span></span>
+        <span class="word-translate">dachte<span class="translation">thought</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">Luis<span class="translation">Luis</span></span>
+        <span class="word-translate">wäre<span class="translation">had</span></span>
+        <span class="word-translate">wach<span class="translation">awake</span></span>
+        <span class="word-translate">geworden<span class="translation">become</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">stand<span class="translation">stood</span></span>
+        <span class="word-translate">auf<span class="translation">up</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">sah<span class="translation">looked</span></span>
+        <span class="word-translate">nach<span class="translation">on</span></span>
+        <span class="word-translate">ihm<span class="translation">him</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">aber<span class="translation">but</span></span>
+        <span class="word-translate">er<span class="translation">he</span></span>
+        <span class="word-translate">schlief<span class="translation">slept</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">…<span class="translation">...</span></span>
+        <span class="word-translate">„Hat<span class="translation">"Has</span></span>
+        <span class="word-translate">Paola<span class="translation">Paola</span></span>
+        <span class="word-translate">den<span class="translation">the</span></span>
+        <span class="word-translate">Fernseher<span class="translation">television</span></span>
+        <span class="word-translate">vergessen<span class="translation">forgotten</span></span>
+        <span class="word-translate">?“<span class="translation">?"</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">dachte<span class="translation">thought</span></span>
+        <span class="word-translate">ich<span class="translation">I</span></span>
+        <span class="word-translate">und<span class="translation">and</span></span>
+        <span class="word-translate">machte<span class="translation">made</span></span>
+        <span class="word-translate">mich<span class="translation">myself</span></span>
+        <span class="word-translate">auf<span class="translation">on</span></span>
+        <span class="word-translate">den<span class="translation">the</span></span>
+        <span class="word-translate">Weg<span class="translation">way</span></span>
+        <span class="word-translate">zum<span class="translation">to the</span></span>
+        <span class="word-translate">Wohnzimmer<span class="translation">living room</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Dabei<span class="translation">In the process</span></span>
+        <span class="word-translate">kam<span class="translation">came</span></span>
+        <span class="word-translate">ich<span class="translation">I</span></span>
+        <span class="word-translate">am<span class="translation">past the</span></span>
+        <span class="word-translate">Bad<span class="translation">bathroom</span></span>
+        <span class="word-translate">vorbei<span class="translation">past</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Aus<span class="translation">From</span></span>
+        <span class="word-translate">dem<span class="translation">the</span></span>
+        <span class="word-translate">Bad<span class="translation">bathroom</span></span>
+        <span class="word-translate">hörte<span class="translation">heard</span></span>
+        <span class="word-translate">ich<span class="translation">I</span></span>
+        <span class="word-translate">ein<span class="translation">a</span></span>
+        <span class="word-translate">leises<span class="translation">quiet</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">metallisches<span class="translation">metallic</span></span>
+        <span class="word-translate">„Weitermachen!“<span class="translation">"Keep going!"</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Ich<span class="translation">I</span></span>
+        <span class="word-translate">dachte<span class="translation">thought</span></span>
+        <span class="word-translate">:<span class="translation">:</span></span>
+        <span class="word-translate">die<span class="translation">the</span></span>
+        <span class="word-translate">Zahnbürste<span class="translation">toothbrush</span></span>
+        <span class="word-translate">!<span class="translation">!</span></span>
+        <span class="word-translate">Ist<span class="translation">Is</span></span>
+        <span class="word-translate">ein<span class="translation">a</span></span>
+        <span class="word-translate">Dieb<span class="translation">thief</span></span>
+        <span class="word-translate">im<span class="translation">in the</span></span>
+        <span class="word-translate">Bad<span class="translation">bathroom</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">hat<span class="translation">has</span></span>
+        <span class="word-translate">sie<span class="translation">it</span></span>
+        <span class="word-translate">aus<span class="translation">by</span></span>
+        <span class="word-translate">Versehen<span class="translation">mistake</span></span>
+        <span class="word-translate">berührt<span class="translation">touched</span></span>
+        <span class="word-translate">und<span class="translation">and</span></span>
+        <span class="word-translate">…?<span class="translation">...?</span></span>
+        <span class="word-translate">Entschlossen<span class="translation">Determined</span></span>
+        <span class="word-translate">öffnete<span class="translation">opened</span></span>
+        <span class="word-translate">ich<span class="translation">I</span></span>
+        <span class="word-translate">die<span class="translation">the</span></span>
+        <span class="word-translate">Tür<span class="translation">door</span></span>
+        <span class="word-translate">und<span class="translation">and</span></span>
+        <span class="word-translate">machte<span class="translation">made</span></span>
+        <span class="word-translate">Licht<span class="translation">light</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Die<span class="translation">The</span></span>
+        <span class="word-translate">Zahnbürste<span class="translation">toothbrush</span></span>
+        <span class="word-translate">war<span class="translation">had</span></span>
+        <span class="word-translate">vom<span class="translation">from the</span></span>
+        <span class="word-translate">Waschbecken<span class="translation">sink</span></span>
+        <span class="word-translate">gefallen<span class="translation">fallen</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">lag<span class="translation">lay</span></span>
+        <span class="word-translate">auf<span class="translation">on</span></span>
+        <span class="word-translate">dem<span class="translation">the</span></span>
+        <span class="word-translate">Fußboden<span class="translation">floor</span></span>
+        <span class="word-translate">und<span class="translation">and</span></span>
+        <span class="word-translate">sagte<span class="translation">said</span></span>
+        <span class="word-translate">:<span class="translation">:</span></span>
+        <span class="word-translate">„Weitermachen!“<span class="translation">"Keep going!"</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+      </p>
+      <p>
+        <span class="word-translate">Ich<span class="translation">I</span></span>
+        <span class="word-translate">schüttelte<span class="translation">shook</span></span>
+        <span class="word-translate">sie<span class="translation">it</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">aber<span class="translation">but</span></span>
+        <span class="word-translate">sie<span class="translation">it</span></span>
+        <span class="word-translate">sprach<span class="translation">spoke</span></span>
+        <span class="word-translate">weiter<span class="translation">on</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Ich<span class="translation">I</span></span>
+        <span class="word-translate">versuchte<span class="translation">tried</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">sie<span class="translation">it</span></span>
+        <span class="word-translate">auszuknipsen<span class="translation">to switch off</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">aber<span class="translation">but</span></span>
+        <span class="word-translate">es<span class="translation">there</span></span>
+        <span class="word-translate">gab<span class="translation">was</span></span>
+        <span class="word-translate">keinen<span class="translation">no</span></span>
+        <span class="word-translate">Schalter<span class="translation">switch</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Ich<span class="translation">I</span></span>
+        <span class="word-translate">bedeckte<span class="translation">covered</span></span>
+        <span class="word-translate">sie<span class="translation">it</span></span>
+        <span class="word-translate">mit<span class="translation">with</span></span>
+        <span class="word-translate">drei<span class="translation">three</span></span>
+        <span class="word-translate">Handtüchern<span class="translation">towels</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">schloss<span class="translation">closed</span></span>
+        <span class="word-translate">die<span class="translation">the</span></span>
+        <span class="word-translate">Tür<span class="translation">door</span></span>
+        <span class="word-translate">und<span class="translation">and</span></span>
+        <span class="word-translate">ging<span class="translation">went</span></span>
+        <span class="word-translate">wieder<span class="translation">again</span></span>
+        <span class="word-translate">ins<span class="translation">to</span></span>
+        <span class="word-translate">Bett<span class="translation">bed</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Das<span class="translation">The</span></span>
+        <span class="word-translate">„Weitermachen!“<span class="translation">"Keep going!"</span></span>
+        <span class="word-translate">hörte<span class="translation">did not stop</span></span>
+        <span class="word-translate">nicht<span class="translation">not</span></span>
+        <span class="word-translate">auf<span class="translation">stop</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Das<span class="translation">The</span></span>
+        <span class="word-translate">Metallstimmchen<span class="translation">little metallic voice</span></span>
+        <span class="word-translate">war<span class="translation">was</span></span>
+        <span class="word-translate">durch<span class="translation">through</span></span>
+        <span class="word-translate">kein<span class="translation">no</span></span>
+        <span class="word-translate">Handtuch<span class="translation">towel</span></span>
+        <span class="word-translate">aufzuhalten<span class="translation">to be stopped</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">„Weitermachen!“<span class="translation">"Keep going!"</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">hörte<span class="translation">heard</span></span>
+        <span class="word-translate">ich<span class="translation">I</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">„Weitermachen!“<span class="translation">"Keep going!"</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+      </p>
+      <p>
+        <span class="word-translate">Ich<span class="translation">I</span></span>
+        <span class="word-translate">ging<span class="translation">went</span></span>
+        <span class="word-translate">wieder<span class="translation">again</span></span>
+        <span class="word-translate">ins<span class="translation">to the</span></span>
+        <span class="word-translate">Bad<span class="translation">bathroom</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Versuchte<span class="translation">Tried</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">die<span class="translation">the</span></span>
+        <span class="word-translate">Batterie<span class="translation">battery</span></span>
+        <span class="word-translate">aus<span class="translation">from</span></span>
+        <span class="word-translate">dem<span class="translation">the</span></span>
+        <span class="word-translate">Gerät<span class="translation">device</span></span>
+        <span class="word-translate">zu<span class="translation">to</span></span>
+        <span class="word-translate">nehmen<span class="translation">take</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Sie<span class="translation">It</span></span>
+        <span class="word-translate">befand<span class="translation">was located</span></span>
+        <span class="word-translate">sich<span class="translation">itself</span></span>
+        <span class="word-translate">hinter<span class="translation">behind</span></span>
+        <span class="word-translate">einer<span class="translation">a</span></span>
+        <span class="word-translate">Klappe<span class="translation">flap</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">die<span class="translation">which</span></span>
+        <span class="word-translate">mit<span class="translation">with</span></span>
+        <span class="word-translate">einer<span class="translation">a</span></span>
+        <span class="word-translate">winzigen<span class="translation">tiny</span></span>
+        <span class="word-translate">Schraube<span class="translation">screw</span></span>
+        <span class="word-translate">verschlossen<span class="translation">locked</span></span>
+        <span class="word-translate">war<span class="translation">was</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Ich<span class="translation">I</span></span>
+        <span class="word-translate">suchte<span class="translation">looked for</span></span>
+        <span class="word-translate">einen<span class="translation">a</span></span>
+        <span class="word-translate">Schraubenzieher<span class="translation">screwdriver</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">aber<span class="translation">but</span></span>
+        <span class="word-translate">alle<span class="translation">all</span></span>
+        <span class="word-translate">Schraubenzieher<span class="translation">screwdrivers</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">die<span class="translation">that</span></span>
+        <span class="word-translate">ich<span class="translation">I</span></span>
+        <span class="word-translate">fand<span class="translation">found</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">waren<span class="translation">were</span></span>
+        <span class="word-translate">zu<span class="translation">too</span></span>
+        <span class="word-translate">groß<span class="translation">big</span></span>
+        <span class="word-translate">für<span class="translation">for</span></span>
+        <span class="word-translate">diese<span class="translation">this</span></span>
+        <span class="word-translate">winzige<span class="translation">tiny</span></span>
+        <span class="word-translate">Schraube<span class="translation">screw</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Ich<span class="translation">I</span></span>
+        <span class="word-translate">wurde<span class="translation">became</span></span>
+        <span class="word-translate">nervös<span class="translation">nervous</span></span>
+        <span class="word-translate">…<span class="translation">...</span></span>
+        <span class="word-translate">und<span class="translation">and</span></span>
+        <span class="word-translate">holte<span class="translation">got</span></span>
+        <span class="word-translate">ein<span class="translation">a</span></span>
+        <span class="word-translate">Messer<span class="translation">knife</span></span>
+        <span class="word-translate">,<span class="translation">,</span></span>
+        <span class="word-translate">um<span class="translation">in order to</span></span>
+        <span class="word-translate">die<span class="translation">the</span></span>
+        <span class="word-translate">Schraube<span class="translation">screw</span></span>
+        <span class="word-translate">zu<span class="translation">to</span></span>
+        <span class="word-translate">lösen<span class="translation">loosen</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+      </p>
+      <p>
+        <span class="word-translate">Aber<span class="translation">But</span></span>
+        <span class="word-translate">ich<span class="translation">I</span></span>
+        <span class="word-translate">rutschte<span class="translation">slipped</span></span>
+        <span class="word-translate">mit<span class="translation">with</span></span>
+        <span class="word-translate">dem<span class="translation">the</span></span>
+        <span class="word-translate">Messer<span class="translation">knife</span></span>
+        <span class="word-translate">ab<span class="translation">off</span></span>
+        <span class="word-translate">und<span class="translation">and</span></span>
+        <span class="word-translate">schnitt<span class="translation">cut</span></span>
+        <span class="word-translate">mich<span class="translation">myself</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Blutete<span class="translation">Bled</span></span>
+        <span class="word-translate">.<span class="translation">.</span></span>
+        <span class="word-translate">Leise<span class="translation">Quietly</span></span>
+        <span class="word-translate">fluchend<span class="translation">cursing</span></span>
+        <span class="word-translate">holte<span class="translation">got</span></span>
+        <span class="word-translate">ich<span class="translation">I</span></span>
+        <span class="word-translate">ein<span class="translation">a</span></span>
+        <span class="word-translate">…<span class="translation">...</span></span>
+      </p>
+    </div>
+
+    <hr class="my-8 border-t border-gray-300">
+
+    <div class="grammar-section">
+      <h2 class="text-2xl font-bold mb-4 text-gray-800">Grammar Rules and Observations</h2>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-700">1. Präteritum (Simple Past Tense)</h3>
+      <p class="mb-4">This story is primarily told in the simple past tense (Präteritum), which is very common for
+        written narratives and formal storytelling in German. You can see many examples of both "strong" (irregular) and
+        "weak" (regular) verbs.</p>
+      <div class="example">
+        <p><strong>Weak Verbs (add -te):</strong></p>
+        <p>"Ich <strong>dachte</strong>, Luis wäre wach geworden..." (I thought...)</p>
+        <p>"Aus dem Bad <strong>hörte</strong> ich ein leises, metallisches 'Weitermachen!'" (From the bathroom I
+          heard...)</p>
+        <p>"Entschlossen <strong>öffnete</strong> ich die Tür..." (Determined, I opened the door...)</p>
+        <p><strong>Strong Verbs (vowel change):</strong></p>
+        <p>"...aber er <strong>schlief</strong>." (...but he slept.)</p>
+        <p>"Dabei <strong>kam</strong> ich am Bad vorbei." (In the process, I came past the bathroom.)</p>
+        <p>"Die Zahnbürste... <strong>lag</strong> auf dem Fußboden..." (The toothbrush... lay on the floor...)</p>
+      </div>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-700">2. Subordinate Clauses (Nebensätze)</h3>
+      <p class="mb-4">Subordinate clauses are dependent clauses that add extra information to the main clause. In
+        German, they are famous for sending the conjugated verb to the very end of the clause. This text uses several
+        types.</p>
+      <div class="example">
+        <p><strong>Causal with 'weil' (because):</strong> The verb 'hörte' is at the end.</p>
+        <p>"Eines Nachts wachte ich auf, <strong>weil</strong> ich eine leise Stimme <strong>hörte</strong>."</p>
+        <p><strong>Object clause with 'dass' (that):</strong> The helping verb 'hat' is at the end.</p>
+        <p>"Ob es nicht reicht, <strong>dass</strong> er sich gestern die Zähne besonders sorgfältig geputzt
+          <strong>hat</strong>."</p>
+        <p><strong>Relative Clause with 'die' (which/that):</strong> The verb 'war' is at the end.</p>
+        <p>"Sie befand sich hinter einer Klappe, <strong>die</strong> mit einer winzigen Schraube verschlossen
+          <strong>war</strong>."</p>
+      </div>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-700">3. Reflexive Verbs</h3>
+      <p class="mb-4">Reflexive verbs are actions where the subject and the object are the same person/thing. They
+        require a reflexive pronoun (mich, dich, sich, uns, euch, sich). The pronoun can be in the accusative or dative
+        case.</p>
+      <div class="example">
+        <p><strong>Accusative (the action is done to oneself directly):</strong></p>
+        <p>"...und machte <strong>mich</strong> auf den Weg..." (...and I made my way...)</p>
+        <p>"...und schnitt <strong>mich</strong>." (...and cut myself.)</p>
+        <p><strong>Dative (often when a body part is involved, the body part becomes the direct object):</strong></p>
+        <p>"Wenn Luis <strong>sich</strong> damit die Zähne zu putzen begann..." (When Luis began to brush his [own]
+          teeth with it...)</p>
+      </div>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-700">Strong Verbs in the Präteritum (from the text)</h3>
+      <p class="mb-4">Here is a table of the strong (irregular) verbs found in the text, showing their change from the
+        infinitive to the simple past form used in the story.</p>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white border">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="px-4 py-2 border text-left">Infinitive (Present)</th>
+              <th class="px-4 py-2 border text-left">Präteritum (Simple Past)</th>
+              <th class="px-4 py-2 border text-left">Example from Text (shortened)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-gray-50">
+              <td class="px-4 py-2 border">beginnen (to begin)</td>
+              <td class="px-4 py-2 border">begann</td>
+              <td class="px-4 py-2 border">...zu putzen begann...</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">finden (to find)</td>
+              <td class="px-4 py-2 border">fand</td>
+              <td class="px-4 py-2 border">...die ich fand...</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-4 py-2 border">geben (to give)</td>
+              <td class="px-4 py-2 border">gab</td>
+              <td class="px-4 py-2 border">...es gab keinen Schalter.</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">gehen (to go)</td>
+              <td class="px-4 py-2 border">ging</td>
+              <td class="px-4 py-2 border">Ich ging wieder ins Bad.</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-4 py-2 border">kommen (to come)</td>
+              <td class="px-4 py-2 border">kam</td>
+              <td class="px-4 py-2 border">Das kam so.</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">liegen (to lie)</td>
+              <td class="px-4 py-2 border">lag</td>
+              <td class="px-4 py-2 border">...lag auf dem Fußboden...</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-4 py-2 border">sagen (to say)</td>
+              <td class="px-4 py-2 border">sagte</td>
+              <td class="px-4 py-2 border">...und sagte: "Weitermachen!"</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">schlafen (to sleep)</td>
+              <td class="px-4 py-2 border">schlief</td>
+              <td class="px-4 py-2 border">...aber er schlief.</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-4 py-2 border">schneiden (to cut)</td>
+              <td class="px-4 py-2 border">schnitt</td>
+              <td class="px-4 py-2 border">...und schnitt mich.</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">sprechen (to speak)</td>
+              <td class="px-4 py-2 border">sprach</td>
+              <td class="px-4 py-2 border">...aber sie sprach weiter.</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-4 py-2 border">stehen (to stand)</td>
+              <td class="px-4 py-2 border">stand</td>
+              <td class="px-4 py-2 border">...stand auf...</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">werden (to become)</td>
+              <td class="px-4 py-2 border">wurde</td>
+              <td class="px-4 py-2 border">Ich wurde nervös...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+
+</html>
