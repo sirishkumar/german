@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}} - German Learning</title>
+    <meta name="description" content="{{PAGE_DESCRIPTION}}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <script src="../assets/scripts.js" defer></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="flex items-center justify-between">
+                <a href="../index.html" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                    ← Back to Learning Resources
+                </a>
+                <div class="flex items-center space-x-4">
+                    <button id="font-size-toggle" class="text-sm text-gray-600 hover:text-gray-800" aria-label="Adjust font size">
+                        Aa
+                    </button>
+                    <button id="dark-mode-toggle" class="text-sm text-gray-600 hover:text-gray-800" aria-label="Toggle dark mode">
+                        🌙
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="content-container">
+            <!-- Page Header -->
+            <header class="mb-6">
+                <h1 id="main-content" class="text-3xl font-bold text-gray-800 mb-2">
+                    {{PAGE_TITLE}}
+                </h1>
+                <p class="text-gray-600">
+                    {{PAGE_SUBTITLE}}
+                </p>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                {{CONTENT}}
+            </div>
+
+            <!-- Progress Indicator -->
+            <div class="progress-section mt-8 p-4 bg-gray-50 rounded-lg">
+                <h3 class="text-lg font-semibold mb-2">Learning Progress</h3>
+                <div class="flex items-center space-x-2">
+                    <div class="flex-1 bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-500 h-2 rounded-full transition-all duration-300" style="width: 0%" id="progress-bar"></div>
+                    </div>
+                    <span class="text-sm text-gray-600" id="progress-text">0%</span>
+                </div>
+                <p class="text-sm text-gray-500 mt-1">
+                    Progress is saved automatically as you interact with content
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-12">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+                <p>&copy; 2024 German Learning Resources</p>
+                <div class="flex space-x-4 mt-2 md:mt-0">
+                    <button class="hover:text-gray-800" onclick="window.print()">Print Page</button>
+                    <button class="hover:text-gray-800" id="reset-progress">Reset Progress</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Page Scripts -->
+    <script>
+        // Page-specific initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize page-specific features
+            initializePageFeatures();
+
+            // Set up progress tracking
+            setupProgressTracking();
+
+            // Load saved progress
+            loadProgress();
+        });
+
+        function initializePageFeatures() {
+            // Font size toggle
+            document.getElementById('font-size-toggle').addEventListener('click', function() {
+                const sizes = ['small', 'normal', 'large'];
+                const current = document.body.className.match(/font-size-(\w+)/);
+                const currentIndex = current ? sizes.indexOf(current[1]) : 1;
+                const nextIndex = (currentIndex + 1) % sizes.length;
+
+                GermanLearning.setFontSize(sizes[nextIndex]);
+            });
+
+            // Dark mode toggle
+            document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+                const isDark = GermanLearning.toggleDarkMode();
+                this.textContent = isDark ? '☀️' : '🌙';
+            });
+
+            // Reset progress
+            document.getElementById('reset-progress').addEventListener('click', function() {
+                if (confirm('Are you sure you want to reset your progress for this page?')) {
+                    resetProgress();
+                }
+            });
+        }
+
+        function setupProgressTracking() {
+            // Track interactions with translatable words
+            const interactiveElements = document.querySelectorAll('.tooltip, .word-translate');
+            let interactedElements = new Set();
+
+            interactiveElements.forEach((element, index) => {
+                element.addEventListener('mouseenter', () => trackInteraction(element, index));
+                element.addEventListener('focus', () => trackInteraction(element, index));
+            });
+
+            function trackInteraction(element, index) {
+                if (!interactedElements.has(index)) {
+                    interactedElements.add(index);
+                    updateProgress(interactedElements.size, interactiveElements.length);
+                    saveProgress(Array.from(interactedElements));
+                }
+            }
+        }
+
+        function updateProgress(current, total) {
+            const percentage = Math.round((current / total) * 100);
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+
+            if (progressBar && progressText) {
+                progressBar.style.width = percentage + '%';
+                progressText.textContent = percentage + '%';
+            }
+        }
+
+        function saveProgress(interactedIndices) {
+            const pageKey = 'progress_' + window.location.pathname.replace(/[^a-zA-Z0-9]/g, '_');
+            try {
+                localStorage.setItem(pageKey, JSON.stringify(interactedIndices));
+            } catch (e) {
+                console.warn('Could not save progress:', e);
+            }
+        }
+
+        function loadProgress() {
+            const pageKey = 'progress_' + window.location.pathname.replace(/[^a-zA-Z0-9]/g, '_');
+            try {
+                const saved = localStorage.getItem(pageKey);
+                if (saved) {
+                    const interactedIndices = JSON.parse(saved);
+                    const totalElements = document.querySelectorAll('.tooltip, .word-translate').length;
+                    updateProgress(interactedIndices.length, totalElements);
+                }
+            } catch (e) {
+                console.warn('Could not load progress:', e);
+            }
+        }
+
+        function resetProgress() {
+            const pageKey = 'progress_' + window.location.pathname.replace(/[^a-zA-Z0-9]/g, '_');
+            try {
+                localStorage.removeItem(pageKey);
+                updateProgress(0, document.querySelectorAll('.tooltip, .word-translate').length);
+            } catch (e) {
+                console.warn('Could not reset progress:', e);
+            }
+        }
+    </script>
+</body>
+</html>
