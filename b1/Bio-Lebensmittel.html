@@ -1,185 +1,1044 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <title>Bio-Lebensmittel</title>
-    <style>
-        .tooltip {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bio-Lebensmittel - German Learning</title>
+        <meta
+            name="description"
+            content="Learn German with Bio-Lebensmittel article - interactive text-to-speech"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="../assets/styles.css" />
+        <script src="../assets/tts-simple.js" defer></script>
+        <style>
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    "Helvetica Neue", Arial, sans-serif;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body class="bg-gray-100 min-h-screen">
+        <!-- Skip Link for Accessibility -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
 
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 120px;
-            background-color: #f9f9f9;
-            color: #000;
-            text-align: center;
-            border-radius: 5px;
-            padding: 5px;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%; /* Position above */
-            left: 50%;
-            margin-left: -60px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
+        <!-- Navigation Header -->
+        <header class="bg-white shadow-sm border-b">
+            <div class="container mx-auto px-4 py-3">
+                <nav class="flex items-center justify-between">
+                    <a
+                        href="../index.html"
+                        class="text-blue-600 hover:text-blue-800 font-medium flex items-center"
+                    >
+                        ← Back to Learning Resources
+                    </a>
+                    <div class="flex items-center space-x-4">
+                        <button
+                            onclick="toggleTTS()"
+                            class="px-3 py-1 text-sm bg-purple-100 hover:bg-purple-200 text-purple-800 rounded transition-colors"
+                            title="Toggle TTS Controls (Ctrl+Shift+S)"
+                        >
+                            🔊 TTS
+                        </button>
+                        <button
+                            onclick="speakText('Bio-Lebensmittel werden immer beliebter')"
+                            class="px-3 py-1 text-sm bg-green-100 hover:bg-green-200 text-green-800 rounded transition-colors"
+                            title="Speak first sentence"
+                        >
+                            🎵 Test
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </header>
 
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
-        }
-    </style>
-</head>
-<body>
-    <p><span class="tooltip">Bio-Lebensmittel<span class="tooltiptext">organic foods</span></span> werden immer <span class="tooltip">beliebter<span class="tooltiptext">more popular</span></span>.
-    Der <span class="tooltip">Bio-Trend<span class="tooltiptext">organic trend</span></span> ist trotz der <span class="tooltip">hohen Preise<span class="tooltiptext">high prices</span></span> so groß,
-    dass sich der <span class="tooltip">Kauf<span class="tooltiptext">purchase</span></span> von Bio-Lebensmitteln
-    zu einer <span class="tooltip">moralischen Verpflichtung<span class="tooltiptext">moral obligation</span></span> entwickelt.
-    Angeblich ist Bio <span class="tooltip">gesünder<span class="tooltiptext">healthier</span></span>, <span class="tooltip">natürlicher<span class="tooltiptext">more natural</span></span> und <span class="tooltip">nachhaltiger<span class="tooltiptext">more sustainable</span></span>.
-    Aber was bedeutet es überhaupt, wenn etwas "Bio" ist?
-    Jede <span class="tooltip">Region<span class="tooltiptext">region</span></span> hat dafür ihre eigenen <span class="tooltip">Definitionen und Regeln<span class="tooltiptext">definitions and rules</span></span>.
-    Allgemein gilt jedoch, dass beim <span class="tooltip">Anbau<span class="tooltiptext">cultivation</span></span> von Bio-Lebensmitteln
-    weder <span class="tooltip">Gentechnik<span class="tooltiptext">genetic engineering</span></span> noch <span class="tooltip">künstliche Düngemittel<span class="tooltiptext">artificial fertilizers</span></span> und <span class="tooltip">Pestizide<span class="tooltiptext">pesticides</span></span> eingesetzt
-    werden dürfen.
-    Stattdessen setzen <span class="tooltip">Bio-Bauern<span class="tooltiptext">organic farmers</span></span> auf traditionelle <span class="tooltip">Anbaumethoden<span class="tooltiptext">cultivation methods</span></span>,
-    wie <span class="tooltip">Fruchtwechsel<span class="tooltiptext">crop rotation</span></span> und Bio-Düngemittel wie <span class="tooltip">Kompost<span class="tooltiptext">compost</span></span> oder <span class="tooltip">Mist<span class="tooltiptext">manure</span></span>.
-    Die <span class="tooltip">Absichten<span class="tooltiptext">intentions</span></span> hinter dem <span class="tooltip">Kauf<span class="tooltiptext">purchase</span></span> von <span class="tooltip">Bio-Produkten<span class="tooltiptext">organic products</span></span> sind ohne Zweifel gut
-    – aber macht es tatsächlich <span class="tooltip">Sinn<span class="tooltiptext">sense</span></span> oder verbirgt sich dahinter
-    den <span class="tooltip">Bio-Siegeln<span class="tooltiptext">organic labels</span></span> nur ein teurer <span class="tooltip">Food-Trend<span class="tooltiptext">food trend</span></span>?
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-8">
+            <div class="content-container">
+                <!-- Page Header -->
+                <header class="mb-6">
+                    <h1
+                        id="main-content"
+                        class="text-3xl font-bold text-gray-800 mb-2"
+                    >
+                        Bio-Lebensmittel
+                    </h1>
+                    <p class="text-gray-600">
+                        Learn German vocabulary about organic foods - click any
+                        word to hear pronunciation
+                    </p>
+                </header>
 
-    Ein <span class="tooltip">Ziel<span class="tooltiptext">goal</span></span>, das man durch <span class="tooltip">Bio-Landwirtschaft<span class="tooltiptext">organic farming</span></span> erreichen möchte,
-    ist <span class="tooltip">nahrhaftere<span class="tooltiptext">more nutritious</span></span> und <span class="tooltip">gesündere<span class="tooltiptext">healthier</span></span> Lebensmittel zu <span class="tooltip">erzeugen<span class="tooltiptext">produce</span></span>.
-    Tatsächlich konnten <span class="tooltip">Studien<span class="tooltiptext">studies</span></span> einen erhöhten <span class="tooltip">Antioxidantien-Gehalt<span class="tooltiptext">antioxidant content</span></span>
-    in Bio-Essen <span class="tooltip">nachweisen<span class="tooltiptext">prove</span></span>.
-    Diese werden von allen <span class="tooltip">Pflanzen<span class="tooltiptext">plants</span></span> als natürliches Pestizid produziert
-    und Bio-Pflanzen müssen etwas mehr davon produzieren,
-    weil sie keine Hilfe vom <span class="tooltip">Menschen<span class="tooltiptext">humans</span></span> bekommen. Es wird vermutet,
-    dass <span class="tooltip">Antioxidantien<span class="tooltiptext">antioxidants</span></span> einige gesundheitsfördernde <span class="tooltip">Eigenschaften<span class="tooltiptext">properties</span></span> haben
-    – <span class="tooltip">Wissenschaftler<span class="tooltiptext">scientists</span></span> sind sich darüber aber noch nicht einig.
-    Wir wissen noch nicht genau, wie sie wirken und wie viel <span class="tooltip">Obst<span class="tooltiptext">fruit</span></span>
-    und <span class="tooltip">Gemüse<span class="tooltiptext">vegetables</span></span> man essen müsste, um davon zu profitieren.
-    Und der höhere <span class="tooltip">Nährstoffgehalt<span class="tooltiptext">nutrient content</span></span>? Da ist man sich auch nicht sicher.
-    Manchen <span class="tooltip">Studien<span class="tooltiptext">studies</span></span> zufolge haben Bio-Produkte einen etwas höheren
-    <span class="tooltip">Vitamin-C<span class="tooltiptext">vitamin C</span></span>- und <span class="tooltip">Omega-3-Gehalt<span class="tooltiptext">omega-3 content</span></span>,
-    während andere Studien keinen Unterschied feststellen konnten.
-    Die <span class="tooltip">Beweislage<span class="tooltiptext">evidence</span></span> deutet also auf minimale Unterschiede
-    im Nährstoffgehalt hin.
-    Aktuell hat die <span class="tooltip">Wissenschaft<span class="tooltiptext">science</span></span> noch keine schlagkräftigen Beweise
-    für den gesundheitlichen Nutzen von Bio-Lebensmitteln.
-    Wir wissen aber,
-    dass Obst und Gemüse generell wichtig für die <span class="tooltip">Ernährung<span class="tooltiptext">nutrition</span></span> sind.
-    D.h.: Genügend Gemüse zu essen ist wichtiger
-    als sich darum zu kümmern wie es hergestellt wurde.
+                <!-- Instructions -->
+                <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                    <h2 class="text-lg font-semibold text-blue-800 mb-2">
+                        🎯 How to Use
+                    </h2>
+                    <ul class="list-disc list-inside text-blue-700 space-y-1">
+                        <li>
+                            <strong>Double-click</strong> any German word to
+                            hear pronunciation
+                        </li>
+                        <li>
+                            <strong>Hover</strong> over words to see
+                            translations with 🔊 buttons
+                        </li>
+                        <li>
+                            <strong>Click TTS button</strong> above to open
+                            pronunciation controls
+                        </li>
+                    </ul>
+                </div>
 
-    Man kauft nicht nur Bio wegen der <span class="tooltip">Vitamine<span class="tooltiptext">vitamins</span></span> sondern v.a. auch um <span class="tooltip">Gifte<span class="tooltiptext">poisons</span></span>
-    zu vermeiden: künstliche <span class="tooltip">Pestizide<span class="tooltiptext">pesticides</span></span> und <span class="tooltip">Düngemittel<span class="tooltiptext">fertilizers</span></span>.
-    Und es stimmt: einige <span class="tooltip">Analysen<span class="tooltiptext">analyses</span></span> beweisen,
-    dass weniger <span class="tooltip">Pestizid-Rückstände<span class="tooltiptext">pesticide residues</span></span> auf Bio-Lebensmitteln zu finden sind –
-    aber es ist kompliziert.
-    Weniger <span class="tooltip">Pestizide<span class="tooltiptext">pesticides</span></span> heißt nicht keine Pestizide.
-    Zwar sind Pestizide für Bio-Bauern nur das letzte Mittel,
-    verboten sind sie aber nicht.
-    Die meisten Bio-Pestizide sind natürliche <span class="tooltip">Gifte<span class="tooltiptext">poisons</span></span> wie <span class="tooltip">Pflanzen-Öle<span class="tooltiptext">plant oils</span></span>,
-    <span class="tooltip">Kaliseife<span class="tooltiptext">potassium soap</span></span>, <span class="tooltip">Schwefel<span class="tooltiptext">sulfur</span></span> und <span class="tooltip">Kupfersulfat<span class="tooltiptext">copper sulfate</span></span>,
-    aber es werden auch künstliche <span class="tooltip">Substanzen<span class="tooltiptext">substances</span></span> verwendet.
-    Und wo liegt der Unterschied zu normalen Pestiziden?
-    Er ist tatsächlich nicht sehr groß.
-    Bio-Pestizide sind nicht unbedingt sicherer als herkömmliche Pestizide.
-    Gift ist Gift.
-    Egal, ob die <span class="tooltip">Substanzen<span class="tooltiptext">substances</span></span> künstlich hergestellt
-    oder aus der <span class="tooltip">Natur<span class="tooltiptext">nature</span></span> gewonnen wurden.
-    <span class="tooltip">Kupfersulfat<span class="tooltiptext">copper sulfate</span></span>, ein "natürliches" Pestizid,
-    das häufig bei Bio-<span class="tooltip">Äpfeln<span class="tooltiptext">apples</span></span> eingesetzt wird, ist um einiges schädlicher
-    für den <span class="tooltip">Menschen<span class="tooltiptext">humans</span></span> als andere Pestizide.
-    Die <span class="tooltip">Schädlichkeit<span class="tooltiptext">harmfulness</span></span> hängt von der <span class="tooltip">Konzentration<span class="tooltiptext">concentration</span></span> eines Giftes ab,
-    nicht von seiner "Natürlichkeit".
-    Es gibt kaum <span class="tooltip">Studien<span class="tooltiptext">studies</span></span> über die langfristigen <span class="tooltip">Auswirkungen<span class="tooltiptext">effects</span></span>
-    dieser <span class="tooltip">Pestizidbelastung<span class="tooltiptext">pesticide burden</span></span> – 2018 hat eine dänische Studie herausgefunden,
-    dass Pestizide für einen <span class="tooltip">Erwachsenen<span class="tooltiptext">adult</span></span> in etwa so schädlich sind,
-    wie alle drei Monate ein Glas <span class="tooltip">Wein<span class="tooltiptext">wine</span></span> zu trinken.
-    Die Pestizide auf deinem <span class="tooltip">Essen<span class="tooltiptext">food</span></span>
-    sollten dir also keine schlaflosen Nächte bereiten.
-    Aber strenge <span class="tooltip">Kontrollstandards<span class="tooltiptext">control standards</span></span> für unser Essen zu fordern,
-    ist immer gut!
-    Alle Pestizide werden in der EU und den USA streng reguliert
-    und getestet.
-    Jedes Jahr werden tausende von <span class="tooltip">Lebensmittelproben<span class="tooltiptext">food samples</span></span>
-    auf Pestizide untersucht.
-    Der Großteil der Proben hat gar keine Pestizidrückstände
-    oder nur einen Bruchteil der erlaubten Menge.
-    Wir sollten uns eher vor <span class="tooltip">Verunreinigungen<span class="tooltiptext">contaminations</span></span> durch <span class="tooltip">Pilze<span class="tooltiptext">fungi</span></span>
-    und <span class="tooltip">Bakterien<span class="tooltiptext">bacteria</span></span> fürchten – und dafür sind Bio-Lebensmittel
-    genauso anfällig, wie herkömmliche Lebensmittel.
-    Sind Bio-Lebensmittel besser für die <span class="tooltip">Umwelt<span class="tooltiptext">environment</span></span>?
-    2017 verglich eine <span class="tooltip">Metaanalyse<span class="tooltiptext">meta-analysis</span></span> herkömmliche mit Bio-Landwirtschaft.
-    Sie untersuchte den <span class="tooltip">Einfluss<span class="tooltiptext">impact</span></span> von Produkten
-    aus über 700 <span class="tooltip">Produktionsquellen<span class="tooltiptext">production sources</span></span> auf Dinge wie: <span class="tooltip">Treibhausgase<span class="tooltiptext">greenhouse gases</span></span>,
-    <span class="tooltip">Energieverbrauch<span class="tooltiptext">energy consumption</span></span> und <span class="tooltip">Flächennutzung<span class="tooltiptext">land use</span></span>.
-    Das Ergebnis: Kein <span class="tooltip">Produktionsverfahren<span class="tooltiptext">production method</span></span> ist dem anderen überlegen.
-    Die biologische Landwirtschaft verbraucht zwar weniger Energie
-    aber es werden trotzdem ähnlich viele Treibhausgase produziert.
-    Biobauern benutzen weniger Pestizide, brauchen aber viel
-    mehr <span class="tooltip">Fläche<span class="tooltiptext">land</span></span> für den <span class="tooltip">Anbau<span class="tooltiptext">cultivation</span></span> ihrer Produkte.
-    Diese Ergebnisse wurden auch von einem <span class="tooltip">Bericht<span class="tooltiptext">report</span></span>
-    der <span class="tooltip">Swedish Food Agency<span class="tooltiptext">Swedish Food Agency</span></span> bestätigt:
-    Bio und Nicht-Bio nehmen sich nicht viel.
-    Die größten Unterschiede findet man bei der Flächennutzung
-    und der <span class="tooltip">Ökotoxizität<span class="tooltiptext">ecotoxicity</span></span>.
-    Bei Ersterem kann die herkömmliche Landwirtschaft punkten,
-    bei Letzterem die biologische.
-    Insgesamt aber ergeben diese Untersuchungen,
-    dass die konventionelle Landwirtschaft den geringeren Einfluss
-    auf die Umwelt hat.
-    D.h.: Soweit wir wissen, ist Bio ist nicht besser
-    als die herkömmliche Landwirtschaft.
-    Aber der Bio-Anbau hat noch größere Auswirkungen.
-    Die <span class="tooltip">Nachfrage<span class="tooltiptext">demand</span></span> steigt beständig
-    und beim <span class="tooltip">Versuch<span class="tooltiptext">attempt</span></span> genügend zu produzieren,
-    wird auf Anbaumethoden zurück gegriffen, die die Umwelt
-    auf andere Weise schädigen:
-    <span class="tooltip">Spanien<span class="tooltiptext">Spain</span></span> zum Beispiel produziert für den <span class="tooltip">Export<span class="tooltiptext">export</span></span> riesige Mengen
-    an Bio- und Nicht-Bio-Gemüse in <span class="tooltip">Gewächshäusern<span class="tooltiptext">greenhouses</span></span>.
-    Dabei wird sehr viel Energie verbraucht
-    und große Mengen Treibhausgase produziert.
-    Weil die steigende Nachfrage nicht durch die <span class="tooltip">heimische Produktion<span class="tooltiptext">domestic production</span></span>
-    gedeckt werden kann, nimmt auch der weltweite <span class="tooltip">Handel<span class="tooltiptext">trade</span></span>
-    mit Bio-Lebensmitteln zu.
-    Die <span class="tooltip">Versorgungsketten<span class="tooltiptext">supply chains</span></span> werden dabei immer komplexer und es wird immer
-    schwieriger <span class="tooltip">Qualitätsstandards<span class="tooltiptext">quality standards</span></span> und -<span class="tooltip">Regeln<span class="tooltiptext">rules</span></span> durchzusetzen.
-    Das öffnet <span class="tooltip">Tür und Tor<span class="tooltiptext">door and gate</span></span> für <span class="tooltip">Betrugsfälle<span class="tooltiptext">fraud cases</span></span>,
-    bei denen herkömmliche Lebensmittel als Bio-Essen ausgegeben werden.
+                <!-- Article Content -->
+                <div class="prose prose-lg max-w-none">
+                    <p>
+                        <span class="tooltip"
+                            >Bio-Lebensmittel<span class="tooltiptext"
+                                >organic foods</span
+                            ></span
+                        >
+                        werden immer
+                        <span class="tooltip"
+                            >beliebter<span class="tooltiptext"
+                                >more popular</span
+                            ></span
+                        >. Der
+                        <span class="tooltip"
+                            >Bio-Trend<span class="tooltiptext"
+                                >organic trend</span
+                            ></span
+                        >
+                        ist trotz der
+                        <span class="tooltip"
+                            >hohen Preise<span class="tooltiptext"
+                                >high prices</span
+                            ></span
+                        >
+                        so groß, dass sich der
+                        <span class="tooltip"
+                            >Kauf<span class="tooltiptext">purchase</span></span
+                        >
+                        von Bio-Lebensmitteln zu einer
+                        <span class="tooltip"
+                            >moralischen Verpflichtung<span class="tooltiptext"
+                                >moral obligation</span
+                            ></span
+                        >
+                        entwickelt. Angeblich ist Bio
+                        <span class="tooltip"
+                            >gesünder<span class="tooltiptext"
+                                >healthier</span
+                            ></span
+                        >,
+                        <span class="tooltip"
+                            >natürlicher<span class="tooltiptext"
+                                >more natural</span
+                            ></span
+                        >
+                        und
+                        <span class="tooltip"
+                            >nachhaltiger<span class="tooltiptext"
+                                >more sustainable</span
+                            ></span
+                        >. Aber was bedeutet es überhaupt, wenn etwas "Bio" ist?
+                        Jede
+                        <span class="tooltip"
+                            >Region<span class="tooltiptext">region</span></span
+                        >
+                        hat dafür ihre eigenen
+                        <span class="tooltip"
+                            >Definitionen und Regeln<span class="tooltiptext"
+                                >definitions and rules</span
+                            ></span
+                        >. Allgemein gilt jedoch, dass beim
+                        <span class="tooltip"
+                            >Anbau<span class="tooltiptext"
+                                >cultivation</span
+                            ></span
+                        >
+                        von Bio-Lebensmitteln weder
+                        <span class="tooltip"
+                            >Gentechnik<span class="tooltiptext"
+                                >genetic engineering</span
+                            ></span
+                        >
+                        noch
+                        <span class="tooltip"
+                            >künstliche Düngemittel<span class="tooltiptext"
+                                >artificial fertilizers</span
+                            ></span
+                        >
+                        und
+                        <span class="tooltip"
+                            >Pestizide<span class="tooltiptext"
+                                >pesticides</span
+                            ></span
+                        >
+                        eingesetzt werden dürfen. Stattdessen setzen
+                        <span class="tooltip"
+                            >Bio-Bauern<span class="tooltiptext"
+                                >organic farmers</span
+                            ></span
+                        >
+                        auf traditionelle
+                        <span class="tooltip"
+                            >Anbaumethoden<span class="tooltiptext"
+                                >cultivation methods</span
+                            ></span
+                        >, wie
+                        <span class="tooltip"
+                            >Fruchtwechsel<span class="tooltiptext"
+                                >crop rotation</span
+                            ></span
+                        >
+                        und Bio-Düngemittel wie
+                        <span class="tooltip"
+                            >Kompost<span class="tooltiptext"
+                                >compost</span
+                            ></span
+                        >
+                        oder
+                        <span class="tooltip"
+                            >Mist<span class="tooltiptext">manure</span></span
+                        >. Die
+                        <span class="tooltip"
+                            >Absichten<span class="tooltiptext"
+                                >intentions</span
+                            ></span
+                        >
+                        hinter dem
+                        <span class="tooltip"
+                            >Kauf<span class="tooltiptext">purchase</span></span
+                        >
+                        von
+                        <span class="tooltip"
+                            >Bio-Produkten<span class="tooltiptext"
+                                >organic products</span
+                            ></span
+                        >
+                        sind ohne Zweifel gut – aber macht es tatsächlich
+                        <span class="tooltip"
+                            >Sinn<span class="tooltiptext">sense</span></span
+                        >
+                        oder verbirgt sich dahinter den
+                        <span class="tooltip"
+                            >Bio-Siegeln<span class="tooltiptext"
+                                >organic labels</span
+                            ></span
+                        >
+                        nur ein teurer
+                        <span class="tooltip"
+                            >Food-Trend<span class="tooltiptext"
+                                >food trend</span
+                            ></span
+                        >? Ein
+                        <span class="tooltip"
+                            >Ziel<span class="tooltiptext">goal</span></span
+                        >, das man durch
+                        <span class="tooltip"
+                            >Bio-Landwirtschaft<span class="tooltiptext"
+                                >organic farming</span
+                            ></span
+                        >
+                        erreichen möchte, ist
+                        <span class="tooltip"
+                            >nahrhaftere<span class="tooltiptext"
+                                >more nutritious</span
+                            ></span
+                        >
+                        und
+                        <span class="tooltip"
+                            >gesündere<span class="tooltiptext"
+                                >healthier</span
+                            ></span
+                        >
+                        Lebensmittel zu
+                        <span class="tooltip"
+                            >erzeugen<span class="tooltiptext"
+                                >produce</span
+                            ></span
+                        >. Tatsächlich konnten
+                        <span class="tooltip"
+                            >Studien<span class="tooltiptext"
+                                >studies</span
+                            ></span
+                        >
+                        einen erhöhten
+                        <span class="tooltip"
+                            >Antioxidantien-Gehalt<span class="tooltiptext"
+                                >antioxidant content</span
+                            ></span
+                        >
+                        in Bio-Essen
+                        <span class="tooltip"
+                            >nachweisen<span class="tooltiptext"
+                                >prove</span
+                            ></span
+                        >. Diese werden von allen
+                        <span class="tooltip"
+                            >Pflanzen<span class="tooltiptext"
+                                >plants</span
+                            ></span
+                        >
+                        als natürliches Pestizid produziert und Bio-Pflanzen
+                        müssen etwas mehr davon produzieren, weil sie keine
+                        Hilfe vom
+                        <span class="tooltip"
+                            >Menschen<span class="tooltiptext"
+                                >humans</span
+                            ></span
+                        >
+                        bekommen. Es wird vermutet, dass
+                        <span class="tooltip"
+                            >Antioxidantien<span class="tooltiptext"
+                                >antioxidants</span
+                            ></span
+                        >
+                        einige gesundheitsfördernde
+                        <span class="tooltip"
+                            >Eigenschaften<span class="tooltiptext"
+                                >properties</span
+                            ></span
+                        >
+                        haben –
+                        <span class="tooltip"
+                            >Wissenschaftler<span class="tooltiptext"
+                                >scientists</span
+                            ></span
+                        >
+                        sind sich darüber aber noch nicht einig. Wir wissen noch
+                        nicht genau, wie sie wirken und wie viel
+                        <span class="tooltip"
+                            >Obst<span class="tooltiptext">fruit</span></span
+                        >
+                        und
+                        <span class="tooltip"
+                            >Gemüse<span class="tooltiptext"
+                                >vegetables</span
+                            ></span
+                        >
+                        man essen müsste, um davon zu profitieren. Und der
+                        höhere
+                        <span class="tooltip"
+                            >Nährstoffgehalt<span class="tooltiptext"
+                                >nutrient content</span
+                            ></span
+                        >? Da ist man sich auch nicht sicher. Manchen
+                        <span class="tooltip"
+                            >Studien<span class="tooltiptext"
+                                >studies</span
+                            ></span
+                        >
+                        zufolge haben Bio-Produkte einen etwas höheren
+                        <span class="tooltip"
+                            >Vitamin-C<span class="tooltiptext"
+                                >vitamin C</span
+                            ></span
+                        >- und
+                        <span class="tooltip"
+                            >Omega-3-Gehalt<span class="tooltiptext"
+                                >omega-3 content</span
+                            ></span
+                        >, während andere Studien keinen Unterschied feststellen
+                        konnten. Die
+                        <span class="tooltip"
+                            >Beweislage<span class="tooltiptext"
+                                >evidence</span
+                            ></span
+                        >
+                        deutet also auf minimale Unterschiede im Nährstoffgehalt
+                        hin. Aktuell hat die
+                        <span class="tooltip"
+                            >Wissenschaft<span class="tooltiptext"
+                                >science</span
+                            ></span
+                        >
+                        noch keine schlagkräftigen Beweise für den
+                        gesundheitlichen Nutzen von Bio-Lebensmitteln. Wir
+                        wissen aber, dass Obst und Gemüse generell wichtig für
+                        die
+                        <span class="tooltip"
+                            >Ernährung<span class="tooltiptext"
+                                >nutrition</span
+                            ></span
+                        >
+                        sind. D.h.: Genügend Gemüse zu essen ist wichtiger als
+                        sich darum zu kümmern wie es hergestellt wurde. Man
+                        kauft nicht nur Bio wegen der
+                        <span class="tooltip"
+                            >Vitamine<span class="tooltiptext"
+                                >vitamins</span
+                            ></span
+                        >
+                        sondern v.a. auch um
+                        <span class="tooltip"
+                            >Gifte<span class="tooltiptext">poisons</span></span
+                        >
+                        zu vermeiden: künstliche
+                        <span class="tooltip"
+                            >Pestizide<span class="tooltiptext"
+                                >pesticides</span
+                            ></span
+                        >
+                        und
+                        <span class="tooltip"
+                            >Düngemittel<span class="tooltiptext"
+                                >fertilizers</span
+                            ></span
+                        >. Und es stimmt: einige
+                        <span class="tooltip"
+                            >Analysen<span class="tooltiptext"
+                                >analyses</span
+                            ></span
+                        >
+                        beweisen, dass weniger
+                        <span class="tooltip"
+                            >Pestizid-Rückstände<span class="tooltiptext"
+                                >pesticide residues</span
+                            ></span
+                        >
+                        auf Bio-Lebensmitteln zu finden sind – aber es ist
+                        kompliziert. Weniger
+                        <span class="tooltip"
+                            >Pestizide<span class="tooltiptext"
+                                >pesticides</span
+                            ></span
+                        >
+                        heißt nicht keine Pestizide. Zwar sind Pestizide für
+                        Bio-Bauern nur das letzte Mittel, verboten sind sie aber
+                        nicht. Die meisten Bio-Pestizide sind natürliche
+                        <span class="tooltip"
+                            >Gifte<span class="tooltiptext">poisons</span></span
+                        >
+                        wie
+                        <span class="tooltip"
+                            >Pflanzen-Öle<span class="tooltiptext"
+                                >plant oils</span
+                            ></span
+                        >,
+                        <span class="tooltip"
+                            >Kaliseife<span class="tooltiptext"
+                                >potassium soap</span
+                            ></span
+                        >,
+                        <span class="tooltip"
+                            >Schwefel<span class="tooltiptext"
+                                >sulfur</span
+                            ></span
+                        >
+                        und
+                        <span class="tooltip"
+                            >Kupfersulfat<span class="tooltiptext"
+                                >copper sulfate</span
+                            ></span
+                        >, aber es werden auch künstliche
+                        <span class="tooltip"
+                            >Substanzen<span class="tooltiptext"
+                                >substances</span
+                            ></span
+                        >
+                        verwendet. Und wo liegt der Unterschied zu normalen
+                        Pestiziden? Er ist tatsächlich nicht sehr groß.
+                        Bio-Pestizide sind nicht unbedingt sicherer als
+                        herkömmliche Pestizide. Gift ist Gift. Egal, ob die
+                        <span class="tooltip"
+                            >Substanzen<span class="tooltiptext"
+                                >substances</span
+                            ></span
+                        >
+                        künstlich hergestellt oder aus der
+                        <span class="tooltip"
+                            >Natur<span class="tooltiptext">nature</span></span
+                        >
+                        gewonnen wurden.
+                        <span class="tooltip"
+                            >Kupfersulfat<span class="tooltiptext"
+                                >copper sulfate</span
+                            ></span
+                        >, ein "natürliches" Pestizid, das häufig bei Bio-<span
+                            class="tooltip"
+                            >Äpfeln<span class="tooltiptext">apples</span></span
+                        >
+                        eingesetzt wird, ist um einiges schädlicher für den
+                        <span class="tooltip"
+                            >Menschen<span class="tooltiptext"
+                                >humans</span
+                            ></span
+                        >
+                        als andere Pestizide. Die
+                        <span class="tooltip"
+                            >Schädlichkeit<span class="tooltiptext"
+                                >harmfulness</span
+                            ></span
+                        >
+                        hängt von der
+                        <span class="tooltip"
+                            >Konzentration<span class="tooltiptext"
+                                >concentration</span
+                            ></span
+                        >
+                        eines Giftes ab, nicht von seiner "Natürlichkeit". Es
+                        gibt kaum
+                        <span class="tooltip"
+                            >Studien<span class="tooltiptext"
+                                >studies</span
+                            ></span
+                        >
+                        über die langfristigen
+                        <span class="tooltip"
+                            >Auswirkungen<span class="tooltiptext"
+                                >effects</span
+                            ></span
+                        >
+                        dieser
+                        <span class="tooltip"
+                            >Pestizidbelastung<span class="tooltiptext"
+                                >pesticide burden</span
+                            ></span
+                        >
+                        – 2018 hat eine dänische Studie herausgefunden, dass
+                        Pestizide für einen
+                        <span class="tooltip"
+                            >Erwachsenen<span class="tooltiptext"
+                                >adult</span
+                            ></span
+                        >
+                        in etwa so schädlich sind, wie alle drei Monate ein Glas
+                        <span class="tooltip"
+                            >Wein<span class="tooltiptext">wine</span></span
+                        >
+                        zu trinken. Die Pestizide auf deinem
+                        <span class="tooltip"
+                            >Essen<span class="tooltiptext">food</span></span
+                        >
+                        sollten dir also keine schlaflosen Nächte bereiten. Aber
+                        strenge
+                        <span class="tooltip"
+                            >Kontrollstandards<span class="tooltiptext"
+                                >control standards</span
+                            ></span
+                        >
+                        für unser Essen zu fordern, ist immer gut! Alle
+                        Pestizide werden in der EU und den USA streng reguliert
+                        und getestet. Jedes Jahr werden tausende von
+                        <span class="tooltip"
+                            >Lebensmittelproben<span class="tooltiptext"
+                                >food samples</span
+                            ></span
+                        >
+                        auf Pestizide untersucht. Der Großteil der Proben hat
+                        gar keine Pestizidrückstände oder nur einen Bruchteil
+                        der erlaubten Menge. Wir sollten uns eher vor
+                        <span class="tooltip"
+                            >Verunreinigungen<span class="tooltiptext"
+                                >contaminations</span
+                            ></span
+                        >
+                        durch
+                        <span class="tooltip"
+                            >Pilze<span class="tooltiptext">fungi</span></span
+                        >
+                        und
+                        <span class="tooltip"
+                            >Bakterien<span class="tooltiptext"
+                                >bacteria</span
+                            ></span
+                        >
+                        fürchten – und dafür sind Bio-Lebensmittel genauso
+                        anfällig, wie herkömmliche Lebensmittel. Sind
+                        Bio-Lebensmittel besser für die
+                        <span class="tooltip"
+                            >Umwelt<span class="tooltiptext"
+                                >environment</span
+                            ></span
+                        >? 2017 verglich eine
+                        <span class="tooltip"
+                            >Metaanalyse<span class="tooltiptext"
+                                >meta-analysis</span
+                            ></span
+                        >
+                        herkömmliche mit Bio-Landwirtschaft. Sie untersuchte den
+                        <span class="tooltip"
+                            >Einfluss<span class="tooltiptext"
+                                >impact</span
+                            ></span
+                        >
+                        von Produkten aus über 700
+                        <span class="tooltip"
+                            >Produktionsquellen<span class="tooltiptext"
+                                >production sources</span
+                            ></span
+                        >
+                        auf Dinge wie:
+                        <span class="tooltip"
+                            >Treibhausgase<span class="tooltiptext"
+                                >greenhouse gases</span
+                            ></span
+                        >,
+                        <span class="tooltip"
+                            >Energieverbrauch<span class="tooltiptext"
+                                >energy consumption</span
+                            ></span
+                        >
+                        und
+                        <span class="tooltip"
+                            >Flächennutzung<span class="tooltiptext"
+                                >land use</span
+                            ></span
+                        >. Das Ergebnis: Kein
+                        <span class="tooltip"
+                            >Produktionsverfahren<span class="tooltiptext"
+                                >production method</span
+                            ></span
+                        >
+                        ist dem anderen überlegen. Die biologische
+                        Landwirtschaft verbraucht zwar weniger Energie aber es
+                        werden trotzdem ähnlich viele Treibhausgase produziert.
+                        Biobauern benutzen weniger Pestizide, brauchen aber viel
+                        mehr
+                        <span class="tooltip"
+                            >Fläche<span class="tooltiptext">land</span></span
+                        >
+                        für den
+                        <span class="tooltip"
+                            >Anbau<span class="tooltiptext"
+                                >cultivation</span
+                            ></span
+                        >
+                        ihrer Produkte. Diese Ergebnisse wurden auch von einem
+                        <span class="tooltip"
+                            >Bericht<span class="tooltiptext"
+                                >report</span
+                            ></span
+                        >
+                        der
+                        <span class="tooltip"
+                            >Swedish Food Agency<span class="tooltiptext"
+                                >Swedish Food Agency</span
+                            ></span
+                        >
+                        bestätigt: Bio und Nicht-Bio nehmen sich nicht viel. Die
+                        größten Unterschiede findet man bei der Flächennutzung
+                        und der
+                        <span class="tooltip"
+                            >Ökotoxizität<span class="tooltiptext"
+                                >ecotoxicity</span
+                            ></span
+                        >. Bei Ersterem kann die herkömmliche Landwirtschaft
+                        punkten, bei Letzterem die biologische. Insgesamt aber
+                        ergeben diese Untersuchungen, dass die konventionelle
+                        Landwirtschaft den geringeren Einfluss auf die Umwelt
+                        hat. D.h.: Soweit wir wissen, ist Bio ist nicht besser
+                        als die herkömmliche Landwirtschaft. Aber der Bio-Anbau
+                        hat noch größere Auswirkungen. Die
+                        <span class="tooltip"
+                            >Nachfrage<span class="tooltiptext"
+                                >demand</span
+                            ></span
+                        >
+                        steigt beständig und beim
+                        <span class="tooltip"
+                            >Versuch<span class="tooltiptext"
+                                >attempt</span
+                            ></span
+                        >
+                        genügend zu produzieren, wird auf Anbaumethoden zurück
+                        gegriffen, die die Umwelt auf andere Weise schädigen:
+                        <span class="tooltip"
+                            >Spanien<span class="tooltiptext">Spain</span></span
+                        >
+                        zum Beispiel produziert für den
+                        <span class="tooltip"
+                            >Export<span class="tooltiptext">export</span></span
+                        >
+                        riesige Mengen an Bio- und Nicht-Bio-Gemüse in
+                        <span class="tooltip"
+                            >Gewächshäusern<span class="tooltiptext"
+                                >greenhouses</span
+                            ></span
+                        >. Dabei wird sehr viel Energie verbraucht und große
+                        Mengen Treibhausgase produziert. Weil die steigende
+                        Nachfrage nicht durch die
+                        <span class="tooltip"
+                            >heimische Produktion<span class="tooltiptext"
+                                >domestic production</span
+                            ></span
+                        >
+                        gedeckt werden kann, nimmt auch der weltweite
+                        <span class="tooltip"
+                            >Handel<span class="tooltiptext">trade</span></span
+                        >
+                        mit Bio-Lebensmitteln zu. Die
+                        <span class="tooltip"
+                            >Versorgungsketten<span class="tooltiptext"
+                                >supply chains</span
+                            ></span
+                        >
+                        werden dabei immer komplexer und es wird immer
+                        schwieriger
+                        <span class="tooltip"
+                            >Qualitätsstandards<span class="tooltiptext"
+                                >quality standards</span
+                            ></span
+                        >
+                        und -<span class="tooltip"
+                            >Regeln<span class="tooltiptext">rules</span></span
+                        >
+                        durchzusetzen. Das öffnet
+                        <span class="tooltip"
+                            >Tür und Tor<span class="tooltiptext"
+                                >door and gate</span
+                            ></span
+                        >
+                        für
+                        <span class="tooltip"
+                            >Betrugsfälle<span class="tooltiptext"
+                                >fraud cases</span
+                            ></span
+                        >, bei denen herkömmliche Lebensmittel als Bio-Essen
+                        ausgegeben werden. Aber leider geht es bei der
+                        Diskussion um Bio-Essen selten
+                        <span class="tooltip"
+                            >sachlich<span class="tooltiptext"
+                                >objective</span
+                            ></span
+                        >
+                        zu. Bio ist für viele nicht nur
+                        <span class="tooltip"
+                            >Anbaumethode<span class="tooltiptext"
+                                >cultivation method</span
+                            ></span
+                        >
+                        sondern auch
+                        <span class="tooltip"
+                            >Ideologie<span class="tooltiptext"
+                                >ideology</span
+                            ></span
+                        >. Bio zu kaufen fühlt sich einfach richtig an. Menschen
+                        wollen das Richtige für ihre
+                        <span class="tooltip"
+                            >Gesundheit<span class="tooltiptext"
+                                >health</span
+                            ></span
+                        >, ihre
+                        <span class="tooltip"
+                            >Kinder<span class="tooltiptext"
+                                >children</span
+                            ></span
+                        >
+                        und unseren
+                        <span class="tooltip"
+                            >Planeten<span class="tooltiptext"
+                                >planet</span
+                            ></span
+                        >
+                        tun. Und dabei folgen sie ihrem
+                        <span class="tooltip"
+                            >Instinkt<span class="tooltiptext"
+                                >instinct</span
+                            ></span
+                        >: Bio ist "gut" und herkömmliche Lebensmittel
+                        "schlecht". Keine guten Voraussetzungen für eine
+                        <span class="tooltip"
+                            >rationale Entscheidung<span class="tooltiptext"
+                                >rational decision</span
+                            ></span
+                        >. Vielleicht sollte man aufhören
+                        <span class="tooltip"
+                            >biologische<span class="tooltiptext"
+                                >organic</span
+                            ></span
+                        >
+                        und
+                        <span class="tooltip"
+                            >herkömmliche<span class="tooltiptext"
+                                >conventional</span
+                            ></span
+                        >
+                        Landwirtschaft so strikt zu trennen – sie haben beide
+                        <span class="tooltip"
+                            >Vor- und Nachteile<span class="tooltiptext"
+                                >advantages and disadvantages</span
+                            ></span
+                        >. Für eine effektive
+                        <span class="tooltip"
+                            >Produktion<span class="tooltiptext"
+                                >production</span
+                            ></span
+                        >
+                        von wirklich nachhaltigem
+                        <span class="tooltip"
+                            >Essen<span class="tooltiptext">food</span></span
+                        >, sollten wir die besten
+                        <span class="tooltip"
+                            >Aspekte<span class="tooltiptext"
+                                >aspects</span
+                            ></span
+                        >
+                        von beiden Methoden kombinieren. Eine
+                        <span class="tooltip"
+                            >Faustregel<span class="tooltiptext"
+                                >rule of thumb</span
+                            ></span
+                        >
+                        für deinen nächsten
+                        <span class="tooltip"
+                            >Einkauf<span class="tooltiptext"
+                                >purchase</span
+                            ></span
+                        >: Die
+                        <span class="tooltip"
+                            >Wahl<span class="tooltiptext">choice</span></span
+                        >
+                        deiner Lebensmittel sollte von deinen
+                        <span class="tooltip"
+                            >Absichten<span class="tooltiptext"
+                                >intentions</span
+                            ></span
+                        >
+                        abhängen. Willst du gesund essen? Kaufe mehr Obst und
+                        Gemüse ein – egal ob Bio oder nicht. Sorgst du dich um
+                        die Umwelt? Hier hilft dir Bio leider nicht weiter. Viel
+                        besser wäre es
+                        <span class="tooltip"
+                            >regionale<span class="tooltiptext"
+                                >regional</span
+                            ></span
+                        >,
+                        <span class="tooltip"
+                            >saisonale<span class="tooltiptext"
+                                >seasonal</span
+                            ></span
+                        >
+                        Produkte zu kaufen – man könnte sagen, dass saisonal das
+                        echte Bio ist. Zusammenfassend kann man sagen, dass das
+                        Bio-Siegel nur ein
+                        <span class="tooltip"
+                            >Herstellungshinweis<span class="tooltiptext"
+                                >production notice</span
+                            ></span
+                        >
+                        ist, kein
+                        <span class="tooltip"
+                            >Gütesiegel<span class="tooltiptext"
+                                >quality seal</span
+                            ></span
+                        >
+                        für
+                        <span class="tooltip"
+                            >Sicherheit<span class="tooltiptext"
+                                >safety</span
+                            ></span
+                        >
+                        und kein
+                        <span class="tooltip"
+                            >Wundermittel<span class="tooltiptext"
+                                >miracle cure</span
+                            ></span
+                        >
+                        für deine
+                        <span class="tooltip"
+                            >Ernährung<span class="tooltiptext"
+                                >nutrition</span
+                            ></span
+                        >. Was du isst, ist viel wichtiger als die
+                        <span class="tooltip"
+                            >Herstellung<span class="tooltiptext"
+                                >production</span
+                            ></span
+                        >.
+                    </p>
+                </div>
 
-    Aber leider geht es bei der Diskussion um Bio-Essen
-    selten <span class="tooltip">sachlich<span class="tooltiptext">objective</span></span> zu.
-    Bio ist für viele nicht nur <span class="tooltip">Anbaumethode<span class="tooltiptext">cultivation method</span></span> sondern auch <span class="tooltip">Ideologie<span class="tooltiptext">ideology</span></span>.
+                <!-- Article Summary -->
+                <div
+                    class="mt-8 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg"
+                >
+                    <h3 class="font-semibold mb-3">📝 Article Summary</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-medium mb-2">Key Topics:</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>• Organic food benefits and drawbacks</li>
+                                <li>• Environmental impact comparison</li>
+                                <li>
+                                    • Health effects and scientific evidence
+                                </li>
+                                <li>
+                                    • Pesticide usage in organic vs conventional
+                                    farming
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-2">Quick Actions:</h4>
+                            <div class="space-y-2">
+                                <button
+                                    onclick="speakText('Bio-Lebensmittel werden immer beliebter. Der Bio-Trend ist trotz der hohen Preise so groß.')"
+                                    class="w-full px-3 py-2 bg-purple-500 text-white rounded hover:bg-purple-600 transition-colors text-sm"
+                                >
+                                    Speak Opening
+                                </button>
+                                <button
+                                    onclick="speakText('Zusammenfassend kann man sagen, dass das Bio-Siegel nur ein Herstellungshinweis ist.')"
+                                    class="w-full px-3 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors text-sm"
+                                >
+                                    Speak Summary
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    Bio zu kaufen fühlt sich einfach richtig an.
-    Menschen wollen das Richtige für ihre <span class="tooltip">Gesundheit<span class="tooltiptext">health</span></span>,
-    ihre <span class="tooltip">Kinder<span class="tooltiptext">children</span></span> und unseren <span class="tooltip">Planeten<span class="tooltiptext">planet</span></span> tun.
-    Und dabei folgen sie ihrem <span class="tooltip">Instinkt<span class="tooltiptext">instinct</span></span>: Bio ist "gut"
-    und herkömmliche Lebensmittel "schlecht".
-    Keine guten Voraussetzungen für eine <span class="tooltip">rationale Entscheidung<span class="tooltiptext">rational decision</span></span>.
-    Vielleicht sollte man aufhören <span class="tooltip">biologische<span class="tooltiptext">organic</span></span>
-    und <span class="tooltip">herkömmliche<span class="tooltiptext">conventional</span></span> Landwirtschaft so strikt zu trennen
-    – sie haben beide <span class="tooltip">Vor- und Nachteile<span class="tooltiptext">advantages and disadvantages</span></span>.
-    Für eine effektive <span class="tooltip">Produktion<span class="tooltiptext">production</span></span> von wirklich nachhaltigem <span class="tooltip">Essen<span class="tooltiptext">food</span></span>,
-    sollten wir die besten <span class="tooltip">Aspekte<span class="tooltiptext">aspects</span></span> von beiden Methoden kombinieren.
-    Eine <span class="tooltip">Faustregel<span class="tooltiptext">rule of thumb</span></span> für deinen nächsten <span class="tooltip">Einkauf<span class="tooltiptext">purchase</span></span>:
-    Die <span class="tooltip">Wahl<span class="tooltiptext">choice</span></span> deiner Lebensmittel sollte von deinen <span class="tooltip">Absichten<span class="tooltiptext">intentions</span></span> abhängen.
-    Willst du gesund essen?
-    Kaufe mehr Obst und Gemüse ein – egal ob Bio oder nicht.
-    Sorgst du dich um die Umwelt? Hier hilft dir Bio leider nicht weiter.
+                <!-- Reading Progress -->
+                <div class="progress-section mt-8 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2">Reading Progress</h3>
+                    <div class="flex items-center space-x-2">
+                        <div class="flex-1 bg-gray-200 rounded-full h-2">
+                            <div
+                                class="bg-blue-500 h-2 rounded-full transition-all duration-300"
+                                style="width: 0%"
+                                id="progress-bar"
+                            ></div>
+                        </div>
+                        <span class="text-sm text-gray-600" id="progress-text"
+                            >0%</span
+                        >
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">
+                        Progress increases as you interact with vocabulary words
+                    </p>
+                </div>
+            </div>
+        </main>
 
-    Viel besser wäre es <span class="tooltip">regionale<span class="tooltiptext">regional</span></span>, <span class="tooltip">saisonale<span class="tooltiptext">seasonal</span></span> Produkte zu kaufen
-    – man könnte sagen, dass saisonal das echte Bio ist.
-    Zusammenfassend kann man sagen,
-    dass das Bio-Siegel nur ein <span class="tooltip">Herstellungshinweis<span class="tooltiptext">production notice</span></span> ist,
-    kein <span class="tooltip">Gütesiegel<span class="tooltiptext">quality seal</span></span> für <span class="tooltip">Sicherheit<span class="tooltiptext">safety</span></span> und kein <span class="tooltip">Wundermittel<span class="tooltiptext">miracle cure</span></span>
-    für deine <span class="tooltip">Ernährung<span class="tooltiptext">nutrition</span></span>.
-    Was du isst, ist viel wichtiger als die <span class="tooltip">Herstellung<span class="tooltiptext">production</span></span>.
-    </p>
-</body>
+        <!-- Footer -->
+        <footer class="bg-white border-t mt-12">
+            <div class="container mx-auto px-4 py-6">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-600"
+                >
+                    <p>
+                        &copy; 2024 German Learning Resources - Bio-Lebensmittel
+                    </p>
+                    <div class="flex space-x-4 mt-2 md:mt-0">
+                        <button
+                            onclick="window.print()"
+                            class="hover:text-gray-800"
+                        >
+                            Print Article
+                        </button>
+                        <button
+                            onclick="resetProgress()"
+                            class="hover:text-gray-800"
+                        >
+                            Reset Progress
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Progress Tracking Script -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                setupProgressTracking();
+
+                // Auto-show TTS controls after delay
+                setTimeout(() => {
+                    if (window.showTTS) {
+                        window.showTTS();
+                    }
+                }, 3000);
+            });
+
+            function setupProgressTracking() {
+                const interactiveElements =
+                    document.querySelectorAll(".tooltip");
+                let interactedElements = new Set();
+
+                interactiveElements.forEach((element, index) => {
+                    element.addEventListener("mouseenter", () =>
+                        trackInteraction(index),
+                    );
+                    element.addEventListener("focus", () =>
+                        trackInteraction(index),
+                    );
+                    element.addEventListener("click", () =>
+                        trackInteraction(index),
+                    );
+                });
+
+                function trackInteraction(index) {
+                    if (!interactedElements.has(index)) {
+                        interactedElements.add(index);
+                        updateProgress(
+                            interactedElements.size,
+                            interactiveElements.length,
+                        );
+                        saveProgress(Array.from(interactedElements));
+                    }
+                }
+            }
+
+            function updateProgress(current, total) {
+                const percentage = Math.round((current / total) * 100);
+                const progressBar = document.getElementById("progress-bar");
+                const progressText = document.getElementById("progress-text");
+
+                if (progressBar && progressText) {
+                    progressBar.style.width = percentage + "%";
+                    progressText.textContent = percentage + "%";
+                }
+            }
+
+            function saveProgress(interactedIndices) {
+                const pageKey = "progress_bio_lebensmittel";
+                try {
+                    localStorage.setItem(
+                        pageKey,
+                        JSON.stringify(interactedIndices),
+                    );
+                } catch (e) {
+                    console.warn("Could not save progress:", e);
+                }
+            }
+
+            function resetProgress() {
+                if (confirm("Reset your reading progress for this article?")) {
+                    try {
+                        localStorage.removeItem("progress_bio_lebensmittel");
+                        updateProgress(
+                            0,
+                            document.querySelectorAll(".tooltip").length,
+                        );
+                    } catch (e) {
+                        console.warn("Could not reset progress:", e);
+                    }
+                }
+            }
+
+            // Load saved progress
+            function loadProgress() {
+                try {
+                    const saved = localStorage.getItem(
+                        "progress_bio_lebensmittel",
+                    );
+                    if (saved) {
+                        const interactedIndices = JSON.parse(saved);
+                        const totalElements =
+                            document.querySelectorAll(".tooltip").length;
+                        updateProgress(interactedIndices.length, totalElements);
+                    }
+                } catch (e) {
+                    console.warn("Could not load progress:", e);
+                }
+            }
+
+            loadProgress();
+        </script>
+    </body>
 </html>

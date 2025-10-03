@@ -10,6 +10,7 @@
         />
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="assets/styles.css" />
+        <script src="assets/tts-simple.js" defer></script>
         <style>
             /* Additional styles for index page */
             .folder-content {
@@ -69,6 +70,9 @@
                             class="b1-link"
                         >
                             Musik und Emotionen
+                        </a>
+                        <a href="b1/tts-demo.html" class="b1-link">
+                            🔊 TTS Demo - Text-to-Speech
                         </a>
                     </div>
                 </div>
@@ -242,6 +246,21 @@
                     >
                         Expand All
                     </button>
+                    <button
+                        id="tts-toggle"
+                        class="px-3 py-1 text-sm bg-purple-100 hover:bg-purple-200 text-purple-800 rounded transition-colors"
+                        title="Toggle Text-to-Speech controls (Ctrl+Shift+S)"
+                        onclick="toggleTTS()"
+                    >
+                        🔊 TTS
+                    </button>
+                    <button
+                        onclick="speakText('Hallo, das ist ein Test!')"
+                        class="px-3 py-1 text-sm bg-yellow-100 hover:bg-yellow-200 text-yellow-800 rounded transition-colors"
+                        title="Test TTS - Say Hello"
+                    >
+                        🎵 Test
+                    </button>
                 </div>
             </div>
         </div>
@@ -256,16 +275,16 @@
                 }
 
                 initializeToggles() {
-                    const toggles = document.querySelectorAll('.folder-toggle');
+                    const toggles = document.querySelectorAll(".folder-toggle");
 
-                    toggles.forEach(toggle => {
-                        toggle.addEventListener('click', (e) => {
+                    toggles.forEach((toggle) => {
+                        toggle.addEventListener("click", (e) => {
                             e.preventDefault();
                             this.toggleFolder(toggle);
                         });
 
-                        toggle.addEventListener('keydown', (e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
+                        toggle.addEventListener("keydown", (e) => {
+                            if (e.key === "Enter" || e.key === " ") {
                                 e.preventDefault();
                                 this.toggleFolder(toggle);
                             }
@@ -274,69 +293,69 @@
                 }
 
                 toggleFolder(toggle) {
-                    const targetId = toggle.getAttribute('data-target');
+                    const targetId = toggle.getAttribute("data-target");
                     const content = document.getElementById(targetId);
-                    const icon = toggle.querySelector('.toggle-icon');
+                    const icon = toggle.querySelector(".toggle-icon");
 
                     if (!content) return;
 
-                    const isHidden = !content.classList.contains('show');
+                    const isHidden = !content.classList.contains("show");
 
                     if (isHidden) {
-                        content.classList.add('show');
-                        content.style.display = 'block';
-                        icon.textContent = '▼';
-                        toggle.setAttribute('aria-expanded', 'true');
+                        content.classList.add("show");
+                        content.style.display = "block";
+                        icon.textContent = "▼";
+                        toggle.setAttribute("aria-expanded", "true");
 
                         // Smooth animation
-                        content.style.opacity = '0';
-                        content.style.transform = 'translateY(-10px)';
+                        content.style.opacity = "0";
+                        content.style.transform = "translateY(-10px)";
 
                         requestAnimationFrame(() => {
-                            content.style.transition = 'all 0.3s ease';
-                            content.style.opacity = '1';
-                            content.style.transform = 'translateY(0)';
+                            content.style.transition = "all 0.3s ease";
+                            content.style.opacity = "1";
+                            content.style.transform = "translateY(0)";
                         });
                     } else {
-                        content.classList.remove('show');
-                        content.style.transition = 'all 0.3s ease';
-                        content.style.opacity = '0';
-                        content.style.transform = 'translateY(-10px)';
+                        content.classList.remove("show");
+                        content.style.transition = "all 0.3s ease";
+                        content.style.opacity = "0";
+                        content.style.transform = "translateY(-10px)";
 
                         setTimeout(() => {
-                            content.style.display = 'none';
-                            content.style.transition = '';
-                            content.style.opacity = '';
-                            content.style.transform = '';
+                            content.style.display = "none";
+                            content.style.transition = "";
+                            content.style.opacity = "";
+                            content.style.transform = "";
                         }, 300);
 
-                        icon.textContent = '▶';
-                        toggle.setAttribute('aria-expanded', 'false');
+                        icon.textContent = "▶";
+                        toggle.setAttribute("aria-expanded", "false");
                     }
 
                     this.saveState(targetId, isHidden);
                 }
 
                 expandAll() {
-                    const toggles = document.querySelectorAll('.folder-toggle');
-                    toggles.forEach(toggle => {
-                        const targetId = toggle.getAttribute('data-target');
+                    const toggles = document.querySelectorAll(".folder-toggle");
+                    toggles.forEach((toggle) => {
+                        const targetId = toggle.getAttribute("data-target");
                         const content = document.getElementById(targetId);
-                        const icon = toggle.querySelector('.toggle-icon');
+                        const icon = toggle.querySelector(".toggle-icon");
 
-                        if (content && !content.classList.contains('show')) {
+                        if (content && !content.classList.contains("show")) {
                             this.toggleFolder(toggle);
                         }
                     });
                 }
 
                 collapseAll() {
-                    const toggles = document.querySelectorAll('.folder-toggle');
-                    toggles.forEach(toggle => {
-                        const targetId = toggle.getAttribute('data-target');
+                    const toggles = document.querySelectorAll(".folder-toggle");
+                    toggles.forEach((toggle) => {
+                        const targetId = toggle.getAttribute("data-target");
                         const content = document.getElementById(targetId);
 
-                        if (content && content.classList.contains('show')) {
+                        if (content && content.classList.contains("show")) {
                             this.toggleFolder(toggle);
                         }
                     });
@@ -344,100 +363,132 @@
 
                 saveState(folderId, isOpen) {
                     try {
-                        const states = JSON.parse(localStorage.getItem('folderStates') || '{}');
+                        const states = JSON.parse(
+                            localStorage.getItem("folderStates") || "{}",
+                        );
                         states[folderId] = isOpen;
-                        localStorage.setItem('folderStates', JSON.stringify(states));
+                        localStorage.setItem(
+                            "folderStates",
+                            JSON.stringify(states),
+                        );
                     } catch (e) {
-                        console.warn('Could not save folder state:', e);
+                        console.warn("Could not save folder state:", e);
                     }
                 }
 
                 loadSavedStates() {
                     try {
-                        const states = JSON.parse(localStorage.getItem('folderStates') || '{}');
+                        const states = JSON.parse(
+                            localStorage.getItem("folderStates") || "{}",
+                        );
                         Object.entries(states).forEach(([folderId, isOpen]) => {
                             if (isOpen) {
-                                const toggle = document.querySelector(`[data-target="${folderId}"]`);
+                                const toggle = document.querySelector(
+                                    `[data-target="${folderId}"]`,
+                                );
                                 if (toggle) {
                                     // Small delay to ensure DOM is ready
-                                    setTimeout(() => this.toggleFolder(toggle), 50);
+                                    setTimeout(
+                                        () => this.toggleFolder(toggle),
+                                        50,
+                                    );
                                 }
                             }
                         });
                     } catch (e) {
-                        console.warn('Could not load folder states:', e);
+                        console.warn("Could not load folder states:", e);
                     }
                 }
 
                 setupUtilityButtons() {
                     // Font size toggle
-                    const fontToggle = document.getElementById('font-size-toggle');
+                    const fontToggle =
+                        document.getElementById("font-size-toggle");
                     if (fontToggle) {
-                        let fontSize = 'normal';
-                        fontToggle.addEventListener('click', () => {
-                            const sizes = ['small', 'normal', 'large'];
+                        let fontSize = "normal";
+                        fontToggle.addEventListener("click", () => {
+                            const sizes = ["small", "normal", "large"];
                             const currentIndex = sizes.indexOf(fontSize);
                             fontSize = sizes[(currentIndex + 1) % sizes.length];
 
-                            document.body.className = document.body.className.replace(/font-size-\w+/g, '');
-                            document.body.classList.add(`font-size-${fontSize}`);
+                            document.body.className =
+                                document.body.className.replace(
+                                    /font-size-\w+/g,
+                                    "",
+                                );
+                            document.body.classList.add(
+                                `font-size-${fontSize}`,
+                            );
                         });
                     }
 
                     // Dark mode toggle
-                    const darkToggle = document.getElementById('dark-mode-toggle');
+                    const darkToggle =
+                        document.getElementById("dark-mode-toggle");
                     if (darkToggle) {
-                        darkToggle.addEventListener('click', () => {
-                            document.body.classList.toggle('dark-mode');
-                            const isDark = document.body.classList.contains('dark-mode');
-                            darkToggle.textContent = isDark ? '☀️' : '🌙';
+                        darkToggle.addEventListener("click", () => {
+                            document.body.classList.toggle("dark-mode");
+                            const isDark =
+                                document.body.classList.contains("dark-mode");
+                            darkToggle.textContent = isDark ? "☀️" : "🌙";
 
                             try {
-                                localStorage.setItem('darkMode', isDark);
+                                localStorage.setItem("darkMode", isDark);
                             } catch (e) {
-                                console.warn('Could not save dark mode preference:', e);
+                                console.warn(
+                                    "Could not save dark mode preference:",
+                                    e,
+                                );
                             }
                         });
 
                         // Load dark mode preference
                         try {
-                            const isDark = localStorage.getItem('darkMode') === 'true';
+                            const isDark =
+                                localStorage.getItem("darkMode") === "true";
                             if (isDark) {
-                                document.body.classList.add('dark-mode');
-                                darkToggle.textContent = '☀️';
+                                document.body.classList.add("dark-mode");
+                                darkToggle.textContent = "☀️";
                             }
                         } catch (e) {
-                            console.warn('Could not load dark mode preference:', e);
+                            console.warn(
+                                "Could not load dark mode preference:",
+                                e,
+                            );
                         }
                     }
 
                     // Expand all toggle
-                    const expandToggle = document.getElementById('expand-all');
+                    const expandToggle = document.getElementById("expand-all");
                     if (expandToggle) {
                         let allExpanded = false;
-                        expandToggle.addEventListener('click', () => {
+                        expandToggle.addEventListener("click", () => {
                             if (allExpanded) {
                                 this.collapseAll();
-                                expandToggle.textContent = 'Expand All';
+                                expandToggle.textContent = "Expand All";
                                 allExpanded = false;
                             } else {
                                 this.expandAll();
-                                expandToggle.textContent = 'Collapse All';
+                                expandToggle.textContent = "Collapse All";
                                 allExpanded = true;
                             }
                         });
                     }
+
+                    // TTS toggle (handled by onclick for simplicity)
                 }
             }
 
             // Initialize when DOM is ready
-            document.addEventListener('DOMContentLoaded', () => {
+            document.addEventListener("DOMContentLoaded", () => {
                 new FolderManager();
             });
 
             // Backward compatibility function
             function toggleFolder(folderId) {
-                const toggle = document.querySelector(`[data-target="${folderId}"]`);
+                const toggle = document.querySelector(
+                    `[data-target="${folderId}"]`,
+                );
                 if (toggle && window.folderManager) {
                     window.folderManager.toggleFolder(toggle);
                 }

@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Text-to-Speech Demo - German Learning</title>
+        <meta
+            name="description"
+            content="Demo page showcasing text-to-speech functionality for German learning"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="../assets/styles.css" />
+        <script src="../assets/tts-simple.js" defer></script>
+    </head>
+    <body class="bg-gray-100 min-h-screen">
+        <!-- Skip Link for Accessibility -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+
+        <!-- Navigation Header -->
+        <header class="bg-white shadow-sm border-b">
+            <div class="container mx-auto px-4 py-3">
+                <nav class="flex items-center justify-between">
+                    <a
+                        href="../index.html"
+                        class="text-blue-600 hover:text-blue-800 font-medium flex items-center"
+                    >
+                        ← Back to Learning Resources
+                    </a>
+                    <div class="flex items-center space-x-4">
+                        <button
+                            onclick="toggleTTS()"
+                            class="px-3 py-1 text-sm bg-purple-100 hover:bg-purple-200 text-purple-800 rounded transition-colors"
+                            title="Open TTS Controls (Ctrl+Shift+S)"
+                        >
+                            🔊 TTS Controls
+                        </button>
+                        <button
+                            id="font-size-toggle"
+                            class="text-sm text-gray-600 hover:text-gray-800"
+                            aria-label="Adjust font size"
+                        >
+                            Aa
+                        </button>
+                        <button
+                            id="dark-mode-toggle"
+                            class="text-sm text-gray-600 hover:text-gray-800"
+                            aria-label="Toggle dark mode"
+                        >
+                            🌙
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-8">
+            <div class="content-container">
+                <!-- Page Header -->
+                <header class="mb-6">
+                    <h1
+                        id="main-content"
+                        class="text-3xl font-bold text-gray-800 mb-2"
+                    >
+                        🔊 Text-to-Speech Demo
+                    </h1>
+                    <p class="text-gray-600">
+                        Interactive German pronunciation practice with audio
+                        feedback
+                    </p>
+                </header>
+
+                <!-- Instructions -->
+                <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                    <h2 class="text-lg font-semibold text-blue-800 mb-2">
+                        🎯 How to Use TTS
+                    </h2>
+                    <ul class="list-disc list-inside text-blue-700 space-y-1">
+                        <li>
+                            <strong>Double-click</strong> any German word to
+                            hear pronunciation
+                        </li>
+                        <li>
+                            <strong>Hover</strong> over words to see
+                            translations with 🔊 buttons
+                        </li>
+                        <li>
+                            <strong>Press 'S'</strong> while focused on a word
+                            to speak it
+                        </li>
+                        <li>
+                            <strong>Ctrl+Shift+S</strong> opens the TTS control
+                            panel
+                        </li>
+                        <li><strong>Escape</strong> stops any playing audio</li>
+                    </ul>
+                </div>
+
+                <!-- Demo Content -->
+                <div class="space-y-6">
+                    <!-- Basic Greetings -->
+                    <section>
+                        <h2 class="text-xl font-semibold mb-3">
+                            Grundlegende Begrüßungen
+                        </h2>
+                        <p class="leading-relaxed">
+                            <span class="tooltip"
+                                >Guten Morgen<span class="tooltiptext"
+                                    >Good morning</span
+                                ></span
+                            >!
+                            <span class="tooltip"
+                                >Wie geht es Ihnen<span class="tooltiptext"
+                                    >How are you</span
+                                ></span
+                            >
+                            <span class="tooltip"
+                                >heute<span class="tooltiptext"
+                                    >today</span
+                                ></span
+                            >? Ich
+                            <span class="tooltip"
+                                >hoffe<span class="tooltiptext"
+                                    >hope</span
+                                ></span
+                            >, Sie haben einen
+                            <span class="tooltip"
+                                >schönen Tag<span class="tooltiptext"
+                                    >beautiful day</span
+                                ></span
+                            >.
+                        </p>
+                    </section>
+
+                    <!-- Common Phrases -->
+                    <section>
+                        <h2 class="text-xl font-semibold mb-3">
+                            Häufige Phrasen
+                        </h2>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h3 class="font-medium mb-2">Im Restaurant</h3>
+                                <p class="text-sm leading-relaxed">
+                                    <span class="tooltip"
+                                        >Entschuldigung<span class="tooltiptext"
+                                            >Excuse me</span
+                                        ></span
+                                    >, können Sie mir die
+                                    <span class="tooltip"
+                                        >Speisekarte<span class="tooltiptext"
+                                            >menu</span
+                                        ></span
+                                    >
+                                    <span class="tooltip"
+                                        >bringen<span class="tooltiptext"
+                                            >bring</span
+                                        ></span
+                                    >? Ich
+                                    <span class="tooltip"
+                                        >möchte<span class="tooltiptext"
+                                            >would like</span
+                                        ></span
+                                    >
+                                    gerne das
+                                    <span class="tooltip"
+                                        >Schnitzel<span class="tooltiptext"
+                                            >schnitzel</span
+                                        ></span
+                                    >
+                                    <span class="tooltip"
+                                        >bestellen<span class="tooltiptext"
+                                            >order</span
+                                        ></span
+                                    >.
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h3 class="font-medium mb-2">Beim Einkaufen</h3>
+                                <p class="text-sm leading-relaxed">
+                                    <span class="tooltip"
+                                        >Wo finde ich<span class="tooltiptext"
+                                            >Where do I find</span
+                                        ></span
+                                    >
+                                    das
+                                    <span class="tooltip"
+                                        >Brot<span class="tooltiptext"
+                                            >bread</span
+                                        ></span
+                                    >?
+                                    <span class="tooltip"
+                                        >Wie viel kostet<span
+                                            class="tooltiptext"
+                                            >How much costs</span
+                                        ></span
+                                    >
+                                    diese
+                                    <span class="tooltip"
+                                        >Flasche Wein<span class="tooltiptext"
+                                            >bottle of wine</span
+                                        ></span
+                                    >?
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Difficult Pronunciations -->
+                    <section>
+                        <h2 class="text-xl font-semibold mb-3">
+                            Schwierige Aussprache
+                        </h2>
+                        <p class="text-sm text-gray-600 mb-3">
+                            Click these challenging German words to practice
+                            pronunciation:
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="tooltip bg-red-100 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-red-200 transition-colors"
+                                >Eichhörnchen<span class="tooltiptext"
+                                    >squirrel</span
+                                ></span
+                            >
+                            <span
+                                class="tooltip bg-red-100 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-red-200 transition-colors"
+                                >Streichholzschächtelchen<span
+                                    class="tooltiptext"
+                                    >matchbox</span
+                                ></span
+                            >
+                            <span
+                                class="tooltip bg-red-100 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-red-200 transition-colors"
+                                >Rechtsschutzversicherung<span
+                                    class="tooltiptext"
+                                    >legal insurance</span
+                                ></span
+                            >
+                            <span
+                                class="tooltip bg-red-100 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-red-200 transition-colors"
+                                >Verschlechterte<span class="tooltiptext"
+                                    >worsened</span
+                                ></span
+                            >
+                            <span
+                                class="tooltip bg-red-100 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-red-200 transition-colors"
+                                >Freundschaftsbeziehungen<span
+                                    class="tooltiptext"
+                                    >friendship relationships</span
+                                ></span
+                            >
+                        </div>
+                    </section>
+
+                    <!-- Numbers -->
+                    <section>
+                        <h2 class="text-xl font-semibold mb-3">Zahlen üben</h2>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                            <span
+                                class="tooltip bg-green-100 px-3 py-2 text-center rounded cursor-pointer hover:bg-green-200 transition-colors"
+                                >eins<span class="tooltiptext">one</span></span
+                            >
+                            <span
+                                class="tooltip bg-green-100 px-3 py-2 text-center rounded cursor-pointer hover:bg-green-200 transition-colors"
+                                >zwei<span class="tooltiptext">two</span></span
+                            >
+                            <span
+                                class="tooltip bg-green-100 px-3 py-2 text-center rounded cursor-pointer hover:bg-green-200 transition-colors"
+                                >drei<span class="tooltiptext"
+                                    >three</span
+                                ></span
+                            >
+                            <span
+                                class="tooltip bg-green-100 px-3 py-2 text-center rounded cursor-pointer hover:bg-green-200 transition-colors"
+                                >vier<span class="tooltiptext">four</span></span
+                            >
+                            <span
+                                class="tooltip bg-green-100 px-3 py-2 text-center rounded cursor-pointer hover:bg-green-200 transition-colors"
+                                >fünf<span class="tooltiptext">five</span></span
+                            >
+                            <span
+                                class="tooltip bg-green-100 px-3 py-2 text-center rounded cursor-pointer hover:bg-green-200 transition-colors"
+                                >sechs<span class="tooltiptext">six</span></span
+                            >
+                            <span
+                                class="tooltip bg-green-100 px-3 py-2 text-center rounded cursor-pointer hover:bg-green-200 transition-colors"
+                                >sieben<span class="tooltiptext"
+                                    >seven</span
+                                ></span
+                            >
+                            <span
+                                class="tooltip bg-green-100 px-3 py-2 text-center rounded cursor-pointer hover:bg-green-200 transition-colors"
+                                >acht<span class="tooltiptext"
+                                    >eight</span
+                                ></span
+                            >
+                            <span
+                                class="tooltip bg-green-100 px-3 py-2 text-center rounded cursor-pointer hover:bg-green-200 transition-colors"
+                                >neun<span class="tooltiptext">nine</span></span
+                            >
+                            <span
+                                class="tooltip bg-green-100 px-3 py-2 text-center rounded cursor-pointer hover:bg-green-200 transition-colors"
+                                >zehn<span class="tooltiptext">ten</span></span
+                            >
+                            <span
+                                class="tooltip bg-green-100 px-3 py-2 text-center rounded cursor-pointer hover:bg-green-200 transition-colors"
+                                >zwanzig<span class="tooltiptext"
+                                    >twenty</span
+                                ></span
+                            >
+                            <span
+                                class="tooltip bg-green-100 px-3 py-2 text-center rounded cursor-pointer hover:bg-green-200 transition-colors"
+                                >hundert<span class="tooltiptext"
+                                    >hundred</span
+                                ></span
+                            >
+                        </div>
+                    </section>
+
+                    <!-- Sample Dialogue -->
+                    <section>
+                        <h2 class="text-xl font-semibold mb-3">
+                            Dialog Beispiel
+                        </h2>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="space-y-3">
+                                <div class="flex items-start space-x-3">
+                                    <div
+                                        class="bg-blue-500 text-white px-2 py-1 rounded text-sm font-medium"
+                                    >
+                                        Anna:
+                                    </div>
+                                    <div class="flex-1">
+                                        <span class="tooltip"
+                                            >Hallo<span class="tooltiptext"
+                                                >Hello</span
+                                            ></span
+                                        >
+                                        <span class="tooltip"
+                                            >Max<span class="tooltiptext"
+                                                >Max</span
+                                            ></span
+                                        >!
+                                        <span class="tooltip"
+                                            >Wie war dein<span
+                                                class="tooltiptext"
+                                                >How was your</span
+                                            ></span
+                                        >
+                                        <span class="tooltip"
+                                            >Wochenende<span class="tooltiptext"
+                                                >weekend</span
+                                            ></span
+                                        >?
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div
+                                        class="bg-green-500 text-white px-2 py-1 rounded text-sm font-medium"
+                                    >
+                                        Max:
+                                    </div>
+                                    <div class="flex-1">
+                                        <span class="tooltip"
+                                            >Sehr gut<span class="tooltiptext"
+                                                >Very good</span
+                                            ></span
+                                        >! Ich bin mit
+                                        <span class="tooltip"
+                                            >Freunden<span class="tooltiptext"
+                                                >friends</span
+                                            ></span
+                                        >
+                                        <span class="tooltip"
+                                            >wandern gegangen<span
+                                                class="tooltiptext"
+                                                >went hiking</span
+                                            ></span
+                                        >. Und
+                                        <span class="tooltip"
+                                            >du<span class="tooltiptext"
+                                                >you</span
+                                            ></span
+                                        >?
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div
+                                        class="bg-blue-500 text-white px-2 py-1 rounded text-sm font-medium"
+                                    >
+                                        Anna:
+                                    </div>
+                                    <div class="flex-1">
+                                        Ich habe ein
+                                        <span class="tooltip"
+                                            >neues Buch<span class="tooltiptext"
+                                                >new book</span
+                                            ></span
+                                        >
+                                        <span class="tooltip"
+                                            >gelesen<span class="tooltiptext"
+                                                >read</span
+                                            ></span
+                                        >
+                                        und
+                                        <span class="tooltip"
+                                            >gekocht<span class="tooltiptext"
+                                                >cooked</span
+                                            ></span
+                                        >. Es war sehr
+                                        <span class="tooltip"
+                                            >entspannend<span
+                                                class="tooltiptext"
+                                                >relaxing</span
+                                            ></span
+                                        >.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Practice Text -->
+                    <section>
+                        <h2 class="text-xl font-semibold mb-3">Übungstext</h2>
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <p class="leading-relaxed mb-3">
+                                <span class="tooltip"
+                                    >Deutschland<span class="tooltiptext"
+                                        >Germany</span
+                                    ></span
+                                >
+                                ist ein
+                                <span class="tooltip"
+                                    >wunderschönes Land<span class="tooltiptext"
+                                        >beautiful country</span
+                                    ></span
+                                >
+                                mit
+                                <span class="tooltip"
+                                    >reicher Geschichte<span class="tooltiptext"
+                                        >rich history</span
+                                    ></span
+                                >. Die
+                                <span class="tooltip"
+                                    >deutsche Sprache<span class="tooltiptext"
+                                        >German language</span
+                                    ></span
+                                >
+                                kann
+                                <span class="tooltip"
+                                    >herausfordernd<span class="tooltiptext"
+                                        >challenging</span
+                                    ></span
+                                >
+                                sein, aber mit
+                                <span class="tooltip"
+                                    >Übung<span class="tooltiptext"
+                                        >practice</span
+                                    ></span
+                                >
+                                und
+                                <span class="tooltip"
+                                    >Geduld<span class="tooltiptext"
+                                        >patience</span
+                                    ></span
+                                >
+                                <span class="tooltip"
+                                    >lernt man sie<span class="tooltiptext"
+                                        >one learns it</span
+                                    ></span
+                                >
+                                <span class="tooltip"
+                                    >erfolgreich<span class="tooltiptext"
+                                        >successfully</span
+                                    ></span
+                                >.
+                            </p>
+                            <p class="leading-relaxed">
+                                <span class="tooltip"
+                                    >Technologie<span class="tooltiptext"
+                                        >Technology</span
+                                    ></span
+                                >
+                                wie
+                                <span class="tooltip"
+                                    >Text-zu-Sprache<span class="tooltiptext"
+                                        >text-to-speech</span
+                                    ></span
+                                >
+                                <span class="tooltip"
+                                    >hilft dabei<span class="tooltiptext"
+                                        >helps with this</span
+                                    ></span
+                                >, die
+                                <span class="tooltip"
+                                    >Aussprache<span class="tooltiptext"
+                                        >pronunciation</span
+                                    ></span
+                                >
+                                zu
+                                <span class="tooltip"
+                                    >verbessern<span class="tooltiptext"
+                                        >improve</span
+                                    ></span
+                                >
+                                und das
+                                <span class="tooltip"
+                                    >Hörverstehen<span class="tooltiptext"
+                                        >listening comprehension</span
+                                    ></span
+                                >
+                                zu
+                                <span class="tooltip"
+                                    >entwickeln<span class="tooltiptext"
+                                        >develop</span
+                                    ></span
+                                >.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Quick Actions -->
+                <div
+                    class="mt-8 p-4 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg"
+                >
+                    <h3 class="font-semibold mb-3">🚀 Quick Actions</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <button
+                            onclick="speakText('Guten Tag, wie geht es Ihnen heute?')"
+                            class="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600 transition-colors text-sm"
+                        >
+                            Speak Greeting
+                        </button>
+                        <button
+                            onclick="speakText('Eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn')"
+                            class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors text-sm"
+                        >
+                            Count 1-10
+                        </button>
+                        <button
+                            onclick="speakText('Das ist ein Test der deutschen Aussprache mit verschiedenen Wörtern und Sätzen.')"
+                            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors text-sm"
+                        >
+                            Test Sentence
+                        </button>
+                        <button
+                            onclick="showTTS()"
+                            class="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600 transition-colors text-sm"
+                        >
+                            Open TTS Controls
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Progress Indicator -->
+                <div class="progress-section mt-8 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2">
+                        Learning Progress
+                    </h3>
+                    <div class="flex items-center space-x-2">
+                        <div class="flex-1 bg-gray-200 rounded-full h-2">
+                            <div
+                                class="bg-blue-500 h-2 rounded-full transition-all duration-300"
+                                style="width: 0%"
+                                id="progress-bar"
+                            ></div>
+                        </div>
+                        <span class="text-sm text-gray-600" id="progress-text"
+                            >0%</span
+                        >
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">
+                        Progress increases as you interact with words and use
+                        TTS features
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white border-t mt-12">
+            <div class="container mx-auto px-4 py-6">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-600"
+                >
+                    <p>&copy; 2024 German Learning Resources - TTS Demo</p>
+                    <div class="flex space-x-4 mt-2 md:mt-0">
+                        <button
+                            onclick="window.print()"
+                            class="hover:text-gray-800"
+                        >
+                            Print Page
+                        </button>
+                        <button
+                            onclick="resetProgress()"
+                            class="hover:text-gray-800"
+                        >
+                            Reset Progress
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Custom Scripts -->
+        <script>
+            // Initialize page functionality
+            document.addEventListener("DOMContentLoaded", function () {
+                // Initialize utility buttons
+                setupUtilityButtons();
+
+                // Setup progress tracking
+                setupProgressTracking();
+
+                // Auto-show TTS controls after a delay
+                setTimeout(() => {
+                    if (window.showTTS) {
+                        window.showTTS();
+                    }
+                }, 2000);
+            });
+
+            function setupUtilityButtons() {
+                // Font size toggle
+                const fontToggle = document.getElementById("font-size-toggle");
+                if (fontToggle) {
+                    let fontSize = "normal";
+                    fontToggle.addEventListener("click", () => {
+                        const sizes = ["small", "normal", "large"];
+                        const currentIndex = sizes.indexOf(fontSize);
+                        fontSize = sizes[(currentIndex + 1) % sizes.length];
+
+                        document.body.className =
+                            document.body.className.replace(
+                                /font-size-\w+/g,
+                                "",
+                            );
+                        document.body.classList.add(`font-size-${fontSize}`);
+                    });
+                }
+
+                // Dark mode toggle
+                const darkToggle = document.getElementById("dark-mode-toggle");
+                if (darkToggle) {
+                    darkToggle.addEventListener("click", () => {
+                        document.body.classList.toggle("dark-mode");
+                        const isDark =
+                            document.body.classList.contains("dark-mode");
+                        darkToggle.textContent = isDark ? "☀️" : "🌙";
+                    });
+                }
+            }
+
+            function setupProgressTracking() {
+                const interactiveElements =
+                    document.querySelectorAll(".tooltip");
+                let interactedElements = new Set();
+
+                interactiveElements.forEach((element, index) => {
+                    element.addEventListener("mouseenter", () =>
+                        trackInteraction(index),
+                    );
+                    element.addEventListener("focus", () =>
+                        trackInteraction(index),
+                    );
+                    element.addEventListener("click", () =>
+                        trackInteraction(index),
+                    );
+                });
+
+                function trackInteraction(index) {
+                    if (!interactedElements.has(index)) {
+                        interactedElements.add(index);
+                        updateProgress(
+                            interactedElements.size,
+                            interactiveElements.length,
+                        );
+                    }
+                }
+            }
+
+            function updateProgress(current, total) {
+                const percentage = Math.round((current / total) * 100);
+                const progressBar = document.getElementById("progress-bar");
+                const progressText = document.getElementById("progress-text");
+
+                if (progressBar && progressText) {
+                    progressBar.style.width = percentage + "%";
+                    progressText.textContent = percentage + "%";
+                }
+            }
+
+            function resetProgress() {
+                if (confirm("Reset your progress for this demo page?")) {
+                    updateProgress(
+                        0,
+                        document.querySelectorAll(".tooltip").length,
+                    );
+                }
+            }
+        </script>
+    </body>
+</html>
