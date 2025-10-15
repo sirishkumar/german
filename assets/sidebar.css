@@ -121,3 +121,352 @@ body.has-sidebar>.main-content {
 .sidebar::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #1a1a1a !important;
+  color: #e5e5e5 !important;
+}
+
+/* Sidebar in dark mode */
+body.dark-mode .sidebar {
+  background: #2d2d2d !important;
+  color: #e5e5e5 !important;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .sidebar h2,
+body.dark-mode .sidebar h3 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .folder-toggle {
+  background: #3a3a3a !important;
+  color: #60a5fa !important;
+  border-color: #4a4a4a !important;
+}
+
+body.dark-mode .folder-toggle:hover {
+  background: #4a4a4a !important;
+  border-color: #60a5fa !important;
+}
+
+body.dark-mode .sidebar-link {
+  background: #3a3a3a !important;
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .sidebar-link:hover {
+  background: #4f46e5 !important;
+  color: white !important;
+}
+
+body.dark-mode .sidebar-link.active {
+  background: #4338ca !important;
+  color: white !important;
+}
+
+/* Content area backgrounds */
+body.dark-mode .bg-white {
+  background-color: #2d2d2d !important;
+}
+
+body.dark-mode .bg-gray-100 {
+  background-color: #1a1a1a !important;
+}
+
+body.dark-mode .bg-gray-50 {
+  background-color: #2a2a2a !important;
+}
+
+body.dark-mode .bg-blue-50 {
+  background-color: #1e3a5f !important;
+}
+
+body.dark-mode .bg-yellow-100,
+body.dark-mode .bg-yellow-200,
+body.dark-mode .bg-yellow-300 {
+  background-color: #4a4a1a !important;
+  color: #ffd700 !important;
+}
+
+body.dark-mode .bg-green-100 {
+  background-color: #1a3a1a !important;
+}
+
+body.dark-mode .bg-red-100 {
+  background-color: #3a1a1a !important;
+}
+
+/* Text colors with better contrast */
+body.dark-mode .text-gray-800,
+body.dark-mode .text-gray-700,
+body.dark-mode .text-gray-600,
+body.dark-mode .text-gray-500 {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .text-blue-600,
+body.dark-mode .text-blue-700 {
+  color: #60a5fa !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #ffffff !important;
+}
+
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode li,
+body.dark-mode div {
+  color: inherit;
+}
+
+body.dark-mode strong {
+  color: #ffffff !important;
+}
+
+/* Shadows and borders */
+body.dark-mode .shadow-lg,
+body.dark-mode .shadow-md,
+body.dark-mode .shadow {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-mode .border,
+body.dark-mode .border-gray-200,
+body.dark-mode .border-gray-300 {
+  border-color: #4a4a4a !important;
+}
+
+body.dark-mode .rounded-lg,
+body.dark-mode .rounded,
+body.dark-mode .rounded-xl {
+  border: 1px solid #4a4a4a;
+}
+
+/* Buttons */
+body.dark-mode button {
+  background-color: #3a3a3a !important;
+  color: #e5e5e5 !important;
+  border-color: #4a4a4a !important;
+}
+
+body.dark-mode button:hover {
+  background-color: #4a4a4a !important;
+}
+
+/* Translation elements - Global tooltip improvements */
+.word-translate,
+.sentence-translate {
+  position: relative !important;
+  display: inline-block !important;
+  cursor: pointer !important;
+}
+
+.translation {
+  display: none !important;
+  position: absolute !important;
+  background-color: #333 !important;
+  color: white !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  font-size: 0.9em !important;
+  bottom: 125% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 1000 !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+
+  /* Constrain tooltip width and enable wrapping - OVERRIDE LOCAL STYLES */
+  max-width: min(400px, 90vw) !important;
+  width: auto !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  text-align: center !important;
+  line-height: 1.4 !important;
+}
+
+.word-translate:hover .translation,
+.sentence-translate:hover .translation {
+  display: block !important;
+}
+
+/* Keep tooltip within viewport bounds */
+.translation {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Adjust position for tooltips near edges */
+@media (max-width: 768px) {
+  .translation {
+    max-width: 85vw;
+    font-size: 0.85em;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: none;
+  }
+}
+
+/* Dark mode specific translation styles */
+body.dark-mode .word-translate,
+body.dark-mode .sentence-translate {
+  border-bottom-color: #60a5fa !important;
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .translation {
+  background-color: #3a3a3a !important;
+  color: #ffffff !important;
+  border: 2px solid #60a5fa !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Example boxes and special sections */
+body.dark-mode .example,
+body.dark-mode .note,
+body.dark-mode .explanation {
+  background-color: #2a2a2a !important;
+  border-color: #4a4a4a !important;
+  color: #e5e5e5 !important;
+}
+
+/* Lists */
+body.dark-mode ul,
+body.dark-mode ol {
+  color: #e5e5e5 !important;
+}
+
+/* Links */
+body.dark-mode a {
+  color: #60a5fa !important;
+}
+
+body.dark-mode a:hover {
+  color: #93c5fd !important;
+}
+
+/* Scrollbar in dark mode */
+body.dark-mode .sidebar::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+
+body.dark-mode .sidebar::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+body.dark-mode .sidebar::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Tables in dark mode */
+body.dark-mode table {
+  color: #e5e5e5 !important;
+  border-color: #4a4a4a !important;
+}
+
+body.dark-mode th {
+  background-color: #3a3a3a !important;
+  color: #ffffff !important;
+  border-color: #4a4a4a !important;
+}
+
+body.dark-mode td {
+  background-color: #2a2a2a !important;
+  color: #e5e5e5 !important;
+  border-color: #4a4a4a !important;
+}
+
+body.dark-mode tr:hover td {
+  background-color: #3a3a3a !important;
+}
+
+/* Input fields and blank spaces for fill-in exercises */
+body.dark-mode input[type="text"],
+body.dark-mode input[type="password"],
+body.dark-mode input[type="email"],
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: #3a3a3a !important;
+  color: #ffffff !important;
+  border-color: #60a5fa !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #888 !important;
+}
+
+/* Inline blank spaces (for fill-in-the-blank exercises) */
+body.dark-mode .blank,
+body.dark-mode [style*="background: white"],
+body.dark-mode [style*="background-color: white"],
+body.dark-mode [style*="background:#fff"],
+body.dark-mode [style*="background-color:#fff"] {
+  background-color: #3a3a3a !important;
+  color: #60a5fa !important;
+  border: 2px solid #60a5fa !important;
+}
+
+/* Code blocks and pre-formatted text */
+body.dark-mode pre,
+body.dark-mode code {
+  background-color: #2a2a2a !important;
+  color: #e5e5e5 !important;
+  border-color: #4a4a4a !important;
+}
+
+/* Quotation marks and citations */
+body.dark-mode blockquote {
+  background-color: #2a2a2a !important;
+  color: #e5e5e5 !important;
+  border-left-color: #60a5fa !important;
+}
+
+/* Cards and panels */
+body.dark-mode .card,
+body.dark-mode .panel {
+  background-color: #2d2d2d !important;
+  border-color: #4a4a4a !important;
+}
+
+/* Dividers */
+body.dark-mode hr {
+  border-color: #4a4a4a !important;
+}
+
+/* Highlighted text */
+body.dark-mode mark,
+body.dark-mode .highlight {
+  background-color: #4a4a1a !important;
+  color: #ffd700 !important;
+}
+
+/* Text selection */
+body.dark-mode ::selection {
+  background-color: #4f46e5 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode ::-moz-selection {
+  background-color: #4f46e5 !important;
+  color: #ffffff !important;
+}
+
+/* Additional utility classes */
+body.dark-mode .text-sm,
+body.dark-mode .text-xs {
+  color: #c5c5c5 !important;
+}
+
+body.dark-mode .text-center {
+  color: inherit !important;
+}
