@@ -1,0 +1,123 @@
+/* Sidebar Global Styles */
+:root {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary-color: #06b6d4;
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --folder-bg: #e0e7ff;
+  --folder-hover: #c7d2fe;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+body.has-sidebar {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Adjust main content when sidebar is present */
+body.has-sidebar .container,
+body.has-sidebar>main,
+body.has-sidebar>.main-content {
+  margin-left: 20rem !important;
+  max-width: none !important;
+}
+
+.folder-content {
+  display: none;
+}
+
+.folder-content.show {
+  display: block;
+}
+
+.folder-toggle {
+  background: var(--folder-bg) !important;
+  color: var(--primary-color) !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  width: 100%;
+  text-align: left;
+}
+
+.folder-toggle:hover {
+  background: var(--folder-hover) !important;
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.sidebar-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  margin: 0.25rem 0;
+  border-radius: 0.5rem;
+  background: #f1f5f9;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-link:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateX(5px);
+  border-left-color: var(--secondary-color);
+  box-shadow: var(--shadow-md);
+}
+
+.toggle-icon {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    height: auto;
+    width: 100%;
+  }
+
+  body.has-sidebar .container,
+  body.has-sidebar>main,
+  body.has-sidebar>.main-content {
+    margin-left: 0 !important;
+  }
+}
+
+/* Scrollbar styling for sidebar */
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

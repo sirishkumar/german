@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gewissensfrage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/sidebar.css">
+  <script src="../../assets/sidebar.js"></script>
+  <script src="../../assets/tts-simple.js" defer></script>
+  <style>
+    .sentence-translate {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      text-decoration: underline dotted #9ca3af;
+    }
+
+    .sentence-translate:hover .translation {
+      display: block;
+    }
+
+    .translation {
+      display: none;
+      position: absolute;
+      background-color: #1f2937;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      z-index: 10;
+    }
+
+    .translation::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #1f2937 transparent transparent transparent;
+    }
+
+    .example {
+      background-color: #f3f4f6;
+      padding: 12px;
+      border-left: 4px solid #3b82f6;
+      margin: 16px 0;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+  <!-- Sidebar will be injected here by sidebar.js -->
+  <main class="p-4 sm:p-8">
+    <div class="max-w-4xl mx-auto bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+
+      <h1 class="text-3xl font-bold text-gray-800 mb-2">Gewissensfrage</h1>
+      <p class="text-lg text-gray-500 mb-6">Alexander S., Hannover</p>
+
+      <div class="text-gray-700 space-y-4">
+        <p>
+          <span class="sentence-translate">»Eine Freundin, die kein besonders großes Selbstbewusstsein hat, hat sich
+            nach intensiven Überlegungen und Recherchen in verschiedenen Frauenmagazinen dazu durchgerungen, sich ihre
+            langen Haare abschneiden zu lassen.<span class="translation">A friend, who doesn't have particularly high
+              self-esteem, has, after intensive consideration and research in various women's magazines, brought herself
+              to have her long hair cut off.</span></span>
+          <span class="sentence-translate">Aber wie das aussieht!!<span class="translation">But the way it
+              looks!!</span></span>
+          <span class="sentence-translate">Nun stellt sich mir die Frage, ob ich ihr gegenüber ehrlich zugeben soll,
+            dass mir die neue Frisur nicht gefällt, oder ob ich mich als guter und treuer Freund dafür entscheiden soll,
+            sie in ihrem neuen Auftritt zu bestärken, und die Frisur schönreden soll.«<span class="translation">Now the
+              question arises for me, whether I should honestly admit to her that I don't like the new hairstyle, or
+              whether I, as a good and loyal friend, should decide to support her in her new appearance and talk up the
+              hairstyle.</span></span>
+        </p>
+      </div>
+
+      <hr class="my-8 border-gray-200">
+
+      <div class="grammar-section">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Grammatikalische Anmerkungen</h2>
+        <p class="mb-6 text-gray-600">Dieser Text enthält mehrere interessante grammatikalische Strukturen, die für
+          Deutschlernende auf dem B1/B2-Niveau relevant sind.</p>
+
+        <h3 class="text-xl font-semibold text-gray-700 mt-6 mb-2">1. Relativsätze</h3>
+        <p class="text-gray-700">Ein Relativsatz gibt zusätzliche Informationen zu einem Nomen im Hauptsatz. Er wird
+          durch ein Relativpronomen (z.B. der, die, das) eingeleitet und das konjugierte Verb steht am Ende des Satzes.
+        </p>
+        <div class="example">
+          <p><strong>Beispiel aus dem Text:</strong></p>
+          <p>"Eine Freundin, <strong class="text-blue-600">die</strong> kein besonders großes Selbstbewusstsein <strong
+              class="text-blue-600">hat</strong>, hat sich ... durchgerungen..."</p>
+          <p class="mt-2 text-sm text-gray-600">Hier beschreibt der Relativsatz "die kein besonders großes
+            Selbstbewusstsein hat" die "Freundin" genauer.</p>
+        </div>
+
+        <h3 class="text-xl font-semibold text-gray-700 mt-6 mb-2">2. Nebensätze mit "ob" und "dass"</h3>
+        <p class="text-gray-700">Konjunktionen wie <code class="bg-gray-200 p-1 rounded text-sm">ob</code> (für
+          Ja/Nein-Fragen) und <code class="bg-gray-200 p-1 rounded text-sm">dass</code> leiten Nebensätze ein, in denen
+          das konjugierte Verb ebenfalls am Ende steht. Sie werden oft verwendet, um indirekte Fragen oder Aussagen zu
+          formulieren.</p>
+        <div class="example">
+          <p><strong>Beispiel aus dem Text:</strong></p>
+          <p>"...ob ich ihr gegenüber ehrlich zugeben <strong class="text-blue-600">soll</strong>, dass mir die neue
+            Frisur nicht <strong class="text-blue-600">gefällt</strong>..."</p>
+          <p class="mt-2 text-sm text-gray-600">Hier werden zwei abhängige Fragen formuliert, die Alexanders Dilemma
+            beschreiben.</p>
+        </div>
+
+        <h3 class="text-xl font-semibold text-gray-700 mt-6 mb-2">3. Reflexive Verben</h3>
+        <p class="text-gray-700">Reflexive Verben benötigen ein Reflexivpronomen (mich, dich, sich, uns, euch, sich),
+          das sich auf das Subjekt des Satzes zurückbezieht. Im Text finden wir zwei Beispiele.</p>
+        <div class="example">
+          <p><strong>Beispiele aus dem Text:</strong></p>
+          <ul class="list-disc list-inside">
+            <li><strong>sich durchringen:</strong> "...hat <strong class="text-blue-600">sich</strong> ... dazu <strong
+                class="text-blue-600">durchgerungen</strong>..." (to bring oneself to do something)</li>
+            <li><strong>sich stellen:</strong> "Nun <strong class="text-blue-600">stellt sich</strong> mir die Frage..."
+              (the question arises/presents itself)</li>
+          </ul>
+        </div>
+
+        <h3 class="text-xl font-semibold text-gray-700 mt-6 mb-2">Reflexivpronomen im Akkusativ und Dativ</h3>
+        <p class="text-gray-700 mb-4">Die meisten reflexiven Verben verwenden den Akkusativ. Einige wenige, oft wenn ein
+          zusätzliches Akkusativobjekt im Satz ist, verwenden den Dativ.</p>
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-300">
+            <thead class="bg-gray-200">
+              <tr>
+                <th class="px-4 py-2 border">Personalpronomen</th>
+                <th class="px-4 py-2 border">Reflexivpronomen (Akkusativ)</th>
+                <th class="px-4 py-2 border">Reflexivpronomen (Dativ)</th>
+                <th class="px-4 py-2 border">Beispiel</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-gray-50">
+                <td class="px-4 py-2 border text-center">ich</td>
+                <td class="px-4 py-2 border text-center">mich</td>
+                <td class="px-4 py-2 border text-center">mir</td>
+                <td class="px-4 py-2 border">Ich wasche <strong>mir</strong> die Hände.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border text-center">du</td>
+                <td class="px-4 py-2 border text-center">dich</td>
+                <td class="px-4 py-2 border text-center">dir</td>
+                <td class="px-4 py-2 border">Du putzt <strong>dir</strong> die Zähne.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-4 py-2 border text-center">er/sie/es</td>
+                <td class="px-4 py-2 border text-center">sich</td>
+                <td class="px-4 py-2 border text-center">sich</td>
+                <td class="px-4 py-2 border">Er stellt <strong>sich</strong> die Frage.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border text-center">wir</td>
+                <td class="px-4 py-2 border text-center">uns</td>
+                <td class="px-4 py-2 border text-center">uns</td>
+                <td class="px-4 py-2 border">Wir sehen <strong>uns</strong> den Film an.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-4 py-2 border text-center">ihr</td>
+                <td class="px-4 py-2 border text-center">euch</td>
+                <td class="px-4 py-2 border text-center">euch</td>
+                <td class="px-4 py-2 border">Könnt ihr <strong>euch</strong> das vorstellen?</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border text-center">sie/Sie</td>
+                <td class="px-4 py-2 border text-center">sich</td>
+                <td class="px-4 py-2 border text-center">sich</td>
+                <td class="px-4 py-2 border">Sie haben <strong>sich</strong> verlaufen.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

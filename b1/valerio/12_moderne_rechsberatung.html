@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moderne Rechtsberatung</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/sidebar.css">
+  <script src="../../assets/sidebar.js"></script>
+  <script src="../../assets/tts-simple.js" defer></script>
+  <style>
+    .sentence-translate {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      border-bottom: 2px dotted #93c5fd;
+      /* Light blue dotted underline */
+    }
+
+    .sentence-translate:hover .translation {
+      display: block;
+    }
+
+    .translation {
+      display: none;
+      position: absolute;
+      background-color: #1f2937;
+      /* Dark gray */
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      bottom: 125%;
+      /* Position above the text */
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      z-index: 10;
+    }
+
+    /* Arrow for the tooltip */
+    .translation::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #1f2937 transparent transparent transparent;
+    }
+
+    .example {
+      background-color: #f3f4f6;
+      /* Lighter gray for examples */
+      padding: 12px;
+      border-left: 4px solid #3b82f6;
+      /* Blue border */
+      margin: 16px 0;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+  <!-- Sidebar will be injected here by sidebar.js -->
+  <main class="p-4 sm:p-8">
+    <div class="max-w-4xl mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+
+      <h1 class="text-3xl font-bold text-gray-800 mb-2">Moderne Rechtsberatung</h1>
+      <h2 class="text-xl font-semibold text-blue-600 mb-6">B2</h2>
+
+      <div class="space-y-4 text-gray-700 leading-relaxed">
+        <p>
+          <span class="sentence-translate">Immer mehr Menschen suchen in dieser schnelllebigen Zeit auch schnelle
+            Lösungen
+            für ihre Probleme.<span class="translation">More and more people are looking for quick solutions to their
+              problems in these fast-moving times.</span></span>
+          <span class="sentence-translate">Deshalb gibt es inzwischen auch für rechtliche Fragen „Online-Anwälte".<span
+              class="translation">That's why there are now also "online lawyers" for legal questions.</span></span>
+          <span class="sentence-translate">Wir haben Herrmann Mohr, einen der Gründer von Anwalthilfe-online,
+            befragt.<span class="translation">We interviewed Herrmann Mohr, one of the founders of
+              Anwalthilfe-online.</span></span>
+        </p>
+
+        <p class="font-bold">
+          <span class="sentence-translate">Wie kann ich schnell einen juristischen Rat bekommen?<span
+              class="translation">How can I quickly get legal advice?</span></span>
+        </p>
+
+        <p>
+          <span class="sentence-translate">Das ist ganz einfach: Sie machen im Internet unter Anwalthilfe-online.de eine
+            Anfrage.<span class="translation">That is very simple: You make an inquiry on the internet at
+              Anwalthilfe-online.de.</span></span>
+        </p>
+
+        <p>
+          <span class="sentence-translate">Indem Sie einfach Ihre Frage eingeben.<span class="translation">By simply
+              entering your question.</span></span>
+          <span class="sentence-translate">Ein Beispiel: „Ich bin zu schnell gefahren und habe deswegen zurzeit keine
+            Fahrerlaubnis.<span class="translation">An example: "I was driving too fast and therefore currently do not
+              have a driver's license.</span></span>
+          <span class="sentence-translate">Manchmal fahre ich aber ganz kurze Strecken, die länger als fünf
+            Minuten.<span class="translation">Sometimes, however, I drive very short distances that are longer than five
+              minutes.</span></span>
+          <span class="sentence-translate">Kann ich dafür bestraft werden?"<span class="translation">Can I be punished
+              for
+              that?"</span></span>
+        </p>
+
+        <p class="font-bold">
+          <span class="sentence-translate">Und dann?<span class="translation">And then?</span></span>
+        </p>
+
+        <p>
+          <span class="sentence-translate">Sie bekommen innerhalb weniger Stunden per Mail eine Antwort von einem
+            Anwalt.<span class="translation">You will receive an answer from a lawyer by email within a few
+              hours.</span></span>
+        </p>
+
+        <p>
+          <span class="sentence-translate">Lassen Sie sich vorher unbedingt einen Kostenvoranschlag machen.<span
+              class="translation">Be sure to get a cost estimate beforehand.</span></span>
+          <span class="sentence-translate">Erst dann geben Sie Ihre Anfrage ein.<span class="translation">Only then do
+              you
+              enter your request.</span></span>
+          <span class="sentence-translate">Die Kosten für eine Beratung betragen in der Regel zwischen 20 und 120
+            Euro.<span class="translation">The costs for a consultation are usually between 20 and 120
+              Euros.</span></span>
+          <span class="sentence-translate">Allerdings können viele Fragen so noch nicht endgültig geklärt werden.<span
+              class="translation">However, many questions cannot be finally clarified this way.</span></span>
+        </p>
+
+        <p>
+          <span class="sentence-translate">Sie können auch eine telefonische Anwalt-Hotline nutzen.<span
+              class="translation">You can also use a telephone lawyer hotline.</span></span>
+          <span class="sentence-translate">Hier erhält man für zwei Euro die Stunde eine mündliche Auskunft.<span
+              class="translation">Here you get verbal information for two euros per hour.</span></span>
+          <span class="sentence-translate">Sie müssen sich aber absichern: Notieren Sie sich gleich Namen und Adresse
+            des
+            Anwalts.<span class="translation">But you must protect yourself: Note down the name and address of the
+              lawyer
+              immediately.</span></span>
+          <span class="sentence-translate">Dieser haftet nämlich für seine Antwort.<span class="translation">Because he
+              is
+              liable for his answer.</span></span>
+          <span class="sentence-translate">Berücksichtigen Sie bitte auch: Eine solche Beratung ist gut geeignet für
+            einfache Rechtsfragen des Alltags, nicht aber für schwierige Sachverhalte.<span class="translation">Please
+              also consider: Such a consultation is well-suited for simple legal questions of everyday life, but not for
+              complex matters.</span></span>
+          <span class="sentence-translate">Es hat wenig Sinn, sich an eine solche Hotline zu wenden, wenn Sie betrogen
+            worden sind und keine Beweise dafür haben oder wenn Sie schon in einem Gerichtsprozess verurteilt worden
+            sind
+            und nun in Revision gehen möchten.<span class="translation">It makes little sense to turn to such a hotline
+              if
+              you have been defrauded and have no evidence for it, or if you have already been convicted in a court case
+              and now want to appeal.</span></span>
+        </p>
+      </div>
+
+      <hr class="my-8 border-t border-gray-300">
+
+      <div class="mt-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Wichtige Grammatikregeln im Text</h2>
+        <p class="text-gray-600 mb-6">Dieser Text enthält mehrere wichtige grammatikalische Strukturen, die für das
+          B1/B2-Niveau typisch sind. Hier sind einige Erklärungen.</p>
+
+        <h3 class="text-xl font-semibold text-gray-700 mt-6 mb-2">1. Das Passiv (Vorgangspassiv)</h3>
+        <p class="mb-4">Das Passiv wird verwendet, um die Handlung selbst zu betonen, nicht die Person, die sie
+          ausführt.
+          Es wird mit dem Hilfsverb <strong>werden</strong> und dem <strong>Partizip II</strong> des Hauptverbs
+          gebildet.
+        </p>
+
+        <h4 class="font-bold mt-4">Passiv mit Modalverben</h4>
+        <p>Im Text wird das Passiv oft mit Modalverben (z.B. können, müssen) kombiniert. Die Struktur ist: **Modalverb +
+          Partizip II + werden**.</p>
+        <div class="example">
+          <p><strong>Beispiel aus dem Text:</strong></p>
+          <p>"<span class="sentence-translate">Kann ich dafür bestraft <strong>werden</strong>?<span
+                class="translation">Can I <strong>be punished</strong> for that?</span></span>"</p>
+          <p>"<span class="sentence-translate">Allerdings <strong>können</strong> viele Fragen so noch nicht endgültig
+              geklärt <strong>werden</strong>.<span class="translation">However, many questions <strong>can</strong>not
+                yet <strong>be</strong> finally clarified this way.</span></span>"</p>
+        </div>
+
+        <h4 class="font-bold mt-4">Passiv im Perfekt</h4>
+        <p>Das Perfekt Passiv wird verwendet, um eine abgeschlossene Handlung in der Vergangenheit zu beschreiben. Die
+          Struktur ist: **sein (konjugiert) + Partizip II + worden**.</p>
+        <div class="example">
+          <p><strong>Beispiel aus dem Text:</strong></p>
+          <p>"...<span class="sentence-translate">wenn Sie betrogen <strong>worden sind</strong> ...<span
+                class="translation">...if you <strong>have been</strong> defrauded...</span></span>"</p>
+          <p>"...<span class="sentence-translate">wenn Sie schon in einem Gerichtsprozess verurteilt <strong>worden
+                sind</strong> ...<span class="translation">...if you <strong>have already been</strong> convicted in a
+                court case...</span></span>"</p>
+        </div>
+
+
+        <h3 class="text-xl font-semibold text-gray-700 mt-8 mb-2">2. Konsekutivsätze (Folgesätze) mit "deshalb"</h3>
+        <p class="mb-4">Das Adverb **deshalb** (that's why, therefore) leitet einen Hauptsatz ein, der eine Folge oder
+          Konsequenz aus dem vorherigen Satz ausdrückt. Da es ein Adverb ist, das an erster Position steht, folgt sofort
+          das konjugierte Verb (Inversion).</p>
+        <div class="example">
+          <p><strong>Struktur:</strong> Aussage. + <strong>Deshalb</strong> + Verb + Subjekt + ...</p>
+          <p><strong>Beispiel aus dem Text:</strong></p>
+          <p>"<span class="sentence-translate">Immer mehr Menschen suchen ... schnelle Lösungen für ihre Probleme.<span
+                class="translation">More and more people are looking for... quick solutions for their
+                problems.</span></span> <span class="sentence-translate"><strong>Deshalb</strong> gibt es inzwischen
+              auch
+              für rechtliche Fragen „Online-Anwälte".<span class="translation"><strong>That's why</strong> there are now
+                also "online lawyers" for legal questions.</span></span>"</p>
+        </div>
+
+        <h3 class="text-xl font-semibold text-gray-700 mt-8 mb-2">3. Genitiv vs. "von" + Dativ</h3>
+        <p class="mb-4">Der Genitiv drückt Besitz oder Zugehörigkeit aus. In der gesprochenen Sprache und oft auch in
+          der
+          geschriebenen Sprache wird er häufig durch die Präposition **von + Dativ** ersetzt.</p>
+        <div class="overflow-x-auto mt-6">
+          <table class="min-w-full bg-white border border-gray-200">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="px-4 py-2 border text-left">Konstruktion</th>
+                <th class="px-4 py-2 border text-left">Beispiel aus dem Text</th>
+                <th class="px-4 py-2 border text-left">Erklärung</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t">
+                <td class="px-4 py-2 border font-semibold">Genitiv</td>
+                <td class="px-4 py-2 border">"Notieren Sie sich ... Namen und Adresse <strong>des Anwalts</strong>."
+                </td>
+                <td class="px-4 py-2 border">Formell korrekte Form. Der maskuline Artikel "der" wird im Genitiv zu
+                  "des".
+                </td>
+              </tr>
+              <tr class="bg-gray-50 border-t">
+                <td class="px-4 py-2 border font-semibold">"von" + Dativ</td>
+                <td class="px-4 py-2 border">"...einen der Gründer <strong>von Anwalthilfe-online</strong>, ..."</td>
+                <td class="px-4 py-2 border">Häufige Alternative, besonders bei Namen oder wenn der Genitiv kompliziert
+                  wäre.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

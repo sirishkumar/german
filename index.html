@@ -1,498 +1,569 @@
 <!doctype html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>German Learning Resources</title>
-        <meta
-            name="description"
-            content="Interactive German learning resources for B1 level students"
-        />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="stylesheet" href="assets/styles.css" />
-        <script src="assets/tts-simple.js" defer></script>
-        <style>
-            /* Additional styles for index page */
-            .folder-content {
-                display: none;
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>German Learning Resources</title>
+    <meta name="description" content="Interactive German learning resources for B1 level students" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/tts-simple.js" defer></script>
+    <style>
+        /* Additional styles for index page */
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --secondary-color: #06b6d4;
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --folder-bg: #e0e7ff;
+            --folder-hover: #c7d2fe;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-content {
+            margin-left: 20rem;
+            min-height: 100vh;
+        }
+
+        .folder-content {
+            display: none;
+        }
+
+        .folder-content.show {
+            display: block;
+        }
+
+        .folder-toggle {
+            background: var(--folder-bg) !important;
+            color: var(--primary-color) !important;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            width: 100%;
+            text-align: left;
+        }
+
+        .folder-toggle:hover {
+            background: var(--folder-hover) !important;
+            transform: translateX(5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .folder-content a {
+            display: block;
+            padding: 0.75rem 1rem;
+            margin: 0.25rem 0;
+            border-radius: 0.5rem;
+            background: #f1f5f9;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .folder-content a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(5px);
+            border-left-color: var(--secondary-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .toggle-icon {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        h1 {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                position: relative;
+                height: auto;
+                width: 100%;
             }
 
-            .folder-content.show {
-                display: block;
+            .main-content {
+                margin-left: 0;
             }
+        }
+    </style>
+</head>
 
-            .folder-toggle {
-                transition: all 0.3s ease;
-            }
+<body class="min-h-screen">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-            .folder-toggle:hover {
-                transform: translateY(-1px);
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            }
-        </style>
-    </head>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar w-80 p-6">
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-2">German Learning</h2>
+            <p class="text-sm text-gray-600">B1 Level Resources</p>
+        </div>
 
-    <body class="bg-gray-100 min-h-screen flex items-center justify-center">
-        <a href="#main-content" class="skip-link">Skip to main content</a>
-
-        <div class="bg-white p-8 rounded-lg shadow-md max-w-2xl w-full">
-            <h1
-                id="main-content"
-                class="text-3xl font-bold mb-6 text-center text-gray-800"
-            >
-                German Learning Resources
-            </h1>
-
-            <div class="space-y-4">
-                <!-- B1 Root Level -->
-                <div class="folder-section">
-                    <button
-                        class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
-                        data-target="b1-root"
-                        aria-expanded="false"
-                        aria-controls="b1-root"
-                    >
-                        <span>📁 B1 Level (Main)</span>
-                        <span class="toggle-icon">▶</span>
-                    </button>
-                    <div class="folder-content space-y-2 ml-4" id="b1-root">
-                        <a href="b1/Bio-Lebensmittel.html" class="b1-link">
-                            B1 Level: Lebensmittel (Food)
-                        </a>
-                        <a href="b1/vorsätz-1.html" class="b1-link">
-                            B1 Level: Vorsätz-1
-                        </a>
-                        <a href="b1/7-2a.html" class="b1-link">
-                            Wir Gehören Zussamen
-                        </a>
-                        <a
-                            href="b1/6a-musik-und-emotionen.html"
-                            class="b1-link"
-                        >
-                            Musik und Emotionen
-                        </a>
-                        <a href="b1/tts-demo.html" class="b1-link">
-                            🔊 TTS Demo - Text-to-Speech
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Wortschatz -->
-                <div class="folder-section">
-                    <button
-                        class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
-                        data-target="wortschatz"
-                        aria-expanded="false"
-                        aria-controls="wortschatz"
-                    >
-                        <span>📁 Wortschatz</span>
-                        <span class="toggle-icon">▶</span>
-                    </button>
-                    <div class="folder-content space-y-2 ml-4" id="wortschatz">
-                        <a
-                            href="b1/Wortschatz/b1.2.html"
-                            class="wortschatz-link"
-                        >
-                            Wortschatz
-                        </a>
-                        <a
-                            href="b1/Wortschatz/kunst.html"
-                            class="wortschatz-link"
-                        >
-                            Kunst
-                        </a>
-                        <a
-                            href="b1/Wortschatz/3-gesellschaft.html"
-                            class="wortschatz-link"
-                        >
-                            B1.2 - 124
-                        </a>
-                        <a
-                            href="b1/Wortschatz/3-gesellschaft-2.html"
-                            class="wortschatz-link"
-                        >
-                            B1.2 - 124 - Extended
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Podcasts -->
-                <div class="folder-section">
-                    <button
-                        class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
-                        data-target="podcasts"
-                        aria-expanded="false"
-                        aria-controls="podcasts"
-                    >
-                        <span>📁 Podcasts</span>
-                        <span class="toggle-icon">▶</span>
-                    </button>
-                    <div class="folder-content space-y-2 ml-4" id="podcasts">
-                        <a
-                            href="b1/podcasts/british-elections.html"
-                            class="podcast-link"
-                        >
-                            UK Elections
-                        </a>
-                    </div>
-                </div>
-
-                <!-- News Articles -->
-                <div class="folder-section">
-                    <button
-                        class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
-                        data-target="news-articles"
-                        aria-expanded="false"
-                        aria-controls="news-articles"
-                    >
-                        <span>📁 News Articles</span>
-                        <span class="toggle-icon">▶</span>
-                    </button>
-                    <div
-                        class="folder-content space-y-2 ml-4"
-                        id="news-articles"
-                    >
-                        <a
-                            href="b1/news-articles/spiegel-1.html"
-                            class="news-link"
-                        >
-                            Spiegel 1
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Valerio -->
-                <div class="folder-section">
-                    <button
-                        class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
-                        data-target="valerio"
-                        aria-expanded="false"
-                        aria-controls="valerio"
-                    >
-                        <span>📁 Valerio</span>
-                        <span class="toggle-icon">▶</span>
-                    </button>
-                    <div class="folder-content space-y-2 ml-4" id="valerio">
-                        <a href="b1/valerio/9_e2.html" class="valerio-link">
-                            Reif für den Wertstoffhoff
-                        </a>
-                        <a href="b1/valerio/10.html" class="valerio-link">
-                            Die Frau in der Werbung
-                        </a>
-                        <a
-                            href="b1/valerio/11_adolph_knigge.html"
-                            class="valerio-link"
-                        >
-                            Adolph Knigge - Über den Umgang mit Menschen
-                        </a>
-                        <a
-                            href="b1/valerio/11_andere_sitten.html"
-                            class="valerio-link"
-                        >
-                            Andere Länder, andere Sitten
-                        </a>
-                        <a
-                            href="b1/valerio/10_seite_36.html"
-                            class="valerio-link"
-                        >
-                            Das Beste aus meinem Leben
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Rohan -->
-                <div class="folder-section">
-                    <button
-                        class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
-                        data-target="rohan"
-                        aria-expanded="false"
-                        aria-controls="rohan"
-                    >
-                        <span>📁 Rohan</span>
-                        <span class="toggle-icon">▶</span>
-                    </button>
-                    <div class="folder-content space-y-2 ml-4" id="rohan">
-                        <a
-                            href="b1/rohan/handys_in_der_schule.html"
-                            class="rohan-link"
-                        >
-                            Handys in der Schule
-                        </a>
-                    </div>
+        <nav class="space-y-3">
+            <!-- B1 Root Level -->
+            <div class="folder-section">
+                <button
+                    class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
+                    data-target="b1-root" aria-expanded="false" aria-controls="b1-root">
+                    <span>📁 B1 Level (Main)</span>
+                    <span class="toggle-icon">▶</span>
+                </button>
+                <div class="folder-content space-y-2 ml-4" id="b1-root">
+                    <a href="b1/Bio-Lebensmittel.html" class="b1-link">
+                        B1 Level: Lebensmittel (Food)
+                    </a>
+                    <a href="b1/vorsätz-1.html" class="b1-link">
+                        B1 Level: Vorsätz-1
+                    </a>
+                    <a href="b1/7-2a.html" class="b1-link">
+                        Wir Gehören Zussamen
+                    </a>
+                    <a href="b1/6a-musik-und-emotionen.html" class="b1-link">
+                        Musik und Emotionen
+                    </a>
+                    <a href="b1/tts-demo.html" class="b1-link">
+                        🔊 TTS Demo - Text-to-Speech
+                    </a>
                 </div>
             </div>
 
-            <!-- Settings Panel -->
-            <div class="mt-8 pt-6 border-t border-gray-200">
-                <div class="flex justify-center space-x-4">
-                    <button
-                        id="font-size-toggle"
-                        class="px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded transition-colors"
-                        title="Adjust font size"
-                    >
-                        Aa
-                    </button>
-                    <button
-                        id="dark-mode-toggle"
-                        class="px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded transition-colors"
-                        title="Toggle dark mode"
-                    >
-                        🌙
-                    </button>
-                    <button
-                        id="expand-all"
-                        class="px-3 py-1 text-sm bg-blue-100 hover:bg-blue-200 text-blue-800 rounded transition-colors"
-                        title="Expand all sections"
-                    >
-                        Expand All
-                    </button>
-                    <button
-                        id="tts-toggle"
-                        class="px-3 py-1 text-sm bg-purple-100 hover:bg-purple-200 text-purple-800 rounded transition-colors"
-                        title="Toggle Text-to-Speech controls (Ctrl+Shift+S)"
-                        onclick="toggleTTS()"
-                    >
-                        🔊 TTS
-                    </button>
-                    <button
-                        onclick="speakText('Hallo, das ist ein Test!')"
-                        class="px-3 py-1 text-sm bg-yellow-100 hover:bg-yellow-200 text-yellow-800 rounded transition-colors"
-                        title="Test TTS - Say Hello"
-                    >
-                        🎵 Test
-                    </button>
+            <!-- Wortschatz -->
+            <div class="folder-section">
+                <button
+                    class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
+                    data-target="wortschatz" aria-expanded="false" aria-controls="wortschatz">
+                    <span>📁 Wortschatz</span>
+                    <span class="toggle-icon">▶</span>
+                </button>
+                <div class="folder-content space-y-2 ml-4" id="wortschatz">
+                    <a href="b1/Wortschatz/b1.2.html" class="wortschatz-link">
+                        Wortschatz
+                    </a>
+                    <a href="b1/Wortschatz/kunst.html" class="wortschatz-link">
+                        Kunst
+                    </a>
+                    <a href="b1/Wortschatz/3-gesellschaft.html" class="wortschatz-link">
+                        B1.2 - 124
+                    </a>
+                    <a href="b1/Wortschatz/3-gesellschaft-2.html" class="wortschatz-link">
+                        B1.2 - 124 - Extended
+                    </a>
+                </div>
+            </div>
+
+            <!-- Podcasts -->
+            <div class="folder-section">
+                <button
+                    class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
+                    data-target="podcasts" aria-expanded="false" aria-controls="podcasts">
+                    <span>📁 Podcasts</span>
+                    <span class="toggle-icon">▶</span>
+                </button>
+                <div class="folder-content space-y-2 ml-4" id="podcasts">
+                    <a href="b1/podcasts/british-elections.html" class="podcast-link">
+                        UK Elections
+                    </a>
+                </div>
+            </div>
+
+            <!-- News Articles -->
+            <div class="folder-section">
+                <button
+                    class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
+                    data-target="news-articles" aria-expanded="false" aria-controls="news-articles">
+                    <span>📁 News Articles</span>
+                    <span class="toggle-icon">▶</span>
+                </button>
+                <div class="folder-content space-y-2 ml-4" id="news-articles">
+                    <a href="b1/news-articles/spiegel-1.html" class="news-link">
+                        Spiegel 1
+                    </a>
+                </div>
+            </div>
+
+            <!-- Valerio -->
+            <div class="folder-section">
+                <button
+                    class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
+                    data-target="valerio" aria-expanded="false" aria-controls="valerio">
+                    <span>📁 Valerio</span>
+                    <span class="toggle-icon">▶</span>
+                </button>
+                <div class="folder-content space-y-2 ml-4" id="valerio">
+                    <a href="b1/valerio/9_e2.html" class="valerio-link">
+                        Reif für den Wertstoffhoff
+                    </a>
+                    <a href="b1/valerio/10.html" class="valerio-link">
+                        Die Frau in der Werbung
+                    </a>
+                    <a href="b1/valerio/11_adolph_knigge.html" class="valerio-link">
+                        Adolph Knigge - Über den Umgang mit Menschen
+                    </a>
+                    <a href="b1/valerio/11_andere_sitten.html" class="valerio-link">
+                        Andere Länder, andere Sitten
+                    </a>
+                    <a href="b1/valerio/10_seite_36.html" class="valerio-link">
+                        Das Beste aus meinem Leben
+                    </a>
+                    <a href="b1/valerio/12_moderne_rechsberatung.html" class="valerio-link">
+                        Moderne Rechtsberatung
+                    </a>
+                    <a href="b1/valerio/12_zeigen_sie_auch_große.html" class="valerio-link">
+                        Zeigen Sie auch große
+                    </a>
+                    <a href="b1/valerio/12_Gewissensfrage.html" class="valerio-link">
+                        Gewissensfrage
+                    </a>
+                </div>
+            </div>
+
+            <!-- Rohan -->
+            <div class="folder-section">
+                <button
+                    class="folder-toggle w-full text-left bg-gray-200 hover:bg-gray-300 font-semibold py-2 px-4 rounded mb-2 transition duration-300 flex items-center justify-between"
+                    data-target="rohan" aria-expanded="false" aria-controls="rohan">
+                    <span>📁 Rohan</span>
+                    <span class="toggle-icon">▶</span>
+                </button>
+                <div class="folder-content space-y-2 ml-4" id="rohan">
+                    <a href="b1/rohan/handys_in_der_schule.html" class="rohan-link">
+                        Handys in der Schule
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Settings Panel in Sidebar -->
+        <div class="mt-8 pt-6 border-t border-gray-200">
+            <h3 class="text-sm font-semibold text-gray-700 mb-3">Settings</h3>
+            <div class="space-y-2">
+                <button id="font-size-toggle"
+                    class="w-full px-3 py-2 text-sm bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-lg transition-all font-medium text-left"
+                    title="Adjust font size">
+                    📝 Font Size
+                </button>
+                <button id="dark-mode-toggle"
+                    class="w-full px-3 py-2 text-sm bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition-all font-medium text-left"
+                    title="Toggle dark mode">
+                    🌙 Dark Mode
+                </button>
+                <button id="expand-all"
+                    class="w-full px-3 py-2 text-sm bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-lg transition-all font-medium text-left"
+                    title="Expand all sections">
+                    📂 Expand All
+                </button>
+                <button id="tts-toggle"
+                    class="w-full px-3 py-2 text-sm bg-purple-50 hover:bg-purple-100 text-purple-700 rounded-lg transition-all font-medium text-left"
+                    title="Toggle Text-to-Speech controls (Ctrl+Shift+S)" onclick="toggleTTS()">
+                    🔊 TTS
+                </button>
+                <button onclick="speakText('Hallo, das ist ein Test!')"
+                    class="w-full px-3 py-2 text-sm bg-amber-50 hover:bg-amber-100 text-amber-700 rounded-lg transition-all font-medium text-left"
+                    title="Test TTS - Say Hello">
+                    🎵 Test TTS
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content p-8" id="main-content">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-2xl p-8 mb-8">
+                <h1 class="text-4xl font-bold mb-4 text-center"
+                    style="background: linear-gradient(135deg, #4f46e5, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    German Learning Resources
+                </h1>
+                <p class="text-center text-gray-600 text-lg">Welcome to your interactive German learning hub</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Getting Started</h2>
+                <p class="text-gray-600 mb-4">
+                    Select a topic from the sidebar to begin your German learning journey. Each section contains
+                    interactive lessons with translations, grammar explanations, and text-to-speech functionality.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                    <div class="p-4 bg-indigo-50 rounded-lg">
+                        <h3 class="font-semibold text-indigo-700 mb-2">📚 Lessons</h3>
+                        <p class="text-sm text-gray-600">Interactive reading materials with hover translations</p>
+                    </div>
+                    <div class="p-4 bg-purple-50 rounded-lg">
+                        <h3 class="font-semibold text-purple-700 mb-2">🔊 Audio</h3>
+                        <p class="text-sm text-gray-600">Text-to-speech for pronunciation practice</p>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-lg">
+                        <h3 class="font-semibold text-blue-700 mb-2">📖 Grammar</h3>
+                        <p class="text-sm text-gray-600">Detailed grammar explanations and examples</p>
+                    </div>
+                    <div class="p-4 bg-amber-50 rounded-lg">
+                        <h3 class="font-semibold text-amber-700 mb-2">🎯 Practice</h3>
+                        <p class="text-sm text-gray-600">Real-world texts and news articles</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </main>
 
-        <script>
-            // Modern folder toggle functionality with improved UX
-            class FolderManager {
-                constructor() {
-                    this.initializeToggles();
-                    this.loadSavedStates();
-                    this.setupUtilityButtons();
-                }
+    <script>
+        // Modern folder toggle functionality with improved UX
+        class FolderManager {
+            constructor() {
+                this.initializeToggles();
+                this.loadSavedStates();
+                this.setupUtilityButtons();
+            }
 
-                initializeToggles() {
-                    const toggles = document.querySelectorAll(".folder-toggle");
+            initializeToggles() {
+                const toggles = document.querySelectorAll(".folder-toggle");
 
-                    toggles.forEach((toggle) => {
-                        toggle.addEventListener("click", (e) => {
+                toggles.forEach((toggle) => {
+                    toggle.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        this.toggleFolder(toggle);
+                    });
+
+                    toggle.addEventListener("keydown", (e) => {
+                        if (e.key === "Enter" || e.key === " ") {
                             e.preventDefault();
                             this.toggleFolder(toggle);
-                        });
-
-                        toggle.addEventListener("keydown", (e) => {
-                            if (e.key === "Enter" || e.key === " ") {
-                                e.preventDefault();
-                                this.toggleFolder(toggle);
-                            }
-                        });
+                        }
                     });
+                });
+            }
+
+            toggleFolder(toggle) {
+                const targetId = toggle.getAttribute("data-target");
+                const content = document.getElementById(targetId);
+                const icon = toggle.querySelector(".toggle-icon");
+
+                if (!content) return;
+
+                const isHidden = !content.classList.contains("show");
+
+                if (isHidden) {
+                    content.classList.add("show");
+                    content.style.display = "block";
+                    icon.textContent = "▼";
+                    toggle.setAttribute("aria-expanded", "true");
+
+                    // Smooth animation
+                    content.style.opacity = "0";
+                    content.style.transform = "translateY(-10px)";
+
+                    requestAnimationFrame(() => {
+                        content.style.transition = "all 0.3s ease";
+                        content.style.opacity = "1";
+                        content.style.transform = "translateY(0)";
+                    });
+                } else {
+                    content.classList.remove("show");
+                    content.style.transition = "all 0.3s ease";
+                    content.style.opacity = "0";
+                    content.style.transform = "translateY(-10px)";
+
+                    setTimeout(() => {
+                        content.style.display = "none";
+                        content.style.transition = "";
+                        content.style.opacity = "";
+                        content.style.transform = "";
+                    }, 300);
+
+                    icon.textContent = "▶";
+                    toggle.setAttribute("aria-expanded", "false");
                 }
 
-                toggleFolder(toggle) {
+                this.saveState(targetId, isHidden);
+            }
+
+            expandAll() {
+                const toggles = document.querySelectorAll(".folder-toggle");
+                toggles.forEach((toggle) => {
                     const targetId = toggle.getAttribute("data-target");
                     const content = document.getElementById(targetId);
                     const icon = toggle.querySelector(".toggle-icon");
 
-                    if (!content) return;
-
-                    const isHidden = !content.classList.contains("show");
-
-                    if (isHidden) {
-                        content.classList.add("show");
-                        content.style.display = "block";
-                        icon.textContent = "▼";
-                        toggle.setAttribute("aria-expanded", "true");
-
-                        // Smooth animation
-                        content.style.opacity = "0";
-                        content.style.transform = "translateY(-10px)";
-
-                        requestAnimationFrame(() => {
-                            content.style.transition = "all 0.3s ease";
-                            content.style.opacity = "1";
-                            content.style.transform = "translateY(0)";
-                        });
-                    } else {
-                        content.classList.remove("show");
-                        content.style.transition = "all 0.3s ease";
-                        content.style.opacity = "0";
-                        content.style.transform = "translateY(-10px)";
-
-                        setTimeout(() => {
-                            content.style.display = "none";
-                            content.style.transition = "";
-                            content.style.opacity = "";
-                            content.style.transform = "";
-                        }, 300);
-
-                        icon.textContent = "▶";
-                        toggle.setAttribute("aria-expanded", "false");
+                    if (content && !content.classList.contains("show")) {
+                        this.toggleFolder(toggle);
                     }
+                });
+            }
 
-                    this.saveState(targetId, isHidden);
-                }
+            collapseAll() {
+                const toggles = document.querySelectorAll(".folder-toggle");
+                toggles.forEach((toggle) => {
+                    const targetId = toggle.getAttribute("data-target");
+                    const content = document.getElementById(targetId);
 
-                expandAll() {
-                    const toggles = document.querySelectorAll(".folder-toggle");
-                    toggles.forEach((toggle) => {
-                        const targetId = toggle.getAttribute("data-target");
-                        const content = document.getElementById(targetId);
-                        const icon = toggle.querySelector(".toggle-icon");
-
-                        if (content && !content.classList.contains("show")) {
-                            this.toggleFolder(toggle);
-                        }
-                    });
-                }
-
-                collapseAll() {
-                    const toggles = document.querySelectorAll(".folder-toggle");
-                    toggles.forEach((toggle) => {
-                        const targetId = toggle.getAttribute("data-target");
-                        const content = document.getElementById(targetId);
-
-                        if (content && content.classList.contains("show")) {
-                            this.toggleFolder(toggle);
-                        }
-                    });
-                }
-
-                saveState(folderId, isOpen) {
-                    try {
-                        const states = JSON.parse(
-                            localStorage.getItem("folderStates") || "{}",
-                        );
-                        states[folderId] = isOpen;
-                        localStorage.setItem(
-                            "folderStates",
-                            JSON.stringify(states),
-                        );
-                    } catch (e) {
-                        console.warn("Could not save folder state:", e);
+                    if (content && content.classList.contains("show")) {
+                        this.toggleFolder(toggle);
                     }
+                });
+            }
+
+            saveState(folderId, isOpen) {
+                try {
+                    const states = JSON.parse(
+                        localStorage.getItem("folderStates") || "{}",
+                    );
+                    states[folderId] = isOpen;
+                    localStorage.setItem(
+                        "folderStates",
+                        JSON.stringify(states),
+                    );
+                } catch (e) {
+                    console.warn("Could not save folder state:", e);
                 }
+            }
 
-                loadSavedStates() {
-                    try {
-                        const states = JSON.parse(
-                            localStorage.getItem("folderStates") || "{}",
-                        );
-                        Object.entries(states).forEach(([folderId, isOpen]) => {
-                            if (isOpen) {
-                                const toggle = document.querySelector(
-                                    `[data-target="${folderId}"]`,
-                                );
-                                if (toggle) {
-                                    // Small delay to ensure DOM is ready
-                                    setTimeout(
-                                        () => this.toggleFolder(toggle),
-                                        50,
-                                    );
-                                }
-                            }
-                        });
-                    } catch (e) {
-                        console.warn("Could not load folder states:", e);
-                    }
-                }
-
-                setupUtilityButtons() {
-                    // Font size toggle
-                    const fontToggle =
-                        document.getElementById("font-size-toggle");
-                    if (fontToggle) {
-                        let fontSize = "normal";
-                        fontToggle.addEventListener("click", () => {
-                            const sizes = ["small", "normal", "large"];
-                            const currentIndex = sizes.indexOf(fontSize);
-                            fontSize = sizes[(currentIndex + 1) % sizes.length];
-
-                            document.body.className =
-                                document.body.className.replace(
-                                    /font-size-\w+/g,
-                                    "",
-                                );
-                            document.body.classList.add(
-                                `font-size-${fontSize}`,
+            loadSavedStates() {
+                try {
+                    const states = JSON.parse(
+                        localStorage.getItem("folderStates") || "{}",
+                    );
+                    Object.entries(states).forEach(([folderId, isOpen]) => {
+                        if (isOpen) {
+                            const toggle = document.querySelector(
+                                `[data-target="${folderId}"]`,
                             );
-                        });
-                    }
-
-                    // Dark mode toggle
-                    const darkToggle =
-                        document.getElementById("dark-mode-toggle");
-                    if (darkToggle) {
-                        darkToggle.addEventListener("click", () => {
-                            document.body.classList.toggle("dark-mode");
-                            const isDark =
-                                document.body.classList.contains("dark-mode");
-                            darkToggle.textContent = isDark ? "☀️" : "🌙";
-
-                            try {
-                                localStorage.setItem("darkMode", isDark);
-                            } catch (e) {
-                                console.warn(
-                                    "Could not save dark mode preference:",
-                                    e,
+                            if (toggle) {
+                                // Small delay to ensure DOM is ready
+                                setTimeout(
+                                    () => this.toggleFolder(toggle),
+                                    50,
                                 );
                             }
-                        });
+                        }
+                    });
+                } catch (e) {
+                    console.warn("Could not load folder states:", e);
+                }
+            }
 
-                        // Load dark mode preference
+            setupUtilityButtons() {
+                // Font size toggle
+                const fontToggle =
+                    document.getElementById("font-size-toggle");
+                if (fontToggle) {
+                    let fontSize = "normal";
+                    fontToggle.addEventListener("click", () => {
+                        const sizes = ["small", "normal", "large"];
+                        const currentIndex = sizes.indexOf(fontSize);
+                        fontSize = sizes[(currentIndex + 1) % sizes.length];
+
+                        document.body.className =
+                            document.body.className.replace(
+                                /font-size-\w+/g,
+                                "",
+                            );
+                        document.body.classList.add(
+                            `font-size-${fontSize}`,
+                        );
+                    });
+                }
+
+                // Dark mode toggle
+                const darkToggle =
+                    document.getElementById("dark-mode-toggle");
+                if (darkToggle) {
+                    darkToggle.addEventListener("click", () => {
+                        document.body.classList.toggle("dark-mode");
+                        const isDark =
+                            document.body.classList.contains("dark-mode");
+                        darkToggle.textContent = isDark ? "☀️" : "🌙";
+
                         try {
-                            const isDark =
-                                localStorage.getItem("darkMode") === "true";
-                            if (isDark) {
-                                document.body.classList.add("dark-mode");
-                                darkToggle.textContent = "☀️";
-                            }
+                            localStorage.setItem("darkMode", isDark);
                         } catch (e) {
                             console.warn(
-                                "Could not load dark mode preference:",
+                                "Could not save dark mode preference:",
                                 e,
                             );
                         }
+                    });
+
+                    // Load dark mode preference
+                    try {
+                        const isDark =
+                            localStorage.getItem("darkMode") === "true";
+                        if (isDark) {
+                            document.body.classList.add("dark-mode");
+                            darkToggle.textContent = "☀️";
+                        }
+                    } catch (e) {
+                        console.warn(
+                            "Could not load dark mode preference:",
+                            e,
+                        );
                     }
-
-                    // Expand all toggle
-                    const expandToggle = document.getElementById("expand-all");
-                    if (expandToggle) {
-                        let allExpanded = false;
-                        expandToggle.addEventListener("click", () => {
-                            if (allExpanded) {
-                                this.collapseAll();
-                                expandToggle.textContent = "Expand All";
-                                allExpanded = false;
-                            } else {
-                                this.expandAll();
-                                expandToggle.textContent = "Collapse All";
-                                allExpanded = true;
-                            }
-                        });
-                    }
-
-                    // TTS toggle (handled by onclick for simplicity)
                 }
-            }
 
-            // Initialize when DOM is ready
-            document.addEventListener("DOMContentLoaded", () => {
-                new FolderManager();
-            });
-
-            // Backward compatibility function
-            function toggleFolder(folderId) {
-                const toggle = document.querySelector(
-                    `[data-target="${folderId}"]`,
-                );
-                if (toggle && window.folderManager) {
-                    window.folderManager.toggleFolder(toggle);
+                // Expand all toggle
+                const expandToggle = document.getElementById("expand-all");
+                if (expandToggle) {
+                    let allExpanded = false;
+                    expandToggle.addEventListener("click", () => {
+                        if (allExpanded) {
+                            this.collapseAll();
+                            expandToggle.textContent = "Expand All";
+                            allExpanded = false;
+                        } else {
+                            this.expandAll();
+                            expandToggle.textContent = "Collapse All";
+                            allExpanded = true;
+                        }
+                    });
                 }
+
+                // TTS toggle (handled by onclick for simplicity)
             }
-        </script>
-    </body>
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener("DOMContentLoaded", () => {
+            new FolderManager();
+        });
+
+        // Backward compatibility function
+        function toggleFolder(folderId) {
+            const toggle = document.querySelector(
+                `[data-target="${folderId}"]`,
+            );
+            if (toggle && window.folderManager) {
+                window.folderManager.toggleFolder(toggle);
+            }
+        }
+    </script>
+</body>
+
 </html>

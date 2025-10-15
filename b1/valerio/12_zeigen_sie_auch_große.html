@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zeigen Sie auch Größe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/sidebar.css">
+  <script src="../../assets/sidebar.js"></script>
+  <script src="../../assets/tts-simple.js" defer></script>
+  <style>
+    .sentence-translate {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      border-bottom: 2px dotted #93c5fd;
+      /* Light blue dotted underline */
+    }
+
+    .sentence-translate:hover .translation {
+      display: block;
+    }
+
+    .translation {
+      display: none;
+      position: absolute;
+      background-color: #1f2937;
+      /* Dark gray */
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      bottom: 125%;
+      /* Position above the text */
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      z-index: 10;
+    }
+
+    /* Arrow for the tooltip */
+    .translation::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #1f2937 transparent transparent transparent;
+    }
+
+    .example {
+      background-color: #f3f4f6;
+      /* Lighter gray for examples */
+      padding: 12px;
+      border-left: 4px solid #3b82f6;
+      /* Blue border */
+      margin: 16px 0;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+  <!-- Sidebar will be injected here by sidebar.js -->
+  <main class="p-4 sm:p-8">
+    <div class="max-w-4xl mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+
+      <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center bg-yellow-300 py-2 rounded">Zeigen Sie auch Größe
+      </h1>
+
+      <div class="space-y-4 text-gray-700 leading-relaxed">
+        <p>
+          <span class="sentence-translate">Große zeigen, das tun viele Menschen in Deutschland.<span
+              class="translation">Showing greatness, that's what many people in Germany do.</span></span>
+          <span class="sentence-translate">Sie engagieren sich freiwillig.<span class="translation">They
+              volunteer.</span></span>
+          <span class="sentence-translate">„Zeigen auch Sie Größe!"<span class="translation">"Show greatness,
+              too!"</span></span>
+          <span class="sentence-translate">Mit diesem Spruch wurde die „Woche des bürgerschaftlichen Engagements"
+            beworben.<span class="translation">With this slogan, the "Week of Civic Engagement" was
+              promoted.</span></span>
+          <span class="sentence-translate">Tatsächlich engagieren sich mehr als 23 Millionen Menschen in Deutschland
+            freiwillig und ohne Lohn.<span class="translation">In fact, more than 23 million people in Germany volunteer
+              without pay.</span></span>
+          <span class="sentence-translate">Sie organisieren sich in einer Million Vereinen, Bürgerinitiativen,
+            Selbsthilfegruppen, pumpen Fußbälle auf, frisieren Pflegebedürftige, restaurieren alte Häuser, springen für
+            kranke Lehrer ein, backen Nudelauflauf für die Schulküche - und während ihres Urlaubs operieren deutsche
+            Ärzte
+            in Elendsvierteln der „Dritten Welt" Patienten.<span class="translation">They organize themselves in a
+              million
+              clubs, citizens' initiatives, self-help groups, pump up soccer balls, style the hair of people in need of
+              care, restore old houses, step in for sick teachers, bake pasta casseroles for the school kitchen - and
+              during their vacation, German doctors operate on patients in the slums of the "Third World".</span></span>
+        </p>
+        <p>
+          <span class="sentence-translate">Allein 25 000 Helfer sind zum Beispiel jede Woche in den rund 500 Vereinen
+            der
+            „Tafel" im Einsatz, sammeln in Supermärkten Lebensmittel kurz vor dem Verfallsdatum ein und verteilen sie an
+            Bedürftige.<span class="translation">For example, 25,000 helpers alone are on duty every week in the roughly
+              500 associations of the "Tafel" (Food Bank), collecting food from supermarkets shortly before its
+              expiration
+              date and distributing it to those in need.</span></span>
+          <span class="sentence-translate">„Alle reden von sozialer Kälte.<span class="translation">"Everyone talks
+              about
+              social coldness.</span></span>
+          <span class="sentence-translate">Aber wir erleben jeden Tag das Gegenteil", berichtet der
+            „Tafel"-Vorstand.<span class="translation">But we experience the opposite every day," reports the "Tafel"
+              board.</span></span>
+          <span class="sentence-translate">„In Deutschland ist das Wir-Gefühl auf dem Vormarsch."<span
+              class="translation">"In Germany, the sense of community is on the rise."</span></span>
+        </p>
+        <p>
+          <span class="sentence-translate">Besonders aktiv sind dabei Mitglieder großer Familien, regelmäßige
+            Kirchgänger
+            und Pendler, die am Rande der Großstadt ihre Nachbarschaft gestalten.<span class="translation">Particularly
+              active are members of large families, regular churchgoers, and commuters who shape their neighborhoods on
+              the outskirts of the big city.</span></span>
+          <span class="sentence-translate">Am häufigsten aber setzen sich Arbeitslose und Rentner ein.<span
+              class="translation">But most often, the unemployed and pensioners get involved.</span></span>
+          <span class="sentence-translate">Aber auch die Zahl der Jugendlichen, die ein „freiwilliges soziales Jahr" in
+            Altersheimen, Sportvereinen und Naturschutzgruppen machen, steigt beständig.<span class="translation">But
+              the
+              number of young people doing a "voluntary social year" in retirement homes, sports clubs, and nature
+              conservation groups is also constantly increasing.</span></span>
+        </p>
+        <p>
+          <span class="sentence-translate">Inzwischen haben sich in allen größeren Städten Freiwilligenagenturen
+            gebildet.<span class="translation">Meanwhile, volunteer agencies have formed in all larger
+              cities.</span></span>
+          <span class="sentence-translate">Ein Beispiel ist die Agentur „Tatendrang" in München.<span
+              class="translation">One example is the "Tatendrang" agency in Munich.</span></span>
+          <span class="sentence-translate">Unter dem Motto „Spenden Sie Zeit statt Geld" organisieren sie für
+            freiwillige
+            Helfer Einsatzmöglichkeiten.<span class="translation">Under the motto "Donate time instead of money," they
+              organize opportunities for volunteers.</span></span>
+          <span class="sentence-translate">„Wir arbeiten mit mehr als 200 gemeinnützigen Einrichtungen zusammen.<span
+              class="translation">"We work together with more than 200 non-profit organizations.</span></span>
+          <span class="sentence-translate">Wir finden immer etwas, was passt - für den 35-jährigen Berufstätigen, der
+            ein
+            paar Stunden Zeit im Monat spenden will, wie für den Arbeitslosen, der seinen Tag mit einem Ehrenamt
+            strukturieren möchte."<span class="translation">We always find something that fits - for the 35-year-old
+              professional who wants to donate a few hours a month, as well as for the unemployed person who wants to
+              structure his day with a volunteer position."</span></span>
+        </p>
+        <p>
+          <span class="sentence-translate">Die dunklen Prophezeiungen einer egoistischen Spaßgesellschaft von
+            „Ichlingen"
+            haben sich offensichtlich nicht erfüllt.<span class="translation">The dark prophecies of an egoistic fun
+              society of "Me-lings" have obviously not come true.</span></span>
+          <span class="sentence-translate">Im Gegenteil: Die Bereitschaft zum Engagement wächst und wächst!<span
+              class="translation">On the contrary: The willingness to get involved is growing and growing!</span></span>
+        </p>
+      </div>
+
+      <hr class="my-8 border-t border-gray-300">
+
+      <div class="mt-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Wichtige Grammatikregeln im Text</h2>
+        <p class="text-gray-600 mb-6">Dieser Text ist reich an grammatikalischen Strukturen, die für fortgeschrittene
+          Deutschlerner relevant sind. Hier sind einige der wichtigsten Konzepte erklärt.</p>
+
+        <h3 class="text-xl font-semibold text-gray-700 mt-6 mb-2">1. Relativsätze</h3>
+        <p class="mb-4">Relativsätze geben zusätzliche Informationen zu einem Nomen im Hauptsatz. Sie werden durch ein
+          Relativpronomen (z.B. der, die, das, was) eingeleitet. Das konjugierte Verb steht am Ende des Relativsatzes.
+          Das
+          Relativpronomen richtet sich in Genus (Geschlecht) und Numerus (Zahl) nach dem Bezugswort, aber der Kasus
+          (Fall)
+          wird durch seine Funktion im Relativsatz bestimmt.</p>
+
+        <div class="example">
+          <p><strong>Beispiel aus dem Text:</strong></p>
+          <p>"...<span class="sentence-translate">die Zahl der Jugendlichen, <strong>die</strong> ein „freiwilliges
+              soziales Jahr“ ... machen, steigt beständig.<span class="translation">...the number of young people,
+                <strong>who</strong> do a "voluntary social year" ..., is constantly increasing.</span></span>"</p>
+          <ul class="list-disc pl-5 mt-2">
+            <li>Bezugswort: <em>die Jugendlichen</em> (Plural)</li>
+            <li>Relativpronomen: <em>die</em> (Nominativ Plural, da es das Subjekt im Relativsatz ist)</li>
+          </ul>
+        </div>
+        <div class="example">
+          <p><strong>Beispiel aus dem Text:</strong></p>
+          <p>"<span class="sentence-translate">...für den 35-jährigen Berufstätigen, <strong>der</strong> ein paar
+              Stunden
+              ... spenden will...<span class="translation">...for the 35-year-old professional, <strong>who</strong>
+                wants
+                to donate a few hours...</span></span>"</p>
+          <ul class="list-disc pl-5 mt-2">
+            <li>Bezugswort: <em>der Berufstätige</em> (Maskulinum)</li>
+            <li>Relativpronomen: <em>der</em> (Nominativ Singular, da es das Subjekt im Relativsatz ist)</li>
+          </ul>
+        </div>
+
+        <h3 class="text-xl font-semibold text-gray-700 mt-8 mb-2">2. Präpositionen und ihre Fälle (Kasus)</h3>
+        <p class="mb-4">Der Text verwendet viele Präpositionen, die einen bestimmten Fall (Akkusativ, Dativ oder
+          Genitiv)
+          erfordern. Die korrekte Verwendung ist entscheidend für die Satzstruktur.</p>
+        <div class="overflow-x-auto mt-6">
+          <table class="min-w-full bg-white border border-gray-200">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="px-4 py-2 border text-left">Präposition</th>
+                <th class="px-4 py-2 border text-left">Kasus</th>
+                <th class="px-4 py-2 border text-left">Beispiel aus dem Text</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t">
+                <td class="px-4 py-2 border font-semibold">in</td>
+                <td class="px-4 py-2 border">Dativ (Ort)</td>
+                <td class="px-4 py-2 border">"...viele Menschen <strong>in Deutschland</strong>."</td>
+              </tr>
+              <tr class="bg-gray-50 border-t">
+                <td class="px-4 py-2 border font-semibold">mit</td>
+                <td class="px-4 py-2 border">Dativ</td>
+                <td class="px-4 py-2 border">"<strong>Mit diesem Spruch</strong> wurde ... beworben."</td>
+              </tr>
+              <tr class="border-t">
+                <td class="px-4 py-2 border font-semibold">für</td>
+                <td class="px-4 py-2 border">Akkusativ</td>
+                <td class="px-4 py-2 border">"...springen <strong>für kranke Lehrer</strong> ein..."</td>
+              </tr>
+              <tr class="bg-gray-50 border-t">
+                <td class="px-4 py-2 border font-semibold">an</td>
+                <td class="px-4 py-2 border">Akkusativ</td>
+                <td class="px-4 py-2 border">"...verteilen sie <strong>an Bedürftige</strong>."</td>
+              </tr>
+              <tr class="border-t">
+                <td class="px-4 py-2 border font-semibold">während</td>
+                <td class="px-4 py-2 border">Genitiv</td>
+                <td class="px-4 py-2 border">"<strong>während ihres Urlaubs</strong> operieren..."</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-gray-700 mt-8 mb-2">3. Der Genitiv</h3>
+        <p class="mb-4">Der Genitiv wird verwendet, um Besitz, Zugehörigkeit oder eine enge Beziehung auszudrücken. Man
+          fragt danach mit "Wessen?". Er wird häufig in formelleren oder geschriebenen Texten verwendet.</p>
+        <div class="example">
+          <p><strong>Beispiele aus dem Text:</strong></p>
+          <p>"...die „Woche <strong>des bürgerschaftlichen Engagements</strong>"..." (Wessen Woche? -> des Engagements)
+          </p>
+          <p>"...am Rande <strong>der Großstadt</strong>..." (Wessen Rand? -> der Großstadt)</p>
+          <p>"...Prophezeiungen <strong>einer egoistischen Spaßgesellschaft</strong>..." (Wessen Prophezeiungen? ->
+            einer
+            Spaßgesellschaft)</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
