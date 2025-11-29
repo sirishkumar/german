@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Der erste Schultag - German Reading Practice</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CSP Compliance: Allowing basic styles/scripts -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.tailwindcss.com 'unsafe-inline';">
+
+  <style>
+    /* Custom Tooltip Logic */
+    .sentence-translate {
+      position: relative;
+      display: inline;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      border-bottom: 1px dashed #cbd5e1;
+      /* Subtle hint that it's interactive */
+    }
+
+    .sentence-translate:hover {
+      background-color: #fef9c3;
+      /* Light yellow highlight on hover */
+    }
+
+    .sentence-translate:hover .translation {
+      display: block;
+      opacity: 1;
+      transform: translate(-50%, -10px);
+    }
+
+    .translation {
+      display: none;
+      opacity: 0;
+      position: absolute;
+      background-color: #1e293b;
+      /* Slate 800 */
+      color: #ffffff;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      bottom: 100%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: max-content;
+      max-width: 300px;
+      /* Prevent it from being too wide on mobile */
+      white-space: normal;
+      z-index: 50;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      pointer-events: none;
+      /* Prevents tooltip from blocking mouse interaction */
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    /* Triangle arrow for the tooltip */
+    .translation::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #1e293b transparent transparent transparent;
+    }
+
+    .example-box {
+      border-left-width: 4px;
+      border-left-color: #3b82f6;
+      /* Blue-500 */
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
+
+  <main class="max-w-4xl mx-auto p-4 sm:p-8">
+
+    <!-- Text Section -->
+    <div class="bg-white p-6 sm:p-10 rounded-xl shadow-lg mb-12">
+      <div class="mb-6 border-b pb-4">
+        <span class="text-sm font-semibold text-blue-600 uppercase tracking-wide">Lesetext (B1/B2)</span>
+        <h1 class="text-3xl sm:text-4xl font-bold mt-2 text-slate-900">Der erste Schultag</h1>
+      </div>
+
+      <div class="space-y-4 text-lg text-slate-700 text-justify">
+        <!-- Paragraph 1 -->
+        <p>
+          <span class="sentence-translate">
+            Wenn man in Deutschland über den ersten Schultag spricht, muss man auch von der Schultüte reden.
+            <span class="translation">When one speaks about the first school day in Germany, one must also talk about
+              the school cone.</span>
+          </span>
+          <span class="sentence-translate">
+            Sie ist das deutlichste Kennzeichen der Mädchen und Jungen, die zum allerersten Mal in die Schule gehen.
+            <span class="translation">It is the most distinct symbol of the girls and boys who are going to school for
+              the very first time.</span>
+          </span>
+        </p>
+
+        <!-- Paragraph 2 -->
+        <p>
+          <span class="sentence-translate">
+            Der Schulanfang ist so alt wie die Schule selbst.
+            <span class="translation">The start of school is as old as school itself.</span>
+          </span>
+          <span class="sentence-translate">
+            Früher erfolgte der Schulanfang im Frühjahr oder Herbst und mit ihm entwickelten sich zahlreiche Bräuche.
+            <span class="translation">In the past, school started in spring or autumn, and numerous customs developed
+              along with it.</span>
+          </span>
+          <span class="sentence-translate">
+            Die Tradition, den Schulanfang der Kinder mit Gebäck und Früchten zu versüßen, kann man bis in die Antike
+            zurückverfolgen:
+            <span class="translation">The tradition of sweetening the start of school for children with pastries and
+              fruits can be traced back to antiquity:</span>
+          </span>
+          <span class="sentence-translate italic text-slate-600">
+            „Es geben die Lehrer den Knaben süßes Gebäck, damit sie Lust bekommen, die ersten Lektionen zu lernen.“
+            (Horaz)
+            <span class="translation">"The teachers give the boys sweet pastries so that they get the desire to learn
+              the first lessons." (Horace)</span>
+          </span>
+        </p>
+
+        <!-- Paragraph 3 -->
+        <p>
+          <span class="sentence-translate">
+            Im Mittelalter erhielten Kinder zur Einschulung Brezeln, Feigen, Rosinen und Mandeln.
+            <span class="translation">In the Middle Ages, children received pretzels, figs, raisins, and almonds for
+              enrollment.</span>
+          </span>
+          <span class="sentence-translate">
+            Der Brauch, den Schulanfängern Süßigkeiten in einer Schultüte zu überreichen, entstand Anfang des 19.
+            Jahrhunderts.
+            <span class="translation">The custom of handing sweets to school beginners in a school cone emerged at the
+              beginning of the 19th century.</span>
+          </span>
+          <span class="sentence-translate">
+            Die „Zuckertüte“, wie sie wegen ihres Inhaltes vor allem in Thüringen und Sachsen heute noch heißt, war
+            bereits im Jahre 1852 Anlass, ein Kinderbuch darüber zu zeichnen und zu schreiben.
+            <span class="translation">The "sugar cone," as it is still called today mainly in Thuringia and Saxony
+              because of its content, was already the occasion in 1852 to draw and write a children's book about
+              it.</span>
+          </span>
+        </p>
+
+        <!-- Paragraph 4 -->
+        <p>
+          <span class="sentence-translate">
+            Der Überlieferung nach wuchsen die Zuckertüten an einem Zuckertütenbaum, der im Schulgebäude stand.
+            <span class="translation">According to tradition, the sugar cones grew on a sugar cone tree that stood in
+              the school building.</span>
+          </span>
+          <span class="sentence-translate">
+            Dieser Baum konnte sich auf dem Dachboden oder im Keller der Schule befinden.
+            <span class="translation">This tree could be located in the attic or in the cellar of the school.</span>
+          </span>
+          <span class="sentence-translate">
+            Heute hängen die Tüten in manchen Orten sogar an richtigen Bäumen.
+            <span class="translation">Today, in some places, the cones even hang on real trees.</span>
+          </span>
+        </p>
+
+        <!-- Paragraph 5 -->
+        <p>
+          <span class="sentence-translate">
+            Vor 150 Jahren waren es nur Kinder der gehobenen Schichten, die ein Einschulungsgeschenk bekamen.
+            <span class="translation">150 years ago, it was only children of the upper classes who received an
+              enrollment gift.</span>
+          </span>
+          <span class="sentence-translate">
+            Die meisten anderen Kinder mussten in der Landwirtschaft helfen oder durch andere Arbeiten zum
+            Familienunterhalt beitragen.
+            <span class="translation">Most other children had to help in agriculture or contribute to the family
+              livelihood through other work.</span>
+          </span>
+          <span class="sentence-translate">
+            Als sich die Schulpflicht immer mehr durchsetzte, wurden die Schultüten häufiger – zunächst in Thüringen und
+            Sachsen.
+            <span class="translation">As compulsory schooling became more and more established, school cones became more
+              common – initially in Thuringia and Saxony.</span>
+          </span>
+        </p>
+
+        <!-- Paragraph 6 -->
+        <p>
+          <span class="sentence-translate">
+            Um 1910 begann Carl August Nestler, Zuckertüten fabrikmäßig herzustellen.
+            <span class="translation">Around 1910, Carl August Nestler began to manufacture sugar cones
+              industrially.</span>
+          </span>
+          <span class="sentence-translate">
+            Seit dieser Zeit wanderte der Schultütenbrauch auch in das übrige Deutschland.
+            <span class="translation">Since that time, the school cone custom also spread to the rest of Germany.</span>
+          </span>
+          <span class="sentence-translate">
+            In den kleinen Orten Westdeutschlands kamen die Tüten allerdings erst in den 1950er-Jahren an.
+            <span class="translation">However, in the small towns of West Germany, the cones only arrived in the
+              1950s.</span>
+          </span>
+        </p>
+
+        <!-- Paragraph 7 -->
+        <p>
+          <span class="sentence-translate">
+            Die Form der Tüten hat sich in den letzten hundert Jahren nicht wesentlich geändert.
+            <span class="translation">The shape of the cones has not changed significantly in the last hundred
+              years.</span>
+          </span>
+          <span class="sentence-translate">
+            Es überwiegt der runde Spitzkegel.
+            <span class="translation">The round pointed cone predominates.</span>
+          </span>
+          <span class="sentence-translate">
+            In der ehemaligen DDR hatte sich eine sechseckige Tüte durchgesetzt.
+            <span class="translation">In the former GDR, a hexagonal cone had prevailed.</span>
+          </span>
+        </p>
+
+        <!-- Paragraph 8 -->
+        <p>
+          <span class="sentence-translate">
+            Heute klingt das Wort „Zuckertüte“ vor allem für Zahnärzte und gesundheitsbewusste Eltern sehr verdächtig.
+            <span class="translation">Today, the word "sugar cone" sounds very suspicious, especially to dentists and
+              health-conscious parents.</span>
+          </span>
+          <span class="sentence-translate">
+            Die vielen Süßigkeiten in den Tüten müssen oft Zeichenstiften oder Spielzeug weichen.
+            <span class="translation">The many sweets in the cones often have to give way to drawing pencils or
+              toys.</span>
+          </span>
+          <span class="sentence-translate">
+            In mancher Schultüte findet sich sogar ein Handy.
+            <span class="translation">In some school cones, there is even a mobile phone.</span>
+          </span>
+          <span class="sentence-translate">
+            Hinweise, was alles in die Tüte kommen sollte und was nicht, kann man alle Jahre wieder in den Medien
+            nachlesen.
+            <span class="translation">Advice on what should go into the bag and what shouldn't can be read in the media
+              every year.</span>
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Grammar Section -->
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="h-8 w-1 bg-blue-600 rounded-full"></div>
+        <h2 class="text-2xl font-bold text-slate-800">Wichtige Grammatikregeln im Text</h2>
+      </div>
+
+      <p class="mb-8 text-slate-600">
+        Dieser Text enthält fortgeschrittene grammatikalische Strukturen (Niveau B1/B2), insbesondere
+        Vergangenheitsformen für Erzählungen und komplexe Satzkonstruktionen mit "zu".
+      </p>
+
+      <!-- Rule 1: Präteritum -->
+      <section class="mb-10">
+        <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center">
+          <span class="bg-blue-100 text-blue-800 text-sm font-semibold mr-3 px-2.5 py-0.5 rounded">Zeitformen</span>
+          1. Das Präteritum (Simple Past)
+        </h3>
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+          <p class="mb-4">
+            Das Präteritum wird hauptsächlich in der <strong>schriftlichen Sprache</strong> (Zeitungen, Bücher,
+            Berichte) verwendet, um über vergangene Ereignisse zu berichten.
+          </p>
+
+          <div class="overflow-x-auto">
+            <table class="min-w-full text-sm text-left text-slate-600">
+              <thead class="text-xs text-slate-700 uppercase bg-slate-50">
+                <tr>
+                  <th class="px-6 py-3">Infinitiv</th>
+                  <th class="px-6 py-3">Präteritum (3. Pers. Sg.)</th>
+                  <th class="px-6 py-3">Beispiel im Text</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white border-b">
+                  <td class="px-6 py-4 font-semibold">sein</td>
+                  <td class="px-6 py-4">war</td>
+                  <td class="px-6 py-4 italic">"Vor 150 Jahren <strong>waren</strong> es nur Kinder..."</td>
+                </tr>
+                <tr class="bg-slate-50 border-b">
+                  <td class="px-6 py-4 font-semibold">erfolgen</td>
+                  <td class="px-6 py-4">erfolgte</td>
+                  <td class="px-6 py-4 italic">"Früher <strong>erfolgte</strong> der Schulanfang..."</td>
+                </tr>
+                <tr class="bg-white border-b">
+                  <td class="px-6 py-4 font-semibold">wachsen</td>
+                  <td class="px-6 py-4">wuchs</td>
+                  <td class="px-6 py-4 italic">"...<strong>wuchsen</strong> die Zuckertüten an einem Baum"</td>
+                </tr>
+                <tr class="bg-slate-50">
+                  <td class="px-6 py-4 font-semibold">beginnen</td>
+                  <td class="px-6 py-4">begann</td>
+                  <td class="px-6 py-4 italic">"Um 1910 <strong>begann</strong> Carl August Nestler..."</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Rule 2: Infinitiv mit zu -->
+      <section class="mb-10">
+        <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center">
+          <span class="bg-green-100 text-green-800 text-sm font-semibold mr-3 px-2.5 py-0.5 rounded">Satzbau</span>
+          2. Infinitiv mit "zu"
+        </h3>
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+          <p class="mb-4">
+            Wenn ein zweites Verb im Satz steht und kein Modalverb ist, steht es oft am Ende des Satzes im Infinitiv mit
+            "zu".
+          </p>
+
+          <div class="example-box bg-slate-50 p-4 mb-4 rounded-r-lg">
+            <p class="font-semibold text-slate-700 mb-1">Struktur:</p>
+            <p class="text-slate-600">Hauptsatz + Komma + [Ergänzungen] + <strong>zu</strong> + Infinitiv.</p>
+          </div>
+
+          <ul class="list-disc list-inside space-y-2 text-slate-700">
+            <li>
+              <span class="font-medium text-blue-600">Absicht/Zweck:</span> "...Anlass, ein Kinderbuch darüber
+              <strong>zu zeichnen und zu schreiben</strong>."
+            </li>
+            <li>
+              <span class="font-medium text-blue-600">Nach Nomen:</span> "Die Tradition, den Schulanfang [...]
+              <strong>zu versüßen</strong>."
+            </li>
+            <li>
+              <span class="font-medium text-blue-600">Mit 'um' (Finalsatz):</span> "Es geben die Lehrer [...] Gebäck,
+              damit sie Lust bekommen, die ersten Lektionen <strong>zu lernen</strong>."
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Rule 3: Genitiv -->
+      <section class="mb-10">
+        <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center">
+          <span class="bg-purple-100 text-purple-800 text-sm font-semibold mr-3 px-2.5 py-0.5 rounded">Kasus</span>
+          3. Der Genitiv (The Genitive Case)
+        </h3>
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+          <p class="mb-4">
+            Der Text verwendet oft den Genitiv, um Zugehörigkeit oder Zeitangaben auszudrücken. Bestimmte Präpositionen
+            erfordern ebenfalls den Genitiv.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-purple-50 p-4 rounded border border-purple-100">
+              <h4 class="font-bold text-purple-700 mb-2">Präposition "wegen" (because of)</h4>
+              <p class="italic text-slate-700">"...wie sie <strong class="text-purple-600">wegen ihres Inhaltes</strong>
+                [...] heute noch heißt"</p>
+            </div>
+            <div class="bg-purple-50 p-4 rounded border border-purple-100">
+              <h4 class="font-bold text-purple-700 mb-2">Zugehörigkeit</h4>
+              <p class="italic text-slate-700">"Anfang <strong class="text-purple-600">des 19. Jahrhunderts</strong>"
+              </p>
+              <p class="italic text-slate-700 mt-2">"Kinder <strong class="text-purple-600">der gehobenen
+                  Schichten</strong>"</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Additional Concepts Table -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold text-slate-800 mb-4">Wichtiger Wortschatz & Synonyme</h2>
+        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+          <table class="min-w-full divide-y divide-slate-300">
+            <thead class="bg-slate-50">
+              <tr>
+                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-slate-900">Begriff im Text
+                </th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-slate-900">Bedeutung / Synonym
+                </th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-slate-900">Englisch</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 bg-white">
+              <tr>
+                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-slate-900">der Brauch / die Sitte
+                </td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-500">eine Tradition</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-500">custom / tradition</td>
+              </tr>
+              <tr>
+                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-slate-900">versüßen</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-500">etwas angenehmer machen</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-500">to sweeten</td>
+              </tr>
+              <tr>
+                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-slate-900">die Schulpflicht</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-500">Gesetz: Kinder müssen zur Schule</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-500">compulsory schooling</td>
+              </tr>
+              <tr>
+                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-slate-900">sich durchsetzen</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-500">gewinnen / populär werden</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-500">to prevail / establish itself</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- New Section: Difficult Words with Examples -->
+      <section class="mb-10">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="h-8 w-1 bg-indigo-600 rounded-full"></div>
+          <h2 class="text-2xl font-bold text-slate-800">Vertiefung: Schwierige Wörter (B1)</h2>
+        </div>
+        <p class="mb-6 text-slate-600">Hier sind einige schwierigere Wörter aus dem Text mit Übersetzungen und neuen
+          Beispielsätzen.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-white p-5 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-indigo-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-bold text-lg text-slate-800">das Kennzeichen</h3>
+              <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">Nomen</span>
+            </div>
+            <p class="text-sm text-slate-500 mb-3 border-b pb-2">Translation: <em>characteristic, distinctive mark</em>
+            </p>
+            <p class="text-slate-700 mb-1"><strong>Beispiel:</strong></p>
+            <p class="text-slate-800 italic">"Das Markenzeichen (Kennzeichen) von Ferrari ist das rote Auto."</p>
+            <p class="text-xs text-slate-500 mt-1">(The trademark of Ferrari is the red car.)</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white p-5 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-indigo-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-bold text-lg text-slate-800">zurückverfolgen</h3>
+              <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">Verb</span>
+            </div>
+            <p class="text-sm text-slate-500 mb-3 border-b pb-2">Translation: <em>to trace back</em></p>
+            <p class="text-slate-700 mb-1"><strong>Beispiel:</strong></p>
+            <p class="text-slate-800 italic">"Die Polizei konnte den Anruf bis zum Täter zurückverfolgen."</p>
+            <p class="text-xs text-slate-500 mt-1">(The police could trace the call back to the perpetrator.)</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white p-5 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-indigo-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-bold text-lg text-slate-800">die Überlieferung</h3>
+              <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">Nomen</span>
+            </div>
+            <p class="text-sm text-slate-500 mb-3 border-b pb-2">Translation: <em>tradition, lore</em></p>
+            <p class="text-slate-700 mb-1"><strong>Beispiel:</strong></p>
+            <p class="text-slate-800 italic">"Der Überlieferung nach wurde die Stadt von Römern gegründet."</p>
+            <p class="text-xs text-slate-500 mt-1">(According to tradition, the city was founded by Romans.)</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white p-5 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-indigo-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-bold text-lg text-slate-800">sich durchsetzen</h3>
+              <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">Verb</span>
+            </div>
+            <p class="text-sm text-slate-500 mb-3 border-b pb-2">Translation: <em>to prevail, to catch on</em></p>
+            <p class="text-slate-700 mb-1"><strong>Beispiel:</strong></p>
+            <p class="text-slate-800 italic">"Die neue Idee konnte sich am Ende gegen die Kritik durchsetzen."</p>
+            <p class="text-xs text-slate-500 mt-1">(The new idea was finally able to prevail against the criticism.)</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="bg-white p-5 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-indigo-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-bold text-lg text-slate-800">gesundheitsbewusst</h3>
+              <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">Adjektiv</span>
+            </div>
+            <p class="text-sm text-slate-500 mb-3 border-b pb-2">Translation: <em>health-conscious</em></p>
+            <p class="text-slate-700 mb-1"><strong>Beispiel:</strong></p>
+            <p class="text-slate-800 italic">"Meine Eltern kaufen nur Bio-Produkte, sie sind sehr gesundheitsbewusst."
+            </p>
+            <p class="text-xs text-slate-500 mt-1">(My parents only buy organic products; they are very
+              health-conscious.)</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="bg-white p-5 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-indigo-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-bold text-lg text-slate-800">weichen</h3>
+              <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">Verb</span>
+            </div>
+            <p class="text-sm text-slate-500 mb-3 border-b pb-2">Translation: <em>to yield, to give way</em></p>
+            <p class="text-slate-700 mb-1"><strong>Beispiel:</strong></p>
+            <p class="text-slate-800 italic">"Der Regen musste endlich der Sonne weichen."</p>
+            <p class="text-xs text-slate-500 mt-1">(The rain finally had to give way to the sun.)</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-8 text-center mt-12">
+    <p>Erstellt mit HTML & Tailwind CSS. Basierend auf dem Text "Der erste Schultag".</p>
+  </footer>
+
+</body>
+
+</html>

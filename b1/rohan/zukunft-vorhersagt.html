@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Wie das Gehirn die Zukunft vorhersagt</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="../../assets/sidebar.css" />
+        <script src="../../assets/sidebar.js"></script>
+        <script src="../../assets/tts-simple.js" defer></script>
+        <style>
+            .sentence-translate {
+                position: relative;
+                display: inline;
+                cursor: help;
+                border-bottom: 1px dashed #cbd5e1;
+            }
+
+            .sentence-translate:hover .translation {
+                display: block;
+                opacity: 1;
+            }
+
+            .translation {
+                display: none;
+                opacity: 0;
+                position: absolute;
+                background-color: #1f2937;
+                color: #f3f4f6;
+                padding: 8px 12px;
+                border-radius: 6px;
+                font-size: 0.85rem;
+                line-height: 1.4;
+                bottom: 120%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: max-content;
+                max-width: 300px;
+                white-space: normal;
+                z-index: 50;
+                box-shadow:
+                    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                transition: opacity 0.2s ease-in-out;
+                text-align: center;
+            }
+
+            /* Arrow for the tooltip */
+            .translation::after {
+                content: " ";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #1f2937 transparent transparent transparent;
+            }
+
+            .example-box {
+                background-color: #f0f9ff; /* sky-50 */
+                padding: 1rem;
+                border-left: 4px solid #0ea5e9; /* sky-500 */
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                border-radius: 0 0.5rem 0.5rem 0;
+            }
+        </style>
+    </head>
+
+    <body class="bg-slate-100 font-sans leading-relaxed text-slate-800">
+        <main class="p-4 sm:p-8">
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+                <h1
+                    class="text-3xl font-bold mb-6 text-slate-900 border-b pb-4"
+                >
+                    Wie das Gehirn die Zukunft vorhersagt
+                </h1>
+
+                <div class="space-y-4 text-lg">
+                    <p>
+                        <span class="sentence-translate">
+                            Manchmal antizipieren wir Situationen so gut, dass
+                            wir fast schon glauben, übernatürliche Kräfte zu
+                            haben.
+                            <span class="translation"
+                                >Sometimes we anticipate situations so well that
+                                we almost believe we have supernatural
+                                powers.</span
+                            >
+                        </span>
+                        <span class="sentence-translate">
+                            Tatsächlich kann das Gehirn die unmittelbare Zukunft
+                            teilweise vorhersagen.
+                            <span class="translation"
+                                >In fact, the brain can partially predict the
+                                immediate future.</span
+                            >
+                        </span>
+                        <span class="sentence-translate">
+                            Wie das funktioniert und worauf es ankommt, hat nun
+                            ein deutsches Forscherteam herausgefunden.
+                            <span class="translation"
+                                >How this works and what matters has now been
+                                found out by a German research team.</span
+                            >
+                        </span>
+                    </p>
+
+                    <p
+                        class="font-semibold text-slate-700 bg-slate-50 p-4 rounded-lg"
+                    >
+                        <span class="sentence-translate">
+                            Im Video: Ist Ihr Gehirn fit?
+                            <span class="translation"
+                                >In the video: Is your brain fit?</span
+                            >
+                        </span>
+                        <span class="sentence-translate">
+                            Mit zwei einfachen Tests finden Sie es heraus.
+                            <span class="translation"
+                                >Find out with two simple tests.</span
+                            >
+                        </span>
+                    </p>
+
+                    <p>
+                        <span class="sentence-translate">
+                            Im Alltag erahnen wir bisweilen Geschehnisse, bevor
+                            sie passieren.
+                            <span class="translation"
+                                >In everyday life, we sometimes sense events
+                                before they happen.</span
+                            >
+                        </span>
+                        <span class="sentence-translate">
+                            Zum Beispiel beim Autofahren, wenn wir die auf Rot
+                            springende Ampel antizipieren und rasch bremsen.
+                            <span class="translation"
+                                >For example, while driving, when we anticipate
+                                the traffic light turning red and brake
+                                quickly.</span
+                            >
+                        </span>
+                        <span class="sentence-translate">
+                            Oder wenn etwas vom Tisch zu fallen droht und wir
+                            den Gegenstand blitzschnell festhalten.
+                            <span class="translation"
+                                >Or when something threatens to fall off the
+                                table and we grab the object lightning
+                                fast.</span
+                            >
+                        </span>
+                        <span class="sentence-translate">
+                            Das zeitliche Vorhersagen ist eine Elementarfunktion
+                            des Nervensystems.
+                            <span class="translation"
+                                >Temporal prediction is an elementary function
+                                of the nervous system.</span
+                            >
+                        </span>
+                        <span class="sentence-translate">
+                            Doch wie schafft es das Gehirn, die unmittelbare
+                            Zukunft vorauszusagen?
+                            <span class="translation"
+                                >But how does the brain manage to predict the
+                                immediate future?</span
+                            >
+                        </span>
+                    </p>
+
+                    <p>
+                        <span class="sentence-translate">
+                            Mit dieser Frage haben sich mehrere
+                            Neurowissenschaftler des Max-Planck-Instituts für
+                            empirische Ästhetik (MPIEA), des Ernst Strüngmann
+                            Instituts für Neurowissenschaften (ESI) sowie der
+                            Goethe-Universität Frankfurt beschäftigt.
+                            <span class="translation"
+                                >Several neuroscientists from the Max Planck
+                                Institute for Empirical Aesthetics (MPIEA), the
+                                Ernst Strüngmann Institute for Neuroscience
+                                (ESI), and Goethe University Frankfurt have
+                                addressed this question.</span
+                            >
+                        </span>
+                        <span class="sentence-translate">
+                            Die Studie erschien im Fachmagazin „Nature
+                            Communications“ und ist Bestandteil des größeren
+                            Forschungsprojekts „The Anticipation of Events in
+                            Time“.
+                            <span class="translation"
+                                >The study appeared in the journal "Nature
+                                Communications" and is part of the larger
+                                research project "The Anticipation of Events in
+                                Time".</span
+                            >
+                        </span>
+                    </p>
+
+                    <h3 class="text-xl font-bold mt-6 mb-2 text-slate-800">
+                        Forscher untersuchen, warum das Gehirn die Zukunft
+                        vorhersagen kann
+                    </h3>
+
+                    <p>
+                        <span class="sentence-translate">
+                            In ihrer Untersuchung entdeckten die Wissenschaftler
+                            um Erstautor Matthias Grabenhorst vom ESI mittels
+                            einer Magnetenzephalographie drei Kernbereiche des
+                            Gehirns, die bei der Antizipation eine wichtige
+                            Rolle spielen.
+                            <span class="translation"
+                                >In their investigation, the scientists led by
+                                first author Matthias Grabenhorst from the ESI
+                                discovered three core areas of the brain using
+                                magnetoencephalography that play an important
+                                role in anticipation.</span
+                            >
+                        </span>
+                        <span class="sentence-translate">
+                            So eruieren diese Bereiche, wann ein Ereignis
+                            wahrscheinlich eintreten wird.
+                            <span class="translation"
+                                >Thus, these areas determine when an event is
+                                likely to occur.</span
+                            >
+                        </span>
+                    </p>
+
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>
+                            <span class="sentence-translate">
+                                Der posteriore Parietallappen ist ein
+                                Knotenpunkt für die zeitliche Planung und die
+                                motorische Vorbereitung.
+                                <span class="translation"
+                                    >The posterior parietal lobe is a hub for
+                                    temporal planning and motor
+                                    preparation.</span
+                                >
+                            </span>
+                        </li>
+                        <li>
+                            <span class="sentence-translate">
+                                Der posteriore mittlere Gyrus Temporalis ist für
+                                die zeitliche Verarbeitung von Ereignissen
+                                relevant.
+                                <span class="translation"
+                                    >The posterior middle temporal gyrus is
+                                    relevant for the temporal processing of
+                                    events.</span
+                                >
+                            </span>
+                        </li>
+                        <li>
+                            <span class="sentence-translate">
+                                Der sensomotorische Kortex ist direkt an den
+                                Bewegungen beteiligt, die auf vorhergesehene
+                                Ereignisse folgen.
+                                <span class="translation"
+                                    >The sensorimotor cortex is directly
+                                    involved in the movements that follow
+                                    predicted events.</span
+                                >
+                            </span>
+                        </li>
+                    </ul>
+
+                    <h3 class="text-xl font-bold mt-6 mb-2 text-slate-800">
+                        Schwingungen repräsentieren Ereigniswahrscheinlichkeit
+                    </h3>
+
+                    <p>
+                        <span class="sentence-translate">
+                            Darüber hinaus stellten die Wissenschaftler fest,
+                            dass bestimmte Hirnströme den Zeitpunkt zukünftiger
+                            Ereignisse vorhersagen.
+                            <span class="translation"
+                                >Furthermore, the scientists determined that
+                                certain brain waves predict the timing of future
+                                events.</span
+                            >
+                        </span>
+                        <span class="sentence-translate">
+                            Diese Hirnströme weisen eine gewisse Anzahl von
+                            Schwingungen pro Sekunde auf, die sich in den
+                            Frequenzbereichen Alpha mit sieben bis zwölf Hertz
+                            und Beta mit 15 bis 30 Hertz bewegen.
+                            <span class="translation"
+                                >These brain waves exhibit a certain number of
+                                oscillations per second, moving in the Alpha
+                                frequency range of seven to twelve Hertz and
+                                Beta of 15 to 30 Hertz.</span
+                            >
+                        </span>
+                    </p>
+
+                    <p>
+                        <span class="sentence-translate">
+                            Jene Schwingungen repräsentieren derweil die
+                            Ereigniswahrscheinlichkeit über die Zeit – also die
+                            Schlüsselvariable, die darüber entscheidet, wie gut
+                            Menschen die unmittelbare Zukunft vorhersehen
+                            können.
+                            <span class="translation"
+                                >Meanwhile, those oscillations represent the
+                                event probability over time – that is, the key
+                                variable that determines how well humans can
+                                foresee the immediate future.</span
+                            >
+                        </span>
+                    </p>
+
+                    <h3 class="text-xl font-bold mt-6 mb-2 text-slate-800">
+                        „Je vorhersehbarer ein Ereignis ist, desto stärker sind
+                        die neuralen Schwingungen“
+                    </h3>
+
+                    <p>
+                        <span class="sentence-translate">
+                            „Die Ergebnisse zeigen, dass Hirnströme in diesen
+                            Frequenzbereichen den Zeitpunkt repräsentieren, an
+                            dem zukünftige Ereignisse eintreten werden“, sagt
+                            Erstautor Grabenhorst in einer Pressemitteilung des
+                            MPIEA.
+                            <span class="translation"
+                                >"The results show that brain waves in these
+                                frequency ranges represent the point in time
+                                when future events will occur," says first
+                                author Grabenhorst in a press release from the
+                                MPIEA.</span
+                            >
+                        </span>
+                        <span class="sentence-translate">
+                            „Je vorhersehbarer ein Ereignis ist, desto stärker
+                            sind die neuralen Schwingungen.
+                            <span class="translation"
+                                >"The more predictable an event is, the stronger
+                                the neural oscillations are.</span
+                            >
+                        </span>
+                        <span class="sentence-translate">
+                            Dadurch kann das Gehirn schneller und effizienter
+                            reagieren.“
+                            <span class="translation"
+                                >As a result, the brain can react faster and
+                                more efficiently."</span
+                            >
+                        </span>
+                    </p>
+
+                    <p>
+                        <span class="sentence-translate">
+                            Der Ansicht des Forschungsteams nach könnten die
+                            Untersuchungsergebnisse das Verständnis von
+                            Entscheidungsfindung und Aufmerksamkeit sowie
+                            sportlichen Leistungen und neurologischen Störungen
+                            grundlegend beeinflussen.
+                            <span class="translation"
+                                >According to the research team, the study
+                                results could fundamentally influence the
+                                understanding of decision-making and attention,
+                                as well as athletic performance and neurological
+                                disorders.</span
+                            >
+                        </span>
+                    </p>
+
+                    <p>
+                        <span class="sentence-translate">
+                            „Die Studie öffnet neue Türen für die Erforschung
+                            der grundlegenden Rolle von Hirnrhythmen bei der
+                            Navigation durch Zeit und Zukunft“, ergänzt
+                            Seniorautor Georgios Michalareas der
+                            Goethe-Universität.
+                            <span class="translation"
+                                >"The study opens new doors for exploring the
+                                fundamental role of brain rhythms in navigating
+                                through time and the future," adds senior author
+                                Georgios Michalareas of Goethe University.</span
+                            >
+                        </span>
+                    </p>
+
+                    <p>
+                        <span class="sentence-translate">
+                            Es sei denkbar, dass diese Rhythmen beim Trainieren
+                            des Gehirns zum Einsatz kommen.
+                            <span class="translation"
+                                >It is conceivable that these rhythms could be
+                                used when training the brain.</span
+                            >
+                        </span>
+                        <span class="sentence-translate">
+                            Weiterhin könnten Störungen in diesen Signalen
+                            erklären, warum neurologische Störungen wie ADHS
+                            oder Parkinson die Reaktionsgeschwindigkeit
+                            beeinträchtigen.
+                            <span class="translation"
+                                >Furthermore, disruptions in these signals could
+                                explain why neurological disorders such as ADHD
+                                or Parkinson's impair reaction speed.</span
+                            >
+                        </span>
+                    </p>
+                </div>
+
+                <hr class="my-12 border-t-2 border-slate-200" />
+
+                <section>
+                    <h2 class="text-2xl font-bold mb-6 text-indigo-800">
+                        Grammatik-Insights (B2/C1 Niveau)
+                    </h2>
+                    <p class="mb-6 text-slate-600">
+                        Dieser Text enthält fortgeschrittene grammatikalische
+                        Strukturen, die typisch für wissenschaftliche oder
+                        journalistische Texte sind. Hier sind die wichtigsten
+                        Konzepte erklärt.
+                    </p>
+
+                    <div class="mb-10">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-3">
+                            1. Der Doppelkonnektor "Je ... desto/umso"
+                        </h3>
+                        <p class="mb-2">
+                            Dieser Konnektor wird verwendet, um zwei Komparative
+                            (Vergleichsformen) miteinander zu verbinden. Er
+                            drückt eine proportionale Abhängigkeit aus.
+                        </p>
+                        <ul
+                            class="list-disc pl-5 mb-4 space-y-1 text-slate-700"
+                        >
+                            <li>
+                                <strong>Je</strong> leitet einen Nebensatz ein
+                                (Verb am Ende).
+                            </li>
+                            <li>
+                                <strong>Desto</strong> (oder <em>umso</em>)
+                                leitet den Hauptsatz ein (Verb auf Position 2
+                                nach dem Adjektiv).
+                            </li>
+                        </ul>
+
+                        <div class="example-box">
+                            <p class="font-bold text-indigo-900 mb-2">
+                                Beispiel aus dem Text:
+                            </p>
+                            <p class="italic">
+                                „<span class="bg-yellow-200 px-1">Je</span>
+                                vorhersehbarer ein Ereignis
+                                <span class="font-bold text-red-600">ist</span>
+                                (Nebensatz),
+                                <span class="bg-yellow-200 px-1">desto</span>
+                                stärker
+                                <span class="font-bold text-red-600">sind</span>
+                                die neuralen Schwingungen (Hauptsatz).“
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mb-10">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-3">
+                            2. Partizip I als Adjektiv (Partizipialattribut)
+                        </h3>
+                        <p class="mb-2">
+                            In gehobener Sprache werden Relativsätze oft durch
+                            Partizipien ersetzt, die vor dem Nomen stehen (wie
+                            ein Adjektiv). Dies macht den Text kompakter.
+                        </p>
+
+                        <div class="example-box">
+                            <p class="font-bold text-indigo-900 mb-2">
+                                Beispiel aus dem Text:
+                            </p>
+                            <p class="mb-2">
+                                „...wenn wir die
+                                <span class="bg-yellow-200 px-1"
+                                    >auf Rot springende</span
+                                >
+                                Ampel antizipieren...“
+                            </p>
+                            <p class="text-sm text-slate-500">
+                                → Umformung zum Relativsatz: „...die Ampel,
+                                <span class="italic">die auf Rot springt</span
+                                >...“
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mb-10">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-3">
+                            3. Konjunktiv I (Indirekte Rede)
+                        </h3>
+                        <p class="mb-2">
+                            In journalistischen Texten wird oft der Konjunktiv I
+                            verwendet, um Aussagen oder Meinungen von anderen
+                            wiederzugeben (Distanzierung vom Wahrheitsgehalt).
+                        </p>
+                        <p class="mb-2">
+                            Der Konjunktiv I leitet sich vom Infinitiv ab (sein
+                            -> er sei, haben -> er habe).
+                        </p>
+
+                        <div class="example-box">
+                            <p class="font-bold text-indigo-900 mb-2">
+                                Beispiel aus dem Text:
+                            </p>
+                            <p class="italic">
+                                „Es
+                                <span class="bg-yellow-200 px-1">sei</span>
+                                denkbar, dass diese Rhythmen [...] zum Einsatz
+                                kommen.“
+                            </p>
+                            <p class="text-sm text-slate-500 mt-1">
+                                Hier gibt der Autor die Vermutung der
+                                Wissenschaftler wieder.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mb-10">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-3">
+                            4. Präpositionen mit Genitiv
+                        </h3>
+                        <p class="mb-2">
+                            Wissenschaftliche Texte verwenden oft Präpositionen,
+                            die den Genitiv verlangen.
+                        </p>
+
+                        <div class="example-box">
+                            <p class="font-bold text-indigo-900 mb-2">
+                                Beispiel aus dem Text:
+                            </p>
+                            <p class="italic">
+                                „...entdeckten die Wissenschaftler [...]
+                                <span class="bg-yellow-200 px-1">mittels</span>
+                                einer Magnetenzephalographie drei
+                                Kernbereiche...“
+                            </p>
+                        </div>
+
+                        <p class="font-semibold mt-4 mb-2">
+                            Andere wichtige Genitiv-Präpositionen:
+                        </p>
+                        <ul
+                            class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm"
+                        >
+                            <li class="bg-white p-2 border rounded shadow-sm">
+                                <strong>wegen</strong> (because of) -
+                                <em>Wegen des Wetters...</em>
+                            </li>
+                            <li class="bg-white p-2 border rounded shadow-sm">
+                                <strong>trotz</strong> (despite) -
+                                <em>Trotz der Gefahr...</em>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </body>
+</html>
