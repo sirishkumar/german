@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bewerbungsschreiben Analyse</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/sidebar.css">
+  <script src="../../assets/sidebar.js"></script>
+  <script src="../../assets/tts-simple.js" defer></script>
+  <style>
+    .sentence-translate {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      border-bottom: 1px dotted #999;
+    }
+
+    .sentence-translate:hover .translation {
+      display: block;
+    }
+
+    .translation {
+      display: none;
+      position: absolute;
+      background-color: #1f2937;
+      color: #ffffff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: normal;
+      min-width: 250px;
+      z-index: 50;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      margin-bottom: 5px;
+      line-height: 1.4;
+    }
+
+    /* Triangle for tooltip */
+    .translation::after {
+      content: " ";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #1f2937 transparent transparent transparent;
+    }
+
+    .example {
+      background-color: #f3f4f6;
+      padding: 16px;
+      border-left: 4px solid #3b82f6;
+      margin: 16px 0;
+      border-radius: 0 4px 4px 0;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-gray-800 font-sans">
+  <main class="p-4 sm:p-8">
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+
+      <h1 class="text-3xl font-bold mb-6 text-slate-800 border-b pb-4">Analyse: Bewerbung als Ingenieur</h1>
+
+      <div class="mb-10 space-y-4 text-lg leading-relaxed">
+
+        <h2 class="font-bold text-xl mb-2">
+          <span class="sentence-translate">Ihr Stellenangebot als Ingenieur für Elektrotechnik
+            <span class="translation">Your job offer as an Electrical Engineer</span>
+          </span>
+        </h2>
+
+        <p>
+          <span class="sentence-translate">Sehr geehrte Frau Fischer,
+            <span class="translation">Dear Ms. Fischer,</span>
+          </span>
+        </p>
+
+        <p>
+          <span class="sentence-translate">durch meine langjährige Tätigkeit im Bereich des industriellen Anlagebaus
+            kenne ich die exzellente Reputation Ihres Unternehmens.
+            <span class="translation">Through my many years of activity in the field of industrial plant construction, I
+              know the excellent reputation of your company.</span>
+          </span>
+          <span class="sentence-translate">Gerne würde ich meine Fähigkeiten für Ihr Unternehmen einsetzen, deshalb
+            bewerbe ich mich hiermit um die ausgeschriebene Stelle als Ingenieur für Elektrotechnik.
+            <span class="translation">I would gladly like to use my skills for your company, therefore I hereby apply
+              for the advertised position as an engineer for electrical engineering.</span>
+          </span>
+          <span class="sentence-translate">Besonders angesprochen hat mich die Aussicht auf eine verantwortungsvolle
+            Position und die enge Zusammenarbeit mit internationalen Teams.
+            <span class="translation">I was particularly appealed by the prospect of a responsible position and close
+              cooperation with international teams.</span>
+          </span>
+          <span class="sentence-translate">Das Studium der Elektrotechnik an der Universität Nürnberg habe ich 2005 mit
+            dem Diplom erfolgreich abgeschlossen.
+            <span class="translation">I successfully completed my studies in electrical engineering at the University of
+              Nuremberg in 2005 with a diploma.</span>
+          </span>
+        </p>
+
+        <p>
+          <span class="sentence-translate">Seitdem konnte ich bei meinem jetzigen Arbeitgeber vielfältige Erfahrungen in
+            der Projektierung von MSR-Anlagen und in der Automatisierung im industriellen Anlagenbau sammeln.
+            <span class="translation">Since then, I have been able to gain diverse experience in the project planning of
+              I&C systems (MSR) and in automation in industrial plant construction at my current employer.</span>
+          </span>
+          <span class="sentence-translate">Ich bin für die Durchführung von Engineering-Projekten im Bereich der Steuer-
+            und Regelungstechnik für Industrieanlagen verantwortlich und stehe den Kunden und Lieferanten in allen
+            projektrelevanten und elektrotechnischen Fragen zur Verfügung.
+            <span class="translation">I am responsible for the implementation of engineering projects in the field of
+              control and regulation technology for industrial plants and am available to customers and suppliers for
+              all project-relevant and electrotechnical questions.</span>
+          </span>
+          <span class="sentence-translate">Zur weiteren erfolgreichen Bewältigung meiner jetzigen Arbeitsaufgaben
+            gehören neben Fachkenntnissen auch Teamgeist und ausgezeichnete kommunikative Fertigkeiten.
+            <span class="translation">In addition to specialist knowledge, team spirit and excellent communication
+              skills belong to the further successful management of my current work tasks.</span>
+          </span>
+          <span class="sentence-translate">Selbstverständlich verfüge ich über profunde Kenntnisse in SPS.
+            <span class="translation">Of course, I possess profound knowledge of PLC (Programmable Logic
+              Controller).</span>
+          </span>
+          <span class="sentence-translate">Ich lese und schreibe fließend Englisch.
+            <span class="translation">I read and write fluent English.</span>
+          </span>
+        </p>
+
+        <p>
+          <span class="sentence-translate">Über die Einladung zu einem persönlichen Gespräch würde ich mich sehr freuen.
+            <span class="translation">I would be very pleased to receive an invitation to a personal interview.</span>
+          </span>
+        </p>
+
+        <p>
+          <span class="sentence-translate">Mit freundlichen Grüßen
+            <span class="translation">Sincerely / With kind regards</span>
+          </span><br>
+          Max Muster
+        </p>
+      </div>
+
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold mb-6 text-slate-800 bg-slate-100 p-2 rounded">Grammatikregeln (B1/B2-Niveau)</h2>
+
+        <div class="space-y-8">
+
+          <div>
+            <h3 class="text-xl font-semibold text-blue-700 mb-2">1. Kausaladverbien: "deshalb"</h3>
+            <p class="mb-2">
+              Das Wort <strong>deshalb</strong> ist ein Konnektor, der zwei Hauptsätze verbindet. Es drückt eine Folge
+              aus (Konsequenz). Wichtig ist die Wortstellung: Nach "deshalb" folgt sofort das Verb, dann das Subjekt
+              (Inversion).
+            </p>
+            <div class="example">
+              <p><strong>Struktur:</strong> Satz 1. Deshalb + <strong>Verb</strong> + <strong>Subjekt</strong> ...</p>
+              <p class="mt-2"><strong>Im Text:</strong> "...deshalb <strong>bewerbe</strong> <strong>ich</strong> mich
+                hiermit..."</p>
+              <p class="mt-1 text-sm text-gray-600">Falsch wäre: "...deshalb ich bewerbe mich..."</p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-blue-700 mb-2">2. Verben mit festen Präpositionen</h3>
+            <p class="mb-2">
+              Viele Verben im Deutschen verlangen eine feste Präposition. Diese muss man zusammen mit dem Kasus
+              (Akkusativ oder Dativ) lernen. Dies ist sehr wichtig für formelle Briefe.
+            </p>
+            <div class="example">
+              <ul class="list-disc list-inside space-y-2">
+                <li><strong>sich bewerben um</strong> (+ Akkusativ): <br><em>"...bewerbe ich mich hiermit
+                    <strong>um</strong> die ausgeschriebene Stelle."</em></li>
+                <li><strong>verfügen über</strong> (+ Akkusativ): <br><em>"...verfüge ich <strong>über</strong> profunde
+                    Kenntnisse."</em></li>
+                <li><strong>gehören zu</strong> (+ Dativ): <br><em>"...gehören <strong>zur</strong> (=zu der) weiteren
+                    erfolgreichen Bewältigung..."</em></li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-blue-700 mb-2">3. Genitivattribute (Nominalstil)</h3>
+            <p class="mb-2">
+              In formellen Texten und im Berufsleben wird oft der Genitiv benutzt, um zwei Nomen zu verbinden. Dies
+              lässt den Text professioneller und kompakter wirken.
+            </p>
+            <div class="example">
+              <p><strong>Beispiele aus dem Text:</strong></p>
+              <ul class="list-disc list-inside mt-2">
+                <li>...im Bereich <strong>des industriellen Anlagebaus</strong></li>
+                <li>...die Reputation <strong>Ihres Unternehmens</strong></li>
+                <li>...das Studium <strong>der Elektrotechnik</strong></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold mb-6 text-slate-800 bg-slate-100 p-2 rounded">Wichtiger Wortschatz (B1+)</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-300 rounded-lg">
+            <thead>
+              <tr class="bg-slate-200 text-slate-700 uppercase text-sm leading-normal">
+                <th class="py-3 px-6 text-left">Deutsches Wort</th>
+                <th class="py-3 px-6 text-left">Englische Übersetzung</th>
+                <th class="py-3 px-6 text-left">Beispielsatz</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-600 text-sm font-light">
+              <tr class="border-b border-gray-200 hover:bg-gray-100">
+                <td class="py-3 px-6 text-left whitespace-nowrap font-medium">die Reputation</td>
+                <td class="py-3 px-6 text-left">the reputation</td>
+                <td class="py-3 px-6 text-left">Die Firma genießt eine gute Reputation in der Branche.</td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-100">
+                <td class="py-3 px-6 text-left whitespace-nowrap font-medium">sich bewerben (um)</td>
+                <td class="py-3 px-6 text-left">to apply (for)</td>
+                <td class="py-3 px-6 text-left">Er bewirbt sich um einen neuen Job bei Siemens.</td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-100">
+                <td class="py-3 px-6 text-left whitespace-nowrap font-medium">verantwortungsvoll</td>
+                <td class="py-3 px-6 text-left">responsible</td>
+                <td class="py-3 px-6 text-left">Als Manager hat sie eine sehr verantwortungsvolle Aufgabe.</td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-100">
+                <td class="py-3 px-6 text-left whitespace-nowrap font-medium">die Kenntnisse (Pl.)</td>
+                <td class="py-3 px-6 text-left">knowledge / skills</td>
+                <td class="py-3 px-6 text-left">Für diesen Beruf brauchen Sie gute Deutschkenntnisse.</td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-100">
+                <td class="py-3 px-6 text-left whitespace-nowrap font-medium">zur Verfügung stehen</td>
+                <td class="py-3 px-6 text-left">to be available</td>
+                <td class="py-3 px-6 text-left">Bei Fragen stehe ich Ihnen gerne zur Verfügung.</td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-100">
+                <td class="py-3 px-6 text-left whitespace-nowrap font-medium">fließend</td>
+                <td class="py-3 px-6 text-left">fluent</td>
+                <td class="py-3 px-6 text-left">Sie spricht fließend Spanisch und Französisch.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schulkleidung statt Markenwahn</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/sidebar.css">
+  <script src="../../assets/sidebar.js"></script>
+  <script src="../../assets/tts-simple.js" defer></script>
+  <style>
+    .sentence-translate {
+      position: relative;
+      display: inline;
+      cursor: pointer;
+      border-bottom: 1px dashed #ccc;
+    }
+
+    .sentence-translate:hover {
+      background-color: #f0fdf4;
+      /* Light green highlight on hover */
+    }
+
+    .sentence-translate:hover .translation {
+      display: block;
+    }
+
+    .translation {
+      display: none;
+      position: absolute;
+      background-color: #1f2937;
+      /* Tailwind gray-800 */
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: max-content;
+      max-width: 300px;
+      white-space: normal;
+      z-index: 50;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    /* Triangle arrow for the tooltip */
+    .translation::after {
+      content: " ";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #1f2937 transparent transparent transparent;
+    }
+
+    .example {
+      background-color: #eff6ff;
+      /* Tailwind blue-50 */
+      padding: 15px;
+      border-left: 4px solid #3b82f6;
+      /* Tailwind blue-500 */
+      margin: 15px 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .grammar-rule {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 p-4 md:p-8 font-sans">
+  <main class="max-w-4xl mx-auto">
+
+    <div class="bg-white p-6 md:p-10 rounded-lg shadow-lg mb-8">
+      <h1 class="text-3xl font-bold mb-6 text-gray-800">Schulkleidung statt Markenwahn</h1>
+
+
+      <div class="text-lg leading-relaxed text-gray-700 text-justify">
+        <span class="sentence-translate">
+          Schüler in Uniform?
+          <span class="translation">Students in uniform?</span>
+        </span>
+
+        <span class="sentence-translate">
+          Bayerns Ministerpräsident, die Bundesbildungsministerin und die Bundesjustizministerin sprachen sich für die
+          Schuluniform aus.
+          <span class="translation">Bavaria's Prime Minister, the Federal Minister of Education, and the Federal
+            Minister of Justice expressed their support for school uniforms.</span>
+        </span>
+
+        <span class="sentence-translate">
+          Die Bildungsministerin sagte gestern dazu, dass das Tragen einer Schuluniform zu begrüßen ist, wenn
+          einheitliche Schulkleidung zur Identifizierung mit der Schule beiträgt und Symbol einer Gemeinschaft aller
+          Schüler ist.
+          <span class="translation">The Minister of Education added yesterday that wearing a school uniform is to be
+            welcomed if uniform school clothing contributes to identification with the school and is a symbol of a
+            community of all students.</span>
+        </span>
+
+        <span class="sentence-translate">
+          „Falls Schulkleidung darüber hinaus dem verbreiteten Markenwahn entgegenwirkt, umso besser.“
+          <span class="translation">"If school clothing also counteracts the widespread obsession with brands, all the
+            better."</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="bg-white p-6 md:p-10 rounded-lg shadow-lg mb-8">
+      <h2 class="text-2xl font-bold mb-6 text-indigo-700 border-b pb-2">Grammatikregeln auf B1-Niveau</h2>
+
+      <p class="mb-4 text-gray-600">Dieser Text verwendet typische Strukturen der Nachrichtensprache und Argumentation.
+      </p>
+
+      <div class="grammar-rule">
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">1. Das Präteritum (Vergangenheit in Berichten)</h3>
+        <p class="mb-2">In Zeitungsartikeln und Nachrichten wird meistens das <strong>Präteritum</strong> verwendet, um
+          über vergangene Ereignisse zu berichten.</p>
+        <div class="example">
+          <ul class="list-disc pl-5 space-y-1">
+            <li>... <strong>sprachen</strong> sich ... aus (Infinitiv: sich aussprechen)</li>
+            <li>Die Ministerin <strong>sagte</strong> ... (Infinitiv: sagen)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grammar-rule">
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">2. Konditionale Nebensätze (Wenn / Falls)</h3>
+        <p class="mb-2">Konditionalsätze drücken eine Bedingung aus. Das Verb steht im Nebensatz immer am
+          <strong>Ende</strong>.</p>
+        <div class="example">
+          <p class="font-medium">Struktur: Konnektor + Subjekt + ... + Verb am Ende</p>
+          <p class="mt-2">"... <strong>wenn</strong> einheitliche Schulkleidung ... zur Identifizierung
+            <strong>beiträgt</strong>."</p>
+          <p class="mt-1">"<strong>Falls</strong> Schulkleidung ... dem Markenwahn <strong>entgegenwirkt</strong>..."
+          </p>
+        </div>
+      </div>
+
+      <div class="grammar-rule">
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">3. Passiversatzform: sein + zu + Infinitiv</h3>
+        <p class="mb-2">Diese Konstruktion drückt eine Notwendigkeit oder eine Möglichkeit aus und hat eine passive
+          Bedeutung. Es ist eine elegante Alternative zu "müssen/können + Passiv".</p>
+        <div class="example">
+          <p>"... dass das Tragen einer Schuluniform <strong>zu begrüßen ist</strong>."</p>
+          <p class="text-sm text-gray-600 mt-1"><em>Bedeutung:</em> ... dass das Tragen einer Schuluniform begrüßt
+            werden sollte.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white p-6 md:p-10 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold mb-6 text-emerald-700 border-b pb-2">Wichtiger Wortschatz (B1)</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white border border-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th
+                class="px-6 py-3 border-b border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                Wort / Ausdruck</th>
+              <th
+                class="px-6 py-3 border-b border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                Englisch</th>
+              <th
+                class="px-6 py-3 border-b border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                Beispiel</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">sich aussprechen für</td>
+              <td class="px-6 py-4 text-gray-600">to advocate for / support</td>
+              <td class="px-6 py-4 text-gray-600 italic">Ich spreche mich für längere Pausen aus.</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">entgegenwirken (+ Dat)</td>
+              <td class="px-6 py-4 text-gray-600">to counteract</td>
+              <td class="px-6 py-4 text-gray-600 italic">Sport kann Stress entgegenwirken.</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">die Gemeinschaft</td>
+              <td class="px-6 py-4 text-gray-600">community</td>
+              <td class="px-6 py-4 text-gray-600 italic">In einer starken Gemeinschaft hilft man sich.</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">beitragen zu</td>
+              <td class="px-6 py-4 text-gray-600">to contribute to</td>
+              <td class="px-6 py-4 text-gray-600 italic">Jeder soll zum Erfolg des Projekts beitragen.</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">verbreitet</td>
+              <td class="px-6 py-4 text-gray-600">widespread / common</td>
+              <td class="px-6 py-4 text-gray-600 italic">Diese Meinung ist in Deutschland weit verbreitet.</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">einheitlich</td>
+              <td class="px-6 py-4 text-gray-600">uniform / consistent</td>
+              <td class="px-6 py-4 text-gray-600 italic">Die Regeln müssen für alle einheitlich sein.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+</body>
+
+</html>
