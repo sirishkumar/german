@@ -93,12 +93,83 @@
         left: 20px;
       }
     }
+
+    /* Inline word-level glossing */
+    .word-gloss {
+      position: relative;
+      cursor: help;
+      border-bottom: 1px dashed #38bdf8;
+      padding: 0 2px;
+      transition: background-color 0.15s ease;
+    }
+
+    .word-gloss:hover,
+    .word-gloss:focus-visible {
+      background-color: #e0f2fe;
+      outline: none;
+    }
+
+    .word-gloss::after {
+      content: attr(data-meaning);
+      position: absolute;
+      left: 50%;
+      bottom: 140%;
+      transform: translateX(-50%);
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      white-space: normal;
+      width: max-content;
+      max-width: 260px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      z-index: 60;
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
+    .word-gloss:hover::after,
+    .word-gloss:focus-visible::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .glossary-sidebar {
+      position: sticky;
+      top: 1.5rem;
+      align-self: start;
+    }
+
+    .glossary-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      padding: 0.75rem;
+      background: #f8fafc;
+      transition: border-color 0.15s ease, background-color 0.15s ease;
+    }
+
+    .glossary-item.active {
+      border-color: #0284c7;
+      background: #e0f2fe;
+    }
+
+    #glossary-list {
+      max-height: calc(100vh - 220px);
+      overflow-y: auto;
+      padding-right: 4px;
+    }
   </style>
+  <link rel="stylesheet" href="../../../assets/glossary.css">
+  <script src="../../../assets/glossary.js" defer></script>
 </head>
 
 <body class="bg-slate-50 font-serif text-slate-800 antialiased leading-relaxed">
 
-  <main class="max-w-4xl mx-auto px-6 py-12">
+  <main class="max-w-6xl mx-auto px-6 py-12">
 
     <header class="mb-10 text-center border-b border-slate-200 pb-8">
       <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">Eine starke Frau: Pauline von
@@ -117,285 +188,327 @@
       </div>
     </header>
 
-    <article class="bg-white shadow-xl rounded-2xl p-8 md:p-12 mb-12 ring-1 ring-slate-900/5">
-      <h2 class="text-2xl font-bold text-slate-800 mb-6 font-sans border-l-4 border-blue-500 pl-4">Der Lesetext</h2>
+    <div class="lg:grid lg:grid-cols-[2.2fr_1fr] lg:gap-10">
+      <div class="space-y-12">
+        <article class="bg-white shadow-xl rounded-2xl p-8 md:p-12 ring-1 ring-slate-900/5" id="pauline-reader">
+          <h2 class="text-2xl font-bold text-slate-800 mb-6 font-sans border-l-4 border-blue-500 pl-4">Der Lesetext</h2>
 
-      <div class="text-xl space-y-6 text-justify">
-        <p>
-          <span class="sentence-translate">
-            Fürstin Pauline zur Lippe, 1769 in Ballenstedt geboren, gilt heute als Musterbeispiel für jene Regenten von
-            kleinen Herrschaftsgebieten, in die das alte deutsche Reich zerfallen war.
-            <span class="translation">Princess Pauline of Lippe, born in Ballenstedt in 1769, is considered today a
-              prime example of those regents of small territories into which the old German Empire had
-              disintegrated.</span>
-          </span>
-          <span class="sentence-translate">
-            Pauline führte ihr kleines Fürstentum so mustergültig, dass die Bewohner bis zu den Weltkriegen in gutem
-            bürgerlichen Wohlstand leben konnten.
-            <span class="translation">Pauline led her small principality so exemplarily that the inhabitants were able
-              to live in good bourgeois prosperity until the World Wars.</span>
-          </span>
-          <span class="sentence-translate">
-            Ihr Vater, Fürst von Anhalt-Bernburg, erzog sie auf gleiche Weise wie ihren Bruder.
-            <span class="translation">Her father, Prince of Anhalt-Bernburg, raised her in the same way as her
-              brother.</span>
-          </span>
-          <span class="sentence-translate">
-            Sie erhielt Unterricht in Staatswissenschaften und verbrachte den ganzen Tag am Schreibtisch.
-            <span class="translation">She received instruction in political science and spent the entire day at her
-              desk.</span>
-          </span>
-          <span class="sentence-translate">
-            Später heiratete sie den Fürsten Leopold zur Lippe, der aber schon im Jahre 1802 starb.
-            <span class="translation">Later she married Prince Leopold of Lippe, who, however, died as early as
-              1802.</span>
-          </span>
-        </p>
+          <div class="text-xl space-y-6 text-justify">
+            <p>
+              <span class="sentence-translate">
+                <span class="word-gloss" data-word="Fürstin" data-meaning="princess; ruling noblewoman">Fürstin</span>
+                Pauline zur Lippe, 1769 in Ballenstedt geboren, gilt heute als
+                <span class="word-gloss" data-meaning="model example">Musterbeispiel</span> für jene
+                <span class="word-gloss" data-meaning="regents; rulers who govern for someone else">Regenten</span> von
+                kleinen <span class="word-gloss" data-meaning="territories; domains">Herrschaftsgebieten</span>, in die
+                das alte deutsche Reich <span class="word-gloss" data-meaning="had fallen apart; disintegrated">zerfallen</span>
+                war.
+                <span class="translation">Princess Pauline of Lippe, born in Ballenstedt in 1769, is considered today a
+                  prime example of those regents of small territories into which the old German Empire had
+                  disintegrated.</span>
+              </span>
+              <span class="sentence-translate">
+                Pauline <span class="word-gloss" data-meaning="led; governed">führte</span> ihr kleines
+                <span class="word-gloss" data-meaning="principality">Fürstentum</span> so
+                <span class="word-gloss" data-meaning="exemplary; by the book">mustergültig</span>, dass die Bewohner
+                bis zu den Weltkriegen in gutem <span class="word-gloss" data-meaning="bourgeois prosperity; comfortable middle-class living">bürgerlichen Wohlstand</span>
+                leben konnten.
+                <span class="translation">Pauline led her small principality so exemplarily that the inhabitants were
+                  able to live in good bourgeois prosperity until the World Wars.</span>
+              </span>
+              <span class="sentence-translate">
+                Ihr Vater, Fürst von Anhalt-Bernburg, <span class="word-gloss" data-meaning="raised; brought up">erzog</span>
+                sie auf gleiche Weise wie ihren Bruder.
+                <span class="translation">Her father, Prince of Anhalt-Bernburg, raised her in the same way as her
+                  brother.</span>
+              </span>
+              <span class="sentence-translate">
+                Sie erhielt Unterricht in <span class="word-gloss" data-meaning="political science; public policy studies">Staatswissenschaften</span>
+                und verbrachte den ganzen Tag am Schreibtisch.
+                <span class="translation">She received instruction in political science and spent the entire day at her
+                  desk.</span>
+              </span>
+              <span class="sentence-translate">
+                Später heiratete sie den Fürsten Leopold zur Lippe, der aber schon im Jahre 1802
+                <span class="word-gloss" data-meaning="died">starb</span>.
+                <span class="translation">Later she married Prince Leopold of Lippe, who, however, died as early as
+                  1802.</span>
+              </span>
+            </p>
 
-        <p>
-          <span class="sentence-translate">
-            Von da an musste Pauline die Regentschaft für ihren unmündigen Sohn übernehmen.
-            <span class="translation">From then on, Pauline had to take over the regency for her underage son.</span>
-          </span>
-          <span class="sentence-translate">
-            Schon bald bemerkte sie das Elend und die große Armut, die im Lande herrschten.
-            <span class="translation">Very soon she noticed the misery and the great poverty that prevailed in the
-              land.</span>
-          </span>
-          <span class="sentence-translate">
-            Sie las Bücher über moderne Sozialfürsorge und erkannte, dass die Armen vor allem Arbeit brauchten.
-            <span class="translation">She read books about modern social welfare and realized that the poor needed work
-              above all.</span>
-          </span>
-          <span class="sentence-translate">
-            Sie errichtete Berufsschulen für Kinder.
-            <span class="translation">She established vocational schools for children.</span>
-          </span>
-          <span class="sentence-translate">
-            Dort erlernten sie ein kleines Handwerk und erhielten dafür ein bisschen Geld.
-            <span class="translation">There they learned a small trade and received a little money for it.</span>
-          </span>
-          <span class="sentence-translate">
-            Dieser Lohn half den Kindern später beim Aufbau einer eigenen Existenz.
-            <span class="translation">This wage helped the children later with building their own livelihood.</span>
-          </span>
-        </p>
+            <p>
+              <span class="sentence-translate">
+                Von da an musste Pauline die <span class="word-gloss" data-meaning="regency; temporary rule">Regentschaft</span>
+                für ihren <span class="word-gloss" data-meaning="underage; not yet of legal age">unmündigen</span> Sohn
+                übernehmen.
+                <span class="translation">From then on, Pauline had to take over the regency for her underage son.</span>
+              </span>
+              <span class="sentence-translate">
+                Schon bald bemerkte sie das <span class="word-gloss" data-meaning="misery">Elend</span> und die große
+                <span class="word-gloss" data-meaning="poverty">Armut</span>, die im Lande herrschten.
+                <span class="translation">Very soon she noticed the misery and the great poverty that prevailed in the
+                  land.</span>
+              </span>
+              <span class="sentence-translate">
+                Sie las Bücher über moderne <span class="word-gloss" data-meaning="social welfare; social care">Sozialfürsorge</span>
+                und erkannte, dass die Armen vor allem Arbeit brauchten.
+                <span class="translation">She read books about modern social welfare and realized that the poor needed
+                  work above all.</span>
+              </span>
+              <span class="sentence-translate">
+                Sie errichtete <span class="word-gloss" data-meaning="vocational schools">Berufsschulen</span> für
+                Kinder.
+                <span class="translation">She established vocational schools for children.</span>
+              </span>
+              <span class="sentence-translate">
+                Dort erlernten sie ein kleines <span class="word-gloss" data-meaning="trade; craft">Handwerk</span> und
+                erhielten dafür ein bisschen Geld.
+                <span class="translation">There they learned a small trade and received a little money for it.</span>
+              </span>
+              <span class="sentence-translate">
+                Dieser Lohn half den Kindern später beim Aufbau einer eigenen
+                <span class="word-gloss" data-meaning="livelihood; existence">Existenz</span>.
+                <span class="translation">This wage helped the children later with building their own livelihood.</span>
+              </span>
+            </p>
 
-        <p>
-          <span class="sentence-translate">
-            Pauline ließ Listen von Armen und Kranken anfertigen und wer ganz hilfebedürftig war, wurde kostenlos in
-            Krankenstuben versorgt.
-            <span class="translation">Pauline had lists of the poor and sick drawn up, and whoever was completely in
-              need of help was cared for free of charge in infirmaries.</span>
-          </span>
-          <span class="sentence-translate">
-            Zur Betreuung von Wahnsinnigen und Gemütskranken ließ sie ein Schloss umbauen und Kuhställe einrichten, in
-            denen die Kranken Käse und Butter herstellen konnten.
-            <span class="translation">For the care of the insane and the mentally ill, she had a castle converted and
-              cow barns set up where the patients could produce cheese and butter.</span>
-          </span>
-          <span class="sentence-translate">
-            Nach der Gründung des ersten deutschen Kindergartens in Detmold (1802) veranstaltete sie ein ‚Seminar‘ für
-            Frauen, um Erzieherinnen für weitere Kindergärten auszubilden.
-            <span class="translation">After the founding of the first German kindergarten in Detmold (1802), she
-              organized a 'seminar' for women in order to train educators for further kindergartens.</span>
-          </span>
-        </p>
+            <p>
+              <span class="sentence-translate">
+                Pauline ließ Listen von Armen und Kranken anfertigen und wer ganz
+                <span class="word-gloss" data-meaning="in need of help; reliant on aid">hilfebedürftig</span> war,
+                wurde kostenlos in <span class="word-gloss" data-meaning="infirmaries">Krankenstuben</span> versorgt.
+                <span class="translation">Pauline had lists of the poor and sick drawn up, and whoever was completely in
+                  need of help was cared for free of charge in infirmaries.</span>
+              </span>
+              <span class="sentence-translate">
+                Zur Betreuung von <span class="word-gloss" data-meaning="the insane; people considered mad at the time">Wahnsinnigen</span>
+                und <span class="word-gloss" data-meaning="mentally ill; suffering from emotional illness">Gemütskranken</span>
+                ließ sie ein Schloss umbauen und Kuhställe einrichten, in denen die Kranken Käse und Butter herstellen
+                konnten.
+                <span class="translation">For the care of the insane and the mentally ill, she had a castle converted
+                  and cow barns set up where the patients could produce cheese and butter.</span>
+              </span>
+              <span class="sentence-translate">
+                Nach der Gründung des ersten deutschen Kindergartens in Detmold (1802) veranstaltete sie ein ‚Seminar‘
+                für Frauen, um Erzieherinnen für weitere Kindergärten auszubilden.
+                <span class="translation">After the founding of the first German kindergarten in Detmold (1802), she
+                  organized a 'seminar' for women in order to train educators for further kindergartens.</span>
+              </span>
+            </p>
 
-        <p>
-          <span class="sentence-translate">
-            Pauline legte Vorratslager mit Getreide an, was für Zeiten der Hungersnot dringend notwendig war.
-            <span class="translation">Pauline set up stockpiles of grain, which was urgently necessary for times of
-              famine.</span>
-          </span>
-          <span class="sentence-translate">
-            Sie sorgte für neue Straßenkarten und verkürzte die Wehrpflicht für junge Männer auf fünf Jahre.
-            <span class="translation">She provided for new road maps and shortened the military service for young men to
-              five years.</span>
-          </span>
-          <span class="sentence-translate">
-            In vielen Dingen, z. B. in der Fürsorge für Geisteskranke, war Pauline ihrer Zeit so weit voraus, dass sie
-            auf Unverständnis bei Teilen der Bevölkerung und der eigenen Familie stieß.
-            <span class="translation">In many things, e.g., in the care for the mentally ill, Pauline was so far ahead
-              of her time that she met with lack of understanding from parts of the population and her own
-              family.</span>
-          </span>
-        </p>
+            <p>
+              <span class="sentence-translate">
+                Pauline legte <span class="word-gloss" data-meaning="stockpiles; reserves">Vorratslager</span> mit
+                Getreide an, was für Zeiten der <span class="word-gloss" data-meaning="famine">Hungersnot</span>
+                dringend notwendig war.
+                <span class="translation">Pauline set up stockpiles of grain, which was urgently necessary for times of
+                  famine.</span>
+              </span>
+              <span class="sentence-translate">
+                Sie sorgte für neue Straßenkarten und verkürzte die <span class="word-gloss" data-meaning="compulsory military service; draft">Wehrpflicht</span>
+                für junge Männer auf fünf Jahre.
+                <span class="translation">She provided for new road maps and shortened the military service for young
+                  men to five years.</span>
+              </span>
+              <span class="sentence-translate">
+                In vielen Dingen, z. B. in der Fürsorge für <span class="word-gloss" data-meaning="mentally ill people">Geisteskranke</span>,
+                war Pauline ihrer Zeit so weit <span class="word-gloss" data-meaning="ahead; in front">voraus</span>,
+                dass sie auf <span class="word-gloss" data-meaning="lack of understanding; incomprehension">Unverständnis</span>
+                bei Teilen der Bevölkerung und der eigenen Familie stieß.
+                <span class="translation">In many things, e.g., in the care for the mentally ill, Pauline was so far
+                  ahead of her time that she met with lack of understanding from parts of the population and her own
+                  family.</span>
+              </span>
+            </p>
 
-        <p>
-          <span class="sentence-translate">
-            Sie starb 1820 völlig verarmt in Detmold.
-            <span class="translation">She died in 1820 completely impoverished in Detmold.</span>
-          </span>
-          <span class="sentence-translate">
-            Bei der hastigen Beerdigung folgten nur wenige ihrem Sarg, nicht einmal ihre eigenen Kinder.
-            <span class="translation">At the hasty funeral, only a few followed her coffin, not even her own
-              children.</span>
-          </span>
-          <span class="sentence-translate">
-            Paulines wohltätige Einrichtungen aber gibt es bis heute und im Volk ist sie dafür unvergessen.
-            <span class="translation">However, Pauline's charitable institutions exist to this day, and among the
-              people, she is unforgotten for them.</span>
-          </span>
-        </p>
-      </div>
-    </article>
-
-    <section class="mb-12 font-sans">
-      <div class="flex items-center mb-6">
-        <div class="h-8 w-1 bg-blue-600 rounded-full mr-3"></div>
-        <h2 class="text-2xl font-bold text-slate-800">Grammar Rules & Concepts</h2>
-      </div>
-
-      <div class="grid grid-cols-1 gap-8">
-
-        <article class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-          <h3 class="text-xl font-bold text-blue-900 mb-3 flex items-center">
-            <span class="bg-blue-100 text-blue-800 text-sm font-semibold mr-3 px-2.5 py-0.5 rounded">Tense</span>
-            The Präteritum (Narrative Past)
-          </h3>
-          <p class="text-slate-600 mb-4">
-            The Präteritum is the standard tense for written narratives, reports, and biographies in German. Unlike the
-            Perfekt (used in spoken language), it creates a formal distance appropriate for historical accounts.
-          </p>
-
-          <div class="grid md:grid-cols-2 gap-4">
-            <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-emerald-400">
-              <h4 class="font-bold text-slate-700 mb-2">Weak Verbs (Regular)</h4>
-              <p class="text-sm text-slate-500 mb-2">Rule: Stem + <span
-                  class="font-mono text-emerald-600 font-bold">-te</span> + Ending</p>
-              <p class="italic text-slate-800">"Sie <span
-                  class="bg-emerald-100 px-1 rounded font-semibold">sorgte</span> für neue Karten."</p>
-              <p class="text-xs text-slate-400 mt-1">(Infinitive: sorgen)</p>
-            </div>
-            <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-amber-400">
-              <h4 class="font-bold text-slate-700 mb-2">Strong Verbs (Irregular)</h4>
-              <p class="text-sm text-slate-500 mb-2">Rule: Vowel Change (Ablaut)</p>
-              <p class="italic text-slate-800">"Er <span class="bg-amber-100 px-1 rounded font-semibold">starb</span> im
-                Jahre 1802."</p>
-              <p class="text-xs text-slate-400 mt-1">(Infinitive: sterben)</p>
-            </div>
+            <p>
+              <span class="sentence-translate">
+                Sie starb 1820 völlig <span class="word-gloss" data-meaning="impoverished; destitute">verarmt</span> in
+                Detmold.
+                <span class="translation">She died in 1820 completely impoverished in Detmold.</span>
+              </span>
+              <span class="sentence-translate">
+                Bei der hastigen Beerdigung folgten nur wenige ihrem
+                <span class="word-gloss" data-meaning="coffin">Sarg</span>, nicht einmal ihre eigenen Kinder.
+                <span class="translation">At the hasty funeral, only a few followed her coffin, not even her own
+                  children.</span>
+              </span>
+              <span class="sentence-translate">
+                Paulines <span class="word-gloss" data-meaning="charitable institutions">wohltätige Einrichtungen</span>
+                aber gibt es bis heute und im Volk ist sie dafür unvergessen.
+                <span class="translation">However, Pauline's charitable institutions exist to this day, and among the
+                  people, she is unforgotten for them.</span>
+              </span>
+            </p>
           </div>
         </article>
 
-        <article class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-          <h3 class="text-xl font-bold text-blue-900 mb-3 flex items-center">
-            <span class="bg-purple-100 text-purple-800 text-sm font-semibold mr-3 px-2.5 py-0.5 rounded">Voice</span>
-            The Passive Voice (Vorgangspassiv)
-          </h3>
-          <p class="text-slate-600 mb-4">
-            Biographical texts often use the passive to focus on the <em>recipient</em> of an action (e.g., the poor) or
-            the <em>result</em> (e.g., the institution established), rather than the specific person performing the
-            work.
-          </p>
-          <div class="bg-purple-50 p-4 rounded-lg border border-purple-100">
-            <p class="font-bold text-purple-900 mb-2">Textual Example:</p>
-            <p class="text-lg mb-2 text-slate-800">"...wer ganz hilfebedürftig war, <span
-                class="font-bold text-purple-600">wurde</span> kostenlos in Krankenstuben <span
-                class="font-bold text-purple-600">versorgt</span>."</p>
-            <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-              <li><strong>Construction:</strong> <em>wurden</em> (Präteritum of werden) + Participle II.</li>
-              <li><strong>Agent:</strong> Omitted (implied: by nurses/doctors).</li>
-              <li><strong>Focus:</strong> The provision of care.</li>
-            </ul>
+        <section class="font-sans">
+          <div class="flex items-center mb-6">
+            <div class="h-8 w-1 bg-blue-600 rounded-full mr-3"></div>
+            <h2 class="text-2xl font-bold text-slate-800">Grammar Rules & Concepts</h2>
           </div>
-        </article>
 
-        <article class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-          <h3 class="text-xl font-bold text-blue-900 mb-3 flex items-center">
-            <span class="bg-orange-100 text-orange-800 text-sm font-semibold mr-3 px-2.5 py-0.5 rounded">Syntax</span>
-            Relative Clauses with Prepositions
-          </h3>
-          <p class="text-slate-600 mb-4">
-            At the B2 level, relative clauses often involve verbs that require a specific preposition. The preposition
-            must appear <strong>before</strong> the relative pronoun.
-          </p>
-          <table class="w-full text-sm text-left text-slate-600 border border-slate-200 rounded-lg overflow-hidden">
-            <thead class="bg-slate-100 text-slate-700 uppercase font-bold text-xs">
-              <tr>
-                <th class="px-4 py-3">Antecedent</th>
-                <th class="px-4 py-3">Preposition + Pronoun</th>
-                <th class="px-4 py-3">Context</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-200">
-              <tr class="bg-white">
-                <td class="px-4 py-3 font-medium">Herrschaftsgebiete</td>
-                <td class="px-4 py-3 text-orange-600 font-bold">in die</td>
-                <td class="px-4 py-3">Accusative (Movement/Change)</td>
-              </tr>
-              <tr class="bg-slate-50">
-                <td class="px-4 py-3 font-medium">Kuhställe</td>
-                <td class="px-4 py-3 text-orange-600 font-bold">in denen</td>
-                <td class="px-4 py-3">Dative (Location)</td>
-              </tr>
-            </tbody>
-          </table>
-        </article>
+          <div class="grid grid-cols-1 gap-8">
 
+            <article class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+              <h3 class="text-xl font-bold text-blue-900 mb-3 flex items-center">
+                <span class="bg-blue-100 text-blue-800 text-sm font-semibold mr-3 px-2.5 py-0.5 rounded">Tense</span>
+                The Präteritum (Narrative Past)
+              </h3>
+              <p class="text-slate-600 mb-4">
+                The Präteritum is the standard tense for written narratives, reports, and biographies in German. Unlike
+                the Perfekt (used in spoken language), it creates a formal distance appropriate for historical accounts.
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-emerald-400">
+                  <h4 class="font-bold text-slate-700 mb-2">Weak Verbs (Regular)</h4>
+                  <p class="text-sm text-slate-500 mb-2">Rule: Stem + <span
+                      class="font-mono text-emerald-600 font-bold">-te</span> + Ending</p>
+                  <p class="italic text-slate-800">"Sie <span
+                      class="bg-emerald-100 px-1 rounded font-semibold">sorgte</span> für neue Karten."</p>
+                  <p class="text-xs text-slate-400 mt-1">(Infinitive: sorgen)</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-amber-400">
+                  <h4 class="font-bold text-slate-700 mb-2">Strong Verbs (Irregular)</h4>
+                  <p class="text-sm text-slate-500 mb-2">Rule: Vowel Change (Ablaut)</p>
+                  <p class="italic text-slate-800">"Er <span class="bg-amber-100 px-1 rounded font-semibold">starb</span>
+                    im Jahre 1802."</p>
+                  <p class="text-xs text-slate-400 mt-1">(Infinitive: sterben)</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+              <h3 class="text-xl font-bold text-blue-900 mb-3 flex items-center">
+                <span class="bg-purple-100 text-purple-800 text-sm font-semibold mr-3 px-2.5 py-0.5 rounded">Voice</span>
+                The Passive Voice (Vorgangspassiv)
+              </h3>
+              <p class="text-slate-600 mb-4">
+                Biographical texts often use the passive to focus on the <em>recipient</em> of an action (e.g., the
+                poor) or the <em>result</em> (e.g., the institution established), rather than the specific person
+                performing the work.
+              </p>
+              <div class="bg-purple-50 p-4 rounded-lg border border-purple-100">
+                <p class="font-bold text-purple-900 mb-2">Textual Example:</p>
+                <p class="text-lg mb-2 text-slate-800">"...wer ganz hilfebedürftig war, <span
+                    class="font-bold text-purple-600">wurde</span> kostenlos in Krankenstuben <span
+                    class="font-bold text-purple-600">versorgt</span>."</p>
+                <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                  <li><strong>Construction:</strong> <em>wurden</em> (Präteritum of werden) + Participle II.</li>
+                  <li><strong>Agent:</strong> Omitted (implied: by nurses/doctors).</li>
+                  <li><strong>Focus:</strong> The provision of care.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+              <h3 class="text-xl font-bold text-blue-900 mb-3 flex items-center">
+                <span class="bg-orange-100 text-orange-800 text-sm font-semibold mr-3 px-2.5 py-0.5 rounded">Syntax</span>
+                Relative Clauses with Prepositions
+              </h3>
+              <p class="text-slate-600 mb-4">
+                At the B2 level, relative clauses often involve verbs that require a specific preposition. The
+                preposition must appear <strong>before</strong> the relative pronoun.
+              </p>
+              <table class="w-full text-sm text-left text-slate-600 border border-slate-200 rounded-lg overflow-hidden">
+                <thead class="bg-slate-100 text-slate-700 uppercase font-bold text-xs">
+                  <tr>
+                    <th class="px-4 py-3">Antecedent</th>
+                    <th class="px-4 py-3">Preposition + Pronoun</th>
+                    <th class="px-4 py-3">Context</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+                  <tr class="bg-white">
+                    <td class="px-4 py-3 font-medium">Herrschaftsgebiete</td>
+                    <td class="px-4 py-3 text-orange-600 font-bold">in die</td>
+                    <td class="px-4 py-3">Accusative (Movement/Change)</td>
+                  </tr>
+                  <tr class="bg-slate-50">
+                    <td class="px-4 py-3 font-medium">Kuhställe</td>
+                    <td class="px-4 py-3 text-orange-600 font-bold">in denen</td>
+                    <td class="px-4 py-3">Dative (Location)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+
+          </div>
+        </section>
+
+        <section class="font-sans mb-12">
+          <div class="flex items-center mb-6">
+            <div class="h-8 w-1 bg-emerald-500 rounded-full mr-3"></div>
+            <h2 class="text-2xl font-bold text-slate-800">Relevant Vocabulary (B1/B2)</h2>
+          </div>
+
+          <div class="overflow-x-auto shadow-lg rounded-lg border border-slate-200">
+            <table class="w-full text-sm text-left text-slate-500">
+              <thead class="text-xs text-slate-700 uppercase bg-slate-100">
+                <tr>
+                  <th scope="col" class="px-6 py-4 font-extrabold tracking-wider">German Term</th>
+                  <th scope="col" class="px-6 py-4 font-extrabold tracking-wider">English Meaning</th>
+                  <th scope="col" class="px-6 py-4 font-extrabold tracking-wider">Example Sentence</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white">
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="px-6 py-4 font-bold text-slate-900 text-base">der Wohlstand</td>
+                  <td class="px-6 py-4 text-slate-700">prosperity / wealth</td>
+                  <td class="px-6 py-4 italic text-slate-600">Der wirtschaftliche Aufschwung brachte Wohlstand.</td>
+                </tr>
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="px-6 py-4 font-bold text-slate-900 text-base">gelten als</td>
+                  <td class="px-6 py-4 text-slate-700">to be considered as</td>
+                  <td class="px-6 py-4 italic text-slate-600">Sie gilt als Expertin auf ihrem Gebiet.</td>
+                </tr>
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="px-6 py-4 font-bold text-slate-900 text-base">die Fürsorge</td>
+                  <td class="px-6 py-4 text-slate-700">welfare / care</td>
+                  <td class="px-6 py-4 italic text-slate-600">Die staatliche Fürsorge ist wichtig für Familien.</td>
+                </tr>
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="px-6 py-4 font-bold text-slate-900 text-base">errichten</td>
+                  <td class="px-6 py-4 text-slate-700">to establish / build</td>
+                  <td class="px-6 py-4 italic text-slate-600">Die Stadt errichtete ein neues Denkmal.</td>
+                </tr>
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="px-6 py-4 font-bold text-slate-900 text-base">die Wehrpflicht</td>
+                  <td class="px-6 py-4 text-slate-700">conscription / draft</td>
+                  <td class="px-6 py-4 italic text-slate-600">Die Wehrpflicht wurde ausgesetzt.</td>
+                </tr>
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="px-6 py-4 font-bold text-slate-900 text-base">verarmen</td>
+                  <td class="px-6 py-4 text-slate-700">to become impoverished</td>
+                  <td class="px-6 py-4 italic text-slate-600">Ohne Arbeit drohte die Familie zu verarmen.</td>
+                </tr>
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="px-6 py-4 font-bold text-slate-900 text-base">voraus sein</td>
+                  <td class="px-6 py-4 text-slate-700">to be ahead of</td>
+                  <td class="px-6 py-4 italic text-slate-600">Sie war ihrer Zeit weit voraus.</td>
+                </tr>
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="px-6 py-4 font-bold text-slate-900 text-base">das Unverständnis</td>
+                  <td class="px-6 py-4 text-slate-700">lack of understanding</td>
+                  <td class="px-6 py-4 italic text-slate-600">Seine Pläne stießen auf Unverständnis.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
       </div>
-    </section>
 
-    <section class="font-sans mb-12">
-      <div class="flex items-center mb-6">
-        <div class="h-8 w-1 bg-emerald-500 rounded-full mr-3"></div>
-        <h2 class="text-2xl font-bold text-slate-800">Relevant Vocabulary (B1/B2)</h2>
-      </div>
-
-      <div class="overflow-x-auto shadow-lg rounded-lg border border-slate-200">
-        <table class="w-full text-sm text-left text-slate-500">
-          <thead class="text-xs text-slate-700 uppercase bg-slate-100">
-            <tr>
-              <th scope="col" class="px-6 py-4 font-extrabold tracking-wider">German Term</th>
-              <th scope="col" class="px-6 py-4 font-extrabold tracking-wider">English Meaning</th>
-              <th scope="col" class="px-6 py-4 font-extrabold tracking-wider">Example Sentence</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-200 bg-white">
-            <tr class="hover:bg-slate-50 transition-colors">
-              <td class="px-6 py-4 font-bold text-slate-900 text-base">der Wohlstand</td>
-              <td class="px-6 py-4 text-slate-700">prosperity / wealth</td>
-              <td class="px-6 py-4 italic text-slate-600">Der wirtschaftliche Aufschwung brachte Wohlstand.</td>
-            </tr>
-            <tr class="hover:bg-slate-50 transition-colors">
-              <td class="px-6 py-4 font-bold text-slate-900 text-base">gelten als</td>
-              <td class="px-6 py-4 text-slate-700">to be considered as</td>
-              <td class="px-6 py-4 italic text-slate-600">Sie gilt als Expertin auf ihrem Gebiet.</td>
-            </tr>
-            <tr class="hover:bg-slate-50 transition-colors">
-              <td class="px-6 py-4 font-bold text-slate-900 text-base">die Fürsorge</td>
-              <td class="px-6 py-4 text-slate-700">welfare / care</td>
-              <td class="px-6 py-4 italic text-slate-600">Die staatliche Fürsorge ist wichtig für Familien.</td>
-            </tr>
-            <tr class="hover:bg-slate-50 transition-colors">
-              <td class="px-6 py-4 font-bold text-slate-900 text-base">errichten</td>
-              <td class="px-6 py-4 text-slate-700">to establish / build</td>
-              <td class="px-6 py-4 italic text-slate-600">Die Stadt errichtete ein neues Denkmal.</td>
-            </tr>
-            <tr class="hover:bg-slate-50 transition-colors">
-              <td class="px-6 py-4 font-bold text-slate-900 text-base">die Wehrpflicht</td>
-              <td class="px-6 py-4 text-slate-700">conscription / draft</td>
-              <td class="px-6 py-4 italic text-slate-600">Die Wehrpflicht wurde ausgesetzt.</td>
-            </tr>
-            <tr class="hover:bg-slate-50 transition-colors">
-              <td class="px-6 py-4 font-bold text-slate-900 text-base">verarmen</td>
-              <td class="px-6 py-4 text-slate-700">to become impoverished</td>
-              <td class="px-6 py-4 italic text-slate-600">Ohne Arbeit drohte die Familie zu verarmen.</td>
-            </tr>
-            <tr class="hover:bg-slate-50 transition-colors">
-              <td class="px-6 py-4 font-bold text-slate-900 text-base">voraus sein</td>
-              <td class="px-6 py-4 text-slate-700">to be ahead of</td>
-              <td class="px-6 py-4 italic text-slate-600">Sie war ihrer Zeit weit voraus.</td>
-            </tr>
-            <tr class="hover:bg-slate-50 transition-colors">
-              <td class="px-6 py-4 font-bold text-slate-900 text-base">das Unverständnis</td>
-              <td class="px-6 py-4 text-slate-700">lack of understanding</td>
-              <td class="px-6 py-4 italic text-slate-600">Seine Pläne stießen auf Unverständnis.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+      <aside class="glossary-sidebar bg-white shadow-xl rounded-2xl p-6 border border-slate-200 mt-10 lg:mt-0"
+        id="glossary-sidebar">
+        <p class="text-xs uppercase tracking-wide text-blue-600 font-semibold mb-2">Word-by-word</p>
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Rechter Rand: Sofort-Glossar</h3>
+        <p class="text-sm text-slate-600 mb-4">Fahre über markierte Wörter oder tippe sie an. Das passende Glossar rückt
+          hier auf – ideal für schnelles Nachschlagen während des Lesens.</p>
+        <div class="space-y-3" id="glossary-list" aria-live="polite"></div>
+      </aside>
+    </div>
 
     <footer class="mt-16 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm font-sans">
       <p class="mb-2">Developed for Educational Purposes based on the text "Eine starke Frau: Pauline von
