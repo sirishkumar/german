@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion: Sicherheit und Qualität in der deutschen Industrie</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .sentence-translate {
+      position: relative;
+      cursor: help;
+      border-bottom: 2px dotted #94a3b8;
+      transition: background-color 0.2s ease-in-out;
+      border-radius: 2px;
+    }
+
+    .sentence-translate:hover {
+      background-color: #e0f2fe;
+      border-bottom-color: #0284c7;
+    }
+
+    .translation {
+      visibility: hidden;
+      opacity: 0;
+      width: 320px;
+      background-color: #1e293b;
+      color: #f8fafc;
+      text-align: left;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      position: absolute;
+      z-index: 50;
+      bottom: 140%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      transition: opacity 0.2s ease-in-out, visibility 0.2s;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .translation::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -6px;
+      border-width: 6px;
+      border-style: solid;
+      border-color: #1e293b transparent transparent transparent;
+    }
+
+    .sentence-translate:hover .translation {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media (max-width: 640px) {
+      .translation {
+        width: 250px;
+        left: 0;
+        transform: translateX(0);
+      }
+
+      .translation::after {
+        left: 20px;
+      }
+    }
+
+    .word-gloss {
+      border-bottom: 1px dashed #3b82f6;
+      cursor: pointer;
+    }
+  </style>
+  <link rel="stylesheet" href="assets/glossary.css">
+  <script src="assets/glossary.js" defer></script>
+</head>
+
+<body class="bg-slate-50 font-serif text-slate-800 antialiased leading-relaxed">
+  <main class="max-w-6xl mx-auto px-6 py-12">
+
+    <header class="mb-12">
+      <p class="text-blue-600 font-bold tracking-widest uppercase text-sm mb-2">Teil 1: Leseverstehen</p>
+      <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">Sicherheit und Qualität in der deutschen
+        Industrie</h1>
+    </header>
+
+    <div class="lg:grid lg:grid-cols-[2.2fr_1fr] lg:gap-10">
+      <div class="space-y-12">
+
+        <article class="bg-white shadow-xl rounded-2xl p-8 md:p-12 ring-1 ring-slate-900/5" id="reader">
+          <h2 class="text-2xl font-bold text-slate-800 mb-6 font-sans border-l-4 border-blue-500 pl-4">Der Lesetext</h2>
+          <div class="text-lg space-y-6 text-justify leading-loose">
+
+            <p>
+              <span class="sentence-translate">
+                In deutschen Fabriken gelten strenge <span class="word-gloss"
+                  data-meaning="safety regulations">Sicherheitsvorschriften</span>.
+                <span class="translation">Strict safety regulations apply in German factories.</span>
+              </span>
+              <span class="sentence-translate">
+                Jeder neue Mitarbeiter muss eine <span class="word-gloss"
+                  data-meaning="instruction/briefing">Einweisung</span> bekommen, bevor er eine Maschine bedienen darf.
+                <span class="translation">Every new employee must receive an instruction before they are allowed to
+                  operate a machine.</span>
+              </span>
+              <span class="sentence-translate">
+                Der <span class="word-gloss" data-meaning="safety officer">Sicherheitsbeauftragte</span> erklärt die
+                Regeln und zeigt, wo sich der <span class="word-gloss" data-meaning="emergency exit">Notausgang</span>
+                und die <span class="word-gloss" data-meaning="first-aid equipment">Erste-Hilfe-Ausrüstung</span>
+                befinden.
+                <span class="translation">The safety officer explains the rules and shows where the emergency exit and
+                  first-aid equipment are located.</span>
+              </span>
+              <span class="sentence-translate">
+                Ohne passende <span class="word-gloss" data-meaning="protective equipment">Schutzausrüstung</span> darf
+                niemand die Werkhalle betreten.
+                <span class="translation">No one is allowed to enter the workshop without suitable protective
+                  equipment.</span>
+              </span>
+              <span class="sentence-translate">
+                Dazu gehören Schutzbrille, <span class="word-gloss" data-meaning="hearing protection">Gehörschutz</span>
+                und Sicherheitsschuhe.
+                <span class="translation">This includes safety goggles, hearing protection, and safety shoes.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                Die <span class="word-gloss" data-meaning="quality control">Qualitätskontrolle</span> spielt eine
+                zentrale Rolle in der deutschen Produktion.
+                <span class="translation">Quality control plays a central role in German production.</span>
+              </span>
+              <span class="sentence-translate">
+                Jedes Werkstück wird mehrfach überprüft, bevor es das Werk verlässt.
+                <span class="translation">Every workpiece is checked multiple times before it leaves the factory.</span>
+              </span>
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="defective/faulty">Fehlerhafte</span> Produkte werden sofort <span
+                  class="word-gloss" data-meaning="sorted out">aussortiert</span> und entweder nachgebessert oder
+                entsorgt.
+                <span class="translation">Defective products are sorted out immediately and either reworked or disposed
+                  of.</span>
+              </span>
+              <span class="sentence-translate">
+                Die Prüfverfahren sind genau dokumentiert, damit man später nachvollziehen kann, wer was kontrolliert
+                hat.
+                <span class="translation">The testing procedures are precisely documented so that it can be traced later
+                  who checked what.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                Ein großes Problem in vielen Fabriken ist die <span class="word-gloss"
+                  data-meaning="maintenance">Instandhaltung</span> der Maschinen.
+                <span class="translation">A major problem in many factories is the maintenance of the machines.</span>
+              </span>
+              <span class="sentence-translate">
+                Regelmäßige <span class="word-gloss" data-meaning="servicing/maintenance">Wartung</span> verhindert
+                teure <span class="word-gloss" data-meaning="operational breakdowns">Betriebsstörungen</span>.
+                <span class="translation">Regular maintenance prevents expensive operational disruptions.</span>
+              </span>
+              <span class="sentence-translate">
+                Wenn eine Fertigungsmaschine plötzlich <span class="word-gloss"
+                  data-meaning="comes to a standstill">stillsteht</span>, kostet das nicht nur Geld, sondern verzögert
+                auch die Auslieferung.
+                <span class="translation">If a production machine suddenly stops, it not only costs money but also
+                  delays delivery.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                Einerseits bietet die Arbeit in einer Fabrik gute <span class="word-gloss"
+                  data-meaning="earning opportunities">Verdienstmöglichkeiten</span>.
+                <span class="translation">On the one hand, working in a factory offers good earning
+                  opportunities.</span>
+              </span>
+              <span class="sentence-translate">
+                Andererseits ist <span class="word-gloss" data-meaning="shift work">Schichtarbeit</span> körperlich und
+                psychisch belastend.
+                <span class="translation">On the other hand, shift work is physically and mentally taxing.</span>
+              </span>
+              <span class="sentence-translate">
+                Der <span class="word-gloss" data-meaning="works council">Betriebsrat</span> setzt sich deshalb für
+                bessere Arbeitsbedingungen ein.
+                <span class="translation">The works council therefore advocates for better working conditions.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                Die Zukunft der deutschen Industrie hängt von gut ausgebildeten <span class="word-gloss"
+                  data-meaning="skilled workers">Facharbeitern</span> ab.
+                <span class="translation">The future of German industry depends on well-trained skilled workers.</span>
+              </span>
+              <span class="sentence-translate">
+                Viele Betriebe bilden selbst <span class="word-gloss" data-meaning="apprentices">Auszubildende</span>
+                aus, weil es auf dem Arbeitsmarkt nicht genug qualifizierte Bewerber gibt.
+                <span class="translation">Many companies train apprentices themselves because there are not enough
+                  qualified applicants on the labor market.</span>
+              </span>
+            </p>
+
+          </div>
+        </article>
+
+        <section class="bg-blue-50 rounded-2xl p-8 border border-blue-100">
+          <h3 class="text-xl font-bold text-blue-900 mb-4">Grammatik-Fokus: Konnektoren</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+              <h4 class="font-bold text-blue-700 mb-2">Nicht nur... sondern auch</h4>
+              <p class="text-sm">Used for emphasis (Not only... but also).</p>
+              <p class="italic text-slate-600 mt-2">"...kostet das **nicht nur** Geld, **sondern** verzögert **auch**
+                die Auslieferung."</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+              <h4 class="font-bold text-blue-700 mb-2">Einerseits... andererseits</h4>
+              <p class="text-sm">Used to weigh pros and cons (On the one hand... on the other hand).</p>
+              <p class="italic text-slate-600 mt-2">"**Einerseits** bietet die Arbeit... **andererseits** ist
+                Schichtarbeit belastend."</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-slate-900 text-white rounded-2xl p-8">
+          <h3 class="text-xl font-bold mb-4">Interaktive Übung</h3>
+          <p class="mb-6 text-slate-300">Vervollständigen Sie die Sätze mit den passenden Wörtern aus dem Text:</p>
+          <div class="space-y-4">
+            <div class="flex flex-col gap-2">
+              <label>1. Wer an einer Maschine arbeitet, braucht eine gute _________.</label>
+              <input type="text"
+                class="bg-slate-800 border border-slate-700 rounded p-2 text-white focus:ring-2 focus:ring-blue-500 outline-none"
+                placeholder="Lösung eingeben...">
+            </div>
+            <div class="flex flex-col gap-2">
+              <label>2. Die _________ dokumentiert alle Prüfverfahren ganz genau.</label>
+              <input type="text"
+                class="bg-slate-800 border border-slate-700 rounded p-2 text-white focus:ring-2 focus:ring-blue-500 outline-none"
+                placeholder="Lösung eingeben...">
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <aside
+        class="glossary-sidebar bg-white shadow-xl rounded-2xl p-6 border border-slate-200 mt-10 lg:mt-0 sticky top-6 self-start"
+        id="glossary-sidebar">
+        <p class="text-xs uppercase tracking-wide text-blue-600 font-semibold mb-2">Word-by-word</p>
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Rechter Rand: Sofort-Glossar</h3>
+        <p class="text-sm text-slate-600 mb-4">Fahre über markierte Wörter oder tippe sie an. Das passende Glossar rückt
+          hier auf – ideal für schnelles Nachschlagen während des Lesens.</p>
+        <div class="space-y-3" id="glossary-list" aria-live="polite">
+        </div>
+      </aside>
+    </div>
+
+    <footer class="mt-16 pt-8 border-t border-slate-200 text-center text-slate-500 text-sm">
+      <p>&copy; 2025 German Industry Lesson - B1/B2 Level</p>
+    </footer>
+  </main>
+</body>
+
+</html>
