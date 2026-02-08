@@ -230,16 +230,22 @@
           <p class="mb-6 text-slate-300">Vervollständigen Sie die Sätze mit den passenden Wörtern aus dem Text:</p>
           <div class="space-y-4">
             <div class="flex flex-col gap-2">
-              <label>1. Wer an einer Maschine arbeitet, braucht eine gute _________.</label>
-              <input type="text"
+              <label for="ex1">1. Wer an einer Maschine arbeitet, braucht eine gute _________. </label>
+              <input id="ex1" type="text"
                 class="bg-slate-800 border border-slate-700 rounded p-2 text-white focus:ring-2 focus:ring-blue-500 outline-none"
                 placeholder="Lösung eingeben...">
+              <button onclick="checkAnswer('ex1','Einweisung', 'feedback1')"
+                class="mt-2 px-3 py-1 bg-blue-600 text-white rounded">Check</button>
+              <span id="feedback1" class="ml-2"></span>
             </div>
             <div class="flex flex-col gap-2">
-              <label>2. Die _________ dokumentiert alle Prüfverfahren ganz genau.</label>
-              <input type="text"
+              <label for="ex2">2. Die _________ dokumentiert alle Prüfverfahren ganz genau.</label>
+              <input id="ex2" type="text"
                 class="bg-slate-800 border border-slate-700 rounded p-2 text-white focus:ring-2 focus:ring-blue-500 outline-none"
                 placeholder="Lösung eingeben...">
+              <button onclick="checkAnswer('ex2','Qualitätskontrolle', 'feedback2')"
+                class="mt-2 px-3 py-1 bg-blue-600 text-white rounded">Check</button>
+              <span id="feedback2" class="ml-2"></span>
             </div>
           </div>
         </section>
@@ -261,6 +267,19 @@
     <footer class="mt-16 pt-8 border-t border-slate-200 text-center text-slate-500 text-sm">
       <p>&copy; 2025 German Industry Lesson - B1/B2 Level</p>
     </footer>
+    <script>
+      function checkAnswer(inputId, correct, feedbackId) {
+        const val = document.getElementById(inputId).value.trim();
+        const feedback = document.getElementById(feedbackId);
+        if (val.toLowerCase() === correct.toLowerCase()) {
+          feedback.textContent = '✅ Richtig!';
+          feedback.style.color = '#22c55e';
+        } else {
+          feedback.textContent = '❌ Versuchen Sie es erneut.';
+          feedback.style.color = '#ef4444';
+        }
+      }
+    </script>
   </main>
 </body>
 

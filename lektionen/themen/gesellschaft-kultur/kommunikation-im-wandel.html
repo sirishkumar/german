@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B2 Lektion: Kommunikation im Wandel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .sentence-translate {
+      position: relative;
+      cursor: help;
+      border-bottom: 2px dotted #94a3b8;
+      transition: background-color 0.2s ease-in-out;
+      border-radius: 2px;
+      display: inline;
+    }
+
+    .sentence-translate:hover {
+      background-color: #e0f2fe;
+      border-bottom-color: #0284c7;
+    }
+
+    .translation {
+      visibility: hidden;
+      opacity: 0;
+      width: 320px;
+      background-color: #1e293b;
+      color: #f8fafc;
+      text-align: left;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      position: absolute;
+      z-index: 50;
+      bottom: 140%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      transition: opacity 0.2s ease-in-out, visibility 0.2s;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      pointer-events: none;
+    }
+
+    .translation::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -6px;
+      border-width: 6px;
+      border-style: solid;
+      border-color: #1e293b transparent transparent transparent;
+    }
+
+    .sentence-translate:hover .translation {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media (max-width: 640px) {
+      .translation {
+        width: 250px;
+        left: 0;
+        transform: translateX(0);
+      }
+
+      .translation::after {
+        left: 20px;
+      }
+    }
+
+    .word-gloss {
+      cursor: pointer;
+      color: #2563eb;
+      font-weight: 500;
+    }
+
+    .word-gloss:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <link rel="stylesheet" href="../../../assets/glossary.css">
+  <script src="../../../assets/glossary.js" defer></script>
+</head>
+
+<body class="bg-slate-50 font-serif text-slate-800 antialiased leading-relaxed">
+  <main class="max-w-6xl mx-auto px-6 py-12">
+
+    <header class="mb-12 border-b border-slate-200 pb-8">
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-2 font-sans">Kommunikation im Wandel der Zeit</h1>
+      <p class="text-xl text-slate-600 font-sans">Wie hat sich Sprache verändert, welche Formen der Kommunikation leben
+        und erleben wir heute?</p>
+    </header>
+
+    <div class="lg:grid lg:grid-cols-[2.2fr_1fr] lg:gap-10">
+      <div class="space-y-12">
+        <article class="bg-white shadow-xl rounded-2xl p-8 md:p-12 ring-1 ring-slate-900/5" id="reader">
+
+          <div class="text-lg space-y-8 text-justify">
+            <p>
+              <span class="sentence-translate">
+                Sprache ist ein <span class="word-gloss" data-meaning="fundamental">grundlegendes</span> <span
+                  class="word-gloss" data-meaning="feature (das)">Merkmal</span> der menschlichen Gesellschaft und
+                Kultur.
+                <span class="translation">Language is a fundamental feature of human society and culture.</span>
+              </span>
+              <span class="sentence-translate">
+                Durch sie haben wir die Möglichkeit uns zu <span class="word-gloss"
+                  data-meaning="to communicate/reach an understanding">verständigen</span>, Ideen zu teilen, sowie
+                unsere Gedanken und Gefühle auszudrücken.
+                <span class="translation">Through it, we have the possibility to communicate, share ideas, and express
+                  our thoughts and feelings.</span>
+              </span>
+              <span class="sentence-translate">
+                Seit den Anfängen der menschlichen Zivilisation war Kommunikation ein <span class="word-gloss"
+                  data-meaning="essential">essenzieller</span> Bestandteil des Lebens.
+                <span class="translation">Since the beginnings of human civilization, communication has been an
+                  essential part of life.</span>
+              </span>
+              <span class="sentence-translate">
+                Sie nimmt auch heute noch einen großen Teil unseres Lebens ein, hat sich jedoch im Laufe der
+                Jahrhunderte stark verändert.
+                <span class="translation">It still takes up a large part of our lives today, but has changed
+                  significantly over the centuries.</span>
+              </span>
+              <span class="sentence-translate">
+                Während sich die grundlegenden Konzepte von Sprache und Kommunikation nicht geändert haben, haben sich
+                die Formen und Medien, die wir zur Übertragung von Informationen nutzen, dramatisch weiterentwickelt.
+                <span class="translation">While the basic concepts of language and communication haven't changed, the
+                  forms and media we use to transfer information have evolved dramatically.</span>
+              </span>
+            </p>
+
+            <h2 class="text-2xl font-bold text-slate-800 mt-8 mb-4 font-sans">Von Altdeutsch zu modernem Deutsch</h2>
+            <p>
+              <span class="sentence-translate">
+                Ein Beispiel für den <span class="word-gloss" data-meaning="change/transformation (der)">Wandel</span>
+                der Sprache ist die Entwicklung von Altdeutsch zu modernem Deutsch.
+                <span class="translation">An example of the change in language is the development from Old German to
+                  modern German.</span>
+              </span>
+              <span class="sentence-translate">
+                Altdeutsch wurde von den Germanen gesprochen und war die Grundlage für die heutige deutsche Sprache.
+                <span class="translation">Old German was spoken by the Germanic tribes and was the basis for today's
+                  German language.</span>
+              </span>
+              <span class="sentence-translate">
+                Im Laufe der Zeit wurde die Sprache jedoch von vielen anderen Sprachen <span class="word-gloss"
+                  data-meaning="influenced">beeinflusst</span>, dazu zählen vor allem Latein, Französisch und Englisch.
+                <span class="translation">Over time, however, the language was influenced by many other languages,
+                  primarily including Latin, French, and English.</span>
+              </span>
+              <span class="sentence-translate">
+                Diese Beeinflussung führte zu einer Vielzahl von Veränderungen in Grammatik, Aussprache und
+                Rechtschreibung.
+                <span class="translation">This influence led to a variety of changes in grammar, pronunciation, and
+                  spelling.</span>
+              </span>
+            </p>
+
+            <h2 class="text-2xl font-bold text-slate-800 mt-8 mb-4 font-sans">Technologie in der Kommunikation</h2>
+            <p>
+              <span class="sentence-translate">
+                Ein weiterer Faktor, der den Wandel von Sprache beeinflusst, ist die Verbreitung von Technologie und
+                Kommunikation.
+                <span class="translation">Another factor influencing the change in language is the spread of technology
+                  and communication.</span>
+              </span>
+              <span class="sentence-translate">
+                So <span class="word-gloss" data-meaning="to herald/ring in">läutete</span> die Erfindung der Schrift im
+                antiken Griechenland eine neue <span class="word-gloss" data-meaning="era (die)">Ära</span> der
+                Kommunikation ein.
+                <span class="translation">Thus, the invention of writing in ancient Greece heralded a new era of
+                  communication.</span>
+              </span>
+              <span class="sentence-translate">
+                Von nun an konnten Gedanken und Ideen aufgezeichnet und über weite Entfernungen hinweg übertragen
+                werden.
+                <span class="translation">From then on, thoughts and ideas could be recorded and transmitted over long
+                  distances.</span>
+              </span>
+              <span class="sentence-translate">
+                Mit der Erfindung des Telefons im späten 19. Jahrhundert wurde die persönliche Kommunikation einmal mehr
+                auf eine neue Ebene gehoben.
+                <span class="translation">With the invention of the telephone in the late 19th century, personal
+                  communication was once again raised to a new level.</span>
+              </span>
+              <span class="sentence-translate">
+                Plötzlich war es möglich, mit Menschen auf der ganzen Welt zu sprechen, als ob sie direkt neben einem
+                stehen würden.
+                <span class="translation">Suddenly it was possible to speak with people all over the world as if they
+                  were standing right next to you.</span>
+              </span>
+            </p>
+
+            <h2 class="text-2xl font-bold text-slate-800 mt-8 mb-4 font-sans">SMS, E-Mail & Co.</h2>
+            <p>
+              <span class="sentence-translate">
+                Eine weitere bahnbrechende Technologie sollte die Art und Weise, wie wir kommunizieren ein weiteres Mal
+                stark verändern – die des Internets.
+                <span class="translation">Another groundbreaking technology was to once again strongly change the way we
+                  communicate – that of the internet.</span>
+              </span>
+              <span class="sentence-translate">
+                Die Verwendung von SMS, E-Mail und sozialen Medien hat dazu geführt, dass eine neue Form von Kurztexten
+                und Akronymen entstanden ist, die in der digitalen Kommunikation verwendet werden.
+                <span class="translation">The use of SMS, email, and social media has led to the emergence of a new form
+                  of short texts and acronyms used in digital communication.</span>
+              </span>
+              <span class="sentence-translate">
+                Diese Kurzformen und Abkürzungen haben sich in die gesprochene Sprache und sogar in den formellen
+                Schreibstil <span class="word-gloss" data-meaning="crept in">eingeschlichen</span>.
+                <span class="translation">These short forms and abbreviations have crept into spoken language and even
+                  into formal writing styles.</span>
+              </span>
+              <span class="sentence-translate">
+                Durch das Internet stehen dem Nutzer außerdem eine Vielzahl an Plattformen zur Kommunikation zur
+                Verfügung.
+                <span class="translation">Furthermore, the internet provides the user with a variety of platforms for
+                  communication.</span>
+              </span>
+              <span class="sentence-translate">
+                Auf diesen Plattformen können Texte, Bilder, Videos oder sogar Sprachnachrichten versendet werden.
+                <span class="translation">On these platforms, texts, images, videos, or even voice messages can be
+                  sent.</span>
+              </span>
+              <span class="sentence-translate">
+                Und: All das ist in <span class="word-gloss" data-meaning="real-time">Echtzeit</span> möglich.
+                <span class="translation">And: All of this is possible in real-time.</span>
+              </span>
+              <span class="sentence-translate">
+                Außerdem hat man nun auch die Möglichkeit Videoanrufe zu tätigen, oder an Video-Konferenzen von überall
+                auf der Welt teilzunehmen.
+                <span class="translation">Additionally, one now also has the possibility to make video calls or
+                  participate in video conferences from anywhere in the world.</span>
+              </span>
+              <span class="sentence-translate">
+                Diese neue Art der Kommunikation bietet viele Vorteile: Eine globale <span class="word-gloss"
+                  data-meaning="networking (die)">Vernetzung</span> ist quasi <span class="word-gloss"
+                  data-meaning="in the blink of an eye">im Handumdrehen</span> machbar und die Kommunikation ist schnell
+                und effektiv.
+                <span class="translation">This new type of communication offers many advantages: global networking is
+                  feasible virtually in the blink of an eye, and communication is fast and effective.</span>
+              </span>
+              <span class="sentence-translate">
+                Außerdem sind wir durch moderne Kommunikationswege flexibler und haben sogar die Möglichkeit von zuhause
+                aus zu arbeiten.
+                <span class="translation">Furthermore, through modern communication channels, we are more flexible and
+                  even have the possibility to work from home.</span>
+              </span>
+            </p>
+
+            <h2 class="text-2xl font-bold text-slate-800 mt-8 mb-4 font-sans">Herausforderungen & Missverständnisse</h2>
+            <p>
+              <span class="sentence-translate">
+                Doch moderne Technologien konfrontieren uns auch mit Nachteilen und Herausforderungen.
+                <span class="translation">But modern technologies also confront us with disadvantages and
+                  challenges.</span>
+              </span>
+              <span class="sentence-translate">
+                Dazu zählt der Verlust von persönlichen Beziehungen.
+                <span class="translation">This includes the loss of personal relationships.</span>
+              </span>
+              <span class="sentence-translate">
+                Moderne Kommunikationswege können dazu führen, dass wir uns weniger persönlich verbunden fühlen.
+                <span class="translation">Modern communication channels can lead to us feeling less personally
+                  connected.</span>
+              </span>
+              <span class="sentence-translate">
+                Durch den <span class="word-gloss" data-meaning="waiving/foregoing (der)">Verzicht</span> auf
+                persönliche Gespräche und Interaktionen kann es schwieriger sein, Beziehungen aufzubauen und zu pflegen.
+                <span class="translation">By foregoing personal conversations and interactions, it can be more difficult
+                  to build and maintain relationships.</span>
+              </span>
+              <span class="sentence-translate">
+                Missverständnisse können <span class="word-gloss" data-meaning="increasingly/more often">vermehrt</span>
+                durch die Verwendung von Textnachrichten und E-Mails auftreten, da Tonfall und <span class="word-gloss"
+                  data-meaning="body language (die)">Körpersprache</span> fehlen.
+                <span class="translation">Misunderstandings can occur more frequently through the use of text messages
+                  and emails, as tone and body language are missing.</span>
+              </span>
+              <span class="sentence-translate">
+                Zudem führen moderne Kommunikationsmethoden permanent zu Ablenkungen, die Konzentration auf das
+                Wesentliche wird immer schwieriger.
+                <span class="translation">In addition, modern communication methods lead to permanent distractions;
+                  concentrating on the essentials is becoming increasingly difficult.</span>
+              </span>
+              <span class="sentence-translate">
+                Ein Phänomen, das vermutlich fast jeder schon mal bei sich selbst beobachtet hat, ist der Druck ständig
+                erreichbar sein zu müssen.
+                <span class="translation">A phenomenon that probably almost everyone has observed in themselves is the
+                  pressure to have to be constantly reachable.</span>
+              </span>
+              <span class="sentence-translate">
+                Auch das ist eine Quelle für Ablenkungen.
+                <span class="translation">This too is a source of distractions.</span>
+              </span>
+              <span class="sentence-translate">
+                Überall achten wir darauf unsere Daten und die unserer Kunden zu schützen, doch mit der digitalen
+                Kommunikation schaffen wir eine <span class="word-gloss"
+                  data-meaning="target/vulnerability (die)">Angriffsfläche</span> für Hacker und unbefugte Dritte, die
+                sich immer wieder Zugang zu sensiblen Daten <span class="word-gloss"
+                  data-meaning="to obtain/procure">verschaffen</span>.
+                <span class="translation">Everywhere we take care to protect our data and that of our customers, but
+                  with digital communication, we create a target for hackers and unauthorized third parties who
+                  repeatedly gain access to sensitive data.</span>
+              </span>
+              <span class="sentence-translate">
+                Die Folge kann zum Beispiel Identitätsdiebstahl sein oder der Verlust wertvoller und existenzsichernder
+                Daten.
+                <span class="translation">The consequence can be, for example, identity theft or the loss of valuable
+                  and livelihood-securing data.</span>
+              </span>
+              <span class="sentence-translate">
+                Soziale Medien machen Cybermobbing oder den Austausch von Hassreden im Netz vergleichsweise einfach,
+                denn hier kann schnell eine hohe <span class="word-gloss" data-meaning="reach (die)">Reichweite</span>
+                und große Sichtbarkeit aufgebaut werden.
+                <span class="translation">Social media makes cyberbullying or the exchange of hate speech online
+                  comparatively easy, as a high reach and great visibility can be built up quickly here.</span>
+              </span>
+            </p>
+
+            <h2 class="text-2xl font-bold text-slate-800 mt-8 mb-4 font-sans">Sprache in der Veränderung</h2>
+            <p>
+              <span class="sentence-translate">
+                Der Wandel der Sprache zeigt aber auch, dass Sprache kein <span class="word-gloss"
+                  data-meaning="rigid">starres</span> Konstrukt ist, sondern vielmehr ein sich ständig entwickelndes
+                Phänomen, das sich an die Bedürfnisse und auch die Entwicklung der Gesellschaft anpasst.
+                <span class="translation">The change in language also shows, however, that language is not a rigid
+                  construct, but rather a constantly evolving phenomenon that adapts to the needs and also the
+                  development of society.</span>
+              </span>
+              <span class="sentence-translate">
+                Sie spiegelt die Veränderungen wider, die in unserem Zusammenleben stattfinden und ist ein wichtiger
+                Indikator für Fortschritt und Entwicklung.
+                <span class="translation">It reflects the changes taking place in our life together and is an important
+                  indicator of progress and development.</span>
+              </span>
+              <span class="sentence-translate">
+                Neue Wege der Kommunikation bieten zahlreiche Möglichkeiten und Chancen.
+                <span class="translation">New ways of communication offer numerous possibilities and
+                  opportunities.</span>
+              </span>
+              <span class="sentence-translate">
+                Als Gesellschaft ist es aber genauso wichtig die Nachteile zu erkennen und dagegen vorzugehen.
+                <span class="translation">As a society, however, it is just as important to recognize the disadvantages
+                  and take action against them.</span>
+              </span>
+            </p>
+          </div>
+        </article>
+
+        <section class="bg-slate-100 rounded-2xl p-8 border border-slate-200">
+          <h3 class="text-2xl font-bold text-slate-800 mb-6 font-sans">Grammatik-Check: Wortbildung & Passiv</h3>
+          <table class="w-full text-left bg-white rounded-xl overflow-hidden shadow-sm">
+            <thead class="bg-slate-200 text-slate-700">
+              <tr>
+                <th class="p-4">Phänomen</th>
+                <th class="p-4">Beispiel aus dem Text</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="p-4 font-semibold">Passiv Präteritum</td>
+                <td class="p-4 italic">"...wurde von den Germanen gesprochen"</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold">Nomen-Verb-Verbindungen</td>
+                <td class="p-4 italic">"Möglichkeit ... auszudrücken", "Zugang verschaffen"</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold">Zusammengesetzte Nomen</td>
+                <td class="p-4 italic">Existenzsicherungsdaten, Identitätsdiebstahl</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+
+      <aside
+        class="glossary-sidebar bg-white shadow-xl rounded-2xl p-6 border border-slate-200 mt-10 lg:mt-0 h-fit sticky top-6"
+        id="glossary-sidebar">
+        <p class="text-xs uppercase tracking-wide text-blue-600 font-semibold mb-2">Word-by-word</p>
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Sofort-Glossar</h3>
+        <p class="text-sm text-slate-600 mb-4">Klicke auf die blauen Wörter im Text, um die Details hier zu sehen.</p>
+        <div class="space-y-3" id="glossary-list" aria-live="polite"></div>
+      </aside>
+    </div>
+
+    <footer class="mt-16 pt-8 border-t border-slate-200 text-center text-slate-500 text-sm italic">
+      Ende der Lektion: Kommunikation im Wandel.
+    </footer>
+  </main>
+</body>
+
+</html>
