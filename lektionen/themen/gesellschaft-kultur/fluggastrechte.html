@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ärger beim Fliegen - B2 Leseverstehen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Tooltip CSS for sentence translations */
+    .sentence-translate {
+      position: relative;
+      cursor: help;
+      border-bottom: 2px dotted #94a3b8;
+      transition: background-color 0.2s ease-in-out;
+      border-radius: 2px;
+    }
+
+    .sentence-translate:hover {
+      background-color: #e0f2fe;
+      border-bottom-color: #0284c7;
+    }
+
+    .translation {
+      visibility: hidden;
+      opacity: 0;
+      width: 320px;
+      background-color: #1e293b;
+      color: #f8fafc;
+      text-align: left;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      position: absolute;
+      z-index: 50;
+      bottom: 140%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      transition: opacity 0.2s ease-in-out, visibility 0.2s;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      pointer-events: none;
+    }
+
+    .translation::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -6px;
+      border-width: 6px;
+      border-style: solid;
+      border-color: #1e293b transparent transparent transparent;
+    }
+
+    .sentence-translate:hover .translation {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media (max-width: 640px) {
+      .translation {
+        width: 250px;
+        left: 0;
+        transform: translateX(0);
+      }
+
+      .translation::after {
+        left: 20px;
+      }
+    }
+
+    /* Interactive word styling */
+    .word-gloss {
+      border-bottom: 1px dashed #3b82f6;
+      cursor: pointer;
+      color: #1e40af;
+      font-weight: 500;
+    }
+
+    .word-gloss:hover {
+      background-color: #dbeafe;
+    }
+
+    /* Gap marker styling */
+    .gap-marker {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #64748b;
+      padding: 0 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.85em;
+      margin-right: 0.5em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../../assets/glossary.css">
+  <script src="../../../assets/glossary.js" defer></script>
+</head>
+
+<body class="bg-slate-50 font-serif text-slate-800 antialiased leading-relaxed">
+  <main class="max-w-6xl mx-auto px-6 py-12">
+
+    <header class="mb-12 text-center">
+      <h1 class="text-4xl font-black text-slate-900 mb-4 font-sans tracking-tight">Ärger beim Fliegen</h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto italic">Ein Artikel über Passagierrechte und Herausforderungen
+        bei Flugreisen.</p>
+    </header>
+
+    <div class="lg:grid lg:grid-cols-[2.2fr_1fr] lg:gap-10">
+      <div class="space-y-12">
+        <article class="bg-white shadow-xl rounded-2xl p-8 md:p-12 ring-1 ring-slate-900/5" id="reader">
+          <h2 class="text-2xl font-bold text-slate-800 mb-6 font-sans border-l-4 border-blue-500 pl-4">Der Lesetext</h2>
+
+          <div class="text-xl space-y-6 text-justify">
+            <p>
+              <span class="sentence-translate">
+                Über vier Milliarden Menschen sind <span class="word-gloss" data-meaning="annually">jährlich</span> mit
+                dem Flugzeug unterwegs, <span class="word-gloss" data-meaning="trend rising">Tendenz steigend</span>.
+                <span class="translation">Over four billion people travel by plane annually, and the trend is
+                  rising.</span>
+              </span>
+              <span class="sentence-translate">
+                In Deutschland gilt das Flugzeug bei Urlaubsreisen als das beliebteste <span class="word-gloss"
+                  data-meaning="means of transport">Verkehrsmittel</span>, das sicherste ist es sowieso.
+                <span class="translation">In Germany, the airplane is considered the most popular means of transport for
+                  holiday travel; it is the safest anyway.</span>
+              </span>
+              <span class="sentence-translate">
+                Doch gerade zur Urlaubszeit steigt das <span class="word-gloss"
+                  data-meaning="volume of traffic">Verkehrsaufkommen</span> an den Flughäfen.
+                <span class="translation">But especially during the holiday season, the volume of traffic at airports
+                  increases.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="gap-marker">(0) [g]</span>
+              <span class="sentence-translate">
+                Für Urlaubsreisende ist dies besonders <span class="word-gloss"
+                  data-meaning="annoying/aggravating">ärgerlich</span>, denn lange Wartezeiten bedeuten gleichzeitig
+                verlorene Urlaubszeit.
+                <span class="translation">For holidaymakers, this is particularly annoying, because long waiting times
+                  simultaneously mean lost vacation time.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="gap-marker">(1) [ ]</span>
+              <span class="sentence-translate">
+                Gegen Stress und Ärger auf dem Flughafen helfen dann nur noch eine gewisse <span class="word-gloss"
+                  data-meaning="serenity/composure">Gelassenheit</span> und das Wissen über die Rechte von Fluggästen.
+                <span class="translation">Against stress and anger at the airport, only a certain serenity and knowledge
+                  of passenger rights can help.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="gap-marker">(2) [ ]</span>
+              <span class="sentence-translate">
+                In dieser <span class="word-gloss" data-meaning="EU regulation">EU-Verordnung</span> wird beschrieben,
+                welche <span class="word-gloss" data-meaning="compensation services">Ausgleichs-</span> und <span
+                  class="word-gloss" data-meaning="care services">Versorgungsleistungen</span> Passagieren bei großen
+                Verspätungen, bei <span class="word-gloss" data-meaning="denied boarding">Nichtbeförderungen</span>,
+                <span class="word-gloss" data-meaning="overbookings">Überbuchungen</span> und <span class="word-gloss"
+                  data-meaning="cancellations">Annullierungen</span> von Flügen <span class="word-gloss"
+                  data-meaning="to be entitled to">zustehen</span>.
+                <span class="translation">This EU regulation describes which compensation and care services passengers
+                  are entitled to in the event of major delays, denied boarding, overbooking, and cancellations of
+                  flights.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="gap-marker">(3) [ ]</span>
+              <span class="sentence-translate">
+                Die <span class="word-gloss" data-meaning="care/support service">Betreuungsleistung</span> beinhaltet
+                zum Beispiel die Versorgung mit Essen und Getränken oder eine Hotelübernachtung einschließlich Transfer
+                vom und zum Flughafen.
+                <span class="translation">The care service includes, for example, the provision of food and drinks or an
+                  overnight hotel stay including transfer to and from the airport.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                Einen finanziellen <span class="word-gloss" data-meaning="compensation/balance">Ausgleich</span>
+                erhalten Passagiere bei Verspätungen von über drei Stunden am Zielort.
+                <span class="translation">Passengers receive financial compensation for delays of more than three hours
+                  at the destination.</span>
+              </span>
+              <span class="gap-marker">(4) [ ]</span>
+              <span class="sentence-translate">
+                Bei Flugstrecken bis zu 1500 km besteht ein <span class="word-gloss"
+                  data-meaning="claim/entitlement">Anspruch</span> auf 250 Euro, bei einer Distanz von 1500 bis 3500 km
+                bekommt der Fluggast 400 Euro, bei über 3500 km sind es 600 Euro.
+                <span class="translation">For flight routes up to 1500 km, there is an entitlement to 250 euros; for a
+                  distance of 1500 to 3500 km, the passenger receives 400 euros; for over 3500 km, it is 600
+                  euros.</span>
+              </span>
+              <span class="sentence-translate">
+                Dabei spielt es keine Rolle, ob es sich um einen <span class="word-gloss"
+                  data-meaning="scheduled flight">Linienflug</span>, <span class="word-gloss"
+                  data-meaning="charter flight">Charterflug</span> oder einen Flug innerhalb einer <span
+                  class="word-gloss" data-meaning="package tour">Pauschalreise</span> (Flug und Hotel) handelt.
+                <span class="translation">It does not matter whether it is a scheduled flight, charter flight, or a
+                  flight within a package tour (flight and hotel).</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                Der Anspruch auf <span class="word-gloss" data-meaning="compensation payment">Ausgleichszahlung</span>
+                gilt für alle Flüge, die innerhalb der EU starten oder von einer europäischen Fluggesellschaft
+                durchgeführt werden.
+                <span class="translation">The right to compensation applies to all flights departing within the EU or
+                  operated by a European airline.</span>
+              </span>
+              <span class="sentence-translate">
+                Und hier wird es auch schon schwierig:
+                <span class="translation">And this is where it gets difficult:</span>
+              </span>
+              <span class="gap-marker">(5) [ ]</span>
+              <span class="sentence-translate">
+                Bucht man die gleiche Reise mit einer türkischen Fluggesellschaft, fällt nur der Flug von Frankfurt
+                unter diese Regelung.
+                <span class="translation">If you book the same trip with a Turkish airline, only the flight from
+                  Frankfurt falls under this regulation.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="gap-marker">(6) [ ]</span>
+              <span class="sentence-translate">
+                Wer zum Beispiel nach einer Verspätung oder einem <span class="word-gloss"
+                  data-meaning="flight cancellation">Flugausfall</span> sein Reiserecht bei einer europäischen
+                Fluggesellschaft <span class="word-gloss" data-meaning="to assert/claim">geltend machen</span> möchte,
+                kann auf Schwierigkeiten stoßen.
+                <span class="translation">Anyone wishing to assert their travel rights with a European airline after a
+                  delay or flight cancellation, for example, may encounter difficulties.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="gap-marker">(7) [ ]</span>
+              <span class="sentence-translate">
+                Einige Fluggesellschaften haben ihre Kontaktdaten für den <span class="word-gloss"
+                  data-meaning="complaint case">Reklamationsfall</span> auf ihren Websites so gut versteckt, dass man
+                sie nur mit Mühe findet.
+                <span class="translation">Some airlines have hidden their contact details for complaints on their
+                  websites so well that they can only be found with difficulty.</span>
+              </span>
+              <span class="sentence-translate">
+                Hat man sie nach langem Suchen entdeckt, ist der Kundenservice per Telefon nicht erreichbar oder die
+                E-Mails werden nicht beantwortet.
+                <span class="translation">Once found after a long search, customer service is not reachable by phone or
+                  emails are not answered.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="gap-marker">(8) [ ]</span>
+              <span class="sentence-translate">
+                Sie schieben die Verspätung gern auf <span class="word-gloss"
+                  data-meaning="extraordinary circumstances">außergewöhnliche Umstände</span> wie Streiks oder das
+                Wetter.
+                <span class="translation">They like to blame the delay on extraordinary circumstances such as strikes or
+                  the weather.</span>
+              </span>
+              <span class="sentence-translate">
+                So kann es sein, dass man sich nicht nur über die Verspätung, sondern auch noch über das Verhalten der
+                Fluggesellschaft im <span class="word-gloss" data-meaning="complaint case">Reklamationsfall</span>
+                ärgert.
+                <span class="translation">Thus, it may be that one is annoyed not only about the delay but also about
+                  the behavior of the airline in the event of a complaint.</span>
+              </span>
+            </p>
+          </div>
+        </article>
+
+        <section class="bg-blue-50 rounded-2xl p-8 border border-blue-100 shadow-sm">
+          <h3 class="text-xl font-bold text-blue-900 mb-4 font-sans">Grammatik-Notizen</h3>
+          <div class="grid md:grid-cols-2 gap-6 text-sm">
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+              <h4 class="font-bold text-blue-700 mb-2 underline">Passiv (Passive Voice)</h4>
+              <p class="mb-2 text-slate-700">Im Text wird oft das Passiv verwendet, um Regeln allgemein zu beschreiben:
+              </p>
+              <ul class="list-disc pl-4 space-y-1 text-slate-600">
+                <li><i>"In dieser EU-Verordnung <strong>wird beschrieben</strong>..."</i></li>
+                <li><i>"...von einer europäischen Fluggesellschaft <strong>durchgeführt werden</strong>."</i></li>
+              </ul>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+              <h4 class="font-bold text-blue-700 mb-2 underline">Feste Nomen-Verb-Verbindungen</h4>
+              <ul class="list-disc pl-4 space-y-2 text-slate-600">
+                <li><strong>Recht geltend machen:</strong> Sein Recht einfordern (to assert a right).</li>
+                <li><strong>Auf Schwierigkeiten stoßen:</strong> Probleme bekommen (to encounter difficulties).</li>
+                <li><strong>Einen Ausgleich erhalten:</strong> Geld/Kompensation bekommen.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-slate-100 rounded-2xl p-8 border border-slate-200">
+          <h3 class="text-xl font-bold text-slate-800 mb-4 font-sans">Verständnis-Check</h3>
+          <p class="mb-4 text-slate-600">Überprüfen Sie, ob Sie die wichtigsten Punkte verstanden haben:</p>
+          <div class="space-y-3">
+            <div class="p-3 bg-white rounded border border-slate-300">
+              <p class="font-semibold text-slate-800">Ab wann gibt es finanziellen Ausgleich?</p>
+              <p class="text-slate-600 mt-1">Erst ab einer Verspätung von <strong>über drei Stunden</strong> am Zielort.
+              </p>
+            </div>
+            <div class="p-3 bg-white rounded border border-slate-300">
+              <p class="font-semibold text-slate-800">Was ist eine "außergewöhnliche" Situation?</p>
+              <p class="text-slate-600 mt-1">Ereignisse wie <strong>Streiks</strong> oder schlechtes
+                <strong>Wetter</strong>. In diesen Fällen müssen Airlines oft nicht zahlen.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="glossary-sidebar bg-white shadow-xl rounded-2xl p-6 border border-slate-200 mt-10 lg:mt-0"
+        id="glossary-sidebar">
+        <p class="text-xs uppercase tracking-wide text-blue-600 font-semibold mb-2">Vokabelhilfe</p>
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Rechter Rand: Sofort-Glossar</h3>
+        <p class="text-sm text-slate-600 mb-4">Fahre über markierte Wörter oder tippe sie an. Das passende Glossar rückt
+          hier auf – ideal für schnelles Nachschlagen während des Lesens.</p>
+        <div class="space-y-3" id="glossary-list" aria-live="polite"></div>
+      </aside>
+    </div>
+
+    <footer class="mt-16 pt-8 border-t border-slate-200 text-center text-slate-500 text-sm">
+      <p>B2 Deutsch: Leseverständnis & Rechtsterminologie</p>
+    </footer>
+  </main>
+</body>
+
+</html>
