@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Die ungleichen Regenwürmer - Lektion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .sentence-translate {
+      position: relative;
+      cursor: help;
+      border-bottom: 2px dotted #94a3b8;
+      transition: background-color 0.2s ease-in-out;
+      border-radius: 2px;
+    }
+
+    .sentence-translate:hover {
+      background-color: #e0f2fe;
+      border-bottom-color: #0284c7;
+    }
+
+    .translation {
+      visibility: hidden;
+      opacity: 0;
+      width: 320px;
+      background-color: #1e293b;
+      color: #f8fafc;
+      text-align: left;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      position: absolute;
+      z-index: 50;
+      bottom: 140%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      transition: opacity 0.2s ease-in-out, visibility 0.2s;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .translation::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -6px;
+      border-width: 6px;
+      border-style: solid;
+      border-color: #1e293b transparent transparent transparent;
+    }
+
+    .sentence-translate:hover .translation {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media (max-width: 640px) {
+      .translation {
+        width: 250px;
+        left: 0;
+        transform: translateX(0);
+      }
+
+      .translation::after {
+        left: 20px;
+      }
+    }
+
+  </style>
+  <link rel="stylesheet" href="../../../assets/glossary.css">
+  <script src="../../../assets/glossary.js" defer></script>
+</head>
+
+<body class="bg-slate-50 font-serif text-slate-800 antialiased leading-relaxed">
+  <main class="max-w-6xl mx-auto px-6 py-12">
+
+    <header class="mb-12">
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-2 font-sans tracking-tight">Die ungleichen Regenwürmer</h1>
+      <p class="text-lg text-slate-600 font-sans">Eine Fabel von Franz Hohler über Abenteuerlust und Sicherheit.</p>
+    </header>
+
+    <div class="lg:grid lg:grid-cols-[2.2fr_1fr] lg:gap-10">
+      <div class="space-y-12">
+
+        <article class="bg-white shadow-xl rounded-2xl p-8 md:p-12 ring-1 ring-slate-900/5" id="reader">
+          <h2 class="text-2xl font-bold text-slate-800 mb-6 font-sans border-l-4 border-blue-500 pl-4">Der Lesetext</h2>
+          <div class="text-xl space-y-8 text-justify leading-relaxed">
+            <p>
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="Deep">Tief</span>
+                <span class="word-gloss" data-meaning="under">unter</span>
+                <span class="word-gloss" data-meaning="a">einem</span>
+                <span class="word-gloss" data-meaning="sorrel field (plant)">Sauerampferfeld</span>
+                <span class="word-gloss" data-meaning="lived (past tense of leben)">lebten</span>
+                <span class="word-gloss" data-meaning="once">einmal</span>
+                <span class="word-gloss" data-meaning="two">zwei</span>
+                <span class="word-gloss" data-meaning="earthworms (m. pl.)">Regenwürmer</span>
+                <span class="word-gloss" data-meaning="and">und</span>
+                <span class="word-gloss" data-meaning="fed (themselves)">ernährten</span>
+                <span class="word-gloss" data-meaning="themselves">sich</span>
+                <span class="word-gloss" data-meaning="from">von</span>
+                <span class="word-gloss" data-meaning="sorrel roots">Sauerampferwurzeln</span>.
+                <span class="translation">Deep beneath a sorrel field once lived two earthworms and nourished themselves
+                  on sorrel roots.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="One day">Eines Tages</span>
+                <span class="word-gloss" data-meaning="said">sagte</span>
+                <span class="word-gloss" data-meaning="the first">der erste</span>
+                Regenwurm: „<span class="word-gloss" data-meaning="Well then / Alright">Wohlan</span>,
+                <span class="word-gloss" data-meaning="I am">ich bin</span>
+                <span class="word-gloss" data-meaning="fed up / full">es satt</span>,
+                <span class="word-gloss" data-meaning="here below">hier unten</span>
+                <span class="word-gloss" data-meaning="to live">zu leben</span>,
+                <span class="word-gloss" data-meaning="I want to">ich will</span>
+                <span class="word-gloss" data-meaning="a journey">eine Reise</span>
+                <span class="word-gloss" data-meaning="to make">machen</span>
+                <span class="word-gloss" data-meaning="and">und</span>
+                <span class="word-gloss" data-meaning="the world">die Welt</span>
+                <span class="word-gloss" data-meaning="get to know / learn about">kennenlernen</span>.“
+                <span class="translation">One day the first earthworm said: "Well then, I am tired of living down here,
+                  I want to go on a journey and get to know the world."</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="He packed">Er packte</span>
+                <span class="word-gloss" data-meaning="his little suitcase">sein Köfferchen</span>
+                <span class="word-gloss" data-meaning="and">und</span>
+                <span class="word-gloss" data-meaning="drilled/burrowed">bohrte</span>
+                <span class="word-gloss" data-meaning="himself">sich</span>
+                <span class="word-gloss" data-meaning="upwards">nach oben</span>,
+                <span class="word-gloss" data-meaning="and">und</span>
+                <span class="word-gloss" data-meaning="as / when">als</span>
+                <span class="word-gloss" data-meaning="he saw">er sah</span>,
+                <span class="word-gloss" data-meaning="how">wie</span>
+                <span class="word-gloss" data-meaning="the sun">die Sonne</span>
+                <span class="word-gloss" data-meaning="shone">schien</span>
+                <span class="word-gloss" data-meaning="and">und</span>
+                <span class="word-gloss" data-meaning="the wind">der Wind</span>
+                <span class="word-gloss" data-meaning="over">über</span>
+                <span class="word-gloss" data-meaning="the field">das Sauerampferfeld</span>
+                <span class="word-gloss" data-meaning="stroked / blew">strich</span>,
+                <span class="word-gloss" data-meaning="became">wurde</span>
+                <span class="word-gloss" data-meaning="it (impersonal)">es</span>
+                <span class="word-gloss" data-meaning="him">ihm</span>
+                <span class="word-gloss" data-meaning="light around the heart (happy)">leicht ums Herz</span>,
+                <span class="word-gloss" data-meaning="and">und</span>
+                <span class="word-gloss" data-meaning="he slithered">er schlängelte</span>
+                <span class="word-gloss" data-meaning="himself">sich</span>
+                <span class="word-gloss" data-meaning="cheerfully">fröhlich</span>
+                <span class="word-gloss" data-meaning="between">zwischen</span>
+                <span class="word-gloss" data-meaning="the stems">den Stengeln</span>
+                <span class="word-gloss" data-meaning="through">hindurch</span>.
+                <span class="translation">He packed his little suitcase and burrowed his way upward, and when he saw how
+                  the sun shone and the wind blew over the sorrel field, his heart felt light, and he slithered happily
+                  through the stems.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="But">Doch</span>
+                <span class="word-gloss" data-meaning="he">er</span>
+                <span class="word-gloss" data-meaning="was">war</span>
+                <span class="word-gloss" data-meaning="hardly">kaum</span>
+                <span class="word-gloss" data-meaning="three feet (distance)">drei Fuß</span>
+                <span class="word-gloss" data-meaning="far">weit</span>
+                <span class="word-gloss" data-meaning="come (traveled)">gekommen</span>,
+                <span class="word-gloss" data-meaning="there / then">da</span>
+                <span class="word-gloss" data-meaning="discovered">entdeckte</span>
+                <span class="word-gloss" data-meaning="him">ihn</span>
+                <span class="word-gloss" data-meaning="a blackbird (f. sg.)">eine Amsel</span>
+                <span class="word-gloss" data-meaning="and">und</span>
+                <span class="word-gloss" data-meaning="ate (him) up">fraß ihn auf</span>.
+                <span class="translation">But he had hardly gone three feet when a blackbird discovered him and ate him
+                  up.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="The second">Der zweite</span>
+                Regenwurm
+                <span class="word-gloss" data-meaning="however">hingegen</span>
+                <span class="word-gloss" data-meaning="stayed">blieb</span>
+                <span class="word-gloss" data-meaning="always">immer</span>
+                <span class="word-gloss" data-meaning="in his hole">in seinem Loch</span>
+                <span class="word-gloss" data-meaning="under the ground">unter dem Boden</span>,
+                <span class="word-gloss" data-meaning="ate">fraß</span>
+                <span class="word-gloss" data-meaning="every day">jeden Tag</span>
+                <span class="word-gloss" data-meaning="his sorrel roots">seine Sauerampferwurzeln</span>
+                <span class="word-gloss" data-meaning="and">und</span>
+                <span class="word-gloss" data-meaning="stayed">blieb</span>
+                <span class="word-gloss" data-meaning="the longest time">die längste Zeit</span>
+                <span class="word-gloss" data-meaning="alive">am Leben</span>.
+                <span class="translation">The second earthworm, however, always stayed in his hole beneath the ground,
+                  ate his sorrel roots every day, and stayed alive for the longest time.</span>
+              </span>
+            </p>
+
+            <p class="italic text-slate-700">
+              <span class="sentence-translate">
+                Aber <span class="word-gloss" data-meaning="tell me">sagt mir</span>
+                <span class="word-gloss" data-meaning="yourselves">selbst</span> —
+                <span class="word-gloss" data-meaning="is that a life?">ist das ein Leben?</span>
+                <span class="translation">But tell me yourselves — is that a life?</span>
+              </span>
+            </p>
+          </div>
+        </article>
+
+        <section class="bg-white shadow-lg rounded-2xl p-8 border border-slate-100">
+          <h3 class="text-2xl font-bold text-slate-800 mb-4 font-sans">Grammatik-Fokus: Präteritum (Narrative Past)</h3>
+          <p class="mb-4">This story uses the <strong>Präteritum</strong>, which is the standard tense for written
+            stories and fables in German.</p>
+
+          <div class="overflow-x-auto">
+            <table class="min-w-full text-sm text-left text-slate-500">
+              <thead class="text-xs text-slate-700 uppercase bg-slate-50">
+                <tr>
+                  <th class="px-4 py-2">Verb</th>
+                  <th class="px-4 py-2">Präteritum (3. Pers.)</th>
+                  <th class="px-4 py-2">Meaning</th>
+                  <th class="px-4 py-2">Type</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                <tr>
+                  <td class="px-4 py-2 font-medium">leben</td>
+                  <td class="px-4 py-2">lebte</td>
+                  <td class="px-4 py-2">lived</td>
+                  <td class="px-4 py-2 text-green-600">Regular</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2 font-medium">sagen</td>
+                  <td class="px-4 py-2">sagte</td>
+                  <td class="px-4 py-2">said</td>
+                  <td class="px-4 py-2 text-green-600">Regular</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2 font-medium">sehen</td>
+                  <td class="px-4 py-2">sah</td>
+                  <td class="px-4 py-2">saw</td>
+                  <td class="px-4 py-2 text-red-600">Irregular</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2 font-medium">bleiben</td>
+                  <td class="px-4 py-2">blieb</td>
+                  <td class="px-4 py-2">stayed</td>
+                  <td class="px-4 py-2 text-red-600">Irregular</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="bg-blue-50 rounded-2xl p-8 border border-blue-100">
+          <h3 class="text-2xl font-bold text-blue-900 mb-4 font-sans">Verständnis-Check</h3>
+          <ul class="space-y-4 text-blue-800">
+            <li>
+              <strong>1. Warum wollte der erste Regenwurm nach oben?</strong>
+              <div class="mt-2 p-3 bg-white rounded border border-blue-200 italic text-sm">Er wollte eine Reise machen
+                und die Welt kennenlernen.</div>
+            </li>
+            <li>
+              <strong>2. Was passierte dem abenteuerlustigen Wurm?</strong>
+              <div class="mt-2 p-3 bg-white rounded border border-blue-200 italic text-sm">Eine Amsel entdeckte ihn und
+                fraß ihn auf.</div>
+            </li>
+          </ul>
+        </section>
+
+      </div>
+
+      <aside class="glossary-sidebar bg-white shadow-xl rounded-2xl p-6 border border-slate-200 mt-10 lg:mt-0"
+        id="glossary-sidebar">
+        <p class="text-xs uppercase tracking-wide text-blue-600 font-semibold mb-2">Word-by-word</p>
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Rechter Rand: Sofort-Glossar</h3>
+        <p class="text-sm text-slate-600 mb-4">Fahre über markierte Wörter oder tippe sie an. Das passende Glossar rückt
+          hier auf – ideal für schnelles Nachschlagen während des Lesens.</p>
+        <div class="space-y-3" id="glossary-list" aria-live="polite"></div>
+      </aside>
+
+    </div>
+
+    <footer class="mt-16 pt-8 border-t border-slate-200 text-center text-slate-500 text-sm">
+      <p>Möchten Sie, dass ich die Grammatik der trennbaren Verben (z.B. <em>auffressen</em>) in diesem Text genauer
+        erläutere?</p>
+    </footer>
+  </main>
+</body>
+
+</html>
