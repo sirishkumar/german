@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B2 Leseverstehen: Kostspielige Missverständnisse</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Minimal inline CSS for sentence tooltips */
+    .sentence-translate {
+      position: relative;
+      cursor: help;
+      border-bottom: 2px dotted #94a3b8;
+      transition: background-color 0.2s ease-in-out;
+      border-radius: 2px;
+    }
+
+    .sentence-translate:hover {
+      background-color: #e0f2fe;
+      border-bottom-color: #0284c7;
+    }
+
+    .translation {
+      visibility: hidden;
+      opacity: 0;
+      width: 320px;
+      background-color: #1e293b;
+      color: #f8fafc;
+      text-align: left;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      position: absolute;
+      z-index: 50;
+      bottom: 140%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      transition: opacity 0.2s ease-in-out, visibility 0.2s;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .translation::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -6px;
+      border-width: 6px;
+      border-style: solid;
+      border-color: #1e293b transparent transparent transparent;
+    }
+
+    .sentence-translate:hover .translation {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media (max-width: 640px) {
+      .translation {
+        width: 250px;
+        left: 0;
+        transform: translateX(0);
+      }
+
+      .translation::after {
+        left: 20px;
+      }
+    }
+
+    /* Subtle highlight for word glosses to make them clickable/discoverable */
+    .word-gloss {
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-color: #cbd5e1;
+      text-decoration-thickness: 1px;
+      transition: color 0.2s;
+    }
+
+    .word-gloss:hover {
+      color: #2563eb;
+      text-decoration-color: #2563eb;
+    }
+  </style>
+
+  <link rel="stylesheet" href="../../../assets/glossary.css">
+  <script src="../../../assets/glossary.js" defer></script>
+</head>
+
+<body class="bg-slate-50 font-serif text-slate-800 antialiased leading-relaxed">
+  <main class="max-w-6xl mx-auto px-6 py-12">
+
+    <header class="mb-10 text-center">
+      <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight mb-3 font-sans">Kostspielige Missverständnisse
+      </h1>
+      <p class="text-lg text-slate-600 font-sans">B2 Reading Comprehension • Cultural Business Etiquette</p>
+    </header>
+
+    <div class="lg:grid lg:grid-cols-[2.2fr_1fr] lg:gap-10">
+
+      <div class="space-y-12">
+
+        <article class="bg-white shadow-xl rounded-2xl p-8 md:p-12 ring-1 ring-slate-900/5" id="reader">
+          <h2 class="text-2xl font-bold text-slate-800 mb-6 font-sans border-l-4 border-blue-500 pl-4">Der Lesetext</h2>
+          <div class="text-xl space-y-6 text-justify">
+
+            <p>
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="sweaty / perspiring">Verschwitzt</span>
+                <span class="word-gloss" data-meaning="arrive (kommen ... an)">kommen</span>
+                <span class="word-gloss" data-meaning="the">die</span>
+                <span class="word-gloss" data-meaning="delegates / envoys (m, pl)">Entsandten</span>
+                <span class="word-gloss" data-meaning="of a">eines</span>
+                <span class="word-gloss" data-meaning="German">deutschen</span>
+                <span class="word-gloss" data-meaning="company (n)">Unternehmens</span>
+                <span class="word-gloss" data-meaning="at the">am</span>
+                <span class="word-gloss" data-meaning="airport (m)">Flughafen</span>
+                <span class="word-gloss" data-meaning="of">von</span>
+                <span class="word-gloss" data-meaning="Casablanca">Casablanca</span>
+                <span class="word-gloss" data-meaning="arrive (kommen ... an)">an</span>.
+                <span class="translation">Sweaty, the delegates of a German company arrive at the Casablanca
+                  airport.</span>
+              </span>
+
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="By">Von</span>
+                <span class="word-gloss" data-meaning="a">einer</span>
+                <span class="word-gloss" data-meaning="group (f)">Gruppe</span>
+                <span class="word-gloss" data-meaning="local">einheimischer</span>
+                <span class="word-gloss" data-meaning="business people (pl)">Geschäftsleute</span>
+                <span class="word-gloss" data-meaning="are (passive auxiliary)">werden</span>
+                <span class="word-gloss" data-meaning="they">sie</span>
+                <span class="word-gloss" data-meaning="friendly / warmly">freundlich</span>
+                <span class="word-gloss" data-meaning="received / welcomed">empfangen</span>.
+                <span class="translation">They are warmly welcomed by a group of local business people.</span>
+              </span>
+
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="The">Die</span>
+                <span class="word-gloss" data-meaning="hosts (m, pl)">Gastgeber</span>
+                <span class="word-gloss" data-meaning="have">haben</span>
+                <span class="word-gloss" data-meaning="themselves">sich</span>
+                <span class="word-gloss" data-meaning="thoughts (m, pl)">Gedanken</span>
+                <span class="word-gloss" data-meaning="made (thought about)">gemacht</span>,
+                <span class="word-gloss" data-meaning="how">wie</span>
+                <span class="word-gloss" data-meaning="they">sie</span>
+                <span class="word-gloss" data-meaning="the">den</span>
+                <span class="word-gloss" data-meaning="negotiations (f, pl)">Verhandlungen</span>
+                <span class="word-gloss" data-meaning="with">mit</span>
+                <span class="word-gloss" data-meaning="the">den</span>
+                <span class="word-gloss" data-meaning="future">zukünftigen</span>
+                <span class="word-gloss" data-meaning="business partners (m, pl)">Geschäftspartnern</span>
+                <span class="word-gloss" data-meaning="a">einen</span>
+                <span class="word-gloss" data-meaning="favorable">günstigen</span>
+                <span class="word-gloss" data-meaning="ground (m)">Boden</span>
+                <span class="word-gloss" data-meaning="prepare">bereiten</span>
+                <span class="word-gloss" data-meaning="can">können</span>:
+                <span class="word-gloss" data-meaning="A">Ein</span>
+                <span class="word-gloss" data-meaning="tasty">schmackhaftes</span>
+                <span class="word-gloss" data-meaning="food / meal (n)">Essen</span>
+                <span class="word-gloss" data-meaning="to the">zum</span>
+                <span class="word-gloss" data-meaning="start / kickoff (m)">Auftakt</span>
+                <span class="word-gloss" data-meaning="can">kann</span>
+                <span class="word-gloss" data-meaning="there">da</span>
+                <span class="word-gloss" data-meaning="surely">doch</span>
+                <span class="word-gloss" data-meaning="not">nicht</span>
+                <span class="word-gloss" data-meaning="wrong">verkehrt</span>
+                <span class="word-gloss" data-meaning="be">sein</span>.
+                <span class="translation">The hosts have thought about how they can prepare favorable ground for the
+                  negotiations with the future business partners: A tasty meal to kick things off surely can't be
+                  wrong.</span>
+              </span>
+
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="The">Die</span>
+                <span class="word-gloss" data-meaning="Germans">Deutschen</span>
+                <span class="word-gloss" data-meaning="expect">erwarten</span>
+                <span class="word-gloss" data-meaning="an">ein</span>
+                <span class="word-gloss" data-meaning="elegant / posh">vornehmes</span>
+                <span class="word-gloss" data-meaning="meal (n)">Essen</span>,
+                <span class="word-gloss" data-meaning="instead">stattdessen</span>
+                <span class="word-gloss" data-meaning="pile up">türmen</span>
+                <span class="word-gloss" data-meaning="themselves">sich</span>
+                <span class="word-gloss" data-meaning="on">auf</span>
+                <span class="word-gloss" data-meaning="their">ihrem</span>
+                <span class="word-gloss" data-meaning="table (m)">Tisch</span>
+                <span class="word-gloss" data-meaning="cheeseburgers (m, pl)">Cheeseburger</span>
+                <span class="word-gloss" data-meaning="and">und</span>
+                <span class="word-gloss" data-meaning="greasy">fettige</span>
+                <span class="word-gloss" data-meaning="fries (f, pl)">Pommes</span>.
+                <span class="translation">The Germans expect an elegant meal, instead cheeseburgers and greasy fries
+                  pile up on their table.</span>
+              </span>
+
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="The">Den</span>
+                <span class="word-gloss" data-meaning="German">deutschen</span>
+                <span class="word-gloss" data-meaning="guests (m, pl)">Gästen</span>
+                <span class="word-gloss"
+                  data-meaning="sees (man sieht ... an = one can tell by looking at)">sieht</span>
+                <span class="word-gloss" data-meaning="one">man</span>
+                <span class="word-gloss" data-meaning="their">ihr</span>
+                <span class="word-gloss" data-meaning="discomfort (n)">Unbehagen</span>
+                <span class="word-gloss" data-meaning="at (ansehen = to see/notice on someone)">an</span>,
+                <span class="word-gloss" data-meaning="the">das</span>
+                <span class="word-gloss" data-meaning="smile (n)">Lächeln</span>
+                <span class="word-gloss" data-meaning="the">der</span>
+                <span class="word-gloss" data-meaning="hosts (m, pl)">Gastgeber</span>
+                <span class="word-gloss" data-meaning="freezes">gefriert</span>
+                <span class="word-gloss" data-meaning="likewise / also">ebenfalls</span>.
+                <span class="translation">You can see the discomfort on the German guests, the smiles of the hosts also
+                  freeze.</span>
+              </span>
+
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="They">Sie</span>
+                <span class="word-gloss" data-meaning="are">sind</span>
+                <span class="word-gloss" data-meaning="about">über</span>
+                <span class="word-gloss" data-meaning="the">die</span>
+                <span class="word-gloss" data-meaning="absent / lacking">ausbleibende</span>
+                <span class="word-gloss" data-meaning="joy (f)">Freude</span>
+                <span class="word-gloss" data-meaning="disappointed">enttäuscht</span>,
+                <span class="word-gloss" data-meaning="because">denn</span>
+                <span class="word-gloss" data-meaning="they">sie</span>
+                <span class="word-gloss" data-meaning="had">hatten</span>
+                <span class="word-gloss" data-meaning="it">es</span>
+                <span class="word-gloss" data-meaning="indeed">ja</span>
+                <span class="word-gloss" data-meaning="only">nur</span>
+                <span class="word-gloss" data-meaning="good">gut</span>
+                <span class="word-gloss" data-meaning="meant">gemeint</span>.
+                <span class="translation">They are disappointed about the lack of joy, because they only meant
+                  well.</span>
+              </span>
+
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="A">Ein</span>
+                <span class="word-gloss" data-meaning="bad">schlechter</span>
+                <span class="word-gloss" data-meaning="start (m)">Start</span>
+                <span class="word-gloss" data-meaning="for">für</span>
+                <span class="word-gloss" data-meaning="the">die</span>
+                <span class="word-gloss" data-meaning="first">erste</span>
+                <span class="word-gloss" data-meaning="negotiation round (f)">Verhandlungsrunde</span>.
+                <span class="translation">A bad start for the first round of negotiations.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="Neither">Keiner</span>
+                <span class="word-gloss" data-meaning="the">der</span>
+                <span class="word-gloss" data-meaning="both">beiden</span>
+                <span class="word-gloss" data-meaning="partners (m, pl)">Partner</span>
+                <span class="word-gloss" data-meaning="had">hatte</span>
+                <span class="word-gloss" data-meaning="themselves">sich</span>
+                <span class="word-gloss" data-meaning="previously">zuvor</span>
+                <span class="word-gloss" data-meaning="sufficiently">ausreichend</span>
+                <span class="word-gloss" data-meaning="about">über</span>
+                <span class="word-gloss" data-meaning="the">die</span>
+                <span class="word-gloss" data-meaning="customs / habits (f, pl)">Gepflogenheiten</span>
+                <span class="word-gloss" data-meaning="in the">im</span>
+                <span class="word-gloss" data-meaning="other">anderen</span>
+                <span class="word-gloss" data-meaning="country (n)">Land</span>
+                <span class="word-gloss" data-meaning="informed">informiert</span>.
+                <span class="translation">Neither of the two partners had previously informed themselves sufficiently
+                  about the customs in the other country.</span>
+              </span>
+
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="In">In</span>
+                <span class="word-gloss" data-meaning="Arab">arabischen</span>
+                <span class="word-gloss" data-meaning="countries (n, pl)">Ländern</span>
+                <span class="word-gloss" data-meaning="counts / is considered">gilt</span>
+                <span class="word-gloss" data-meaning="food (n)">Essen</span>
+                <span class="word-gloss" data-meaning="like">wie</span>
+                <span class="word-gloss" data-meaning="at">bei</span>
+                <span class="word-gloss" data-meaning="McDonalds">McDonalds</span>
+                <span class="word-gloss" data-meaning="as">als</span>
+                <span class="word-gloss" data-meaning="something">etwas</span>
+                <span class="word-gloss" data-meaning="special">Besonderes</span>,
+                <span class="word-gloss" data-meaning="in">in</span>
+                <span class="word-gloss" data-meaning="Germany">Deutschland</span>
+                <span class="word-gloss" data-meaning="is">ist</span>
+                <span class="word-gloss" data-meaning="it">es</span>
+                <span class="word-gloss" data-meaning="at least">zumindest</span>
+                <span class="word-gloss" data-meaning="as">als</span>
+                <span class="word-gloss" data-meaning="business lunch (n)">Geschäftsessen</span>
+                <span class="word-gloss" data-meaning="frowned upon">verpönt</span>.
+                <span class="translation">In Arab countries, food like at McDonald's is considered something special; in
+                  Germany, it is at least frowned upon as a business lunch.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="Lacking">Mangelndes</span>
+                <span class="word-gloss" data-meaning="knowledge (n)">Wissen</span>
+                <span class="word-gloss" data-meaning="about">über</span>
+                <span class="word-gloss" data-meaning="the">die</span>
+                <span class="word-gloss" data-meaning="cultural">kulturellen</span>
+                <span class="word-gloss" data-meaning="peculiarities (f, pl)">Eigenheiten</span>
+                <span class="word-gloss" data-meaning="the">der</span>
+                <span class="word-gloss" data-meaning="nation (f)">Nation</span>,
+                <span class="word-gloss" data-meaning="with">mit</span>
+                <span class="word-gloss" data-meaning="which">der</span>
+                <span class="word-gloss" data-meaning="one">man</span>
+                <span class="word-gloss" data-meaning="negotiates">verhandelt</span>,
+                <span class="word-gloss" data-meaning="leads">führt</span>
+                <span class="word-gloss" data-meaning="often">oft</span>
+                <span class="word-gloss" data-meaning="to that / to the fact">dazu</span>,
+                <span class="word-gloss" data-meaning="that">dass</span>
+                <span class="word-gloss" data-meaning="managers (m, pl)">Manager</span>
+                <span class="word-gloss" data-meaning="unsuccessfully">erfolglos</span>
+                <span class="word-gloss" data-meaning="from">von</span>
+                <span class="word-gloss" data-meaning="conversations / discussions (n, pl)">Gesprächen</span>
+                <span class="word-gloss" data-meaning="return">zurückkehren</span>
+                <span class="word-gloss" data-meaning="and">und</span>
+                <span class="word-gloss" data-meaning="themselves">sich</span>
+                <span class="word-gloss" data-meaning="at all">gar</span>
+                <span class="word-gloss" data-meaning="not">nicht</span>
+                <span class="word-gloss" data-meaning="explain">erklären</span>
+                <span class="word-gloss" data-meaning="can">können</span>,
+                <span class="word-gloss" data-meaning="how">wie</span>
+                <span class="word-gloss" data-meaning="the">die</span>
+                <span class="word-gloss" data-meaning="barriers (f, pl)">Barrieren</span>
+                <span class="word-gloss" data-meaning="between">zwischen</span>
+                <span class="word-gloss" data-meaning="them">ihnen</span>
+                <span class="word-gloss" data-meaning="and">und</span>
+                <span class="word-gloss" data-meaning="the">den</span>
+                <span class="word-gloss" data-meaning="conversation partners (m, pl)">Gesprächspartnern</span>
+                <span class="word-gloss" data-meaning="arisen / developed">entstanden</span>
+                <span class="word-gloss" data-meaning="are">sind</span>.
+                <span class="translation">Lack of knowledge about the cultural peculiarities of the nation you are
+                  negotiating with often leads to managers returning unsuccessfully from discussions and not being able
+                  to explain at all how the barriers between them and their conversation partners arose.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="Many">Viele</span>
+                <span class="word-gloss" data-meaning="companies (n, pl)">Unternehmen</span>
+                <span class="word-gloss" data-meaning="send">senden</span>
+                <span class="word-gloss" data-meaning="therefore">deshalb</span>
+                <span class="word-gloss" data-meaning="their">ihre</span>
+                <span class="word-gloss" data-meaning="employees (m, pl)">Mitarbeiter</span>
+                <span class="word-gloss" data-meaning="to">zu</span>
+                <span class="word-gloss" data-meaning="country-specific">länderspezifischen</span>
+                <span class="word-gloss" data-meaning="seminars (n, pl)">Seminaren</span>,
+                <span class="word-gloss" data-meaning="at">bei</span>
+                <span class="word-gloss" data-meaning="which">denen</span>
+                <span class="word-gloss" data-meaning="one">man</span>
+                <span class="word-gloss" data-meaning="things (n, pl)">Dinge</span>,
+                <span class="word-gloss" data-meaning="on">auf</span>
+                <span class="word-gloss" data-meaning="which">die</span>
+                <span class="word-gloss" data-meaning="one">man</span>
+                <span class="word-gloss" data-meaning="during">bei</span>
+                <span class="word-gloss" data-meaning="business negotiations (f, pl)">Geschäftsverhandlungen</span>
+                <span class="word-gloss" data-meaning="pay attention">achten</span>
+                <span class="word-gloss" data-meaning="must">muss</span>,
+                <span class="word-gloss" data-meaning="learns / experiences">erfährt</span>.
+                <span class="translation">Many companies therefore send their employees to country-specific seminars
+                  where they learn things that must be paid attention to during business negotiations.</span>
+              </span>
+
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="So / Thus">So</span>
+                <span class="word-gloss" data-meaning="learns">lernt</span>
+                <span class="word-gloss" data-meaning="one">man</span>
+                <span class="word-gloss" data-meaning="for example (zum Beispiel)">z. B.</span>,
+                <span class="word-gloss" data-meaning="that">dass</span>
+                <span class="word-gloss" data-meaning="Japanese (m, pl)">Japaner</span>
+                <span class="word-gloss" data-meaning="the">die</span>
+                <span class="word-gloss" data-meaning="color (f)">Farbe</span>
+                <span class="word-gloss" data-meaning="gray">Grau</span>
+                <span class="word-gloss" data-meaning="for">bei</span>
+                <span class="word-gloss" data-meaning="suits (m, pl)">Anzügen</span>
+                <span class="word-gloss" data-meaning="appreciate / value">schätzen</span>,
+                <span class="word-gloss" data-meaning="not">nicht</span>
+                <span class="word-gloss" data-meaning="so">so</span>
+                <span class="word-gloss" data-meaning="much">sehr</span>
+                <span class="word-gloss" data-meaning="but / however">aber</span>
+                <span class="word-gloss" data-meaning="colorful">bunte</span>
+                <span class="word-gloss" data-meaning="ties (f, pl)">Krawatten</span>
+                <span class="word-gloss" data-meaning="or">oder</span>
+                <span class="word-gloss" data-meaning="shirts (n, pl)">Hemden</span>,
+                <span class="word-gloss" data-meaning="or">oder</span>
+                <span class="word-gloss" data-meaning="that">dass</span>
+                <span class="word-gloss" data-meaning="one">man</span>
+                <span class="word-gloss" data-meaning="at the">beim</span>
+                <span class="word-gloss" data-meaning="business lunch (n)">Geschäftsessen</span>
+                <span class="word-gloss" data-meaning="with">mit</span>
+                <span class="word-gloss" data-meaning="French">französischen</span>
+                <span class="word-gloss" data-meaning="partners (m, pl)">Partnern</span>
+                <span class="word-gloss" data-meaning="in">in</span>
+                <span class="word-gloss" data-meaning="the">der</span>
+                <span class="word-gloss" data-meaning="break (f)">Pause</span>
+                <span class="word-gloss" data-meaning="between">zwischen</span>
+                <span class="word-gloss" data-meaning="dessert (n)">Dessert</span>
+                <span class="word-gloss" data-meaning="and">und</span>
+                <span class="word-gloss" data-meaning="cheese (m)">Käse</span>
+                <span class="word-gloss" data-meaning="on">auf</span>
+                <span class="word-gloss" data-meaning="no">keinen</span>
+                <span class="word-gloss" data-meaning="case / event (m)">Fall</span>
+                <span class="word-gloss" data-meaning="switch off / tune out">abschalten</span>
+                <span class="word-gloss" data-meaning="should">sollte</span>,
+                <span class="word-gloss" data-meaning="because">denn</span>
+                <span class="word-gloss" data-meaning="in">in</span>
+                <span class="word-gloss" data-meaning="this">dieser</span>
+                <span class="word-gloss" data-meaning="time (f)">Zeit</span>
+                <span class="word-gloss" data-meaning="are (passive auxiliary)">werden</span>
+                <span class="word-gloss" data-meaning="preferably">bevorzugt</span>
+                <span class="word-gloss" data-meaning="delicate / sensitive">delikate</span>
+                <span class="word-gloss" data-meaning="business questions (f, pl)">Geschäftsfragen</span>
+                <span class="word-gloss" data-meaning="discussed">besprochen</span>
+                <span class="word-gloss" data-meaning="and">und</span>
+                <span class="word-gloss" data-meaning="resolved">gelöst</span>.
+                <span class="translation">For example, you learn that the Japanese appreciate the color gray in suits,
+                  but not so much colorful ties or shirts, or that during a business meal with French partners you
+                  absolutely shouldn't switch off during the break between dessert and cheese, because delicate business
+                  issues are preferentially discussed and resolved during this time.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="One">Man</span>
+                <span class="word-gloss" data-meaning="must">muss</span>
+                <span class="word-gloss" data-meaning="not">nicht</span>
+                <span class="word-gloss" data-meaning="immediately">gleich</span>
+                <span class="word-gloss" data-meaning="into">in</span>
+                <span class="word-gloss" data-meaning="the">die</span>
+                <span class="word-gloss" data-meaning="role (f)">Rolle</span>
+                <span class="word-gloss" data-meaning="of a">eines</span>
+                <span class="word-gloss" data-meaning="Frenchman (m)">Franzosen</span>
+                <span class="word-gloss" data-meaning="or">oder</span>
+                <span class="word-gloss" data-meaning="Briton (m)">Briten</span>
+                <span class="word-gloss" data-meaning="slip into">schlüpfen</span>,
+                <span class="word-gloss" data-meaning="in order">um</span>
+                <span class="word-gloss" data-meaning="successfully">erfolgreich</span>
+                <span class="word-gloss" data-meaning="to">zu</span>
+                <span class="word-gloss" data-meaning="negotiate">verhandeln</span>,
+                <span class="word-gloss" data-meaning="but">aber</span>
+                <span class="word-gloss" data-meaning="it">es</span>
+                <span class="word-gloss" data-meaning="is">ist</span>
+                <span class="word-gloss" data-meaning="important">wichtig</span>,
+                <span class="word-gloss" data-meaning="a">ein</span>
+                <span class="word-gloss" data-meaning="feel / intuition (n)">Gespür</span>
+                <span class="word-gloss" data-meaning="for">für</span>
+                <span class="word-gloss" data-meaning="the">die</span>
+                <span class="word-gloss" data-meaning="foreign">fremde</span>
+                <span class="word-gloss" data-meaning="nation (f)">Nation</span>
+                <span class="word-gloss" data-meaning="in">im</span>
+                <span class="word-gloss" data-meaning="general">Allgemeinen</span>
+                <span class="word-gloss" data-meaning="to">zu</span>
+                <span class="word-gloss" data-meaning="develop">entwickeln</span>
+                <span class="word-gloss" data-meaning="and">und</span>
+                <span class="word-gloss" data-meaning="oneself">sich</span>
+                <span class="word-gloss" data-meaning="about">über</span>
+                <span class="word-gloss" data-meaning="structures (f, pl)">Strukturen</span>
+                <span class="word-gloss" data-meaning="and">und</span>
+                <span class="word-gloss" data-meaning="customs (f, pl)">Gepflogenheiten</span>
+                <span class="word-gloss" data-meaning="beforehand">vorher</span>
+                <span class="word-gloss" data-meaning="to">zu</span>
+                <span class="word-gloss" data-meaning="inform">informieren</span>.
+                <span class="translation">You don't have to immediately slip into the role of a Frenchman or Brit to
+                  negotiate successfully, but it is important to develop a feel for the foreign nation in general and to
+                  inform yourself beforehand about structures and customs.</span>
+              </span>
+
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="That">Das</span>
+                <span class="word-gloss" data-meaning="simplifies">vereinfacht</span>
+                <span class="word-gloss" data-meaning="the">den</span>
+                <span class="word-gloss" data-meaning="handling / interaction (m)">Umgang</span>
+                <span class="word-gloss" data-meaning="with one another">miteinander</span>
+                <span class="word-gloss" data-meaning="enormously">enorm</span>.
+                <span class="translation">This enormously simplifies interacting with one another.</span>
+              </span>
+            </p>
+
+          </div>
+        </article>
+
+        <section class="bg-white shadow-xl rounded-2xl p-8 md:p-12 ring-1 ring-slate-900/5">
+          <h2 class="text-2xl font-bold text-slate-800 mb-6 font-sans border-l-4 border-indigo-500 pl-4">
+            Grammatik-Spotlight: Das Passiv (Vorgangspassiv)</h2>
+          <p class="text-slate-600 mb-4 font-sans text-lg">
+            This text uses the passive voice to emphasize actions rather than who is performing them. The
+            <strong>Vorgangspassiv</strong> (process passive) is formed with <em>werden</em> + <em>Partizip II</em>.
+          </p>
+          <div class="bg-indigo-50 rounded-lg p-6 mb-6">
+            <h3 class="font-bold text-indigo-900 mb-3">Beispiele aus dem Text:</h3>
+            <ul class="space-y-4 text-indigo-800 font-sans">
+              <li>
+                <span class="block font-serif text-lg">"Von einer Gruppe einheimischer Geschäftsleute
+                  <strong>werden</strong> sie freundlich <strong>empfangen</strong>."</span>
+                <span class="text-sm opacity-80">(They are warmly welcomed by a group of local business people.)</span>
+              </li>
+              <li>
+                <span class="block font-serif text-lg">"...denn in dieser Zeit <strong>werden</strong> bevorzugt
+                  delikate Geschäftsfragen <strong>besprochen</strong> und <strong>gelöst</strong>."</span>
+                <span class="text-sm opacity-80">(...because delicate business issues are preferentially discussed and
+                  resolved during this time.)</span>
+              </li>
+            </ul>
+          </div>
+          <p class="text-slate-600 font-sans">
+            <em>Tipp:</em> Notice how "Von" (by) is used to indicate the agent performing the action when it's necessary
+            to mention them.
+          </p>
+        </section>
+
+        <section class="bg-white shadow-xl rounded-2xl p-8 md:p-12 ring-1 ring-slate-900/5">
+          <h2 class="text-2xl font-bold text-slate-800 mb-6 font-sans border-l-4 border-green-500 pl-4">Übung:
+            Lückentext</h2>
+          <p class="text-slate-600 mb-6 font-sans text-lg">
+            Test your active recall. Fill in the blanks with the correct vocabulary word from the text:
+            <br>
+            <span class="text-sm text-slate-500 mt-2 block font-mono bg-slate-100 p-2 rounded">
+              Gepflogenheiten | Unbehagen | verpönt | Auftakt | schlüpfen
+            </span>
+          </p>
+
+          <div class="space-y-6 font-serif text-lg">
+            <p>1. Ein gutes Essen ist ein toller <input type="text"
+                class="border-b-2 border-slate-300 bg-transparent w-24 text-center focus:outline-none focus:border-green-500"
+                placeholder="..."> für eine Geschäftsverhandlung.</p>
+            <p>2. In manchen Ländern ist es <input type="text"
+                class="border-b-2 border-slate-300 bg-transparent w-24 text-center focus:outline-none focus:border-green-500"
+                placeholder="...">, beim Essen laute Geräusche zu machen.</p>
+            <p>3. Man sollte sich vorher über die kulturellen <input type="text"
+                class="border-b-2 border-slate-300 bg-transparent w-36 text-center focus:outline-none focus:border-green-500"
+                placeholder="..."> des Landes informieren.</p>
+            <p>4. Dem Manager sah man sein <input type="text"
+                class="border-b-2 border-slate-300 bg-transparent w-28 text-center focus:outline-none focus:border-green-500"
+                placeholder="..."> deutlich an, als er das komische Essen sah.</p>
+            <p>5. Man muss nicht direkt in die Rolle eines Einheimischen <input type="text"
+                class="border-b-2 border-slate-300 bg-transparent w-28 text-center focus:outline-none focus:border-green-500"
+                placeholder="...">.</p>
+          </div>
+        </section>
+
+      </div>
+
+      <aside
+        class="glossary-sidebar bg-white shadow-xl rounded-2xl p-6 border border-slate-200 mt-10 lg:mt-0 self-start sticky top-6"
+        id="glossary-sidebar">
+        <p class="text-xs uppercase tracking-wide text-blue-600 font-semibold mb-2">Word-by-word</p>
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Rechter Rand: Sofort-Glossar</h3>
+        <p class="text-sm text-slate-600 mb-4">Fahre über markierte Wörter oder tippe sie an. Das passende Glossar rückt
+          hier auf – ideal für schnelles Nachschlagen während des Lesens.</p>
+        <div class="space-y-3 max-h-[70vh] overflow-y-auto pr-2" id="glossary-list" aria-live="polite">
+        </div>
+      </aside>
+
+    </div>
+  </main>
+</body>
+
+</html>

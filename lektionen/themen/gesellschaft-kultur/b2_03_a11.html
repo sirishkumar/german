@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion: Abenteuer Ausland</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .sentence-translate {
+      position: relative;
+      cursor: help;
+      border-bottom: 2px dotted #94a3b8;
+      transition: background-color 0.2s ease-in-out;
+      border-radius: 2px;
+    }
+
+    .sentence-translate:hover {
+      background-color: #e0f2fe;
+      border-bottom-color: #0284c7;
+    }
+
+    .translation {
+      visibility: hidden;
+      opacity: 0;
+      width: 320px;
+      background-color: #1e293b;
+      color: #f8fafc;
+      text-align: left;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      position: absolute;
+      z-index: 50;
+      bottom: 140%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      transition: opacity 0.2s ease-in-out, visibility 0.2s;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .translation::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -6px;
+      border-width: 6px;
+      border-style: solid;
+      border-color: #1e293b transparent transparent transparent;
+    }
+
+    .sentence-translate:hover .translation {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media (max-width: 640px) {
+      .translation {
+        width: 250px;
+        left: 0;
+        transform: translateX(0);
+      }
+
+      .translation::after {
+        left: 20px;
+      }
+    }
+
+  </style>
+  <link rel="stylesheet" href="../../../assets/glossary.css">
+  <script src="../../../assets/glossary.js" defer></script>
+</head>
+
+<body class="bg-slate-50 font-serif text-slate-800 antialiased leading-relaxed">
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <header class="mb-12 border-b border-slate-200 pb-8">
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-2 font-sans tracking-tight">Abenteuer Ausland</h1>
+      <p class="text-lg text-slate-600 font-sans">Ein Text über die Motive und Trends der deutschen Auswanderung.</p>
+    </header>
+
+    <div class="lg:grid lg:grid-cols-[2.2fr_1fr] lg:gap-10">
+      <div class="space-y-12">
+        <article class="bg-white shadow-xl rounded-2xl p-8 md:p-12 ring-1 ring-slate-900/5" id="reader">
+          <h2 class="text-2xl font-bold text-slate-800 mb-6 font-sans border-l-4 border-blue-500 pl-4">Der Lesetext</h2>
+          <div class="text-lg space-y-6 text-justify">
+            <p>
+              <span class="sentence-translate">
+                Viele <span class="word-gloss" data-meaning="Germans (plural)">Deutsche</span> <span class="word-gloss"
+                  data-meaning="pulled / was drawing">zog</span> und <span class="word-gloss"
+                  data-meaning="draws / attracts">zieht</span> es ins <span class="word-gloss"
+                  data-meaning="abroad / foreign countries">Ausland</span>.
+                <span class="translation">Many Germans were and are attracted to move abroad.</span>
+              </span>
+              <span class="sentence-translate">
+                Dabei waren <span class="word-gloss" data-meaning="thirst for adventure">Abenteuerlust</span>, <span
+                  class="word-gloss" data-meaning="variety / change">Abwechslung</span> und die <span class="word-gloss"
+                  data-meaning="the search">Suche</span> nach einer interessanten <span class="word-gloss"
+                  data-meaning="the challenge">Herausforderung</span> im <span class="word-gloss"
+                  data-meaning="professional field">beruflichen Bereich</span> früher die stärksten <span
+                  class="word-gloss" data-meaning="motives">Motive</span>.
+                <span class="translation">In the process, a thirst for adventure, variety, and the search for an
+                  interesting professional challenge were previously the strongest motives.</span>
+              </span>
+              <span class="sentence-translate">
+                Vor allem intellektuelle <span class="word-gloss" data-meaning="globetrotters">Weltenbummler</span>
+                hielten einst <span class="word-gloss" data-meaning="to keep a lookout">Ausschau</span> nach
+                vielfältigen Erfahrungen und <span class="word-gloss"
+                  data-meaning="career opportunities">Karrieremöglichkeiten</span>, denn die besten Chancen auf einen
+                gut bezahlten Job im Ausland hatten in der <span class="word-gloss"
+                  data-meaning="the past">Vergangenheit</span> hauptsächlich <span class="word-gloss"
+                  data-meaning="workers">Arbeitskräfte</span> mit einem <span class="word-gloss"
+                  data-meaning="academic degree">akademischen Abschluss</span>.
+                <span class="translation">Above all, intellectual globetrotters once looked out for diverse experiences
+                  and career opportunities, because in the past, mainly workers with an academic degree had the best
+                  chances for a well-paid job abroad.</span>
+              </span>
+            </p>
+            <p>
+              <span class="sentence-translate">
+                Das hat sich nach der <span class="word-gloss"
+                  data-meaning="turn of the millennium">Jahrtausendwende</span> <span class="word-gloss"
+                  data-meaning="changed">verändert</span>.
+                <span class="translation">That has changed after the turn of the millennium.</span>
+              </span>
+              <span class="sentence-translate">
+                Deutsche <span class="word-gloss" data-meaning="skilled workers">Facharbeiter</span> (auch die über
+                50-Jährigen) werden <span class="word-gloss" data-meaning="because of">wegen</span> ihrer <span
+                  class="word-gloss" data-meaning="solid / sturdy">soliden</span> <span class="word-gloss"
+                  data-meaning="training / education">Ausbildung</span> sowohl im praktischen als auch im theoretischen
+                Bereich immer mehr <span class="word-gloss" data-meaning="valued / appreciated">geschätzt</span>.
+                <span class="translation">German skilled workers (including those over 50) are increasingly valued
+                  because of their solid training in both practical and theoretical areas.</span>
+              </span>
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="temporary employment agencies">Zeitarbeitsagenturen</span> und
+                <span class="word-gloss" data-meaning="personnel service companies">Personaldienstleistungsfirmen</span>
+                bieten auf <span class="word-gloss" data-meaning="job boards">Jobbörsen</span> viele Stellen für <span
+                  class="word-gloss" data-meaning="craftsmen">Handwerker</span> in Skandinavien an: <span
+                  class="word-gloss" data-meaning="car mechanic">Kfz-Mechaniker</span>, <span class="word-gloss"
+                  data-meaning="electrician">Elektriker</span>, <span class="word-gloss"
+                  data-meaning="carpenters">Zimmermänner</span>, <span class="word-gloss"
+                  data-meaning="masons / bricklayers">Maurer</span>, <span class="word-gloss"
+                  data-meaning="roofers">Dachdecker</span>, <span class="word-gloss"
+                  data-meaning="welders">Schweißer</span> usw.
+                <span class="translation">Temporary employment agencies and personnel service companies offer many
+                  positions for craftsmen in Scandinavia on job boards: car mechanics, electricians, carpenters, masons,
+                  roofers, welders, etc.</span>
+              </span>
+            </p>
+            <p>
+              <span class="sentence-translate">
+                Bei den <span class="word-gloss" data-meaning="job seekers">Arbeitssuchenden</span> aus Deutschland sind
+                auch Länder wie Österreich, die Schweiz und Spanien sehr beliebt.
+                <span class="translation">Countries like Austria, Switzerland, and Spain are also very popular among job
+                  seekers from Germany.</span>
+              </span>
+              <span class="sentence-translate">
+                Hier werden vor allem qualifizierte Arbeitskräfte in der <span class="word-gloss"
+                  data-meaning="gastronomy">Gastronomie-</span> und <span class="word-gloss"
+                  data-meaning="tourism industry">Tourismusbranche</span> <span class="word-gloss"
+                  data-meaning="sought / searched for">gesucht</span>.
+                <span class="translation">Here, qualified workers are mainly sought in the gastronomy and tourism
+                  sectors.</span>
+              </span>
+              <span class="sentence-translate">
+                Die Bundesagentur für Arbeit <span class="word-gloss" data-meaning="records / notes">verzeichnet</span>
+                hohe <span class="word-gloss" data-meaning="placement rates">Vermittlungsquoten</span> in Länder wie
+                Norwegen, Dänemark, Niederlande, Irland, Großbritannien und Island.
+                <span class="translation">The Federal Employment Agency records high placement rates in countries like
+                  Norway, Denmark, the Netherlands, Ireland, Great Britain, and Iceland.</span>
+              </span>
+              <span class="sentence-translate">
+                Dort bieten sich außer im <span class="word-gloss"
+                  data-meaning="booming construction industry">boomenden Baugewerbe</span> und in der <span
+                  class="word-gloss" data-meaning="metalworking industry">metallverarbeitenden Industrie</span> gute
+                Möglichkeiten für Fachkräfte im <span class="word-gloss"
+                  data-meaning="medical nursing sector">medizinischen Pflegebereich</span>, in Callcenteragenturen und
+                im <span class="word-gloss" data-meaning="finance and banking">Finanz- und Bankwesen</span>.
+                <span class="translation">There, besides the booming construction and metalworking industries, there are
+                  good opportunities for specialists in medical nursing, call center agencies, and the finance and
+                  banking sectors.</span>
+              </span>
+            </p>
+            <p>
+              <span class="sentence-translate">
+                Offiziellen Angaben <span class="word-gloss" data-meaning="according to">zufolge</span> <span
+                  class="word-gloss" data-meaning="emigrated">wanderten</span> im Jahr 2013 knapp 140 000 Deutsche <span
+                  class="word-gloss" data-meaning="out (emigrated)">aus</span> und suchten ihr <span class="word-gloss"
+                  data-meaning="luck / happiness">Glück</span> im Ausland.
+                <span class="translation">According to official figures, nearly 140,000 Germans emigrated in 2013 and
+                  sought their luck abroad.</span>
+              </span>
+              <span class="sentence-translate">
+                Und das sind nur die, die sich <span class="word-gloss"
+                  data-meaning="properly / according to regulations">ordnungsgemäß</span> <span class="word-gloss"
+                  data-meaning="deregistered">abgemeldet</span> haben.
+                <span class="translation">And those are only the ones who officially deregistered.</span>
+              </span>
+              <span class="sentence-translate">
+                Man weiß nicht, wie viele <span class="word-gloss" data-meaning="commute">pendeln</span> oder ihren
+                deutschen <span class="word-gloss" data-meaning="residence">Wohnsitz</span> <span class="word-gloss"
+                  data-meaning="formally">formal</span> <span class="word-gloss"
+                  data-meaning="kept / retained">behalten</span> haben.
+                <span class="translation">It is not known how many commute or have formally kept their German
+                  residence.</span>
+              </span>
+            </p>
+          </div>
+        </article>
+
+        <section class="bg-white shadow-lg rounded-2xl p-8 border border-slate-100">
+          <h3 class="text-2xl font-bold text-slate-800 mb-6 font-sans border-l-4 border-green-500 pl-4">Wortschatz:
+            Berufe & Branchen</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-slate-700 mb-2">Handwerk (Crafts)</h4>
+              <ul class="list-disc list-inside space-y-1 text-slate-600">
+                <li>der Maurer (mason)</li>
+                <li>der Dachdecker (roofer)</li>
+                <li>der Schweißer (welder)</li>
+                <li>der Zimmermann (carpenter)</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-700 mb-2">Branchen (Sectors)</h4>
+              <ul class="list-disc list-inside space-y-1 text-slate-600">
+                <li>das Baugewerbe (construction industry)</li>
+                <li>das Bankwesen (banking)</li>
+                <li>die Gastronomie (gastronomy)</li>
+                <li>der Pflegebereich (nursing sector)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-2xl p-8 border border-slate-100">
+          <h3 class="text-2xl font-bold text-slate-800 mb-4 font-sans border-l-4 border-orange-500 pl-4">Grammatik:
+            Kausalangaben</h3>
+          <p class="mb-4 text-slate-600">Im Text finden wir verschiedene Wege, Gründe auszudrücken:</p>
+          <div class="space-y-4">
+            <div class="p-4 bg-orange-50 rounded-lg">
+              <p class="font-semibold text-orange-900">1. Konjunktion "denn" (Hauptsatz)</p>
+              <p class="text-sm italic">"...Karrieremöglichkeiten, <strong>denn</strong> die besten Chancen... hatten
+                Fachkräfte."</p>
+              <p class="text-xs text-orange-700 mt-1">Note: "Denn" uses position 0; the subject follows immediately.</p>
+            </div>
+            <div class="p-4 bg-blue-50 rounded-lg">
+              <p class="font-semibold text-blue-900">2. Präposition "wegen" (+ Genitiv/Dativ)</p>
+              <p class="text-sm italic">"...werden <strong>wegen</strong> ihrer soliden Ausbildung... geschätzt."</p>
+              <p class="text-xs text-blue-700 mt-1">Note: Used here with a possessive pronoun "ihrer".</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-slate-900 text-white rounded-2xl p-8 shadow-xl">
+          <h3 class="text-2xl font-bold mb-6 font-sans text-blue-400">Verständnis-Check</h3>
+          <div class="space-y-6">
+            <p class="text-lg">Welche Aussage ist <strong>richtig</strong> laut Text?</p>
+            <div class="grid gap-4">
+              <button class="w-full text-left p-4 rounded-xl border border-slate-700 hover:bg-slate-800 transition">
+                A) Früher hatten vor allem Handwerker gute Chancen im Ausland.
+              </button>
+              <button
+                class="w-full text-left p-4 rounded-xl border border-blue-500 bg-blue-500/10 hover:bg-blue-500/20 transition">
+                B) Heute werden deutsche Facharbeiter wegen ihrer soliden Ausbildung geschätzt.
+              </button>
+              <button class="w-full text-left p-4 rounded-xl border border-slate-700 hover:bg-slate-800 transition">
+                C) Im Jahr 2013 wanderten genau 140.000 Deutsche aus.
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="glossary-sidebar bg-white shadow-xl rounded-2xl p-6 border border-slate-200 mt-10 lg:mt-0"
+        id="glossary-sidebar">
+        <p class="text-xs uppercase tracking-wide text-blue-600 font-semibold mb-2">Word-by-word</p>
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Rechter Rand: Sofort-Glossar</h3>
+        <p class="text-sm text-slate-600 mb-4">Fahre über markierte Wörter oder tippe sie an. Das passende Glossar rückt
+          hier auf – ideal für schnelles Nachschlagen während des Lesens.</p>
+        <div class="space-y-3" id="glossary-list" aria-live="polite"></div>
+      </aside>
+    </div>
+
+    <footer class="mt-16 text-center border-t border-slate-200 pt-8">
+      <p class="text-slate-500 italic mb-4">Möchten Sie, dass ich eine Übung zu den Berufsbezeichnungen oder zu den
+        Kausalsätzen mit "wegen" erstelle?</p>
+    </footer>
+  </main>
+</body>
+
+</html>

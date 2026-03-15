@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wie Europa verhandelt - B2 Leseverstehen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Minimal sentence tooltip CSS */
+    .sentence-translate {
+      position: relative;
+      cursor: help;
+      border-bottom: 2px dotted #94a3b8;
+      transition: background-color 0.2s ease-in-out;
+      border-radius: 2px;
+    }
+
+    .sentence-translate:hover {
+      background-color: #e0f2fe;
+      border-bottom-color: #0284c7;
+    }
+
+    .translation {
+      visibility: hidden;
+      opacity: 0;
+      width: 320px;
+      background-color: #1e293b;
+      color: #f8fafc;
+      text-align: left;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      position: absolute;
+      z-index: 50;
+      bottom: 140%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      transition: opacity 0.2s ease-in-out, visibility 0.2s;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .translation::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -6px;
+      border-width: 6px;
+      border-style: solid;
+      border-color: #1e293b transparent transparent transparent;
+    }
+
+    .sentence-translate:hover .translation {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media (max-width: 640px) {
+      .translation {
+        width: 250px;
+        left: 0;
+        transform: translateX(0);
+      }
+
+      .translation::after {
+        left: 20px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="../../../assets/glossary.css">
+  <script src="../../../assets/glossary.js" defer></script>
+</head>
+
+<body class="bg-slate-50 font-serif text-slate-800 antialiased leading-relaxed">
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <header class="mb-12">
+      <h1 class="text-4xl font-extrabold text-slate-900 font-sans tracking-tight mb-3">Wie Europa verhandelt</h1>
+      <p class="text-lg text-slate-600 font-sans">Verbessere dein Leseverstehen (B2) mit diesem Text über
+        interkulturelle Unterschiede bei Geschäftsverhandlungen in Europa.</p>
+    </header>
+
+    <div class="lg:grid lg:grid-cols-[2.2fr_1fr] lg:gap-10">
+      <div class="space-y-12">
+
+        <article class="bg-white shadow-xl rounded-2xl p-8 md:p-12 ring-1 ring-slate-900/5" id="reader">
+          <h2 class="text-2xl font-bold text-slate-800 mb-6 font-sans border-l-4 border-blue-500 pl-4">Der Lesetext</h2>
+          <div class="text-lg space-y-6 text-justify">
+
+            <p class="font-sans text-sm font-bold text-slate-500 uppercase tracking-wide">Nation A</p>
+            <p>
+              <span class="sentence-translate">
+                Sie legen viel Wert auf Höflichkeit, bedanken und <span class="word-gloss"
+                  data-meaning="apologize">entschuldigen</span> sich häufig.
+                <span class="translation">They place great value on politeness, thank and apologize frequently.</span>
+              </span>
+              <span class="sentence-translate">
+                Auf viele Deutsche <span class="word-gloss" data-meaning="appear/seem">wirken</span> sie anfangs sehr
+                freundlich.
+                <span class="translation">To many Germans, they seem very friendly at first.</span>
+              </span>
+              <span class="sentence-translate">
+                <span class="word-gloss" data-meaning="Requests">Aufforderungen</span> werden nie direkt, sondern immer
+                im Konjunktiv <span class="word-gloss" data-meaning="formulated">formuliert</span>.
+                <span class="translation">Requests are never formulated directly, but always in the subjunctive.</span>
+              </span>
+              <span class="sentence-translate">
+                „Meetings beginnen, bevor sie angefangen haben“, <span class="word-gloss"
+                  data-meaning="explains">erklärt</span> ein Kulturexperte.
+                <span class="translation">"Meetings begin before they have started," explains a cultural expert.</span>
+              </span>
+              <span class="sentence-translate">
+                „Es ist ganz normal, sich schon vor dem Treffen mit allen <span class="word-gloss"
+                  data-meaning="participants">Beteiligten</span> über ihre <span class="word-gloss"
+                  data-meaning="points of view">Standpunkte</span> <span class="word-gloss"
+                  data-meaning="to exchange">auszutauschen</span>.“
+                <span class="translation">"It is completely normal to exchange views with all participants even before
+                  the meeting."</span>
+              </span>
+              <span class="sentence-translate">
+                Es <span class="word-gloss" data-meaning="prevail">herrschen</span> <span class="word-gloss"
+                  data-meaning="flat">flache</span> Hierarchien, <span class="word-gloss"
+                  data-meaning="group decisions">Gruppenentscheidungen</span> sind heilig.
+                <span class="translation">Flat hierarchies prevail, group decisions are sacred.</span>
+              </span>
+            </p>
+
+            <p class="font-sans text-sm font-bold text-slate-500 uppercase tracking-wide mt-8">Nation B</p>
+            <p>
+              <span class="sentence-translate">
+                „Sie verkaufen nicht, sie <span class="word-gloss" data-meaning="seduce">verführen</span>“, heißt es.
+                <span class="translation">"They don't sell, they seduce," it is said.</span>
+              </span>
+              <span class="sentence-translate">
+                Mit anderen Worten: Eine <span class="word-gloss" data-meaning="rigid">starre</span> <span
+                  class="word-gloss" data-meaning="agenda">Tagesordnung</span>, das <span class="word-gloss"
+                  data-meaning="stubborn">sture</span> <span class="word-gloss"
+                  data-meaning="ticking off">Abhaken</span> von Gesprächspunkten oder <span class="word-gloss"
+                  data-meaning="fact-heavy">faktenlastige</span> Vorträge können in Verhandlungen <span
+                  class="word-gloss" data-meaning="fatal">tödlich</span> sein.
+                <span class="translation">In other words: a rigid agenda, the stubborn ticking off of talking points, or
+                  fact-heavy presentations can be fatal in negotiations.</span>
+              </span>
+              <span class="sentence-translate">
+                Um an Informationen zu <span class="word-gloss" data-meaning="come/get">kommen</span>, muss man selbst
+                aktiv <span class="word-gloss" data-meaning="become">werden</span>.
+                <span class="translation">To get information, one must become active oneself.</span>
+              </span>
+              <span class="sentence-translate">
+                Ein <span class="word-gloss" data-meaning="suitable">geeigneter</span> Weg dazu ist das Geschäftsessen:
+                Sobald die <span class="word-gloss" data-meaning="interpersonal">zwischenmenschliche</span> Beziehung
+                enger wird, sind auch die Infos leichter zu <span class="word-gloss"
+                  data-meaning="have/obtain">haben</span>.
+                <span class="translation">A suitable way to do this is the business lunch: as soon as the interpersonal
+                  relationship becomes closer, the information is also easier to obtain.</span>
+              </span>
+              <span class="sentence-translate">
+                Beim Essen ist allerdings <span class="word-gloss" data-meaning="patience">Geduld</span> <span
+                  class="word-gloss" data-meaning="required">gefragt</span>, denn manchmal <span class="word-gloss"
+                  data-meaning="comes">kommt</span> das gute Angebot oder die Information, die man <span
+                  class="word-gloss" data-meaning="needs">braucht</span>, erst zum Schluss.
+                <span class="translation">At the meal, however, patience is required, because sometimes the good offer
+                  or the information one needs only comes at the end.</span>
+              </span>
+            </p>
+
+            <p class="font-sans text-sm font-bold text-slate-500 uppercase tracking-wide mt-8">Nation C</p>
+            <p>
+              <span class="sentence-translate">
+                Sie <span class="word-gloss" data-meaning="maintain">wahren</span> die Distanz.
+                <span class="translation">They maintain their distance.</span>
+              </span>
+              <span class="sentence-translate">
+                Sie <span class="word-gloss" data-meaning="greet">begrüßen</span> sich nur dann per <span
+                  class="word-gloss" data-meaning="handshake">Händedruck</span>, wenn sie sich zum ersten Mal <span
+                  class="word-gloss" data-meaning="meet">treffen</span> oder sehr lange nicht gesehen haben.
+                <span class="translation">They only greet each other with a handshake when they meet for the first time
+                  or haven't seen each other for a very long time.</span>
+              </span>
+              <span class="sentence-translate">
+                Der <span class="word-gloss" data-meaning="distance">Abstand</span> zum <span class="word-gloss"
+                  data-meaning="counterpart">Gegenüber</span> wird auch beim Smalltalk <span class="word-gloss"
+                  data-meaning="valued">geschätzt</span>: Überaus <span class="word-gloss"
+                  data-meaning="animatedly">angeregt</span> können sich die Geschäftspartner über das Wetter, die <span
+                  class="word-gloss" data-meaning="journey">Anreise</span> oder die Premiere in der Oper <span
+                  class="word-gloss" data-meaning="converse">unterhalten</span> – Privates aber <span class="word-gloss"
+                  data-meaning="remains">bleibt</span> privat.
+                <span class="translation">The distance to the counterpart is also valued during small talk: Business
+                  partners can converse extremely animatedly about the weather, the journey, or the premiere at the
+                  opera – but private matters remain private.</span>
+              </span>
+              <span class="sentence-translate">
+                Trotz der Distanz sind sie sehr höflich, selbst <span class="word-gloss"
+                  data-meaning="instructions">Anweisungen</span> werden als höfliche Bitten <span class="word-gloss"
+                  data-meaning="formulated">formuliert</span>.
+                <span class="translation">Despite the distance, they are very polite, even instructions are formulated
+                  as polite requests.</span>
+              </span>
+            </p>
+
+            <p class="font-sans text-sm font-bold text-slate-500 uppercase tracking-wide mt-8">Nation D</p>
+            <p>
+              <span class="sentence-translate">
+                Wer sich auf die <span class="word-gloss" data-meaning="gestures">Gesten</span> seiner Geschäftspartner
+                <span class="word-gloss" data-meaning="relies">verlässt</span>, kann schnell <span class="word-gloss"
+                  data-meaning="misled">in die Irre geführt</span> werden.
+                <span class="translation">Whoever relies on the gestures of their business partners can quickly be
+                  misled.</span>
+              </span>
+              <span class="sentence-translate">
+                Denn <span class="word-gloss" data-meaning="shaking the head">Kopfschütteln</span> <span
+                  class="word-gloss" data-meaning="means">bedeutet</span> Zustimmung, zweimaliges <span
+                  class="word-gloss" data-meaning="nodding">Nicken</span> hingegen <span class="word-gloss"
+                  data-meaning="rejection">Ablehnung</span>.
+                <span class="translation">Because shaking the head means agreement, whereas nodding twice means
+                  rejection.</span>
+              </span>
+              <span class="sentence-translate">
+                Eine bestimmte <span class="word-gloss" data-meaning="volume">Lautstärke</span> und starkes <span
+                  class="word-gloss" data-meaning="gesturing">Gestikulieren</span> <span class="word-gloss"
+                  data-meaning="belong">gehören</span> zum normalen <span class="word-gloss"
+                  data-meaning="conversational behavior">Gesprächsverhalten</span> dazu und <span class="word-gloss"
+                  data-meaning="show">zeigen</span> besonderes Interesse für das Thema.
+                <span class="translation">A certain volume and strong gesturing belong to normal conversational behavior
+                  and show special interest in the topic.</span>
+              </span>
+              <span class="sentence-translate">
+                Gleichzeitig werden Informationen viel indirekter <span class="word-gloss"
+                  data-meaning="introduced/brought in">eingebracht</span>.
+                <span class="translation">At the same time, information is introduced much more indirectly.</span>
+              </span>
+              <span class="sentence-translate">
+                Jemandem direkt zu sagen, was man <span class="word-gloss" data-meaning="thinks">denkt</span>, <span
+                  class="word-gloss" data-meaning="is considered">gilt</span> als unhöflich.
+                <span class="translation">Telling someone directly what one thinks is considered impolite.</span>
+              </span>
+              <span class="sentence-translate">
+                Die Hierarchien sind wesentlich <span class="word-gloss"
+                  data-meaning="more pronounced">ausgeprägter</span> als in Deutschland, von ihrem Chef <span
+                  class="word-gloss" data-meaning="expect">erwarten</span> die Mitarbeiter in größeren Besprechungen
+                klare Anweisungen.
+                <span class="translation">Hierarchies are much more pronounced than in Germany; employees expect clear
+                  instructions from their boss in larger meetings.</span>
+              </span>
+            </p>
+
+            <p class="font-sans text-sm font-bold text-slate-500 uppercase tracking-wide mt-8">Nation E</p>
+            <p>
+              <span class="sentence-translate">
+                Der <span class="word-gloss" data-meaning="suit">Anzug</span> aus <span class="word-gloss"
+                  data-meaning="finest fabric">feinstem Stoff</span>, das Auto ein Porsche, ein Doktortitel auf der
+                Visitenkarte – beste <span class="word-gloss" data-meaning="prerequisites">Voraussetzungen</span>, um
+                sich das Geschäft mit ihnen gründlich zu <span class="word-gloss"
+                  data-meaning="spoil/ruin">verderben</span>.
+                <span class="translation">The suit made of the finest fabric, the car a Porsche, a doctorate on the
+                  business card – the best prerequisites to thoroughly ruin the business with them.</span>
+              </span>
+              <span class="sentence-translate">
+                Das <span class="word-gloss" data-meaning="key word">Schlüsselwort</span> für Erfolg <span
+                  class="word-gloss" data-meaning="is called">heißt</span> Gleichheit, Hierarchien werden <span
+                  class="word-gloss" data-meaning="downplayed/written in lowercase">kleingeschrieben</span>.
+                <span class="translation">The key word for success is equality; hierarchies are downplayed.</span>
+              </span>
+              <span class="sentence-translate">
+                Werte wie <span class="word-gloss" data-meaning="modesty">Bescheidenheit</span>, <span
+                  class="word-gloss" data-meaning="willingness to compromise">Kompromissbereitschaft</span>,
+                Zusammenarbeit <span class="word-gloss" data-meaning="stand">stehen</span> in Verhandlungen im <span
+                  class="word-gloss" data-meaning="foreground">Vordergrund</span>.
+                <span class="translation">Values such as modesty, willingness to compromise, and cooperation are at the
+                  forefront in negotiations.</span>
+              </span>
+              <span class="sentence-translate">
+                Das Interesse <span class="word-gloss" data-meaning="applies/is directed">gilt</span> schnellen und
+                <span class="word-gloss" data-meaning="pragmatic">pragmatischen</span> Lösungen.
+                <span class="translation">The interest lies in quick and pragmatic solutions.</span>
+              </span>
+              <span class="sentence-translate">
+                Es wird lieber <span class="word-gloss" data-meaning="tried out">ausprobiert</span>, als sich an <span
+                  class="word-gloss" data-meaning="theories">Theorien</span> und <span class="word-gloss"
+                  data-meaning="rulebooks">Regelwerken</span> zu <span class="word-gloss"
+                  data-meaning="orient">orientieren</span>.
+                <span class="translation">They prefer to try things out rather than orient themselves by theories and
+                  rulebooks.</span>
+              </span>
+            </p>
+
+          </div>
+        </article>
+
+        <section class="bg-purple-50 rounded-2xl p-8 md:p-12 border border-purple-100 shadow-sm" id="grammar">
+          <h2 class="text-2xl font-bold text-purple-900 mb-4 font-sans border-l-4 border-purple-500 pl-4">
+            Grammatik-Fokus: Infinitiv mit „zu“</h2>
+          <p class="text-purple-800 mb-6 text-lg">In formelleren Texten finden wir oft die Konstruktion
+            <strong>Infinitiv mit „zu“</strong> oder Sätze mit <strong>„um ... zu“ / „anstatt ... zu“</strong>. Sie
+            machen Sätze eleganter, indem sie Nebensätze mit „dass“ oder „damit“ verkürzen.</p>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-purple-100">
+              <h3 class="font-bold text-slate-800 mb-3 border-b pb-2">Einfacher Infinitiv mit zu</h3>
+              <p class="text-sm text-slate-600 mb-3">Wird nach bestimmten Verben, Nomen oder Adjektiven verwendet (oft
+                bei gleichem Subjekt).</p>
+              <ul class="text-slate-700 space-y-3 text-sm">
+                <li><em>„Es ist normal, sich <span class="text-purple-600 font-bold">auszutauschen</span>.“</em>
+                  (Trennbare Verben: zu steht dazwischen!)</li>
+                <li><em>„Jemandem direkt <span class="text-purple-600 font-bold">zu sagen</span>, was man denkt, gilt
+                    als unhöflich.“</em></li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-purple-100">
+              <h3 class="font-bold text-slate-800 mb-3 border-b pb-2">Finalsätze mit „um ... zu“</h3>
+              <p class="text-sm text-slate-600 mb-3">Drückt eine Absicht oder ein Ziel aus. Es ersetzt einen
+                „damit“-Satz, wenn die Subjekte identisch sind.</p>
+              <ul class="text-slate-700 space-y-3 text-sm">
+                <li><em>„<span class="text-purple-600 font-bold">Um</span> an Informationen <span
+                      class="text-purple-600 font-bold">zu kommen</span>, muss man aktiv werden.“</em></li>
+                <li><em>„... Voraussetzungen, <span class="text-purple-600 font-bold">um</span> sich das Geschäft <span
+                      class="text-purple-600 font-bold">zu verderben</span>.“</em></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-white rounded-2xl p-8 md:p-12 border border-slate-200 shadow-sm" id="exercises">
+          <h2 class="text-2xl font-bold text-slate-800 mb-4 font-sans border-l-4 border-emerald-500 pl-4">Aktivierung:
+            Textverständnis & Grammatik</h2>
+          <p class="text-slate-600 mb-6">Teste dein Wissen! Welche Nationalität verbirgt sich hinter den Abschnitten
+            (A-E)? Und kannst du die Sätze mit „um...zu“ richtig ergänzen?</p>
+
+          <div
+            class="bg-slate-50 p-6 rounded-xl border border-slate-200 text-lg leading-relaxed text-slate-700 space-y-6">
+            <div>
+              <h4 class="font-bold mb-2 text-base text-slate-800">Teil 1: Wer ist wer? (Niederländer, Bulgaren,
+                Schweizer, Franzosen, Briten)</h4>
+              <ul class="space-y-2 text-base">
+                <li>Nation A (Flache Hierarchien, Höflichkeit): <span
+                    class="inline-block w-32 border-b-2 border-slate-400 bg-white"></span></li>
+                <li>Nation B (Geschäftsessen, Verführen): <span
+                    class="inline-block w-32 border-b-2 border-slate-400 bg-white"></span></li>
+                <li>Nation C (Distanz, Privates bleibt privat): <span
+                    class="inline-block w-32 border-b-2 border-slate-400 bg-white"></span></li>
+                <li>Nation D (Kopfschütteln = Zustimmung): <span
+                    class="inline-block w-32 border-b-2 border-slate-400 bg-white"></span></li>
+                <li>Nation E (Bescheidenheit, Pragmatismus): <span
+                    class="inline-block w-32 border-b-2 border-slate-400 bg-white"></span></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold mb-2 text-base text-slate-800">Teil 2: Bilde Sätze mit „um ... zu“</h4>
+              <p class="text-base text-slate-600 mb-2">Beispiel: Er lädt sie zum Essen ein. Er möchte sie besser
+                kennenlernen. &rarr; Er lädt sie zum Essen ein, <em>um sie besser kennenzulernen</em>.</p>
+              <p class="text-base">1. Man muss selbst aktiv werden. Man möchte an Informationen kommen. <br>&rarr; Man
+                muss selbst aktiv werden, <span class="inline-block w-48 border-b-2 border-slate-400 bg-white"></span>.
+              </p>
+              <p class="text-base">2. Sie treffen sich vor dem Meeting. Sie wollen Standpunkte austauschen.<br>&rarr;
+                Sie treffen sich vor dem Meeting, <span
+                  class="inline-block w-48 border-b-2 border-slate-400 bg-white"></span>.</p>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-slate-100 text-sm text-slate-400 select-none">
+            <p class="rotate-180 text-right">Lösungen Teil 1: A = Briten, B = Franzosen, C = Schweizer, D = Bulgaren, E
+              = Niederländer.<br>Lösungen Teil 2: 1. um an Informationen zu kommen. 2. um Standpunkte auszutauschen.</p>
+          </div>
+        </section>
+
+      </div>
+
+      <aside
+        class="glossary-sidebar bg-white shadow-xl rounded-2xl p-6 border border-slate-200 mt-10 lg:mt-0 sticky top-6 self-start"
+        id="glossary-sidebar">
+        <p class="text-xs uppercase tracking-wide text-blue-600 font-semibold mb-2">Word-by-word</p>
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Rechter Rand: Sofort-Glossar</h3>
+        <p class="text-sm text-slate-600 mb-4">Fahre über markierte Wörter oder tippe sie an. Das passende Glossar rückt
+          hier auf – ideal für schnelles Nachschlagen während des Lesens.</p>
+        <div class="space-y-3 max-h-[70vh] overflow-y-auto pr-2" id="glossary-list" aria-live="polite"></div>
+      </aside>
+    </div>
+  </main>
+</body>
+
+</html>
