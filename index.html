@@ -104,6 +104,11 @@
             background-clip: text;
         }
 
+        .search-active {
+            background-color: #4f46e5 !important;
+            color: white !important;
+        }
+
         /* Mobile responsive */
         @media (max-width: 768px) {
             .sidebar {
@@ -129,7 +134,16 @@
             <p class="text-sm text-gray-600">B1 Level Resources</p>
         </div>
 
-        <nav class="space-y-3">
+        <!-- Search -->
+        <div class="mb-4 relative">
+            <input id="sidebar-search" type="search" placeholder="Lektion suchen…" autocomplete="off"
+                class="w-full px-4 py-2 pr-8 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
+            <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs pointer-events-none"
+                aria-hidden="true">⌘K</span>
+        </div>
+        <div id="search-results" class="hidden mb-3 space-y-1"></div>
+
+        <nav class="space-y-3" id="folder-nav">
             <!-- Schule & Bildung -->
             <div class="folder-section">
                 <button
@@ -148,6 +162,9 @@
                     </a>
                     <a href="lektionen/themen/schule-bildung/handys_in_der_schule.html" class="theme-link">
                         Handys in der Schule <span class="text-xs bg-green-100 text-green-700 px-1 rounded">B1</span>
+                    </a>
+                    <a href="lektionen/themen/schule-bildung/uni-wettbewerb.html" class="theme-link">
+                        Kritik am Uni-Wettbewerb <span class="text-xs bg-blue-100 text-blue-700 px-1 rounded">B2</span>
                     </a>
                 </div>
             </div>
@@ -197,7 +214,8 @@
                         Ärger beim Fliegen <span class="text-xs bg-blue-100 text-blue-700 px-1 rounded">B2</span>
                     </a>
                     <a href="lektionen/themen/gesellschaft-kultur/b2_70_a7.html" class="theme-link">
-                        Die ungleichen Regenwürmer <span class="text-xs bg-blue-100 text-blue-700 px-1 rounded">B2</span>
+                        Die ungleichen Regenwürmer <span
+                            class="text-xs bg-blue-100 text-blue-700 px-1 rounded">B2</span>
                     </a>
                     <a href="lektionen/themen/gesellschaft-kultur/b2_03_a11.html" class="theme-link">
                         Abenteuer Ausland (A11) <span class="text-xs bg-blue-100 text-blue-700 px-1 rounded">B2</span>
@@ -206,7 +224,8 @@
                         Abenteuer Ausland <span class="text-xs bg-blue-100 text-blue-700 px-1 rounded">B2</span>
                     </a>
                     <a href="lektionen/themen/gesellschaft-kultur/03_a15_kostspielige.html" class="theme-link">
-                        Kostspielige Missverständnisse <span class="text-xs bg-blue-100 text-blue-700 px-1 rounded">B2</span>
+                        Kostspielige Missverständnisse <span
+                            class="text-xs bg-blue-100 text-blue-700 px-1 rounded">B2</span>
                     </a>
                 </div>
             </div>
@@ -423,6 +442,111 @@
             </div>
         </div>
     </aside>
+
+    <script>
+        // Search functionality
+        (function () {
+            const input = document.getElementById('sidebar-search');
+            const resultsBox = document.getElementById('search-results');
+            const folderNav = document.getElementById('folder-nav');
+
+            // Collect all navigable links at startup
+            function collectLinks() {
+                return Array.from(folderNav.querySelectorAll('a[href]')).map(a => ({
+                    href: a.getAttribute('href'),
+                    label: a.textContent.trim(),
+                }));
+            }
+
+            let links = [];
+            document.addEventListener('DOMContentLoaded', () => {
+                links = collectLinks();
+            });
+
+            // Keyboard shortcut: Cmd/Ctrl+K focuses the search
+            document.addEventListener('keydown', e => {
+                if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+                    e.preventDefault();
+                    input.focus();
+                    input.select();
+                }
+            });
+
+            let activeIndex = -1;
+
+            function getResultItems() {
+                return Array.from(resultsBox.querySelectorAll('a'));
+            }
+
+            function setActive(index) {
+                const items = getResultItems();
+                items.forEach(el => el.classList.remove('search-active'));
+                if (index >= 0 && index < items.length) {
+                    items[index].classList.add('search-active');
+                    items[index].scrollIntoView({ block: 'nearest' });
+                }
+                activeIndex = index;
+            }
+
+            function render(query) {
+                const q = query.trim().toLowerCase();
+                if (!q) {
+                    resultsBox.classList.add('hidden');
+                    resultsBox.innerHTML = '';
+                    folderNav.classList.remove('hidden');
+                    activeIndex = -1;
+                    return;
+                }
+
+                folderNav.classList.add('hidden');
+                const matches = links.filter(l => l.label.toLowerCase().includes(q));
+                activeIndex = -1;
+
+                if (matches.length === 0) {
+                    resultsBox.innerHTML = '<p class="text-xs text-gray-500 px-2 py-1">Keine Ergebnisse</p>';
+                } else {
+                    resultsBox.innerHTML = matches.map(l => {
+                        const hi = l.label.replace(
+                            new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'),
+                            '<mark class="bg-yellow-200 rounded-sm">$1</mark>'
+                        );
+                        return `<a href="${l.href}" class="search-result-item block px-3 py-2 rounded-lg text-sm text-slate-700 bg-slate-50 hover:bg-indigo-600 hover:text-white transition-colors truncate" title="${l.label}">${hi}</a>`;
+                    }).join('');
+                }
+                resultsBox.classList.remove('hidden');
+            }
+
+            input.addEventListener('input', () => render(input.value));
+
+            input.addEventListener('keydown', e => {
+                const items = getResultItems();
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    setActive(Math.min(activeIndex + 1, items.length - 1));
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    setActive(Math.max(activeIndex - 1, 0));
+                } else if (e.key === 'Enter') {
+                    if (activeIndex >= 0 && items[activeIndex]) {
+                        window.location.href = items[activeIndex].getAttribute('href');
+                    } else if (items.length === 1) {
+                        window.location.href = items[0].getAttribute('href');
+                    }
+                } else if (e.key === 'Escape') {
+                    input.value = '';
+                    render('');
+                    input.blur();
+                }
+            });
+
+            // Click outside closes results
+            document.addEventListener('click', e => {
+                if (!input.contains(e.target) && !resultsBox.contains(e.target)) {
+                    if (!input.value) render('');
+                }
+            });
+        })();
+    </script>
 
     <!-- Main Content Area -->
     <main class="main-content p-8" id="main-content">

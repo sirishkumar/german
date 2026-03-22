@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion: Kritik am Uni-Wettbewerb</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .sentence-translate {
+      position: relative;
+      cursor: help;
+      border-bottom: 2px dotted #94a3b8;
+      transition: background-color 0.2s ease-in-out;
+      border-radius: 2px;
+    }
+
+    .sentence-translate:hover {
+      background-color: #e0f2fe;
+      border-bottom-color: #0284c7;
+    }
+
+    .translation {
+      visibility: hidden;
+      opacity: 0;
+      width: 320px;
+      background-color: #1e293b;
+      color: #f8fafc;
+      text-align: left;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      position: absolute;
+      z-index: 50;
+      bottom: 140%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      transition: opacity 0.2s ease-in-out, visibility 0.2s;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      pointer-events: none;
+    }
+
+    .translation::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -6px;
+      border-width: 6px;
+      border-style: solid;
+      border-color: #1e293b transparent transparent transparent;
+    }
+
+    .sentence-translate:hover .translation {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media (max-width: 640px) {
+      .translation {
+        width: 250px;
+        left: 0;
+        transform: translateX(0);
+      }
+
+      .translation::after {
+        left: 20px;
+      }
+    }
+
+    .word-gloss {
+      cursor: pointer;
+      color: #2563eb;
+      border-bottom: 1px solid #bfdbfe;
+      transition: background-color 0.2s;
+    }
+
+    .word-gloss:hover {
+      background-color: #eff6ff;
+    }
+  </style>
+  <link rel="stylesheet" href="../../../assets/glossary.css">
+  <script src="../../../assets/glossary.js" defer></script>
+</head>
+
+<body class="bg-slate-50 font-serif text-slate-800 antialiased leading-relaxed">
+  <main class="max-w-6xl mx-auto px-6 py-12">
+
+    <header class="mb-12">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 font-sans tracking-tight">Warum es Kritik am
+        Wettbewerb gibt</h1>
+      <p class="text-lg text-slate-600 font-sans">Level B2 | Reading Comprehension & Higher Education</p>
+    </header>
+
+    <div class="lg:grid lg:grid-cols-[2.2fr_1fr] lg:gap-10">
+      <div class="space-y-12">
+        <article class="bg-white shadow-xl rounded-2xl p-8 md:p-12 ring-1 ring-slate-900/5" id="reader">
+          <h2 class="text-2xl font-bold text-slate-800 mb-6 font-sans border-l-4 border-blue-500 pl-4">Der Lesetext</h2>
+          <div class="text-xl space-y-6 text-justify">
+
+            <p class="font-bold">
+              <span class="sentence-translate">
+                15 <span class="word-gloss" data-word="die Exzellenzuniversität"
+                  data-meaning="university of excellence">Exzellenzuniversitäten</span> soll es ab 2027 in Deutschland
+                geben.
+                <span class="translation">There are supposed to be 15 universities of excellence in Germany from 2027
+                  onwards.</span>
+              </span>
+              <span class="sentence-translate">
+                Heute Abend <span class="word-gloss" data-word="fallen"
+                  data-meaning="to fall (here: to be made)">fällt</span> die erste <span class="word-gloss"
+                  data-word="die Entscheidung" data-meaning="decision">Entscheidung</span>, welche Unis dabei sein
+                werden.
+                <span class="translation">Tonight, the first decision will be made as to which universities will be
+                  included.</span>
+              </span>
+              <span class="sentence-translate">
+                Aber es gibt <span class="word-gloss" data-word="die Kritik" data-meaning="criticism">Kritik</span> am
+                <span class="word-gloss" data-word="das Antragsverfahren"
+                  data-meaning="application process">Antragsverfahren</span> und der <span class="word-gloss"
+                  data-word="die Finanzierung" data-meaning="financing/funding">Finanzierung</span>.
+                <span class="translation">But there is criticism of the application process and the financing.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                Tilman Reitz blickt <span class="word-gloss" data-word="skeptisch"
+                  data-meaning="skeptical(ly)">skeptisch</span> auf die <span class="word-gloss"
+                  data-word="die Exzellenzstrategie" data-meaning="excellence strategy">Exzellenzstrategie</span> von
+                <span class="word-gloss" data-word="der Bund" data-meaning="federal government">Bund</span> und Ländern.
+                <span class="translation">Tilman Reitz looks skeptically at the excellence strategy of the federal and
+                  state governments.</span>
+              </span>
+              <span class="sentence-translate">
+                Der Professor für Soziologie an der Universität in Jena <span class="word-gloss"
+                  data-word="sich engagieren" data-meaning="to be involved/committed">engagiert sich</span> im "Netzwerk
+                Nachhaltige Wissenschaft", das sich für gute <span class="word-gloss" data-word="die Bedingung"
+                  data-meaning="condition">Bedingungen</span> in der Wissenschaft <span class="word-gloss"
+                  data-word="sich einsetzen" data-meaning="to advocate/campaign for">einsetzt</span>.
+                <span class="translation">The sociology professor at the University of Jena is involved in the
+                  "Sustainable Science Network," which campaigns for good conditions in science.</span>
+              </span>
+              <span class="sentence-translate">
+                "Es wird Geld <span class="word-gloss" data-word="in den Ring werfen"
+                  data-meaning="to throw into the ring (idiom: to provide/invest)">in den Ring geworfen</span> und dann
+                denken sich die Leute <span class="word-gloss" data-word="das Forschungsthema"
+                  data-meaning="research topic">Forschungsthemen</span> aus", sagt der <span class="word-gloss"
+                  data-word="der Wissenschaftler" data-meaning="scientist/academic">Wissenschaftler</span>, "das bringt
+                nicht <span class="word-gloss" data-word="unbedingt" data-meaning="necessarily">unbedingt</span> <span
+                  class="word-gloss" data-word="originell" data-meaning="original/creative">originelle</span> oder <span
+                  class="word-gloss" data-word="solide" data-meaning="solid/robust">solide</span> <span
+                  class="word-gloss" data-word="das Forschungsvorhaben"
+                  data-meaning="research project">Forschungsvorhaben</span> <span class="word-gloss"
+                  data-word="hervorbringen" data-meaning="to produce/bring forth">hervor</span>."
+                <span class="translation">"Money is being thrown into the ring, and then people invent research topics,"
+                  says the academic, "that doesn't necessarily produce original or solid research projects."</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                Auch an der Finanzierung <span class="word-gloss" data-word="äußern"
+                  data-meaning="to express">äußert</span> Reitz Kritik.
+                <span class="translation">Reitz also expresses criticism regarding the financing.</span>
+              </span>
+              <span class="sentence-translate">
+                Denn der <span class="word-gloss" data-word="der Grundgedanke"
+                  data-meaning="basic idea/core concept">Grundgedanke</span> des Wettbewerbs, mit exzellenten
+                Universitäten die <span class="word-gloss" data-word="die Hochschullandschaft"
+                  data-meaning="university landscape">Hochschullandschaft</span> zu <span class="word-gloss"
+                  data-word="bereichern" data-meaning="to enrich">bereichern</span>, <span class="word-gloss"
+                  data-word="aufgehen" data-meaning="to work out/succeed">gehe nicht auf</span>.
+                <span class="translation">Because the basic idea of the competition, to enrich the university landscape
+                  with excellent universities, does not work out.</span>
+              </span>
+              <span class="sentence-translate">
+                Das deutsche <span class="word-gloss" data-word="das Wissenschaftssystem"
+                  data-meaning="science/academic system">Wissenschaftssystem</span> sei schon wegen der finanziellen
+                <span class="word-gloss" data-word="die Ausstattung"
+                  data-meaning="funding level/equipment">Ausstattung</span> nicht <span class="word-gloss"
+                  data-word="in der Lage sein" data-meaning="to be able/in a position">in der Lage</span>, international
+                <span class="word-gloss" data-word="mithalten" data-meaning="to keep up/compete">mitzuhalten</span>.
+                <span class="translation">The German academic system is not in a position to compete internationally
+                  simply due to its level of financial funding.</span>
+              </span>
+              <span class="sentence-translate">
+                Denn das Budget von US-<span class="word-gloss" data-word="die Spitzenuniversität"
+                  data-meaning="top university">Spitzenuniversitäten</span> wie Harvard liege um <span
+                  class="word-gloss" data-word="ein Vielfaches" data-meaning="a multiple">ein Vielfaches</span> höher
+                als das von deutschen Universitäten:
+                <span class="translation">Because the budget of top US universities like Harvard is many times higher
+                  than that of German universities:</span>
+              </span>
+              <span class="sentence-translate">
+                "Das Geld <span class="word-gloss" data-word="reichen" data-meaning="to be enough/suffice">reicht</span>
+                nicht, um Weltklasse-Universitäten hervorzubringen", sagt er, "wir produzieren <span class="word-gloss"
+                  data-word="die Hochglanz-Fassade" data-meaning="glossy facade">Hochglanz-Fassaden</span>, bleiben aber
+                im <span class="word-gloss" data-word="das Mittelfeld"
+                  data-meaning="midfield/average">Mittelfeld</span>."
+                <span class="translation">"The money is not enough to produce world-class universities," he says, "we
+                  produce glossy facades, but remain in the middle of the pack."</span>
+              </span>
+            </p>
+
+            <h3 class="text-xl font-bold mt-8 mb-4">Am Wettbewerb gibt es schon lange Kritik</h3>
+
+            <p>
+              <span class="sentence-translate">
+                Ein <span class="word-gloss" data-word="der Streit" data-meaning="dispute/argument">Streit</span>, der
+                den Wettbewerb schon seit der <span class="word-gloss" data-word="die Entstehung"
+                  data-meaning="emergence/creation">Entstehung</span> <span class="word-gloss" data-word="begleiten"
+                  data-meaning="to accompany">begleitet</span>.
+                <span class="translation">A dispute that has accompanied the competition since its inception.</span>
+              </span>
+              <span class="sentence-translate">
+                Denn <span class="word-gloss" data-word="eigentlich"
+                  data-meaning="actually/originally">eigentlich</span> sollten <span class="word-gloss"
+                  data-word="zunächst" data-meaning="initially">zunächst</span> 1,9 Milliarden Euro auf höchstens drei
+                Elite-Universitäten <span class="word-gloss" data-word="verteilen"
+                  data-meaning="to distribute">verteilt</span> werden.
+                <span class="translation">Because originally, 1.9 billion euros were initially supposed to be
+                  distributed among a maximum of three elite universities.</span>
+              </span>
+              <span class="sentence-translate">
+                So hatte es die SPD 2004 <span class="word-gloss" data-word="vorschlagen"
+                  data-meaning="to suggest/propose">vorgeschlagen</span>.
+                <span class="translation">That is what the SPD had proposed in 2004.</span>
+              </span>
+              <span class="sentence-translate">
+                Doch Bund und Länder diskutierten lange über Kosten und Finanzierung.
+                <span class="translation">But the federal and state governments debated for a long time about costs and
+                  financing.</span>
+              </span>
+              <span class="sentence-translate">
+                Und <span class="word-gloss" data-word="sich einigen" data-meaning="to agree">einigten sich</span> auf
+                eine deutlich <span class="word-gloss" data-word="breit" data-meaning="broad/wide">breitere</span>
+                Verteilung, damit Unis in <span class="word-gloss" data-word="möglichst"
+                  data-meaning="as possible (preferably)">möglichst</span> vielen <span class="word-gloss"
+                  data-word="das Bundesland" data-meaning="federal state">Bundesländern</span> <span class="word-gloss"
+                  data-word="profitieren" data-meaning="to profit/benefit">profitieren</span> können.
+                <span class="translation">And they agreed on a significantly broader distribution so that universities
+                  in as many federal states as possible could benefit.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                Wolfgang Wick <span class="word-gloss" data-word="bewerten"
+                  data-meaning="to evaluate/assess">bewertet</span> die Exzellenzstrategie als <span class="word-gloss"
+                  data-word="der Erfolg" data-meaning="success">Erfolg</span>.
+                <span class="translation">Wolfgang Wick evaluates the excellence strategy as a success.</span>
+              </span>
+              <span class="sentence-translate">
+                Er ist <span class="word-gloss" data-word="der Vorsitzender" data-meaning="chairman">Vorsitzender</span>
+                des Wissenschaftsrats, der die Exzellenzstrategie von Bund und Ländern zusammen mit der Deutschen
+                Forschungsgemeinschaft <span class="word-gloss" data-word="durchführen"
+                  data-meaning="to carry out/conduct">durchführt</span>.
+                <span class="translation">He is the chairman of the Science Council, which carries out the excellence
+                  strategy of the federal and state governments together with the German Research Foundation.</span>
+              </span>
+              <span class="sentence-translate">
+                Der Wissenschaftsrat ist für die Exzellenzuniversitäten <span class="word-gloss"
+                  data-word="verantwortlich" data-meaning="responsible">verantwortlich</span>.
+                <span class="translation">The Science Council is responsible for the universities of excellence.</span>
+              </span>
+              <span class="sentence-translate">
+                "Wir sehen bei den Exzellenzuniversitäten einen größeren Erfolg in nationalen und internationalen
+                Wettbewerben", sagt Wick.
+                <span class="translation">"We see greater success for the universities of excellence in national and
+                  international competitions," says Wick.</span>
+              </span>
+              <span class="sentence-translate">
+                Die <span class="word-gloss" data-word="die Zusammenarbeit"
+                  data-meaning="collaboration">Zusammenarbeit</span> zwischen den <span class="word-gloss"
+                  data-word="die Disziplin" data-meaning="discipline/field">Disziplinen</span> <span class="word-gloss"
+                  data-word="gelingen" data-meaning="to succeed/work well">gelinge</span> an den Hochschulen gut.
+                <span class="translation">Collaboration between disciplines is working well at the universities.</span>
+              </span>
+              <span class="sentence-translate">
+                Auch Wissenschaftler in <span class="word-gloss" data-word="früh" data-meaning="early">frühen</span>
+                <span class="word-gloss" data-word="die Karrierephase" data-meaning="career phase">Karrierephasen</span>
+                profitierten von den <span class="word-gloss" data-word="das Forschungsgeld"
+                  data-meaning="research funds">Forschungsgeldern</span>.
+                <span class="translation">Scientists in early career phases also benefit from the research funds.</span>
+              </span>
+              <span class="sentence-translate">
+                Die Kritik am <span class="word-gloss" data-word="aufwendig"
+                  data-meaning="elaborate/costly/time-consuming">aufwendigen</span> Antragsverfahren <span
+                  class="word-gloss" data-word="ernst nehmen" data-meaning="to take seriously">nimmt er trotzdem
+                  ernst</span>.
+                <span class="translation">Nevertheless, he takes the criticism of the elaborate application process
+                  seriously.</span>
+              </span>
+              <span class="sentence-translate">
+                "Es wird eine <span class="word-gloss" data-word="intern" data-meaning="internal">interne</span> und
+                externe <span class="word-gloss" data-word="die Evaluation" data-meaning="evaluation">Evaluation</span>
+                der Exzellenzstrategie geben."
+                <span class="translation">"There will be an internal and external evaluation of the excellence
+                  strategy."</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                687 Millionen Euro stehen <span class="word-gloss" data-word="jährlich"
+                  data-meaning="annually">jährlich</span> für die Exzellenzstrategie <span class="word-gloss"
+                  data-word="zur Verfügung stehen" data-meaning="to be available">zur Verfügung</span>.
+                <span class="translation">687 million euros are available annually for the excellence strategy.</span>
+              </span>
+              <span class="sentence-translate">
+                Der Bund <span class="word-gloss" data-word="übernehmen"
+                  data-meaning="to take over/assume">übernimmt</span> 75 Prozent.
+                <span class="translation">The federal government covers 75 percent.</span>
+              </span>
+              <span class="sentence-translate">
+                Die Strategie besteht aus zwei <span class="word-gloss" data-word="die Förderlinie"
+                  data-meaning="funding line">Förderlinien</span>: den Exzellenzuniversitäten und den <span
+                  class="word-gloss" data-word="das Exzellenzcluster"
+                  data-meaning="excellence cluster">Exzellenzclustern</span>, das sind Forschungsnetzwerke von mehreren
+                Hochschulen.
+                <span class="translation">The strategy consists of two funding lines: the universities of excellence and
+                  the clusters of excellence, which are research networks of several universities.</span>
+              </span>
+              <span class="sentence-translate">
+                Im <span class="word-gloss" data-word="kommend" data-meaning="coming/next">kommenden</span> Jahr soll
+                die Zahl der <span class="word-gloss" data-word="fördern"
+                  data-meaning="to fund/support">geförderten</span> Exzellenzuniversitäten auf 15 <span
+                  class="word-gloss" data-word="aufstocken" data-meaning="to increase/top up">aufgestockt</span> werden.
+                <span class="translation">Next year, the number of funded universities of excellence is to be increased
+                  to 15.</span>
+              </span>
+              <span class="sentence-translate">
+                Die <span class="word-gloss" data-word="die Förderung" data-meaning="funding/support">Förderung</span>
+                läuft dann bis Ende 2033.
+                <span class="translation">The funding will then run until the end of 2033.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                Im Herbst fällt die Entscheidung, welche neuen Universitäten mit ihren <span class="word-gloss"
+                  data-word="das Konzept" data-meaning="concept">Konzepten</span> <span class="word-gloss"
+                  data-word="überzeugen" data-meaning="to convince">überzeugen</span> können.
+                <span class="translation">In the fall, the decision will be made as to which new universities can
+                  convince with their concepts.</span>
+              </span>
+              <span class="sentence-translate">
+                Wie viele es werden, <span class="word-gloss" data-word="abhängen von" data-meaning="to depend on">hängt
+                  davon ab</span>, wer jetzt in der Förderung bleibt.
+                <span class="translation">How many it will be depends on who remains in the funding now.</span>
+              </span>
+              <span class="sentence-translate">
+                Diese Entscheidung wird heute Abend <span class="word-gloss" data-word="treffen"
+                  data-meaning="to meet (here: to make a decision)">getroffen</span>.
+                <span class="translation">This decision will be made tonight.</span>
+              </span>
+              <span class="sentence-translate">
+                Neun Universitäten und ein <span class="word-gloss" data-word="der Verbund"
+                  data-meaning="network/association">Verbund</span> sind <span class="word-gloss"
+                  data-word="im Rennen sein" data-meaning="to be in the running/race">im Rennen</span>.
+                <span class="translation">Nine universities and one network are in the running.</span>
+              </span>
+              <span class="sentence-translate">
+                Die Universität Konstanz kann nicht mehr <span class="word-gloss" data-word="teilnehmen"
+                  data-meaning="to participate">teilnehmen</span>, weil sie in der Förderlinie der Exzellenzcluster
+                <span class="word-gloss" data-word="zuletzt" data-meaning="lastly/recently">zuletzt</span> nicht
+                überzeugen konnte.
+                <span class="translation">The University of Konstanz can no longer participate because it was ultimately
+                  unable to convince in the excellence cluster funding line.</span>
+              </span>
+            </p>
+
+            <h3 class="text-xl font-bold mt-8 mb-4">Mehr Grundfinanzierung statt Wettbewerb?</h3>
+
+            <p>
+              <span class="sentence-translate">
+                Professor Reitz wünscht sich, dass mehr Geld in die <span class="word-gloss"
+                  data-word="die Grundausstattung" data-meaning="basic funding/equipment">Grundausstattung</span>
+                fließt.
+                <span class="translation">Professor Reitz wishes that more money would flow into basic funding.</span>
+              </span>
+              <span class="sentence-translate">
+                Denn viele Hochschulen stehen zurzeit vor einer <span class="word-gloss" data-word="angespannt"
+                  data-meaning="strained/tense">angespannten</span> <span class="word-gloss" data-word="die Finanzlage"
+                  data-meaning="financial situation">Finanzlage</span>:
+                <span class="translation">Because many universities are currently facing a strained financial
+                  situation:</span>
+              </span>
+              <span class="sentence-translate">
+                "Wir bräuchten ein Programm, das den <span class="word-gloss" data-word="laufend"
+                  data-meaning="ongoing/running">laufenden</span> <span class="word-gloss" data-word="der Betrieb"
+                  data-meaning="operation">Betrieb</span> <span class="word-gloss" data-word="sichern"
+                  data-meaning="to secure">sichern</span> würde, und zwar <span class="word-gloss" data-word="inklusive"
+                  data-meaning="including">inklusive</span> exzellenter Forschung."
+                <span class="translation">"We would need a program that would secure ongoing operations, including
+                  excellent research."</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                Wick vom Wissenschaftsrat betont aber, dass die Gelder nicht <span class="word-gloss"
+                  data-word="ohne weiteres" data-meaning="without further ado / easily">ohne weiteres</span> für die
+                <span class="word-gloss" data-word="die Grundfinanzierung"
+                  data-meaning="base funding">Grundfinanzierung</span> von Hochschulen <span class="word-gloss"
+                  data-word="ausgeben" data-meaning="to spend">ausgegeben</span> werden können:
+                <span class="translation">But Wick from the Science Council emphasizes that the funds cannot be easily
+                  spent on the base funding of universities:</span>
+              </span>
+              <span class="sentence-translate">
+                "Dazu müsste es <span class="word-gloss" data-word="die Änderung"
+                  data-meaning="change/amendment">Änderungen</span> bei Bund-Länder-<span class="word-gloss"
+                  data-word="die Vereinbarung" data-meaning="agreement">Vereinbarungen</span> geben."
+                <span class="translation">"This would require changes to federal-state agreements."</span>
+              </span>
+              <span class="sentence-translate">
+                Eine bessere finanzielle Ausstattung der Universitäten könne nicht über eine <span class="word-gloss"
+                  data-word="die Umwidmung" data-meaning="reallocation (of funds)">Umwidmung</span> der
+                Exzellenzstrategie <span class="word-gloss" data-word="geschehen"
+                  data-meaning="to happen/occur">geschehen</span>.
+                <span class="translation">Better financial funding for universities could not happen through a
+                  reallocation of the excellence strategy.</span>
+              </span>
+            </p>
+
+            <p>
+              <span class="sentence-translate">
+                Der Streit über den <span class="word-gloss" data-word="Sinn und Zweck"
+                  data-meaning="meaning and purpose">Sinn und Zweck</span> der Exzellenzstrategie wird den Wettbewerb
+                also noch weiter begleiten - <span class="word-gloss" data-word="ebenso wie"
+                  data-meaning="just as / as well as">ebenso wie</span> die <span class="word-gloss"
+                  data-word="die Freude" data-meaning="joy">Freude</span> <span class="word-gloss"
+                  data-word="derjenigen" data-meaning="of those">derjenigen</span>, die sich heute über weitere Gelder
+                freuen werden.
+                <span class="translation">The dispute over the meaning and purpose of the excellence strategy will
+                  therefore continue to accompany the competition - just as much as the joy of those who will be happy
+                  about further funds today.</span>
+              </span>
+            </p>
+          </div>
+        </article>
+
+        <section class="bg-white shadow-lg rounded-2xl p-8 border border-slate-200">
+          <h3 class="text-2xl font-bold text-slate-800 mb-6 font-sans">Grammatik-Fokus: Konjunktiv I (Indirekte Rede)
+          </h3>
+          <p class="mb-4 text-slate-700">In German news reporting, the <strong>Konjunktiv I</strong> is essential for
+            reporting statements without claiming they are objective facts. Notice how the text handles claims made by
+            Professor Reitz and Wolfgang Wick:</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-slate-50">
+                  <th class="p-3 border-b font-semibold">Infinitive</th>
+                  <th class="p-3 border-b font-semibold">Konjunktiv I</th>
+                  <th class="p-3 border-b font-semibold">Example from Text</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="p-3 border-b">aufgehen (to work out)</td>
+                  <td class="p-3 border-b text-blue-600 font-mono font-bold">gehe auf</td>
+                  <td class="p-3 border-b italic">"...der Grundgedanke [...] <strong>gehe</strong> nicht
+                    <strong>auf</strong>."</td>
+                </tr>
+                <tr>
+                  <td class="p-3 border-b">sein (to be)</td>
+                  <td class="p-3 border-b text-blue-600 font-mono font-bold">sei</td>
+                  <td class="p-3 border-b italic">"Das Wissenschaftssystem <strong>sei</strong> nicht in der Lage..."
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-3 border-b">liegen (to lie/be situated)</td>
+                  <td class="p-3 border-b text-blue-600 font-mono font-bold">liege</td>
+                  <td class="p-3 border-b italic">"...das Budget [...] <strong>liege</strong> um ein Vielfaches höher."
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-3 border-b">geschehen (to happen)</td>
+                  <td class="p-3 border-b text-blue-600 font-mono font-bold">könne geschehen</td>
+                  <td class="p-3 border-b italic">"Eine bessere Ausstattung [...] <strong>könne</strong> nicht
+                    geschehen."</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="bg-blue-50 shadow-inner rounded-2xl p-8 border border-blue-100">
+          <h3 class="text-2xl font-bold text-blue-900 mb-4 font-sans">Aktivierungsübung: Textverständnis & Vokabeln</h3>
+          <p class="text-blue-800 mb-6">Fülle die Lücken mit den passenden Wörtern aus dem Artikel (Cloze Test). Achte
+            auf die richtige Form!</p>
+          <div class="space-y-4">
+            <div class="bg-white p-5 rounded-lg shadow-sm border border-blue-100">
+              <p class="leading-relaxed">
+                Der Soziologie-Professor Tilman Reitz kritisiert die Exzellenzstrategie. Er findet, dass durch das viele
+                Geld nicht automatisch <strong>1. __________</strong> (creative/original) Forschungsvorhaben entstehen.
+                Außerdem fordert er, dass mehr Geld in die <strong>2. __________</strong> (core funding) der
+                Universitäten fließt, da sich viele Unis in einer <strong>3. __________</strong> (strained) Finanzlage
+                befinden.
+              </p>
+              <details class="mt-4 cursor-pointer text-sm text-blue-600">
+                <summary class="font-semibold outline-none">Lösungen anzeigen</summary>
+                <p class="mt-2 text-slate-700 bg-slate-50 p-3 rounded">1. originelle | 2. Grundausstattung /
+                  Grundfinanzierung | 3. angespannten</p>
+              </details>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="glossary-sidebar bg-white shadow-xl rounded-2xl p-6 border border-slate-200 mt-10 lg:mt-0"
+        id="glossary-sidebar">
+        <p class="text-xs uppercase tracking-wide text-blue-600 font-semibold mb-2">Word-by-word</p>
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Rechter Rand: Sofort-Glossar</h3>
+        <p class="text-sm text-slate-600 mb-4">Fahre über markierte Wörter oder tippe sie an. Das passende Glossar rückt
+          hier auf – ideal für schnelles Nachschlagen während des Lesens.</p>
+        <div class="space-y-3" id="glossary-list" aria-live="polite">
+        </div>
+      </aside>
+    </div>
+
+    <footer class="mt-16 pt-8 border-t border-slate-200 text-center text-slate-500 text-sm">
+      <p>&copy; 2026 Deutsch-Lernportal | Original Article based on WDR</p>
+    </footer>
+  </main>
+</body>
+
+</html>

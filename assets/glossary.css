@@ -7,8 +7,10 @@
   --glossary-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
 }
 
-.word-gloss,
-.word-translate {
+.word-gloss[data-meaning]:not([data-meaning=""]),
+.word-gloss[data-glossary-meaning]:not([data-glossary-meaning=""]),
+.word-translate[data-translation]:not([data-translation=""]),
+.word-translate[data-glossary-meaning]:not([data-glossary-meaning=""]) {
   position: relative;
   cursor: help;
   border-bottom: 1px dashed #38bdf8;
@@ -16,10 +18,14 @@
   transition: background-color 0.15s ease;
 }
 
-.word-gloss:hover,
-.word-translate:hover,
-.word-gloss:focus-visible,
-.word-translate:focus-visible {
+.word-gloss[data-meaning]:not([data-meaning=""]):hover,
+.word-gloss[data-glossary-meaning]:not([data-glossary-meaning=""]):hover,
+.word-translate[data-translation]:not([data-translation=""]):hover,
+.word-translate[data-glossary-meaning]:not([data-glossary-meaning=""]):hover,
+.word-gloss[data-meaning]:not([data-meaning=""]):focus-visible,
+.word-gloss[data-glossary-meaning]:not([data-glossary-meaning=""]):focus-visible,
+.word-translate[data-translation]:not([data-translation=""]):focus-visible,
+.word-translate[data-glossary-meaning]:not([data-glossary-meaning=""]):focus-visible {
   background-color: #e0f2fe;
   outline: none;
 }
